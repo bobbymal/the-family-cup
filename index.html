@@ -20,21 +20,21 @@ color:#f5f5f5;
 
 header{
 background:linear-gradient(180deg,#12263a,#07111b);
-padding:50px 25px;
+padding:45px 25px;
 text-align:center;
 border-bottom:4px solid gold;
 }
 
 h1{
-margin:0;
 font-size:52px;
+margin:0;
 }
 
 .subtitle{
-margin-top:18px;
 font-size:18px;
 line-height:1.8;
-color:#cbd5e1;
+margin-top:18px;
+color:#d1d5db;
 }
 
 .container{
@@ -45,10 +45,10 @@ padding:18px;
 
 .card{
 background:#102030;
-padding:24px;
+padding:22px;
 margin-bottom:22px;
 border-radius:20px;
-box-shadow:0 8px 18px rgba(0,0,0,.35);
+box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
 
 h2{
@@ -58,9 +58,9 @@ padding-left:14px;
 }
 
 .headline{
-text-align:center;
 font-size:24px;
 font-weight:700;
+text-align:center;
 color:gold;
 }
 
@@ -68,8 +68,27 @@ color:gold;
 background:#08111d;
 padding:16px;
 border-radius:16px;
-line-height:1.8;
 font-weight:600;
+line-height:1.8;
+}
+
+.resultsTicker{
+overflow:hidden;
+white-space:nowrap;
+background:#08111d;
+padding:14px;
+border-radius:16px;
+}
+
+.resultsTicker span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 55s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
 }
 
 table{
@@ -90,7 +109,7 @@ text-align:center;
 
 .roster{
 background:#08111d;
-padding:20px;
+padding:18px;
 border-radius:18px;
 margin-bottom:18px;
 border:2px solid #1d3855;
@@ -98,17 +117,13 @@ border:2px solid #1d3855;
 
 .outlook{
 margin-top:14px;
-color:#d1d5db;
 line-height:1.8;
+color:#d1d5db;
 }
 
 .article{
 line-height:1.9;
 font-size:17px;
-}
-
-.award{
-line-height:2;
 }
 
 footer{
@@ -153,7 +168,7 @@ Three Teams • One Champion
 
 <div class="headline">
 
-"The pack is tightening."
+"The leaders can hear footsteps."
 
 </div>
 
@@ -163,7 +178,7 @@ Three Teams • One Champion
 
 <div class="ticker">
 
-🔥 Mateo setting the pace • 👀 Mama G quietly lurking • 🇨🇻 Cabo Verde continues to surprise • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
+🔥 Mateo setting the pace • 👀 Mama G quietly lurking • 🇨🇻 Cabo Verde continues to surprise • 🎯 Momma M keeps stacking points • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
 
 </div>
 
@@ -175,11 +190,7 @@ Three Teams • One Champion
 
 <p>
 
-🟡 Official audit in progress.
-
-<br><br>
-
-Standings will only appear once every country's results are verified.
+🟡 June 22 Locked • Verified Partial
 
 </p>
 
@@ -189,7 +200,13 @@ Standings will only appear once every country's results are verified.
 
 <th>Rank</th>
 
-<th>Player</th>
+<th>Owner</th>
+
+<th>GS</th>
+
+<th>GB</th>
+
+<th>KO</th>
 
 <th>Total</th>
 
@@ -199,9 +216,15 @@ Standings will only appear once every country's results are verified.
 
 <td>🥇</td>
 
-<td>TBD</td>
+<td>Mateo</td>
 
-<td>—</td>
+<td>13</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>13</b></td>
 
 </tr>
 
@@ -209,9 +232,15 @@ Standings will only appear once every country's results are verified.
 
 <td>🥈</td>
 
-<td>TBD</td>
+<td>Mama G</td>
 
-<td>—</td>
+<td>12</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>12</b></td>
 
 </tr>
 
@@ -219,9 +248,15 @@ Standings will only appear once every country's results are verified.
 
 <td>🥉</td>
 
-<td>TBD</td>
+<td>Momma M</td>
 
-<td>—</td>
+<td>11</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>11</b></td>
 
 </tr>
 
@@ -229,9 +264,15 @@ Standings will only appear once every country's results are verified.
 
 <td>4️⃣</td>
 
-<td>TBD</td>
+<td>BOB</td>
 
-<td>—</td>
+<td>9</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>9</b></td>
 
 </tr>
 
@@ -239,9 +280,15 @@ Standings will only appear once every country's results are verified.
 
 <td>5️⃣</td>
 
-<td>TBD</td>
+<td>P-Big</td>
 
-<td>—</td>
+<td>9</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>9</b></td>
 
 </tr>
 
@@ -249,9 +296,15 @@ Standings will only appear once every country's results are verified.
 
 <td>6️⃣</td>
 
-<td>TBD</td>
+<td>J.D.</td>
 
-<td>—</td>
+<td>8</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>8</b></td>
 
 </tr>
 
@@ -259,9 +312,15 @@ Standings will only appear once every country's results are verified.
 
 <td>7️⃣</td>
 
-<td>TBD</td>
+<td>Matt</td>
 
-<td>—</td>
+<td>8</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>8</b></td>
 
 </tr>
 
@@ -269,9 +328,15 @@ Standings will only appear once every country's results are verified.
 
 <td>8️⃣</td>
 
-<td>TBD</td>
+<td>Nene</td>
 
-<td>—</td>
+<td>6</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>6</b></td>
 
 </tr>
 
@@ -287,41 +352,29 @@ Standings will only appear once every country's results are verified.
 
 <h3>Mateo Has Seized The Early Lead</h3>
 
-<p>
+Mateo has planted his flag at the top, but nobody should get comfortable yet. Germany and the United States have done the heavy lifting and Czechia already chipped in a valuable point.
 
-Mateo has planted his flag at the top of the standings, but nobody should be ordering a trophy engraving quite yet. Germany has looked dominant and the United States has done exactly what was needed, giving Mateo the early advantage.
+<br><br>
 
-</p>
+<h3>Mama G Is Right There</h3>
 
-<h3>Mama G Is Lurking</h3>
+Argentina and Mexico have quietly built one of the strongest foundations in the competition. Haiti hasn't contributed yet, but this roster is absolutely in the hunt.
 
-<p>
-
-Mama G might be the most dangerous roster nobody is talking about. Argentina and Mexico have quietly handled their business and remain within striking distance.
-
-</p>
+<br><br>
 
 <h3>BOB Is Starting To Turn Heads</h3>
 
-<p>
+Cabo Verde has become one of the stories of the tournament. Colombia looks dangerous and the Netherlands continue to provide steady production.
 
-This roster has become increasingly interesting. Cabo Verde has already surprised people while Colombia and the Netherlands continue to look dangerous.
+<br><br>
 
-</p>
+<h3>Momma M Keeps Hanging Around</h3>
 
-<h3>Momma M Refuses To Go Away</h3>
+Spain, Switzerland and Scotland aren't always grabbing headlines, but they keep collecting points and staying in the mix.
 
-<p>
-
-Spain, Switzerland and Scotland may not be grabbing headlines every day, but they continue to stack valuable points.
-
-</p>
-
-<p>
+<br><br>
 
 🏆 One giant matchday could completely rewrite this race.
-
-</p>
 
 </div>
 
@@ -435,19 +488,11 @@ Spain, Switzerland and Scotland may not be grabbing headlines every day, but the
 
 <h3>Mateo</h3>
 
-🇩🇪 Germany
-
-<br>
-
-🇺🇸 USA
-
-<br>
-
-🇨🇿 Czechia
+🇩🇪 Germany • 🇺🇸 USA • 🇨🇿 Czechia
 
 <div class="outlook">
 
-Germany and USA have carried this roster beautifully. Czechia already chipped in an important point and every contribution matters.
+Germany and USA have carried this roster beautifully. Czechia has already chipped in an important point.
 
 </div>
 
@@ -457,19 +502,11 @@ Germany and USA have carried this roster beautifully. Czechia already chipped in
 
 <h3>Mama G</h3>
 
-🇦🇷 Argentina
-
-<br>
-
-🇲🇽 Mexico
-
-<br>
-
-🇭🇹 Haiti
+🇦🇷 Argentina • 🇲🇽 Mexico • 🇭🇹 Haiti
 
 <div class="outlook">
 
-Argentina and Mexico have done exactly what was expected. Haiti hasn't joined the party yet, but this roster remains dangerous.
+Argentina and Mexico have done exactly what was expected. Haiti could still become an X-factor.
 
 </div>
 
@@ -479,19 +516,11 @@ Argentina and Mexico have done exactly what was expected. Haiti hasn't joined th
 
 <h3>BOB</h3>
 
-🇳🇱 Netherlands
-
-<br>
-
-🇨🇴 Colombia
-
-<br>
-
-🇨🇻 Cabo Verde
+🇳🇱 Netherlands • 🇨🇴 Colombia • 🇨🇻 Cabo Verde
 
 <div class="outlook">
 
-This roster may be the biggest surprise of the tournament so far. Cabo Verde continues to exceed expectations.
+This may be the surprise roster of the tournament. Cabo Verde refuses to go away.
 
 </div>
 
@@ -501,19 +530,11 @@ This roster may be the biggest surprise of the tournament so far. Cabo Verde con
 
 <h3>Momma M</h3>
 
-🇪🇸 Spain
-
-<br>
-
-🇨🇭 Switzerland
-
-<br>
-
-🏴 Scotland
+🇪🇸 Spain • 🇨🇭 Switzerland • 🏴 Scotland
 
 <div class="outlook">
 
-This group quietly keeps collecting points. Spain may be heating up at the perfect time.
+This roster simply keeps collecting points. Spain could be heating up.
 
 </div>
 
@@ -523,19 +544,11 @@ This group quietly keeps collecting points. Spain may be heating up at the perfe
 
 <h3>J.D.</h3>
 
-🇧🇷 Brazil
-
-<br>
-
-🇭🇷 Croatia
-
-<br>
-
-🇨🇦 Canada
+🇧🇷 Brazil • 🇭🇷 Croatia • 🇨🇦 Canada
 
 <div class="outlook">
 
-Brazil and Canada are doing their jobs. Croatia needs a signature performance soon.
+Brazil and Canada are carrying the load while Croatia searches for a big result.
 
 </div>
 
@@ -545,19 +558,11 @@ Brazil and Canada are doing their jobs. Croatia needs a signature performance so
 
 <h3>Matt</h3>
 
-🏴 England
-
-<br>
-
-🇪🇨 Ecuador
-
-<br>
-
-🇪🇬 Egypt
+🏴 England • 🇪🇨 Ecuador • 🇪🇬 Egypt
 
 <div class="outlook">
 
-England and Egypt have provided a solid foundation while Ecuador searches for its breakthrough moment.
+England and Egypt have built a solid base. Ecuador needs one breakthrough match.
 
 </div>
 
@@ -567,19 +572,11 @@ England and Egypt have provided a solid foundation while Ecuador searches for it
 
 <h3>Nene</h3>
 
-🇵🇹 Portugal
-
-<br>
-
-🇺🇾 Uruguay
-
-<br>
-
-🇦🇹 Austria
+🇵🇹 Portugal • 🇺🇾 Uruguay • 🇦🇹 Austria
 
 <div class="outlook">
 
-This roster feels one big result away from climbing rapidly up the standings.
+This roster feels one huge day away from climbing quickly.
 
 </div>
 
@@ -589,19 +586,11 @@ This roster feels one big result away from climbing rapidly up the standings.
 
 <h3>P-Big</h3>
 
-🇫🇷 France
-
-<br>
-
-🇸🇳 Senegal
-
-<br>
-
-🇸🇪 Sweden
+🇫🇷 France • 🇸🇳 Senegal • 🇸🇪 Sweden
 
 <div class="outlook">
 
-France has been excellent and Sweden has delivered. If Senegal rebounds, this roster becomes scary.
+France has been elite. Sweden has delivered. Senegal needs to bounce back.
 
 </div>
 
@@ -613,21 +602,33 @@ France has been excellent and Sweden has delivered. If Senegal rebounds, this ro
 
 <h2>🎖️ AWARDS OF THE MATCHDAY</h2>
 
-<div class="award">
-
 🏅 Best Pick: Germany 🇩🇪
 
-<br>
+<br><br>
 
 🏅 Biggest Surprise: Cabo Verde 🇨🇻
 
-<br>
+<br><br>
 
 🏅 Team To Watch: BOB 👀
 
-<br>
+<br><br>
 
 🏅 Toughest Break: Haiti 🇭🇹
+
+</div>
+
+<div class="card">
+
+<h2>📺 WORLD CUP RESULTS</h2>
+
+<div class="resultsTicker">
+
+<span>
+
+⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN
+
+</span>
 
 </div>
 
@@ -685,7 +686,7 @@ France has been excellent and Sweden has delivered. If Senegal rebounds, this ro
 
 <br><br>
 
-📜 Tiebreaker: Most Teams Advancing
+📜 Tiebreaker = Most Teams Advancing
 
 </div>
 
