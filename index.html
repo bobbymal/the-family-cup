@@ -20,21 +20,21 @@ color:#f5f5f5;
 
 header{
 background:linear-gradient(180deg,#12263a,#07111b);
-padding:35px 20px;
+padding:40px 25px;
 text-align:center;
 border-bottom:4px solid gold;
 }
 
 h1{
 margin:0;
-font-size:50px;
+font-size:52px;
 }
 
 .subtitle{
-font-size:18px;
 margin-top:15px;
+font-size:18px;
+color:#cbd5e1;
 line-height:1.7;
-color:#d1d5db;
 }
 
 .container{
@@ -46,42 +46,22 @@ padding:18px;
 .card{
 background:#102030;
 padding:22px;
-margin-bottom:20px;
+margin-bottom:22px;
 border-radius:20px;
 box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
 
 h2{
 margin-top:0;
-padding-left:12px;
 border-left:6px solid gold;
+padding-left:14px;
 }
 
 .headline{
-font-size:28px;
-font-weight:700;
 text-align:center;
-color:gold;
-}
-
-.scroller{
-overflow:hidden;
-white-space:nowrap;
-background:#08111d;
-padding:16px;
-border-radius:16px;
+font-size:26px;
 font-weight:700;
-}
-
-.scroller span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 55s linear infinite;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-100%);}
+color:gold;
 }
 
 .podium{
@@ -95,7 +75,7 @@ text-align:center;
 background:#08111d;
 padding:18px;
 border-radius:18px;
-font-size:22px;
+font-size:20px;
 font-weight:700;
 }
 
@@ -111,7 +91,7 @@ padding:14px;
 
 td{
 padding:14px;
-border-bottom:1px solid #28455f;
+border-bottom:1px solid #26425d;
 text-align:center;
 }
 
@@ -125,17 +105,44 @@ border:2px solid #1d3855;
 
 .outlook{
 margin-top:12px;
-line-height:1.7;
+line-height:1.8;
 color:#d1d5db;
 }
 
 .article{
-line-height:1.8;
+line-height:1.9;
+font-size:17px;
 }
 
-.smallStory{
-line-height:1.8;
-font-size:17px;
+.scrollWrap{
+overflow:hidden;
+white-space:nowrap;
+background:#08111d;
+padding:14px;
+border-radius:16px;
+font-weight:600;
+}
+
+.scrollWrap span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 28s linear infinite;
+}
+
+.fast span{
+animation:scroll 22s linear infinite;
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
 }
 
 footer{
@@ -174,11 +181,11 @@ Three Teams • One Champion
 
 <div class="card">
 
-<div class="scroller">
+<div class="scrollWrap fast">
 
 <span>
 
-⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN
+⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN • 🇩🇿 DZA 2-1 JOR
 
 </span>
 
@@ -188,11 +195,11 @@ Three Teams • One Champion
 
 <div class="card">
 
-<div class="scroller">
+<div class="scrollWrap">
 
 <span>
 
-🔥 Mateo setting the pace • 👀 Mama G quietly lurking • 🇨🇻 Cabo Verde continues to surprise • 📈 BOB is climbing • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
+🔥 Mateo setting the pace • 👀 Mama G staying close • 🇨🇻 Cabo Verde continues to impress • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
 
 </span>
 
@@ -265,12 +272,6 @@ Momma M
 <div class="card">
 
 <h2>📺 LIVE STANDINGS</h2>
-
-<p>
-
-🕘 Last Updated: June 22
-
-</p>
 
 <table>
 
@@ -426,23 +427,7 @@ Momma M
 
 <h2>🔥 BIGGEST STORY</h2>
 
-<div class="smallStory">
-
-🇨🇻 Cabo Verde is quickly becoming one of the stories of The Family Cup.
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>📈 BIGGEST MOVER</h2>
-
-<div class="smallStory">
-
-BOB is climbing the standings after Cabo Verde quietly collected another point.
-
-</div>
+🇨🇻 Cabo Verde is no longer a surprise. They're becoming one of the stories of The Family Cup.
 
 </div>
 
@@ -450,11 +435,7 @@ BOB is climbing the standings after Cabo Verde quietly collected another point.
 
 <h2>👀 DID YOU NOTICE?</h2>
 
-<div class="smallStory">
-
-Czechia's lone point could become much more valuable later in the tournament.
-
-</div>
+🇩🇿 Algeria stayed alive with a 2-1 win over Jordan, keeping Group J interesting.
 
 </div>
 
@@ -464,31 +445,31 @@ Czechia's lone point could become much more valuable later in the tournament.
 
 <div class="article">
 
-<h3>Mateo Has Seized The Early Lead</h3>
+<h3>Mateo Is Still The Team To Catch</h3>
 
-Mateo has planted his flag at the top, but nobody should get comfortable. Germany and the USA have done the heavy lifting and Czechia has already chipped in a valuable point.
-
-<br><br>
-
-<h3>Mama G Is Right There</h3>
-
-Argentina and Mexico have quietly built one of the strongest foundations in the competition. Haiti still has time to become an X-factor.
+Germany and the United States continue to do the heavy lifting. Mateo has the lead, but nobody should get comfortable yet.
 
 <br><br>
 
-<h3>BOB Is Turning Heads</h3>
+<h3>Mama G Is Staying Patient</h3>
 
-Cabo Verde has become one of the stories of the tournament. Colombia looks dangerous and the Dutch continue to provide steady production.
-
-<br><br>
-
-<h3>Momma M Keeps Hanging Around</h3>
-
-Spain, Switzerland and Scotland may not dominate headlines, but they continue to collect valuable points.
+Argentina and Mexico have quietly built one of the strongest foundations in the competition.
 
 <br><br>
 
-🏆 One huge matchday could completely rewrite this race.
+<h3>BOB Is Becoming A Storyline</h3>
+
+Cabo Verde has become one of the surprise stories of the tournament while Colombia and the Netherlands remain dangerous.
+
+<br><br>
+
+<h3>P-Big Is Waiting On One More Piece</h3>
+
+France has been excellent. Sweden has delivered. Senegal needs to bounce back.
+
+<br><br>
+
+🏆 One giant matchday could completely reshape this race.
 
 </div>
 
@@ -554,7 +535,7 @@ Spain, Switzerland and Scotland may not dominate headlines, but they continue to
 
 <td>⭐5</td>
 
-<td>J.D.</td>
+<td>P-Big</td>
 
 <td>⚡ One big day away</td>
 
@@ -564,9 +545,9 @@ Spain, Switzerland and Scotland may not dominate headlines, but they continue to
 
 <td>⭐6</td>
 
-<td>Nene</td>
+<td>J.D.</td>
 
-<td>🕰️ Waiting to break through</td>
+<td>💪 Hanging around</td>
 
 </tr>
 
@@ -576,7 +557,7 @@ Spain, Switzerland and Scotland may not dominate headlines, but they continue to
 
 <td>Matt</td>
 
-<td>💪 Hanging around</td>
+<td>🏟️ Waiting for a spark</td>
 
 </tr>
 
@@ -584,9 +565,9 @@ Spain, Switzerland and Scotland may not dominate headlines, but they continue to
 
 <td>⭐8</td>
 
-<td>P-Big</td>
+<td>Nene</td>
 
-<td>🌙 Sleeping giant</td>
+<td>⏳ One result away</td>
 
 </tr>
 
@@ -606,7 +587,7 @@ Spain, Switzerland and Scotland may not dominate headlines, but they continue to
 
 <div class="outlook">
 
-Germany and USA have carried this roster beautifully. Czechia has already chipped in an important point.
+Germany and USA continue to drive this roster.
 
 </div>
 
@@ -620,7 +601,7 @@ Germany and USA have carried this roster beautifully. Czechia has already chippe
 
 <div class="outlook">
 
-Argentina and Mexico have done exactly what was expected. Haiti could still become an X-factor.
+Argentina and Mexico are doing exactly what was expected.
 
 </div>
 
@@ -634,7 +615,7 @@ Argentina and Mexico have done exactly what was expected. Haiti could still beco
 
 <div class="outlook">
 
-This may be the surprise roster of the tournament. Cabo Verde refuses to go away.
+This roster keeps getting more interesting every day.
 
 </div>
 
@@ -648,63 +629,7 @@ This may be the surprise roster of the tournament. Cabo Verde refuses to go away
 
 <div class="outlook">
 
-This roster simply keeps collecting points. Spain could be heating up.
-
-</div>
-
-</div>
-
-<div class="roster">
-
-<h3>J.D.</h3>
-
-🇧🇷 Brazil • 🇭🇷 Croatia • 🇨🇦 Canada
-
-<div class="outlook">
-
-Brazil and Canada are carrying the load while Croatia searches for a big result.
-
-</div>
-
-</div>
-
-<div class="roster">
-
-<h3>Matt</h3>
-
-🏴 England • 🇪🇨 Ecuador • 🇪🇬 Egypt
-
-<div class="outlook">
-
-England and Egypt have built a solid base. Ecuador needs a breakthrough match.
-
-</div>
-
-</div>
-
-<div class="roster">
-
-<h3>Nene</h3>
-
-🇵🇹 Portugal • 🇺🇾 Uruguay • 🇦🇹 Austria
-
-<div class="outlook">
-
-This roster feels one huge day away from climbing quickly.
-
-</div>
-
-</div>
-
-<div class="roster">
-
-<h3>P-Big</h3>
-
-🇫🇷 France • 🇸🇳 Senegal • 🇸🇪 Sweden
-
-<div class="outlook">
-
-France has been elite. Sweden has delivered. Senegal needs to bounce back.
+Quietly stacking points and staying in contention.
 
 </div>
 
@@ -748,15 +673,15 @@ France has been elite. Sweden has delivered. Senegal needs to bounce back.
 
 <br><br>
 
-🥇 1st Group = +6
+🥇 Group Winner = +6
 
 <br><br>
 
-🥈 2nd Group = +4
+🥈 Group Runner-Up = +4
 
 <br><br>
 
-🥉 3rd (Advances) = +2
+🥉 3rd Place (Advances) = +2
 
 <br><br>
 
@@ -782,47 +707,13 @@ France has been elite. Sweden has delivered. Senegal needs to bounce back.
 
 🏆 Champion = +15
 
-<br><br>
-
-📜 Tiebreaker = Most Teams Advancing
-
-</div>
-
-<div class="card">
-
-<h2>🏆 TROPHY CASE</h2>
-
-<table>
-
-<tr>
-
-<th>Season</th>
-
-<th>Champion</th>
-
-<th>Points</th>
-
-</tr>
-
-<tr>
-
-<td>2026</td>
-
-<td>TBD</td>
-
-<td>TBD</td>
-
-</tr>
-
-</table>
-
 </div>
 
 </div>
 
 <footer>
 
-🏆 The Family Cup • Season 1
+🏆 The Family Cup • Season One
 
 </footer>
 
