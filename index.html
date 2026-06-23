@@ -13,27 +13,27 @@
 
 body{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 background:#07111b;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 color:#f5f5f5;
 }
 
 header{
 background:linear-gradient(180deg,#12263a,#07111b);
-padding:45px 25px;
+padding:35px 20px;
 text-align:center;
 border-bottom:4px solid gold;
 }
 
 h1{
-font-size:52px;
 margin:0;
+font-size:50px;
 }
 
 .subtitle{
 font-size:18px;
-line-height:1.8;
-margin-top:18px;
+margin-top:15px;
+line-height:1.7;
 color:#d1d5db;
 }
 
@@ -46,41 +46,34 @@ padding:18px;
 .card{
 background:#102030;
 padding:22px;
-margin-bottom:22px;
+margin-bottom:20px;
 border-radius:20px;
 box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
 
 h2{
 margin-top:0;
+padding-left:12px;
 border-left:6px solid gold;
-padding-left:14px;
 }
 
 .headline{
-font-size:24px;
+font-size:28px;
 font-weight:700;
 text-align:center;
 color:gold;
 }
 
-.ticker{
-background:#08111d;
-padding:16px;
-border-radius:16px;
-font-weight:600;
-line-height:1.8;
-}
-
-.resultsTicker{
+.scroller{
 overflow:hidden;
 white-space:nowrap;
 background:#08111d;
-padding:14px;
+padding:16px;
 border-radius:16px;
+font-weight:700;
 }
 
-.resultsTicker span{
+.scroller span{
 display:inline-block;
 padding-left:100%;
 animation:scroll 55s linear infinite;
@@ -89,6 +82,21 @@ animation:scroll 55s linear infinite;
 @keyframes scroll{
 0%{transform:translateX(0);}
 100%{transform:translateX(-100%);}
+}
+
+.podium{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:12px;
+text-align:center;
+}
+
+.podiumCard{
+background:#08111d;
+padding:18px;
+border-radius:18px;
+font-size:22px;
+font-weight:700;
 }
 
 table{
@@ -103,7 +111,7 @@ padding:14px;
 
 td{
 padding:14px;
-border-bottom:1px solid #26425d;
+border-bottom:1px solid #28455f;
 text-align:center;
 }
 
@@ -116,13 +124,17 @@ border:2px solid #1d3855;
 }
 
 .outlook{
-margin-top:14px;
-line-height:1.8;
+margin-top:12px;
+line-height:1.7;
 color:#d1d5db;
 }
 
 .article{
-line-height:1.9;
+line-height:1.8;
+}
+
+.smallStory{
+line-height:1.8;
 font-size:17px;
 }
 
@@ -148,21 +160,45 @@ color:#94a3b8;
 
 <br><br>
 
+Season One
+
+<br><br>
+
 Three Teams • One Champion
-
-<br><br>
-
-🎙️ Commissioner Bobby
-
-<br><br>
-
-📅 Updated After Every Matchday
 
 </div>
 
 </header>
 
 <div class="container">
+
+<div class="card">
+
+<div class="scroller">
+
+<span>
+
+⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN
+
+</span>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="scroller">
+
+<span>
+
+🔥 Mateo setting the pace • 👀 Mama G quietly lurking • 🇨🇻 Cabo Verde continues to surprise • 📈 BOB is climbing • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
+
+</span>
+
+</div>
+
+</div>
 
 <div class="card">
 
@@ -176,9 +212,51 @@ Three Teams • One Champion
 
 <div class="card">
 
-<div class="ticker">
+<h2>🥇 LEADER PODIUM</h2>
 
-🔥 Mateo setting the pace • 👀 Mama G quietly lurking • 🇨🇻 Cabo Verde continues to surprise • 🎯 Momma M keeps stacking points • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
+<div class="podium">
+
+<div class="podiumCard">
+
+🥇
+
+<br><br>
+
+Mateo
+
+<br><br>
+
+13
+
+</div>
+
+<div class="podiumCard">
+
+🥈
+
+<br><br>
+
+Mama G
+
+<br><br>
+
+12
+
+</div>
+
+<div class="podiumCard">
+
+🥉
+
+<br><br>
+
+Momma M
+
+<br><br>
+
+11
+
+</div>
 
 </div>
 
@@ -190,7 +268,7 @@ Three Teams • One Champion
 
 <p>
 
-🟡 June 22 Locked • Verified Partial
+🕘 Last Updated: June 22
 
 </p>
 
@@ -346,35 +424,71 @@ Three Teams • One Champion
 
 <div class="card">
 
+<h2>🔥 BIGGEST STORY</h2>
+
+<div class="smallStory">
+
+🇨🇻 Cabo Verde is quickly becoming one of the stories of The Family Cup.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📈 BIGGEST MOVER</h2>
+
+<div class="smallStory">
+
+BOB is climbing the standings after Cabo Verde quietly collected another point.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>👀 DID YOU NOTICE?</h2>
+
+<div class="smallStory">
+
+Czechia's lone point could become much more valuable later in the tournament.
+
+</div>
+
+</div>
+
+<div class="card">
+
 <h2>📰 FAMILY CUP DAILY</h2>
 
 <div class="article">
 
 <h3>Mateo Has Seized The Early Lead</h3>
 
-Mateo has planted his flag at the top, but nobody should get comfortable yet. Germany and the United States have done the heavy lifting and Czechia already chipped in a valuable point.
+Mateo has planted his flag at the top, but nobody should get comfortable. Germany and the USA have done the heavy lifting and Czechia has already chipped in a valuable point.
 
 <br><br>
 
 <h3>Mama G Is Right There</h3>
 
-Argentina and Mexico have quietly built one of the strongest foundations in the competition. Haiti hasn't contributed yet, but this roster is absolutely in the hunt.
+Argentina and Mexico have quietly built one of the strongest foundations in the competition. Haiti still has time to become an X-factor.
 
 <br><br>
 
-<h3>BOB Is Starting To Turn Heads</h3>
+<h3>BOB Is Turning Heads</h3>
 
-Cabo Verde has become one of the stories of the tournament. Colombia looks dangerous and the Netherlands continue to provide steady production.
+Cabo Verde has become one of the stories of the tournament. Colombia looks dangerous and the Dutch continue to provide steady production.
 
 <br><br>
 
 <h3>Momma M Keeps Hanging Around</h3>
 
-Spain, Switzerland and Scotland aren't always grabbing headlines, but they keep collecting points and staying in the mix.
+Spain, Switzerland and Scotland may not dominate headlines, but they continue to collect valuable points.
 
 <br><br>
 
-🏆 One giant matchday could completely rewrite this race.
+🏆 One huge matchday could completely rewrite this race.
 
 </div>
 
@@ -482,7 +596,7 @@ Spain, Switzerland and Scotland aren't always grabbing headlines, but they keep 
 
 <div class="card">
 
-<h2>⚽ TEAM OUTLOOKS</h2>
+<h2>⚽ TEAM WATCH</h2>
 
 <div class="roster">
 
@@ -562,7 +676,7 @@ Brazil and Canada are carrying the load while Croatia searches for a big result.
 
 <div class="outlook">
 
-England and Egypt have built a solid base. Ecuador needs one breakthrough match.
+England and Egypt have built a solid base. Ecuador needs a breakthrough match.
 
 </div>
 
@@ -600,7 +714,7 @@ France has been elite. Sweden has delivered. Senegal needs to bounce back.
 
 <div class="card">
 
-<h2>🎖️ AWARDS OF THE MATCHDAY</h2>
+<h2>🎖️ MATCHDAY AWARDS</h2>
 
 🏅 Best Pick: Germany 🇩🇪
 
@@ -615,22 +729,6 @@ France has been elite. Sweden has delivered. Senegal needs to bounce back.
 <br><br>
 
 🏅 Toughest Break: Haiti 🇭🇹
-
-</div>
-
-<div class="card">
-
-<h2>📺 WORLD CUP RESULTS</h2>
-
-<div class="resultsTicker">
-
-<span>
-
-⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN
-
-</span>
-
-</div>
 
 </div>
 
@@ -725,10 +823,6 @@ France has been elite. Sweden has delivered. Senegal needs to bounce back.
 <footer>
 
 🏆 The Family Cup • Season 1
-
-<br><br>
-
-Built by Commissioner Bobby
 
 </footer>
 
