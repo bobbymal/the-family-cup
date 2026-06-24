@@ -59,9 +59,41 @@ padding-left:14px;
 
 .headline{
 text-align:center;
-font-size:26px;
+font-size:30px;
 font-weight:700;
 color:gold;
+}
+
+.scrollWrap{
+overflow:hidden;
+white-space:nowrap;
+background:#08111d;
+padding:14px;
+border-radius:16px;
+font-weight:700;
+font-size:18px;
+}
+
+.scrollWrap span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 18s linear infinite;
+}
+
+.familyTicker span{
+animation:scroll 22s linear infinite;
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
 }
 
 .podium{
@@ -75,7 +107,7 @@ text-align:center;
 background:#08111d;
 padding:18px;
 border-radius:18px;
-font-size:20px;
+font-size:22px;
 font-weight:700;
 }
 
@@ -95,60 +127,9 @@ border-bottom:1px solid #26425d;
 text-align:center;
 }
 
-.roster{
-background:#08111d;
-padding:18px;
-border-radius:18px;
-margin-bottom:18px;
-border:2px solid #1d3855;
-}
-
-.outlook{
-margin-top:12px;
-line-height:1.8;
-color:#d1d5db;
-}
-
 .article{
 line-height:1.9;
 font-size:17px;
-}
-
-.scrollWrap{
-overflow:hidden;
-white-space:nowrap;
-background:#08111d;
-padding:14px;
-border-radius:16px;
-font-weight:600;
-}
-
-.scrollWrap span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 28s linear infinite;
-}
-
-.fast span{
-animation:scroll 22s linear infinite;
-}
-
-@keyframes scroll{
-
-0%{
-transform:translateX(0);
-}
-
-100%{
-transform:translateX(-100%);
-}
-
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#94a3b8;
 }
 
 </style>
@@ -181,11 +162,11 @@ Three Teams • One Champion
 
 <div class="card">
 
-<div class="scrollWrap fast">
+<div class="scrollWrap">
 
 <span>
 
-⚽ MEX 2-0 RSA • 🇰🇷 KOR 2-1 CZE • 🇺🇸 USA 4-1 PAR • 🇩🇪 GER 7-1 CUW • 🇫🇷 FRA 3-1 SEN • 🇦🇷 ARG 3-0 DZA • 🏴 ENG 4-2 CRO • 🇪🇸 ESP 4-0 KSA • 🇺🇾 URU 2-2 CPV • 🇪🇬 EGY 3-1 NZL • 🇫🇷 FRA 3-0 IRQ • 🇳🇴 NOR 3-2 SEN • 🇩🇿 DZA 2-1 JOR
+FINAL 🇵🇹 POR 5-0 UZB • FINAL 🏴 ENG 0-0 GHA • FINAL 🇫🇷 FRA 3-0 IRQ • FINAL 🇳🇴 NOR 3-2 SEN • FINAL 🇩🇿 DZA 2-1 JOR
 
 </span>
 
@@ -195,11 +176,11 @@ Three Teams • One Champion
 
 <div class="card">
 
-<div class="scrollWrap">
+<div class="scrollWrap familyTicker">
 
 <span>
 
-🔥 Mateo setting the pace • 👀 Mama G staying close • 🇨🇻 Cabo Verde continues to impress • ⚠️ Group bonuses are approaching • 🏆 Nobody is safe
+🔥 Mateo still setting the pace • 🇵🇹 Portugal erupts for five • 🇨🇻 Cabo Verde keeps shocking people • 👀 Matt quietly climbing • 🏆 Nobody is safe
 
 </span>
 
@@ -271,7 +252,7 @@ Momma M
 
 <div class="card">
 
-<h2>📺 LIVE STANDINGS</h2>
+<h2>📊 LIVE STANDINGS</h2>
 
 <table>
 
@@ -375,6 +356,38 @@ Momma M
 
 <td>6️⃣</td>
 
+<td>Matt</td>
+
+<td>9</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>9</b></td>
+
+</tr>
+
+<tr>
+
+<td>7️⃣</td>
+
+<td>Nene</td>
+
+<td>9</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td><b>9</b></td>
+
+</tr>
+
+<tr>
+
+<td>8️⃣</td>
+
 <td>J.D.</td>
 
 <td>8</td>
@@ -387,39 +400,18 @@ Momma M
 
 </tr>
 
-<tr>
-
-<td>7️⃣</td>
-
-<td>Matt</td>
-
-<td>8</td>
-
-<td>0</td>
-
-<td>0</td>
-
-<td><b>8</b></td>
-
-</tr>
-
-<tr>
-
-<td>8️⃣</td>
-
-<td>Nene</td>
-
-<td>6</td>
-
-<td>0</td>
-
-<td>0</td>
-
-<td><b>6</b></td>
-
-</tr>
-
 </table>
+
+</div>
+<div class="card">
+
+<h2>🎯 MATCHES THAT MATTER</h2>
+
+🇵🇦 Panama vs 🇭🇷 Croatia → J.D.
+
+<br><br>
+
+🇨🇴 Colombia vs 🇨🇩 DR Congo → BOB
 
 </div>
 
@@ -427,7 +419,19 @@ Momma M
 
 <h2>🔥 BIGGEST STORY</h2>
 
-🇨🇻 Cabo Verde is no longer a surprise. They're becoming one of the stories of The Family Cup.
+🇨🇻 Cabo Verde has officially become one of the stories of The Family Cup. What started as a surprise is becoming a genuine weapon for BOB.
+
+</div>
+
+<div class="card">
+
+<h2>📈 BIGGEST MOVER</h2>
+
+🇵🇹 Nene
+
+<br><br>
+
+Portugal's five-goal performance immediately changed the feel of the race.
 
 </div>
 
@@ -435,7 +439,9 @@ Momma M
 
 <h2>👀 DID YOU NOTICE?</h2>
 
-🇩🇿 Algeria stayed alive with a 2-1 win over Jordan, keeping Group J interesting.
+The top of the leaderboard isn't running away anymore.
+
+One giant matchday could completely shuffle everything.
 
 </div>
 
@@ -447,29 +453,29 @@ Momma M
 
 <h3>Mateo Is Still The Team To Catch</h3>
 
-Germany and the United States continue to do the heavy lifting. Mateo has the lead, but nobody should get comfortable yet.
+Germany and the United States continue to do the heavy lifting. The lead still belongs to Mateo, but the gap no longer feels comfortable.
 
 <br><br>
 
-<h3>Mama G Is Staying Patient</h3>
+<h3>Mama G Is Lurking</h3>
 
-Argentina and Mexico have quietly built one of the strongest foundations in the competition.
+Argentina and Mexico have quietly built one of the strongest foundations in the entire competition.
+
+<br><br>
+
+<h3>Nene Is Back In It</h3>
+
+Portugal's explosion completely changes the energy around this roster.
 
 <br><br>
 
 <h3>BOB Is Becoming A Storyline</h3>
 
-Cabo Verde has become one of the surprise stories of the tournament while Colombia and the Netherlands remain dangerous.
+Cabo Verde has transformed from a fun surprise into one of the best value picks in the tournament.
 
 <br><br>
 
-<h3>P-Big Is Waiting On One More Piece</h3>
-
-France has been excellent. Sweden has delivered. Senegal needs to bounce back.
-
-<br><br>
-
-🏆 One giant matchday could completely reshape this race.
+🏆 Nobody is safe anymore.
 
 </div>
 
@@ -545,9 +551,9 @@ France has been excellent. Sweden has delivered. Senegal needs to bounce back.
 
 <td>⭐6</td>
 
-<td>J.D.</td>
+<td>Nene</td>
 
-<td>💪 Hanging around</td>
+<td>🇵🇹 Back in it</td>
 
 </tr>
 
@@ -557,7 +563,7 @@ France has been excellent. Sweden has delivered. Senegal needs to bounce back.
 
 <td>Matt</td>
 
-<td>🏟️ Waiting for a spark</td>
+<td>📈 Climbing</td>
 
 </tr>
 
@@ -565,9 +571,9 @@ France has been excellent. Sweden has delivered. Senegal needs to bounce back.
 
 <td>⭐8</td>
 
-<td>Nene</td>
+<td>J.D.</td>
 
-<td>⏳ One result away</td>
+<td>⏳ Waiting for a surge</td>
 
 </tr>
 
@@ -587,7 +593,7 @@ France has been excellent. Sweden has delivered. Senegal needs to bounce back.
 
 <div class="outlook">
 
-Germany and USA continue to drive this roster.
+Germany and USA continue to drive this roster. The target remains on Mateo.
 
 </div>
 
@@ -601,7 +607,7 @@ Germany and USA continue to drive this roster.
 
 <div class="outlook">
 
-Argentina and Mexico are doing exactly what was expected.
+Argentina and Mexico have quietly become one of the strongest combinations.
 
 </div>
 
@@ -615,7 +621,7 @@ Argentina and Mexico are doing exactly what was expected.
 
 <div class="outlook">
 
-This roster keeps getting more interesting every day.
+Cabo Verde is no longer a surprise. This roster is becoming dangerous.
 
 </div>
 
@@ -629,7 +635,63 @@ This roster keeps getting more interesting every day.
 
 <div class="outlook">
 
-Quietly stacking points and staying in contention.
+Quietly stacking points and staying near the leaders.
+
+</div>
+
+</div>
+
+<div class="roster">
+
+<h3>J.D.</h3>
+
+🇧🇷 Brazil • 🇭🇷 Croatia • 🇨🇦 Canada
+
+<div class="outlook">
+
+Still within striking distance. One big day changes everything.
+
+</div>
+
+</div>
+
+<div class="roster">
+
+<h3>Matt</h3>
+
+🏴 England • 🇪🇨 Ecuador • 🇪🇬 Egypt
+
+<div class="outlook">
+
+Not flashy, but every point matters in a race this tight.
+
+</div>
+
+</div>
+
+<div class="roster">
+
+<h3>Nene</h3>
+
+🇵🇹 Portugal • 🇺🇾 Uruguay • 🇦🇹 Austria
+
+<div class="outlook">
+
+Portugal's eruption completely changed the outlook.
+
+</div>
+
+</div>
+
+<div class="roster">
+
+<h3>P-Big</h3>
+
+🇫🇷 France • 🇸🇳 Senegal • 🇸🇪 Sweden
+
+<div class="outlook">
+
+France and Sweden continue to deliver. Senegal is the swing team.
 
 </div>
 
@@ -641,7 +703,7 @@ Quietly stacking points and staying in contention.
 
 <h2>🎖️ MATCHDAY AWARDS</h2>
 
-🏅 Best Pick: Germany 🇩🇪
+🏅 Best Performance: Portugal 🇵🇹
 
 <br><br>
 
@@ -649,11 +711,11 @@ Quietly stacking points and staying in contention.
 
 <br><br>
 
-🏅 Team To Watch: BOB 👀
+🏅 Team To Watch: Nene 👀
 
 <br><br>
 
-🏅 Toughest Break: Haiti 🇭🇹
+🏅 Toughest Break: Senegal 🇸🇳
 
 </div>
 
@@ -716,7 +778,7 @@ Quietly stacking points and staying in contention.
 🏆 The Family Cup • Season One
 
 </footer>
-<script src="script.js"></script>
+
 </body>
 
 </html>
