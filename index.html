@@ -5,129 +5,146 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>🏆 The Family Cup</title>
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 background:#07111b;
+color:white;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-color:#f5f5f5;
 }
 
 header{
-background:linear-gradient(180deg,#12263a,#07111b);
-padding:40px 25px;
+background:linear-gradient(180deg,#17365d,#07111b);
+padding:40px 20px;
 text-align:center;
 border-bottom:4px solid gold;
 }
 
-h1{
+header h1{
 margin:0;
-font-size:52px;
+font-size:48px;
+letter-spacing:2px;
 }
 
-.subtitle{
-margin-top:15px;
+header p{
+margin-top:12px;
 font-size:18px;
-color:#cbd5e1;
-line-height:1.7;
+color:#d7e3ef;
+line-height:1.8;
 }
 
 .container{
-max-width:950px;
+max-width:1050px;
 margin:auto;
 padding:18px;
 }
 
 .card{
 background:#102030;
+border-radius:18px;
 padding:22px;
-margin-bottom:22px;
-border-radius:20px;
-box-shadow:0 6px 18px rgba(0,0,0,.35);
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
-h2{
+.card h2{
 margin-top:0;
-border-left:6px solid gold;
 padding-left:14px;
+border-left:6px solid gold;
+font-size:28px;
 }
 
-.headline{
-text-align:center;
-font-size:30px;
-font-weight:700;
-color:gold;
-}
-
-.scrollWrap{
+.ticker{
 overflow:hidden;
 white-space:nowrap;
 background:#08111d;
-padding:14px;
-border-radius:16px;
+padding:16px;
+border-radius:14px;
 font-weight:700;
 font-size:18px;
 }
 
-.scrollWrap span{
+.ticker span{
 display:inline-block;
 padding-left:100%;
-animation:scroll 18s linear infinite;
+animation:ticker 22s linear infinite;
 }
 
-@keyframes scroll{
-
+@keyframes ticker{
 0%{transform:translateX(0);}
-
 100%{transform:translateX(-100%);}
+}
 
+.hero{
+text-align:center;
+font-size:34px;
+font-weight:800;
+color:gold;
+line-height:1.4;
+}
+
+.story{
+font-size:18px;
+line-height:1.9;
 }
 
 .podium{
 display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:12px;
-text-align:center;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:20px;
 }
 
 .podiumCard{
 background:#08111d;
-padding:18px;
 border-radius:18px;
-font-size:22px;
+padding:20px;
+text-align:center;
+font-size:24px;
 font-weight:700;
+border:2px solid #284663;
+}
+
+.podiumCard .score{
+font-size:42px;
+color:gold;
+margin-top:10px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
+margin-top:15px;
 }
 
 th{
-background:#1d3855;
+background:#18334f;
 padding:14px;
 }
 
 td{
 padding:14px;
+text-align:center;
 border-bottom:1px solid #26425d;
-text-align:center;
 }
 
-.article{
-line-height:1.9;
-font-size:17px;
+.highlight{
+color:gold;
+font-weight:bold;
 }
 
-footer{
-text-align:center;
-padding:40px;
-color:#94a3b8;
+.small{
+font-size:16px;
+line-height:1.8;
 }
 
 </style>
@@ -140,19 +157,19 @@ color:#94a3b8;
 
 <h1>🏆 THE FAMILY CUP</h1>
 
-<div class="subtitle">
+<p>
 
-⚽ FIFA WORLD CUP 2026
+FIFA World Cup 2026
 
-<br><br>
+<br>
 
-Season One
+Knockout Stage
 
-<br><br>
+<br>
 
-🏆 Knockout Stage Begins
+Day 1 Complete
 
-</div>
+</p>
 
 </header>
 
@@ -160,11 +177,11 @@ Season One
 
 <div class="card">
 
-<div class="scrollWrap">
+<div class="ticker">
 
 <span>
 
-🏆 GROUP STAGE COMPLETE • 🚀 BOB LEADS THE FAMILY CUP WITH 33 • 👑 J.D. CLOSE BEHIND • 🌮 MAMA G TAKES THIRD • 💙 MOMMA M ONE POINT BACK • THE ROAD TO THE CUP STARTS NOW
+👑 J.D. TAKES THE LEAD • 🇨🇦 CANADA ADVANCES • ROUND OF 16 BOUND • 🚀 BOB FALLS TO SECOND • 🇧🇷 BRAZIL • 🇩🇪 GERMANY • 🇳🇱 NETHERLANDS PLAY TOMORROW
 
 </span>
 
@@ -174,17 +191,27 @@ Season One
 
 <div class="card">
 
+<div class="hero">
+
+👑 J.D. IS YOUR NEW FAMILY CUP LEADER
+
+</div>
+
+</div>
+
+<div class="card">
+
 <h2>🎯 TODAY'S BIGGEST STORY</h2>
 
-🚀 BOB wins the Family Cup Group Stage.
+<div class="story">
 
-<br><br>
+Canada became the first Family Cup team to survive the knockout stage.
 
-Consistency across all three teams earned first place entering the knockouts.
+The victory earned <span class="highlight">+4 points</span> and moved J.D. into first place.
 
-<br><br>
+The group stage leader has officially changed after just one knockout match.
 
-Now every match is win or go home.
+</div>
 
 </div>
 
@@ -192,17 +219,21 @@ Now every match is win or go home.
 
 <h2>😂 BASEMENT BULLETIN</h2>
 
+<div class="small">
+
 🍼 Nene...
 
 <br><br>
 
-Only 13 points behind first.
+Nobody passed you today.
 
-<br><br>
+Nobody caught you either.
 
-A miracle run is still on the table.
+Tomorrow is another chance.
 
 😂
+
+</div>
 
 </div>
 
@@ -210,21 +241,11 @@ A miracle run is still on the table.
 
 <h2>🚨 BUBBLE WATCH</h2>
 
-Nobody is safe.
+<div class="small">
 
-<br><br>
+Only <strong>9 points</strong> separate first from last.
 
-One upset could completely reshape the standings.
-
-👀
-
-</div>
-
-<div class="card">
-
-<div class="headline">
-
-"The Group Stage is over. The real tournament begins now."
+One monster day could completely flip the standings.
 
 </div>
 
@@ -242,11 +263,9 @@ One upset could completely reshape the standings.
 
 <br><br>
 
-🚀 BOB
+👑 J.D.
 
-<br><br>
-
-33
+<div class="score">35</div>
 
 </div>
 
@@ -256,11 +275,9 @@ One upset could completely reshape the standings.
 
 <br><br>
 
-👑 J.D.
+🚀 BOB
 
-<br><br>
-
-31
+<div class="score">33</div>
 
 </div>
 
@@ -272,9 +289,7 @@ One upset could completely reshape the standings.
 
 🌮 Mama G
 
-<br><br>
-
-30
+<div class="score">30</div>
 
 </div>
 
@@ -284,35 +299,63 @@ One upset could completely reshape the standings.
 
 <div class="card">
 
-<h2>📊 OFFICIAL STANDINGS</h2>
+<h2>📊 OFFICIAL FAMILY CUP STANDINGS</h2>
 
 <table>
 
 <tr>
-
 <th>Rank</th>
-
 <th>Owner</th>
-
 <th>Pts</th>
-
 </tr>
 
-<tr><td>🥇</td><td>🚀 BOB</td><td><strong>33</strong></td></tr>
+<tr>
+<td>🥇</td>
+<td>👑 J.D.</td>
+<td><strong>35</strong></td>
+</tr>
 
-<tr><td>🥈</td><td>👑 J.D.</td><td><strong>31</strong></td></tr>
+<tr>
+<td>🥈</td>
+<td>🚀 BOB</td>
+<td><strong>33</strong></td>
+</tr>
 
-<tr><td>🥉</td><td>🌮 Mama G</td><td><strong>30</strong></td></tr>
+<tr>
+<td>🥉</td>
+<td>🌮 Mama G</td>
+<td><strong>30</strong></td>
+</tr>
 
-<tr><td>4️⃣</td><td>💙 Momma M</td><td><strong>29</strong></td></tr>
+<tr>
+<td>4️⃣</td>
+<td>💙 Momma M</td>
+<td><strong>29</strong></td>
+</tr>
 
-<tr><td>5️⃣</td><td>🏟️ Matt</td><td><strong>28</strong></td></tr>
+<tr>
+<td>5️⃣</td>
+<td>🏟️ Matt</td>
+<td><strong>28</strong></td>
+</tr>
 
-<tr><td>6️⃣</td><td>🥪 P-Big</td><td><strong>26</strong></td></tr>
+<tr>
+<td>6️⃣</td>
+<td>🥪 P-Big</td>
+<td><strong>26</strong></td>
+</tr>
 
-<tr><td>7️⃣</td><td>🦅 Mateo</td><td><strong>25</strong></td></tr>
+<tr>
+<td>7️⃣</td>
+<td>🦅 Mateo</td>
+<td><strong>25</strong></td>
+</tr>
 
-<tr><td>8️⃣</td><td>🍼 Nene</td><td><strong>20</strong></td></tr>
+<tr>
+<td>8️⃣</td>
+<td>🍼 Nene</td>
+<td><strong>20</strong></td>
+</tr>
 
 </table>
 
@@ -322,15 +365,31 @@ One upset could completely reshape the standings.
 
 <h2>🔥 BIGGEST STORY</h2>
 
-The group stage is officially complete.
+<div class="story">
+
+The knockout stage has already changed the race.
+
+BOB entered the day with the lead, but Canada's victory pushed J.D. into first place.
+
+Tomorrow features three heavyweight teams:
 
 <br><br>
 
-Only <strong>13 points</strong> separate first and last.
+👑 🇧🇷 Brazil
+
+<br>
+
+🦅 🇩🇪 Germany
+
+<br>
+
+🚀 🇳🇱 Netherlands
 
 <br><br>
 
-From this point forward, every point must be earned in the knockout rounds.
+If all three win, the top of the standings will tighten even further.
+
+</div>
 
 </div>
 
@@ -338,19 +397,25 @@ From this point forward, every point must be earned in the knockout rounds.
 
 <h2>👀 DID YOU NOTICE?</h2>
 
-🚀 BOB quietly claimed the No. 1 spot.
+<div class="small">
+
+✅ Canada became the first team to reach the Round of 16.
 
 <br><br>
 
-🌮 Mama G surged onto the podium.
+👑 J.D. is the first owner to reach 35 points.
 
 <br><br>
 
-🏟️ Matt climbed back into contention.
+🚀 BOB now trails by just two points with the Netherlands still to play.
 
 <br><br>
 
-Every owner still has teams alive.
+Only one knockout match has been played...
+
+and the leaderboard has already changed.
+
+</div>
 
 </div>
 
@@ -358,83 +423,55 @@ Every owner still has teams alive.
 
 <h2>📰 FAMILY CUP DAILY</h2>
 
-<div class="article">
+<div class="story">
 
-<h3>🚀 BOB Claims the Group Stage Crown</h3>
+<h3>👑 J.D. Strikes First</h3>
 
-No dramatic comeback.
+Canada opened the knockout stage with a hard-fought victory over South Africa.
 
-No lucky break.
+The win earned the tournament's first knockout points and launched J.D. into first place.
 
-Just consistent performances from the Netherlands, Colombia, and Cabo Verde.
+<hr>
 
-BOB enters the knockout stage as the leader with 33 points.
+<h3>🚀 BOB Feels the Pressure</h3>
 
-<br><br>
+After finishing atop the group stage, BOB held the lead for only one day.
 
-<h3>👑 J.D. Is Ready to Strike</h3>
+Now all eyes turn to the Netherlands.
 
-Brazil and Croatia both won their groups and Canada advanced.
+A win tomorrow would immediately cut into J.D.'s advantage.
 
-Only two points separate J.D. from first.
+<hr>
 
-<br><br>
+<h3>🦅 Mateo's Big Opportunity</h3>
 
-<h3>🌮 Mama G's Late Surge</h3>
+Germany begins its knockout run tomorrow.
 
-Argentina and Mexico both won their groups.
+A victory would add four points and keep Mateo within striking distance.
 
-Those two powerhouses carried Mama G all the way to third place entering the knockouts.
+<hr>
 
-<br><br>
+<h3>👑 Brazil Takes Center Stage</h3>
 
-<h3>💙 Momma M Is One Point Away</h3>
+Brazil enters as one of the tournament favorites.
 
-Spain and Switzerland delivered exactly what was expected.
+Another win would strengthen J.D.'s hold on first place before most owners have even played.
 
-One great knockout round could put Momma M back on top.
+<hr>
 
-<br><br>
+<h3>The Tournament Has Changed</h3>
 
-<h3>🏟️ Matt Is Heating Up</h3>
+The group stage rewarded consistency.
 
-England won its group.
+The knockout stage rewards survival.
 
-Egypt reached the knockout stage.
-
-Matt quietly climbed into fifth.
-
-<br><br>
-
-<h3>🥪 P-Big Has Firepower</h3>
-
-France looks like one of the tournament favorites.
-
-If France makes a deep run, everyone ahead should be nervous.
-
-<br><br>
-
-<h3>🦅 Mateo Still Has Hope</h3>
-
-Germany and the United States both won their groups.
-
-Mateo has plenty of opportunities left to climb.
-
-<br><br>
-
-<h3>🍼 Nene Update</h3>
-
-Portugal and Austria survived the group stage.
-
-Now every match is an opportunity to make up ground.
-
-😂
+Every match now carries championship implications.
 
 </div>
 
 </div>
 
-  <div class="card">
+<div class="card">
 
 <h2>⭐ POWER RANKINGS</h2>
 
@@ -446,89 +483,25 @@ Now every match is an opportunity to make up ground.
 
 <th>Owner</th>
 
-<th>Media Take</th>
+<th>Trend</th>
 
 </tr>
 
-<tr>
+<tr><td>1️⃣</td><td>👑 J.D.</td><td>⬆️ New Leader</td></tr>
 
-<td>⭐1</td>
+<tr><td>2️⃣</td><td>🚀 BOB</td><td>⬇️ Waiting on Netherlands</td></tr>
 
-<td>🚀 BOB</td>
+<tr><td>3️⃣</td><td>🌮 Mama G</td><td>➡️ Quiet but dangerous</td></tr>
 
-<td>The standard everyone else is chasing.</td>
+<tr><td>4️⃣</td><td>💙 Momma M</td><td>➡️ Spain & Switzerland await</td></tr>
 
-</tr>
+<tr><td>5️⃣</td><td>🏟️ Matt</td><td>⬆️ England looming</td></tr>
 
-<tr>
+<tr><td>6️⃣</td><td>🥪 P-Big</td><td>➡️ France still a favorite</td></tr>
 
-<td>⭐2</td>
+<tr><td>7️⃣</td><td>🦅 Mateo</td><td>⬆️ Germany up next</td></tr>
 
-<td>👑 J.D.</td>
-
-<td>Built for knockout football.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐3</td>
-
-<td>🌮 Mama G</td>
-
-<td>Argentina and Mexico make a dangerous combination.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐4</td>
-
-<td>💙 Momma M</td>
-
-<td>One hot streak away from first place.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐5</td>
-
-<td>🏟️ Matt</td>
-
-<td>Quietly climbing at the perfect time.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐6</td>
-
-<td>🥪 P-Big</td>
-
-<td>France could carry this roster deep.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐7</td>
-
-<td>🦅 Mateo</td>
-
-<td>Germany and the USA still give him a path.</td>
-
-</tr>
-
-<tr>
-
-<td>⭐8</td>
-
-<td>🍼 Nene</td>
-
-<td>Still alive. Nothing to lose.</td>
-
-</tr>
+<tr><td>8️⃣</td><td>🍼 Nene</td><td>👀 Needs a run</td></tr>
 
 </table>
 
@@ -536,105 +509,278 @@ Now every match is an opportunity to make up ground.
 
 <div class="card">
 
-<h2>🏅 KNOCKOUT STAGE AWARDS</h2>
+<h2>🏅 DAILY AWARDS</h2>
 
-🏆 Group Stage Champion — 🚀 BOB
-
-<br><br>
-
-⚡ Best Duo — 🇦🇷 Argentina & 🇲🇽 Mexico
+🏆 Team of the Day
 
 <br><br>
 
-🛡️ Most Consistent Owner — 👑 J.D.
+👑 🇨🇦 Canada
+
+<hr>
+
+🔥 Performance of the Day
 
 <br><br>
 
-🔥 Team to Beat — 🇧🇷 Brazil
+J.D. takes over first place.
+
+<hr>
+
+📈 Biggest Climb
 
 <br><br>
 
-👀 Cinderella Watch — 🇨🇻 Cabo Verde
+👑 J.D. ➜ 1st Place
+
+<hr>
+
+🎯 Match of the Day
+
+<br><br>
+
+🇨🇦 Canada 1–0 🇿🇦 South Africa
+
+<hr>
+
+👀 Tomorrow's Headliner
+
+<br><br>
+
+👑 🇧🇷 Brazil vs 🇯🇵 Japan
 
 </div>
 
-  <div class="card">
+  <style>
+
+.bracket{
+overflow-x:auto;
+padding:10px 0;
+}
+
+.bracket-grid{
+display:grid;
+grid-template-columns:260px 260px 260px 260px 220px;
+gap:24px;
+min-width:1280px;
+align-items:start;
+}
+
+.round h3{
+text-align:center;
+margin:0 0 18px 0;
+color:gold;
+font-size:20px;
+}
+
+.match{
+margin-bottom:26px;
+}
+
+.team{
+background:#08111d;
+border:2px solid #284663;
+border-radius:10px;
+padding:10px 12px;
+margin:6px 0;
+font-weight:600;
+}
+
+.team.winner{
+border-color:gold;
+background:#17365d;
+}
+
+.team.eliminated{
+opacity:.45;
+text-decoration:line-through;
+}
+
+.spacer{
+height:46px;
+}
+
+.bigSpacer{
+height:108px;
+}
+
+.hugeSpacer{
+height:236px;
+}
+
+.champion{
+background:gold;
+color:#07111b;
+padding:18px;
+border-radius:14px;
+text-align:center;
+font-weight:800;
+font-size:22px;
+}
+
+</style>
+
+<div class="card">
 
 <h2>🏆 ROAD TO THE CUP</h2>
 
-<div class="article">
+<div class="bracket">
 
-<h3>LEFT SIDE OF THE BRACKET</h3>
+<div class="bracket-grid">
 
-🇿🇦 South Africa vs 🇨🇦 Canada
+<!-- ROUND OF 32 -->
+
+<div class="round">
+
+<h3>Round of 32</h3>
+
+<div class="match">
+<div class="team eliminated">🇿🇦 South Africa ❌</div>
+<div class="team winner">👑 🇨🇦 Canada ✅</div>
+</div>
+
+<div class="match">
+<div class="team">🚀 🇳🇱 Netherlands</div>
+<div class="team">🇲🇦 Morocco</div>
+</div>
+
+<div class="match">
+<div class="team">👑 🇧🇷 Brazil</div>
+<div class="team">🇯🇵 Japan</div>
+</div>
+
+<div class="match">
+<div class="team">🦅 🇩🇪 Germany</div>
+<div class="team">🇵🇾 Paraguay</div>
+</div>
+
+<div class="match">
+<div class="team">🇨🇮 Ivory Coast</div>
+<div class="team">🇳🇴 Norway</div>
+</div>
+
+<div class="match">
+<div class="team">🥪 🇫🇷 France</div>
+<div class="team">🥪 🇸🇪 Sweden</div>
+</div>
+
+<div class="match">
+<div class="team">🌮 🇲🇽 Mexico</div>
+<div class="team">🏟️ 🇪🇨 Ecuador</div>
+</div>
+
+<div class="match">
+<div class="team">🏟️ 🏴 England</div>
+<div class="team">🇨🇩 DR Congo</div>
+</div>
+
+</div>
+
+<!-- ROUND OF 16 -->
+
+<div class="round">
+
+<h3>Round of 16</h3>
+
+<div class="match">
+
+<div class="team winner">👑 🇨🇦 Canada</div>
+
+<div class="spacer"></div>
+
+<div class="team">Winner NED/MAR</div>
+
+</div>
+
+<div class="bigSpacer"></div>
+
+<div class="match">
+
+<div class="team">Winner BRA/JPN</div>
+
+<div class="spacer"></div>
+
+<div class="team">Winner CIV/NOR</div>
+
+</div>
+
+<div class="bigSpacer"></div>
+
+<div class="match">
+
+<div class="team">Winner FRA/SWE</div>
+
+<div class="spacer"></div>
+
+<div class="team">Winner MEX/ECU</div>
+
+</div>
+
+<div class="bigSpacer"></div>
+
+<div class="match">
+
+<div class="team">Winner ENG/COD</div>
+
+<div class="spacer"></div>
+
+<div class="team">...</div>
+
+</div>
+
+</div>
+
+<!-- QUARTERS -->
+
+<div class="round">
+
+<h3>Quarterfinals</h3>
+
+<div class="hugeSpacer"></div>
+
+<div class="team">TBD</div>
+
+<div class="hugeSpacer"></div>
+
+<div class="team">TBD</div>
+
+</div>
+
+<!-- SEMIS -->
+
+<div class="round">
+
+<h3>Semifinals</h3>
+
+<div style="height:340px;"></div>
+
+<div class="team">TBD</div>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="round">
+
+<h3>Final</h3>
+
+<div style="height:340px;"></div>
+
+<div class="champion">
+
+🏆
 
 <br><br>
 
-🇧🇷 Brazil vs 🇯🇵 Japan
+WORLD CUP
 
-<br><br>
+<br>
 
-🇩🇪 Germany vs 🇵🇾 Paraguay
+CHAMPION
 
-<br><br>
+</div>
 
-🇳🇱 Netherlands vs 🇲🇦 Morocco
-
-<br><br>
-
-🇨🇮 Ivory Coast vs 🇳🇴 Norway
-
-<br><br>
-
-🇫🇷 France vs 🇸🇪 Sweden
-
-<br><br>
-
-🇲🇽 Mexico vs 🇪🇨 Ecuador
-
-<br><br>
-
-🏴 England vs 🇨🇩 DR Congo
-
-<hr style="margin:28px 0;border:1px solid #26425d;">
-
-<h3>RIGHT SIDE OF THE BRACKET</h3>
-
-🇧🇪 Belgium vs 🇸🇳 Senegal
-
-<br><br>
-
-🇺🇸 United States vs 🇧🇦 Bosnia & Herzegovina
-
-<br><br>
-
-🇪🇸 Spain vs 🇦🇹 Austria
-
-<br><br>
-
-🇵🇹 Portugal vs 🇭🇷 Croatia
-
-<br><br>
-
-🇨🇭 Switzerland vs 🇩🇿 Algeria
-
-<br><br>
-
-🇨🇴 Colombia vs 🇬🇭 Ghana
-
-<br><br>
-
-🇦🇷 Argentina vs 🇨🇻 Cabo Verde
-
-<br><br>
-
-🇦🇺 Australia vs 🇪🇬 Egypt
-
-<br><br>
-
-<div class="headline" style="font-size:22px;margin-top:28px;">
-
-🏆 Win and advance. Lose and go home.
+</div>
 
 </div>
 
@@ -644,105 +790,131 @@ Now every match is an opportunity to make up ground.
 
   <div class="card">
 
-<h2>📖 OFFICIAL RULES</h2>
+<h2>📖 OFFICIAL FAMILY CUP RULES</h2>
 
-⚽ Win = 3 Points
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
 
-<br><br>
+<div style="
+background:#08111d;
+padding:20px;
+border-radius:16px;
+border:2px solid #284663;
+">
 
-🤝 Draw = 1 Point
+<h3 style="margin-top:0;color:gold;">⚽ GROUP STAGE</h3>
 
-<br><br>
+<table style="width:100%;border-collapse:collapse;">
 
-❌ Loss = 0 Points
+<tr><td>✅ Win</td><td style="text-align:right;"><strong>+3</strong></td></tr>
 
-<br><br>
+<tr><td>🤝 Draw</td><td style="text-align:right;"><strong>+1</strong></td></tr>
 
-🥇 Group Winner = +6
+<tr><td>❌ Loss</td><td style="text-align:right;"><strong>0</strong></td></tr>
 
-<br><br>
+<tr><td>🥇 Group Winner</td><td style="text-align:right;"><strong>+6</strong></td></tr>
 
-🥈 Group Runner-Up = +4
+<tr><td>🥈 Runner-Up</td><td style="text-align:right;"><strong>+4</strong></td></tr>
 
-<br><br>
+<tr><td>🥉 Best 3rd Place</td><td style="text-align:right;"><strong>+2</strong></td></tr>
 
-🥉 Best 3rd Place = +2
+</table>
 
-<br><br>
+</div>
 
-━━━━━━━━━━━━━━
+<div style="
+background:#08111d;
+padding:20px;
+border-radius:16px;
+border:2px solid #284663;
+">
 
-<br><br>
+<h3 style="margin-top:0;color:gold;">🏆 KNOCKOUT STAGE</h3>
 
-🏆 Knockout Bonuses
+<table style="width:100%;border-collapse:collapse;">
 
-<br><br>
+<tr><td>Round of 32 Win</td><td style="text-align:right;"><strong>+4</strong></td></tr>
 
-🔥 Round of 16 Victory = +4
+<tr><td>Quarterfinal Win</td><td style="text-align:right;"><strong>+6</strong></td></tr>
 
-<br><br>
+<tr><td>Semifinal Win</td><td style="text-align:right;"><strong>+8</strong></td></tr>
 
-🔥 Quarterfinal Victory = +6
+<tr><td>Final Win</td><td style="text-align:right;"><strong>+10</strong></td></tr>
 
-<br><br>
+<tr><td>🏆 World Champion</td><td style="text-align:right;"><strong>+15</strong></td></tr>
 
-🔥 Semifinal Victory = +8
-
-<br><br>
-
-🔥 Final Victory = +10
-
-<br><br>
-
-👑 World Cup Champion = +15
-
-<br><br>
-
-━━━━━━━━━━━━━━
-
-<br><br>
-
-🏆 TIEBREAKERS
-
-<br><br>
-
-1️⃣ Total Points
-
-<br><br>
-
-2️⃣ Goal Differential
-
-<br><br>
-
-3️⃣ Goals Scored
-
-<br><br>
-
-4️⃣ Shared Placement
+</table>
 
 </div>
 
 </div>
 
-<footer>
+<br>
 
-🏆 The Family Cup • Season One
+<div style="
+background:#17365d;
+padding:18px;
+border-radius:16px;
+text-align:center;
+font-size:18px;
+line-height:1.8;
+">
+
+<strong>Current Leader:</strong> 👑 J.D. (35)
+
+<br>
+
+<strong>Closest Challenger:</strong> 🚀 BOB (33)
+
+<br>
+
+<strong>Next Match:</strong> 👑 🇧🇷 Brazil vs 🇯🇵 Japan
+
+</div>
+
+</div>
+
+<footer style="
+margin-top:30px;
+padding:40px 20px;
+text-align:center;
+background:#08111d;
+border-top:3px solid gold;
+color:#d7e3ef;
+line-height:2;
+">
+
+<h2 style="margin-top:0;color:gold;">
+🏆 THE FAMILY CUP
+</h2>
+
+Season One • FIFA World Cup 2026
 
 <br><br>
 
-Group Stage Complete.
+Group Stage Complete ✅
+
+<br>
+
+Knockout Stage Underway ⚔️
 
 <br><br>
 
-16 teams will survive.
+👑 Current Leader: <strong>J.D. (35)</strong>
+
+<br>
+
+🚀 Chasing: <strong>BOB (33)</strong>
 
 <br><br>
 
-Only one Family Cup Champion will remain.
+<i>
+Every match matters.
+Every point counts.
+One Family Cup Champion.
+</i>
 
 </footer>
 
 </body>
 
 </html>
-
