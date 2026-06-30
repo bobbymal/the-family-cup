@@ -1,10 +1,183 @@
-<div class="card">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🏆 The Family Cup</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#07111b;
+color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+header{
+background:linear-gradient(180deg,#17365d,#07111b);
+padding:40px 20px;
+text-align:center;
+border-bottom:4px solid gold;
+}
+
+header h1{
+font-size:48px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+color:#d7e3ef;
+line-height:1.8;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:18px;
+}
+
+.card{
+background:#102030;
+border-radius:18px;
+padding:22px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+.card h2{
+margin-bottom:18px;
+padding-left:14px;
+border-left:6px solid gold;
+font-size:28px;
+}
+
+.hero{
+text-align:center;
+font-size:36px;
+font-weight:800;
+color:gold;
+line-height:1.4;
+}
+
+.story{
+font-size:18px;
+line-height:2;
+}
+
+.small{
+font-size:16px;
+line-height:1.9;
+}
+
+.highlight{
+color:gold;
+font-weight:bold;
+}
+
+.ticker{
+overflow:hidden;
+white-space:nowrap;
+background:#08111d;
+padding:16px;
+border-radius:14px;
+font-weight:700;
+font-size:18px;
+}
+
+.ticker span{
+display:inline-block;
+padding-left:100%;
+animation:ticker 30s linear infinite;
+}
+
+@keyframes ticker{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+.podium{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:18px;
+}
+
+.podiumCard{
+background:#08111d;
+border:2px solid #284663;
+border-radius:18px;
+padding:20px;
+text-align:center;
+}
+
+.podiumCard .score{
+font-size:44px;
+font-weight:800;
+color:gold;
+margin-top:12px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#18334f;
+padding:14px;
+}
+
+td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid #284663;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🏆 THE FAMILY CUP</h1>
+
+<p>
+
+FIFA World Cup 2026
+
+<br>
+
+Knockout Stage
+
+<br>
+
+Day 2 Complete
+
+</p>
+
+</header>
+
+<div class="container">
+
+  <div class="card">
 
 <div class="ticker">
 
 <span>
 
-👑 BRAZIL DEFEATS JAPAN 2–1 • 😱 PARAGUAY ELIMINATES GERMANY (PENS) • 💔 MOROCCO ELIMINATES THE NETHERLANDS (PENS) • 👑 J.D. LEADS THE FAMILY CUP 39–33 • TOMORROW: 🇨🇮 IVORY COAST vs 🇳🇴 NORWAY • 🥪 🇫🇷 FRANCE vs 🥪 🇸🇪 SWEDEN • 🌮 🇲🇽 MEXICO vs 🏟️ 🇪🇨 ECUADOR
+👑 BRAZIL 2–1 JAPAN • 😱 PARAGUAY ELIMINATES GERMANY (PENS) • 💔 MOROCCO ELIMINATES THE NETHERLANDS (PENS) • 👑 J.D. LEADS 39–33 • TOMORROW: 🇨🇮 IVORY COAST vs 🇳🇴 NORWAY • 🥪 🇫🇷 FRANCE vs 🥪 🇸🇪 SWEDEN • 🌮 🇲🇽 MEXICO vs 🏟️ 🇪🇨 ECUADOR
 
 </span>
 
@@ -38,35 +211,37 @@ Two owners suffered.
 
 <br><br>
 
-J.D. watched Brazil do exactly what a tournament favorite is supposed to do.
+J.D. watched Brazil do exactly what favorites are supposed to do.
 
-Win.
+They won.
 
-Advance.
+They advanced.
 
-Move one step closer to the World Cup.
+They delivered four more Family Cup points.
 
 <br><br>
 
 Meanwhile...
 
-Mateo watched Germany's dream end in a penalty shootout.
+Mateo watched Germany fall in a penalty shootout.
 
 <br><br>
 
-Just a few hours later...
+Hours later...
 
-BOB experienced the exact same heartbreak as the Netherlands fell to Morocco.
-
-<br><br>
-
-One favorite survived.
-
-Two contenders disappeared.
+BOB suffered the exact same heartbreak as Morocco stunned the Netherlands.
 
 <br><br>
 
-The Family Cup race suddenly looks very different.
+Brazil survived.
+
+Germany didn't.
+
+The Netherlands didn't.
+
+<br><br>
+
+The Family Cup race suddenly feels completely different.
 
 </div>
 
@@ -82,9 +257,9 @@ The Family Cup race suddenly looks very different.
 
 <br><br>
 
-"The Netherlands waited all day...
+"The Dutch waited all day...
 
-just to lose from twelve yards."
+just to lose on penalties."
 
 <br><br>
 
@@ -92,7 +267,7 @@ just to lose from twelve yards."
 
 <br><br>
 
-"Germany has officially entered the Family Cup support group."
+"Germany has entered the Family Cup support group."
 
 <br><br>
 
@@ -100,7 +275,9 @@ just to lose from twelve yards."
 
 <br><br>
 
-"Nobody noticed I didn't lose any points today."
+"At least nobody passed me today."
+
+😂
 
 </div>
 
@@ -112,35 +289,27 @@ just to lose from twelve yards."
 
 <div class="small">
 
-Only <span class="highlight">6 points</span>
-
-separate first and second.
+Only <span class="highlight">6 points</span> separate first and second.
 
 <br><br>
 
-Brazil survived.
+Tomorrow belongs to France...
 
-Germany is gone.
+Sweden...
 
-The Netherlands are gone.
+Mexico...
 
-<br><br>
+Ivory Coast...
 
-Tomorrow belongs to
+Norway...
 
-France,
-
-Sweden,
-
-Mexico,
-
-Ivory Coast,
-
-Norway
+England...
 
 and Ecuador.
 
-The chase continues.
+<br><br>
+
+The leaderboard isn't safe yet.
 
 </div>
 
@@ -162,9 +331,9 @@ The chase continues.
 
 <div class="score">39</div>
 
-<div style="margin-top:12px;color:#9fd3ff;">
+<div style="margin-top:10px;color:#9fd3ff;">
 
-The king answered.
+Brazil answered.
 
 </div>
 
@@ -180,7 +349,7 @@ The king answered.
 
 <div class="score">33</div>
 
-<div style="margin-top:12px;color:#9fd3ff;">
+<div style="margin-top:10px;color:#9fd3ff;">
 
 Penalty heartbreak.
 
@@ -198,11 +367,9 @@ Penalty heartbreak.
 
 <div class="score">30</div>
 
-<div style="margin-top:12px;color:#9fd3ff;">
+<div style="margin-top:10px;color:#9fd3ff;">
 
-Waiting for Mexico.
-
-</div>
+Mexico up next.
 
 </div>
 
@@ -210,18 +377,18 @@ Waiting for Mexico.
 
 </div>
 
-<div class="card">
+</div>
+
+  <div class="card">
 
 <h2>📊 OFFICIAL FAMILY CUP STANDINGS</h2>
 
 <table>
 
 <tr>
-
 <th>Rank</th>
 <th>Owner</th>
 <th>Points</th>
-
 </tr>
 
 <tr>
@@ -290,25 +457,19 @@ The Netherlands.
 
 <br><br>
 
-Different matches.
+Both entered the day believing they could make a deep World Cup run.
 
-Different stadiums.
+Both survived 120 exhausting minutes.
 
-The exact same ending.
-
-<br><br>
-
-Both fought through 120 minutes.
-
-Both reached penalties.
+Both reached penalty kicks.
 
 Both watched someone else celebrate.
 
 <br><br>
 
-The knockout stage doesn't care how well you played.
+For Mateo and BOB...
 
-It only remembers who advanced.
+today will be remembered as the day everything changed.
 
 </div>
 
@@ -320,19 +481,19 @@ It only remembers who advanced.
 
 <div class="small">
 
-✅ Canada and Brazil are the only owner-controlled teams to survive so far.
+✅ Canada and Brazil are the only owner-controlled teams through to the Round of 16.
 
 <br><br>
 
-❌ Germany became the first heavyweight to crash out.
+❌ Germany became the first heavyweight to fall.
 
 <br><br>
 
-❌ Hours later the Netherlands joined them.
+❌ The Netherlands joined them just hours later.
 
 <br><br>
 
-🏆 Four Round of 32 matches...
+🏆 Four knockout matches...
 
 Four unforgettable stories.
 
@@ -348,154 +509,122 @@ The tournament is only getting started.
 
 <div class="story">
 
-<h3>👑 The King Answered</h3>
+<h3>👑 The King Delivered</h3>
 
-Brazil never panicked.
+Brazil handled business.
 
-They handled Japan 2–1 and delivered four more Family Cup points to J.D.
+No penalty drama.
 
-The lead grows to six.
+No late collapse.
+
+Just a 2–1 victory and four more Family Cup points for J.D.
 
 <hr>
 
 <h3>🦅 Germany's Nightmare</h3>
 
-Mateo waited patiently for Germany's knockout debut.
+Mateo waited all tournament for Germany.
 
-Instead...
+One penalty shootout later...
 
-he watched penalties decide everything.
-
-One kick separated Germany from survival.
+their World Cup was over.
 
 <hr>
 
-<h3>🚀 A Long Wait... For Heartbreak</h3>
+<h3>🚀 A Brutal Finish</h3>
 
 The Netherlands played the final match of the day.
 
-BOB waited hours for kickoff.
+BOB waited all afternoon.
 
-He waited 120 more minutes for a winner.
+He got 120 minutes...
 
-Penalty kicks ended the dream.
-
-<hr>
-
-<h3>🌮 Tomorrow Belongs to Mama G</h3>
-
-Mexico takes the field with a chance to close the gap.
-
-One victory changes the standings again.
+and heartbreak.
 
 <hr>
 
-<h3>🥪 Family vs Family</h3>
+<h3>🌮 Tomorrow Is Massive</h3>
 
-France and Sweden meet tomorrow.
+Mexico takes center stage.
 
-P-Big is guaranteed to celebrate.
+A victory would pull Mama G even closer to the top.
 
-P-Big is also guaranteed to lose one team.
+<hr>
 
-That's knockout football.
+<h3>🥪 Family Civil War</h3>
+
+France.
+
+Sweden.
+
+Only one survives.
+
+P-Big is guaranteed to celebrate...
+
+and guaranteed to lose a team.
 
 </div>
 
 </div>
 
-<div class="card">
+  <div class="card">
 
 <h2>⭐ POWER RANKINGS</h2>
 
 <table>
 
 <tr>
-
 <th>Rank</th>
 <th>Owner</th>
 <th>Media Take</th>
-
 </tr>
 
 <tr>
-
 <td>🥇</td>
-
 <td>👑 J.D.</td>
-
-<td><strong>"The king had the pressure... Brazil delivered."</strong></td>
-
+<td><strong>"The king had the pressure... and Brazil answered."</strong></td>
 </tr>
 
 <tr>
-
 <td>🥈</td>
-
 <td>🚀 BOB</td>
-
-<td><strong>"One penalty kick away from a very different night."</strong></td>
-
+<td><strong>"One penalty kick from keeping pace."</strong></td>
 </tr>
 
 <tr>
-
 <td>🥉</td>
-
 <td>🌮 Mama G</td>
-
-<td><strong>"Tomorrow could completely change this race."</strong></td>
-
+<td><strong>"Mexico can shake up the entire leaderboard."</strong></td>
 </tr>
 
 <tr>
-
 <td>4️⃣</td>
-
 <td>💙 Momma M</td>
-
-<td><strong>"Still quietly lurking with Spain waiting."</strong></td>
-
+<td><strong>"Spain and Switzerland are still waiting in the wings."</strong></td>
 </tr>
 
 <tr>
-
 <td>5️⃣</td>
-
 <td>🏟️ Matt</td>
-
-<td><strong>"England hasn't kicked a ball yet... and that's dangerous."</strong></td>
-
+<td><strong>"England's path just became very interesting."</strong></td>
 </tr>
 
 <tr>
-
 <td>6️⃣</td>
-
 <td>🥪 P-Big</td>
-
-<td><strong>"Tomorrow is impossible. One team survives. One team goes home."</strong></td>
-
+<td><strong>"Guaranteed to win tomorrow... and guaranteed to lose tomorrow."</strong></td>
 </tr>
 
 <tr>
-
 <td>7️⃣</td>
-
 <td>🦅 Mateo</td>
-
-<td><strong>"Germany broke hearts... especially one in this family."</strong></td>
-
+<td><strong>"Germany's exit still hurts."</strong></td>
 </tr>
 
 <tr>
-
 <td>8️⃣</td>
-
 <td>🍼 Nene</td>
-
-<td><strong>"The comeback speech has now reached Day 3."</strong> 😂</td>
-
+<td><strong>"The comeback speech continues for another day."</strong> 😂</td>
 </tr>
 
 </table>
@@ -506,7 +635,9 @@ That's knockout football.
 
 <h2>🏅 DAILY AWARDS</h2>
 
-<b>🏆 Team of the Day</b>
+<div class="story">
+
+🏆 <strong>Team of the Day</strong>
 
 <br><br>
 
@@ -514,7 +645,7 @@ That's knockout football.
 
 <hr>
 
-<b>🔥 Owner of the Day</b>
+🔥 <strong>Owner of the Day</strong>
 
 <br><br>
 
@@ -522,27 +653,29 @@ That's knockout football.
 
 <hr>
 
-<b>😱 Upset of the Day</b>
+😱 <strong>Upset of the Day</strong>
 
 <br><br>
 
-🇵🇾 Paraguay over 🇩🇪 Germany
+🇵🇾 Paraguay eliminates 🇩🇪 Germany
 
 <hr>
 
-<b>💔 Heartbreak of the Day</b>
+💔 <strong>Heartbreak of the Day</strong>
 
 <br><br>
 
-🇲🇦 Morocco over 🇳🇱 Netherlands
+🇲🇦 Morocco eliminates 🇳🇱 Netherlands
 
 <hr>
 
-<b>🎯 Tomorrow's Main Event</b>
+🎯 <strong>Tomorrow's Main Event</strong>
 
 <br><br>
 
 🌮 🇲🇽 Mexico vs 🏟️ 🇪🇨 Ecuador
+
+</div>
 
 </div>
 
@@ -552,235 +685,323 @@ That's knockout football.
 
 <div class="story">
 
-<b>🇨🇮 Ivory Coast vs 🇳🇴 Norway</b>
+<h3>🇨🇮 Ivory Coast vs 🇳🇴 Norway</h3>
 
-<br><br>
-
-The winner earns the unenviable task of facing Brazil.
+The winner earns the right to face Brazil.
 
 <hr>
 
-<b>🥪 France vs 🥪 Sweden</b>
+<h3>🥪 France vs 🥪 Sweden</h3>
 
-<br><br>
+P-Big is guaranteed knockout points...
 
-P-Big is guaranteed to celebrate...
-
-and guaranteed to lose one nation.
+but one of his teams is heading home.
 
 <hr>
 
-<b>🌮 Mexico vs 🏟️ Ecuador</b>
+<h3>🌮 Mexico vs 🏟️ Ecuador</h3>
 
-<br><br>
+Family versus family.
 
-Mama G.
+A huge swing in the standings is waiting.
 
-Matt.
+If Mexico wins...
 
-One Family Cup matchup.
+Mama G gains ground.
 
-Four massive points on the line.
+If Ecuador wins...
 
-Tomorrow's standings could look completely different.
+Matt climbs back into contention.
+
+Tomorrow has the potential to reshape the Family Cup once again.
 
 </div>
 
 </div>
+
+  <!-- ===================== NEW BRACKET ===================== -->
 
 <div class="card">
 
 <h2>🏆 ROAD TO THE CUP</h2>
 
-<div style="text-align:center;color:#cfd8e3;margin-bottom:22px;">
+<div class="small" style="text-align:center;margin-bottom:18px;">
 
 🟩 Advanced &nbsp;&nbsp;
-🟥 Eliminated &nbsp;&nbsp;
-⬜ Still To Play
+⬜ To Be Played &nbsp;&nbsp;
+⬛ Eliminated
 
 </div>
 
-<div class="bracket">
+<style>
 
-<div class="bracketBoard">
+.bracketWrap{
+overflow-x:auto;
+padding:10px 0;
+}
 
-<!-- ================= LEFT ROUND OF 32 ================= -->
+.bracketGrid{
+
+display:grid;
+
+grid-template-columns:
+
+260px 120px
+260px 120px
+260px 120px
+220px
+120px
+260px 120px
+260px 120px
+260px;
+
+min-width:3100px;
+
+align-items:center;
+
+}
+
+.roundTitle{
+
+text-align:center;
+
+color:gold;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+.match{
+
+margin-bottom:20px;
+
+}
+
+.team{
+
+background:#08111d;
+
+border:2px solid #284663;
+
+border-radius:8px;
+
+padding:10px 12px;
+
+margin:6px 0;
+
+font-weight:700;
+
+}
+
+.team.win{
+
+background:#17365d;
+
+border-color:gold;
+
+}
+
+.team.out{
+
+opacity:.35;
+
+text-decoration:line-through;
+
+}
+
+.lines{
+
+position:relative;
+
+height:640px;
+
+}
+
+.lines:before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:22px;
+
+width:100%;
+
+height:596px;
+
+border-left:3px solid #486888;
+
+}
+
+.lines:after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+linear-gradient(#486888,#486888) left 0 top 35px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 123px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 211px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 299px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 387px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 475px/100% 3px no-repeat,
+linear-gradient(#486888,#486888) left 0 top 563px/100% 3px no-repeat;
+}
+
+.trophyBox{
+
+background:linear-gradient(180deg,#f7dd73,#c79d24);
+
+color:#07111b;
+
+padding:24px;
+
+border-radius:18px;
+
+font-weight:800;
+
+font-size:22px;
+
+text-align:center;
+
+}
+
+</style>
+
+<div class="bracketWrap">
+
+<div class="bracketGrid">
+
+<!-- ROUND OF 32 -->
 
 <div>
 
 <div class="roundTitle">ROUND OF 32</div>
 
-<div class="game">
+<div class="match">
 <div class="team out">🇿🇦 South Africa</div>
-<div class="team winner">👑 🇨🇦 Canada</div>
+<div class="team win">👑 🇨🇦 Canada</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team out">🇯🇵 Japan</div>
-<div class="team winner">👑 🇧🇷 Brazil</div>
+<div class="team win">👑 🇧🇷 Brazil</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team out">🦅 🇩🇪 Germany</div>
-<div class="team winner">🇵🇾 Paraguay</div>
+<div class="team win">🇵🇾 Paraguay</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team out">🚀 🇳🇱 Netherlands</div>
-<div class="team winner">🇲🇦 Morocco</div>
+<div class="team win">🇲🇦 Morocco</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🇨🇮 Ivory Coast</div>
 <div class="team">🇳🇴 Norway</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🥪 🇫🇷 France</div>
 <div class="team">🥪 🇸🇪 Sweden</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🌮 🇲🇽 Mexico</div>
 <div class="team">🏟️ 🇪🇨 Ecuador</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🏟️ 🏴 England</div>
 <div class="team">🇨🇩 DR Congo</div>
 </div>
 
 </div>
 
-<!-- ================= LEFT ROUND OF 16 ================= -->
+<div class="lines"></div>
+
+<!-- ROUND OF 16 -->
 
 <div>
 
 <div class="roundTitle">ROUND OF 16</div>
 
-<div class="game">
-
-<div class="team winner">
-
-👑 🇨🇦 Canada
-
+<div class="match">
+<div class="team win">👑 🇨🇦 Canada</div>
+<br><br><br>
+<div class="team win">👑 🇧🇷 Brazil</div>
 </div>
 
-<div class="connectorSmall"></div>
-
-<div class="team winner">
-
-👑 🇧🇷 Brazil
-
+<div class="match">
+<div class="team win">🇵🇾 Paraguay</div>
+<br><br><br>
+<div class="team win">🇲🇦 Morocco</div>
 </div>
 
+<div class="match">
+<div class="team">Winner CIV/NOR</div>
+<br><br><br>
+<div class="team">Winner FRA/SWE</div>
 </div>
 
-<div class="game">
-
-<div class="team winner">
-
-🇵🇾 Paraguay
-
-</div>
-
-<div class="connectorSmall"></div>
-
-<div class="team winner">
-
-🇲🇦 Morocco
-
+<div class="match">
+<div class="team">Winner MEX/ECU</div>
+<br><br><br>
+<div class="team">Winner ENG/COD</div>
 </div>
 
 </div>
 
-<div class="game">
+<div class="lines"></div>
 
-<div class="team pending">
-
-Winner CIV/NOR
-
-</div>
-
-<div class="connectorSmall"></div>
-
-<div class="team pending">
-
-Winner FRA/SWE
-
-</div>
-
-</div>
-
-<div class="game">
-
-<div class="team pending">
-
-Winner MEX/ECU
-
-</div>
-
-<div class="connectorSmall"></div>
-
-<div class="team pending">
-
-Winner ENG/COD
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================= QUARTERS ================= -->
+<!-- QUARTERS -->
 
 <div>
 
-<div class="roundTitle">
+<div class="roundTitle">QUARTERS</div>
 
-QUARTERFINALS
+<div class="match">
 
-</div>
-
-<div class="game">
-
-<div class="team pending">
+<div class="team">
 
 🇨🇦 vs 🇧🇷
 
 </div>
 
-<div class="connectorMedium"></div>
-
 </div>
 
-<div class="game">
+<div style="height:150px;"></div>
 
-<div class="team pending">
+<div class="match">
+
+<div class="team">
 
 🇵🇾 vs 🇲🇦
 
 </div>
 
-<div class="connectorMedium"></div>
-
 </div>
 
-<div class="game">
+<div style="height:150px;"></div>
 
-<div class="team pending">
+<div class="match">
 
-Winner
-
-</div>
-
-<div class="connectorMedium"></div>
-
-</div>
-
-<div class="game">
-
-<div class="team pending">
+<div class="team">
 
 Winner
 
@@ -788,9 +1009,25 @@ Winner
 
 </div>
 
+<div style="height:150px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+
 </div>
 
-  <!-- ================= SEMIFINALS ================= -->
+</div>
+
+</div>
+
+  <!-- CONNECTOR -->
+
+<div class="lines"></div>
+
+<!-- ================= SEMIFINALS ================= -->
 
 <div>
 
@@ -800,41 +1037,33 @@ SEMIFINALS
 
 </div>
 
-<div class="game">
+<div style="margin-top:70px;"></div>
 
-<div class="team pending">
+<div class="team">
 
-Left Bracket Winner
-
-</div>
-
-<div class="connectorLarge"></div>
+Winner QF 1
 
 </div>
 
-<div class="game">
+<div style="height:250px;"></div>
 
-<div class="team pending">
+<div class="team">
 
-Left Bracket Winner
+Winner QF 2
 
 </div>
 
 </div>
 
-</div>
+<!-- CONNECTOR -->
 
-<!-- ================= CHAMPIONSHIP ================= -->
+<div class="lines"></div>
 
-<div class="centerColumn">
+<!-- ================= FINAL ================= -->
 
-<div class="roundTitle">
+<div style="display:flex;align-items:center;justify-content:center;">
 
-🏆 FINAL
-
-</div>
-
-<div class="trophy">
+<div class="trophyBox">
 
 🏆
 
@@ -848,13 +1077,25 @@ FINAL
 
 <br><br>
 
-⏳
+Winner SF 1
+
+<br>
+
+vs
+
+<br>
+
+Winner SF 2
 
 </div>
 
 </div>
 
-<!-- ================= RIGHT SEMIFINAL ================= -->
+<!-- CONNECTOR -->
+
+<div class="lines"></div>
+
+<!-- ================= RIGHT SEMIFINALS ================= -->
 
 <div>
 
@@ -864,29 +1105,27 @@ SEMIFINALS
 
 </div>
 
-<div class="game">
+<div style="margin-top:70px;"></div>
 
-<div class="team pending">
+<div class="team">
 
-Right Bracket Winner
-
-</div>
-
-<div class="connectorLarge"></div>
+Winner QF 3
 
 </div>
 
-<div class="game">
+<div style="height:250px;"></div>
 
-<div class="team pending">
+<div class="team">
 
-Right Bracket Winner
+Winner QF 4
 
 </div>
 
 </div>
 
-</div>
+<!-- CONNECTOR -->
+
+<div class="lines"></div>
 
 <!-- ================= RIGHT QUARTERS ================= -->
 
@@ -898,45 +1137,9 @@ QUARTERFINALS
 
 </div>
 
-<div class="game">
+<div class="match">
 
-<div class="team pending">
-
-Winner
-
-</div>
-
-<div class="connectorMedium"></div>
-
-</div>
-
-<div class="game">
-
-<div class="team pending">
-
-Winner
-
-</div>
-
-<div class="connectorMedium"></div>
-
-</div>
-
-<div class="game">
-
-<div class="team pending">
-
-Winner
-
-</div>
-
-<div class="connectorMedium"></div>
-
-</div>
-
-<div class="game">
-
-<div class="team pending">
+<div class="team">
 
 Winner
 
@@ -944,7 +1147,45 @@ Winner
 
 </div>
 
+<div style="height:150px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+
 </div>
+
+</div>
+
+<div style="height:150px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+
+</div>
+
+</div>
+
+<div style="height:150px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+
+</div>
+
+</div>
+
+</div>
+
+<div class="lines"></div>
 
 <!-- ================= RIGHT ROUND OF 16 ================= -->
 
@@ -956,17 +1197,17 @@ ROUND OF 16
 
 </div>
 
-<div class="game">
+<div class="match">
 
-<div class="team pending">
+<div class="team">
 
 Winner BEL/SEN
 
 </div>
 
-<div class="connectorSmall"></div>
+<br><br><br>
 
-<div class="team pending">
+<div class="team">
 
 Winner USA/BIH
 
@@ -974,17 +1215,17 @@ Winner USA/BIH
 
 </div>
 
-<div class="game">
+<div class="match">
 
-<div class="team pending">
+<div class="team">
 
 Winner ESP/AUT
 
 </div>
 
-<div class="connectorSmall"></div>
+<br><br><br>
 
-<div class="team pending">
+<div class="team">
 
 Winner POR/CRO
 
@@ -992,17 +1233,17 @@ Winner POR/CRO
 
 </div>
 
-<div class="game">
+<div class="match">
 
-<div class="team pending">
+<div class="team">
 
 Winner SUI/ALG
 
 </div>
 
-<div class="connectorSmall"></div>
+<br><br><br>
 
-<div class="team pending">
+<div class="team">
 
 Winner COL/GHA
 
@@ -1010,17 +1251,17 @@ Winner COL/GHA
 
 </div>
 
-<div class="game">
+<div class="match">
 
-<div class="team pending">
+<div class="team">
 
 Winner ARG/CPV
 
 </div>
 
-<div class="connectorSmall"></div>
+<br><br><br>
 
-<div class="team pending">
+<div class="team">
 
 Winner AUS/EGY
 
@@ -1029,6 +1270,8 @@ Winner AUS/EGY
 </div>
 
 </div>
+
+<div class="lines"></div>
 
 <!-- ================= RIGHT ROUND OF 32 ================= -->
 
@@ -1040,42 +1283,42 @@ ROUND OF 32
 
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🇧🇪 Belgium</div>
 <div class="team">🥪 🇸🇳 Senegal</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🦅 🇺🇸 USA</div>
 <div class="team">🇧🇦 Bosnia & Herzegovina</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">💙 🇪🇸 Spain</div>
 <div class="team">🍼 🇦🇹 Austria</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🍼 🇵🇹 Portugal</div>
 <div class="team">👑 🇭🇷 Croatia</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">💙 🇨🇭 Switzerland</div>
 <div class="team">🇩🇿 Algeria</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🚀 🇨🇴 Colombia</div>
 <div class="team">🇬🇭 Ghana</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🌮 🇦🇷 Argentina</div>
 <div class="team">🚀 🇨🇻 Cabo Verde</div>
 </div>
 
-<div class="game">
+<div class="match">
 <div class="team">🇦🇺 Australia</div>
 <div class="team">🏟️ 🇪🇬 Egypt</div>
 </div>
@@ -1088,7 +1331,7 @@ ROUND OF 32
 
 </div>
 
-<div class="card">
+  <div class="card">
 
 <h2>📖 OFFICIAL FAMILY CUP RULES</h2>
 
@@ -1096,12 +1339,14 @@ ROUND OF 32
 
 <div style="
 background:#08111d;
-padding:20px;
-border-radius:16px;
 border:2px solid #284663;
+border-radius:16px;
+padding:20px;
 ">
 
-<h3 style="margin-top:0;color:gold;">⚽ GROUP STAGE</h3>
+<h3 style="color:gold;margin-bottom:16px;">
+⚽ GROUP STAGE
+</h3>
 
 <table>
 
@@ -1115,7 +1360,7 @@ border:2px solid #284663;
 
 <tr><td>🥈 Runner-Up</td><td style="text-align:right;"><strong>+4</strong></td></tr>
 
-<tr><td>🥉 Best Third Place</td><td style="text-align:right;"><strong>+2</strong></td></tr>
+<tr><td>🥉 Best 3rd Place</td><td style="text-align:right;"><strong>+2</strong></td></tr>
 
 </table>
 
@@ -1123,12 +1368,14 @@ border:2px solid #284663;
 
 <div style="
 background:#08111d;
-padding:20px;
-border-radius:16px;
 border:2px solid #284663;
+border-radius:16px;
+padding:20px;
 ">
 
-<h3 style="margin-top:0;color:gold;">🏆 KNOCKOUT STAGE</h3>
+<h3 style="color:gold;margin-bottom:16px;">
+🏆 KNOCKOUT STAGE
+</h3>
 
 <table>
 
@@ -1155,25 +1402,35 @@ background:#17365d;
 border-radius:16px;
 padding:20px;
 text-align:center;
-line-height:2;
 font-size:18px;
+line-height:2;
 ">
 
-<strong>👑 Current Leader:</strong> J.D. (39)
+<strong>👑 Leader:</strong> J.D. — 39
 
 <br>
 
-<strong>🔥 Biggest Story:</strong> Brazil survived. Germany and the Netherlands did not.
+<strong>📈 Closest Challenger:</strong> BOB — 33
 
 <br>
 
-<strong>📺 Tomorrow:</strong> Ivory Coast vs Norway • France vs Sweden • Mexico vs Ecuador
+<strong>🎯 Tomorrow:</strong>
+
+🇨🇮 Ivory Coast vs 🇳🇴 Norway • 🥪 France vs 🥪 Sweden • 🌮 Mexico vs 🏟️ Ecuador
 
 </div>
 
 </div>
 
-<footer>
+<footer style="
+margin-top:30px;
+padding:40px 20px;
+text-align:center;
+background:#08111d;
+border-top:3px solid gold;
+color:#d7e3ef;
+line-height:2;
+">
 
 <h2 style="color:gold;margin-bottom:18px;">
 
@@ -1189,11 +1446,13 @@ Knockout Stage • Day 2 Complete
 
 <br><br>
 
-👑 Leader: <strong>J.D. (39)</strong>
+👑 Current Leader:
+<strong>J.D. (39)</strong>
 
 <br>
 
-🚀 Chasing: <strong>BOB (33)</strong>
+🚀 Chasing:
+<strong>BOB (33)</strong>
 
 <br><br>
 
@@ -1218,4 +1477,3 @@ One Family Cup Champion.
 </body>
 
 </html>
-
