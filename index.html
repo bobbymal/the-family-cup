@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -17,131 +18,229 @@ box-sizing:border-box;
 
 body{
 background:#07111b;
-color:#fff;
+color:white;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 header{
-background:linear-gradient(180deg,#17365d,#07111b);
-padding:40px 20px;
+
+background:linear-gradient(180deg,#16375d,#07111b);
+
+padding:45px 20px;
+
 text-align:center;
+
 border-bottom:4px solid gold;
+
 }
 
 header h1{
-font-size:48px;
+
+font-size:52px;
+
 letter-spacing:2px;
-margin-bottom:10px;
+
+margin-bottom:12px;
+
 }
 
 header p{
-font-size:18px;
-color:#d7e3ef;
+
+font-size:20px;
+
+color:#d8e7f5;
+
 line-height:1.8;
+
 }
 
 .container{
-max-width:1100px;
+
+max-width:1150px;
+
 margin:auto;
+
 padding:18px;
+
 }
 
 .card{
+
 background:#102030;
+
 border-radius:18px;
+
 padding:22px;
-margin-bottom:20px;
-box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+margin-bottom:22px;
+
+box-shadow:0 8px 24px rgba(0,0,0,.35);
+
 }
 
 .card h2{
-margin-bottom:18px;
-padding-left:14px;
+
 border-left:6px solid gold;
+
+padding-left:14px;
+
+margin-bottom:18px;
+
 font-size:28px;
+
 }
 
 .hero{
-text-align:center;
-font-size:36px;
+
+font-size:42px;
+
 font-weight:800;
+
+text-align:center;
+
 color:gold;
-line-height:1.4;
+
+line-height:1.35;
+
 }
 
 .story{
-font-size:18px;
+
+font-size:19px;
+
 line-height:2;
+
 }
 
 .small{
-font-size:16px;
-line-height:1.9;
-}
 
-.highlight{
-color:gold;
-font-weight:bold;
+font-size:17px;
+
+line-height:1.9;
+
 }
 
 .ticker{
+
 overflow:hidden;
+
 white-space:nowrap;
+
 background:#08111d;
+
 padding:16px;
+
 border-radius:14px;
+
 font-weight:700;
+
 font-size:18px;
+
 }
 
 .ticker span{
+
 display:inline-block;
+
 padding-left:100%;
-animation:ticker 30s linear infinite;
+
+animation:ticker 34s linear infinite;
+
 }
 
 @keyframes ticker{
+
 0%{transform:translateX(0);}
+
 100%{transform:translateX(-100%);}
-}
 
-.podium{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:18px;
-}
-
-.podiumCard{
-background:#08111d;
-border:2px solid #284663;
-border-radius:18px;
-padding:20px;
-text-align:center;
-}
-
-.podiumCard .score{
-font-size:44px;
-font-weight:800;
-color:gold;
-margin-top:12px;
 }
 
 table{
+
 width:100%;
+
 border-collapse:collapse;
+
 }
 
 th{
-background:#18334f;
+
+background:#17365d;
+
 padding:14px;
+
 }
 
 td{
+
 padding:14px;
+
 text-align:center;
-border-bottom:1px solid #284663;
+
+border-bottom:1px solid #294663;
+
 }
+
+.podium{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:16px;
+
+margin-top:20px;
+
+}
+
+.podiumCard{
+
+background:#08111d;
+
+border:2px solid #294663;
+
+border-radius:16px;
+
+padding:20px;
+
+text-align:center;
+
+}
+
+.score{
+
+font-size:46px;
+
+font-weight:800;
+
+color:gold;
+
+margin-top:12px;
+
+}
+
+.analytics{
+
+background:#08111d;
+
+border-left:5px solid gold;
+
+padding:16px;
+
+border-radius:12px;
+
+margin-bottom:14px;
+
+line-height:1.8;
+
+}
+
+.good{color:#62ff95;font-weight:bold;}
+
+.bad{color:#ff6c6c;font-weight:bold;}
+
+.gold{color:gold;font-weight:bold;}
 
 </style>
 
@@ -159,7 +258,7 @@ FIFA World Cup 2026
 
 <br>
 
-Round of 16 Set
+Round of 16
 
 </p>
 
@@ -173,7 +272,7 @@ Round of 16 Set
 
 <span>
 
-🇨🇻 CAPE VERDE STEALS THE HEARTS OF THE WORLD • 🌮 ARGENTINA SURVIVES 3–2 (AET) • 🏟️ EGYPT WINS ON PENALTIES • 🚀 COLOMBIA ADVANCES • 👑 J.D. LEADS 39–38 • 🏆 THE ROUND OF 16 IS OFFICIALLY SET
+🇲🇦 MOROCCO ELIMINATES CANADA • 🇫🇷 FRANCE ADVANCES • 👑 J.D. LEADS BY ONE • 📊 THE TITLE RACE IS WIDE OPEN • 🇧🇷 BRAZIL VS NORWAY TODAY • 🇲🇽 MEXICO VS ENGLAND TODAY
 
 </span>
 
@@ -185,9 +284,7 @@ Round of 16 Set
 
 <div class="hero">
 
-🇨🇻 THE DREAM DIED.<br>
-
-❤️ THE WORLD FELL IN LOVE.
+👑 THE CROWN SUDDENLY FEELS HEAVY.
 
 </div>
 
@@ -195,169 +292,121 @@ Round of 16 Set
 
 <div class="card">
 
-<h2>🔥 TODAY'S BIGGEST STORY</h2>
+<h2>🏆 FAMILY CUP STANDINGS</h2>
 
-<div class="story">
+<table>
 
-Sometimes...
+<tr>
 
-the scoreboard doesn't tell the story.
+<th>Rank</th>
 
-<br><br>
+<th>Owner</th>
 
-Cape Verde arrived as one of the smallest nations in the tournament.
+<th>Pts</th>
 
-They left as one of its greatest stories.
+</tr>
 
-<br><br>
+<tr><td>🥇</td><td>👑 J.D.</td><td><strong>39</strong></td></tr>
 
-Argentina needed extra time to finally survive.
+<tr><td>🥈</td><td>🌮 Mama G</td><td><strong>38</strong></td></tr>
 
-Every attack...
+<tr><td>🥉</td><td>💙 Momma M</td><td><strong>37</strong></td></tr>
 
-every save...
+<tr><td>4️⃣</td><td>🚀 BOB</td><td><strong>37</strong></td></tr>
 
-every minute made believers around the world.
+<tr><td>5️⃣</td><td>🏟️ Matt</td><td><strong>36</strong></td></tr>
 
-<br><br>
+<tr><td>6️⃣</td><td>🥪 P-Big</td><td><strong>32</strong></td></tr>
 
-Mama G earned four more Family Cup points.
+<tr><td>7️⃣</td><td>🦅 Mateo</td><td><strong>29</strong></td></tr>
 
-But Cape Verde earned something much bigger...
+<tr><td>8️⃣</td><td>🍼 Nene</td><td><strong>24</strong></td></tr>
 
-respect.
-
-<br><br>
-
-Meanwhile...
-
-Egypt survived a penalty shootout.
-
-Colombia handled business.
-
-And the Round of 16 field is finally complete.
+</table>
 
 </div>
 
+ <div class="card">
+
+<h2>📊 FAMILY CUP ANALYTICS</h2>
+
+<div class="analytics">
+
+<h3>📈 Championship Odds</h3>
+
+<p><strong>🥇 🌮 Mama G — 25%</strong><br>
+<small>Two elite teams remain, and she's only one point behind the leader.</small></p>
+
+<p><strong>🥈 💙 Momma M — 20%</strong><br>
+<small>Spain and Switzerland give her two realistic paths to a deep run.</small></p>
+
+<p><strong>🥉 👑 J.D. — 18%</strong><br>
+<small>Still leads, but Brazil now carries his entire championship.</small></p>
+
+<p><strong>4️⃣ 🚀 BOB — 15%</strong><br>
+<small>Colombia has looked dangerous, but the road only gets tougher.</small></p>
+
+<p><strong>5️⃣ 🥪 P-Big — 12%</strong><br>
+<small>France has already banked 10 knockout points and remains one of the favorites.</small></p>
+
+<p><strong>6️⃣ 🏟️ Matt — 7%</strong><br>
+<small>England and Egypt are still alive, but both face difficult draws.</small></p>
+
+<p><strong>7️⃣ 🦅 Mateo — 2%</strong><br>
+<small>The USA needs a dream run through the toughest side of the bracket.</small></p>
+
+<p><strong>8️⃣ 🍼 Nene — 1%</strong><br>
+<small>Portugal has championship quality but an extremely difficult path.</small></p>
+
 </div>
 
-<div class="card">
+<div class="analytics">
 
-<h2>😂 BASEMENT BULLETIN</h2>
+<h3>🔥 Trending</h3>
 
-<div class="small">
+<p class="good">⬆ P-Big</p>
 
-🌮 <strong>Mama G</strong>
+France continues winning and quietly climbs back into contention.
 
 <br><br>
 
-"I think Cape Verde almost gave me a heart attack."
+<p class="bad">⬇ J.D.</p>
+
+Canada is out. Brazil is now his only remaining hope.
+
+</div>
+
+<div class="analytics">
+
+<h3>⚠ Pressure Meter</h3>
+
+<p>
+
+👑 <span class="gold">J.D. — EXTREME</span>
 
 <br><br>
 
-🚀 <strong>BOB</strong>
+Every Brazil match now feels like a championship match.
 
-<br><br>
-
-"Colombia kept it simple."
-
-<br><br>
-
-🏟️ <strong>Matt</strong>
-
-<br><br>
-
-"Never a doubt...
-
-after penalties."
-
-😂
+</p>
 
 </div>
 
-</div>
+<div class="analytics">
 
-<div class="card">
+<h3>🎯 Today's Swing Match</h3>
 
-<h2>🚨 TITLE WATCH</h2>
+<p>
 
-<div class="small">
+🇲🇽 Mexico vs 🏴 England
 
-Only <span class="highlight">1 point</span> separates first and second.
+<br>
 
-<br><br>
+If Mexico wins, Mama G could seize control of the Family Cup.
 
-The Round of 16 is here.
+If England wins, Matt jumps right back into the title race.
 
-Every surviving team can change the Family Cup.
-
-<br><br>
-
-The chase for the crown has never been tighter.
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>🥇 LEADER PODIUM</h2>
-
-<div class="podium">
-
-<div class="podiumCard">
-
-🥇
-
-<br><br>
-
-👑 J.D.
-
-<div class="score">39!</div>
-
-<div style="margin-top:10px;color:#9fd3ff;">
-
-Feeling the pressure.
-
-</div>
-
-</div>
-
-<div class="podiumCard">
-
-🥈
-
-<br><br>
-
-🌮 Mama G
-
-<div class="score">38</div>
-
-<div style="margin-top:10px;color:#9fd3ff;">
-
-One point away.
-
-</div>
-
-</div>
-
-<div class="podiumCard">
-
-🥉
-
-<br><br>
-
-💙 Momma M
-
-<div class="score">37</div>
-
-<div style="margin-top:10px;color:#9fd3ff;">
-
-Still charging.
-
-</div>
-
-</div>
+</p>
 
 </div>
 
@@ -365,65 +414,69 @@ Still charging.
 
  <div class="card">
 
-<h2>📊 OFFICIAL FAMILY CUP STANDINGS</h2>
+<h2>🌍 STORY OF THE DAY</h2>
 
-<table>
+<div class="story">
 
-<tr>
-<th>Rank</th>
-<th>Owner</th>
-<th>Points</th>
-</tr>
+The standings barely changed.
 
-<tr>
-<td>🥇</td>
-<td>👑 J.D.</td>
-<td><strong>39</strong></td>
-</tr>
+The championship picture did.
 
-<tr>
-<td>🥈</td>
-<td>🌮 Mama G</td>
-<td><strong>38</strong></td>
-</tr>
+<br><br>
 
-<tr>
-<td>🥉</td>
-<td>💙 Momma M</td>
-<td><strong>37</strong></td>
-</tr>
+Canada's elimination leaves 👑 <strong>J.D.</strong> with only one team remaining.
 
-<tr>
-<td>4️⃣</td>
-<td>🚀 BOB</td>
-<td><strong>37</strong></td>
-</tr>
+Not because Canada was expected to win the World Cup...
 
-<tr>
-<td>5️⃣</td>
-<td>🏟️ Matt</td>
-<td><strong>36</strong></td>
-</tr>
+but because every remaining team matters at this stage.
 
-<tr>
-<td>6️⃣</td>
-<td>🦅 Mateo</td>
-<td><strong>29</strong></td>
-</tr>
+<br><br>
 
-<tr>
-<td>7️⃣</td>
-<td>🥪 P-Big</td>
-<td><strong>26</strong></td>
-</tr>
+Meanwhile...
 
-<tr>
-<td>8️⃣</td>
-<td>🍼 Nene</td>
-<td><strong>24</strong></td>
-</tr>
+🇲🇦 Morocco looked every bit like the world's No. 7-ranked team.
 
-</table>
+🇫🇷 France kept doing what great teams do...
+
+winning.
+
+<br><br>
+
+For the first time all tournament...
+
+the Family Cup feels completely up for grabs.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⚽ ROUND OF 16 RESULTS</h2>
+
+<div class="story">
+
+<h3>🇲🇦 Morocco 3–0 Canada</h3>
+
+Morocco controlled the match from the opening whistle.
+
+The Atlas Lions move into the quarterfinals looking every bit like a title contender.
+
+Canada's World Cup—and one of J.D.'s two remaining teams—comes to an end.
+
+<hr style="margin:18px 0;">
+
+<h3>🇫🇷 France 1–0 Paraguay</h3>
+
+No drama.
+
+No panic.
+
+Just another professional performance.
+
+France earns another <strong>6 Family Cup points</strong> for 🥪 P-Big and advances to face Morocco.
+
+</div>
 
 </div>
 
@@ -433,25 +486,17 @@ Still charging.
 
 <div class="story">
 
-🇨🇻 Cape Verde.
+👑 <strong>J.D.</strong>
 
 <br><br>
 
-The final whistle ended an incredible journey.
+The Family Cup leader is still on top.
 
-<br><br>
+But with Canada eliminated, the pressure shifts entirely to Brazil.
 
-They pushed Argentina into extra time.
+One upset...
 
-They refused to quit.
-
-They came within inches of one of the greatest upsets in World Cup history.
-
-<br><br>
-
-They leave without a trophy...
-
-but with the respect of the football world.
+and the race could be turned upside down.
 
 </div>
 
@@ -459,67 +504,61 @@ but with the respect of the football world.
 
 <div class="card">
 
-<h2>👀 DID YOU NOTICE?</h2>
-
-<div class="small">
-
-✅ Every Round of 16 matchup is officially set.
-
-<br><br>
-
-✅ Four owners are now within three points of first place.
-
-<br><br>
-
-✅ Egypt became the lowest-seeded remaining Family Cup team.
-
-<br><br>
-
-🏆 The real tournament starts now.
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>📰 FAMILY CUP DAILY</h2>
+<h2>🏆 QUARTERFINAL CONFIRMED</h2>
 
 <div class="story">
 
-<h3>🇨🇻 The People's Champion</h3>
+🇲🇦 <strong>Morocco</strong>
 
-Cape Verde may be eliminated...
+🆚
 
-but they'll be remembered as the Cinderella of World Cup 2026.
+🇫🇷 <strong>France</strong>
 
-<hr>
+<br><br>
 
-<h3>🌮 Argentina Escapes</h3>
+One of the tournament's best defensive teams.
 
-Mama G stays within one point of the Family Cup lead.
+One of the tournament favorites.
 
-<hr>
+A semifinal place is on the line.
 
-<h3>🚀 Colombia Advances</h3>
+</div>
 
-BOB pulls level with Momma M and stays firmly in the title race.
+</div>
 
-<hr>
+<div class="card">
 
-<h3>🏟️ Egypt Survives</h3>
+<h2>👀 TODAY</h2>
 
-Penalty kicks were enough to keep Matt's hopes alive.
+<div class="story">
 
-<hr>
+<h3>👑 🇧🇷 Brazil vs 🇳🇴 Norway</h3>
 
-<h3>🏆 The Field Is Set</h3>
+Brazil now carries J.D.'s entire Family Cup season.
 
-Sixteen entered the knockout stage.
+<hr style="margin:18px 0;">
 
-Now only sixteen remain.
+<h3>🌮 🇲🇽 Mexico vs 🏴 England 🏟️</h3>
 
-Every Round of 16 matchup is locked in.
+Perhaps the biggest Family Cup match yet.
+
+Mexico could push Mama G into first place.
+
+England could launch Matt right back into championship contention.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="hero">
+
+🏆 THE KING STILL LEADS.
+
+<br>
+
+BUT THE CHASERS ARE CLOSING.
 
 </div>
 
@@ -527,160 +566,13 @@ Every Round of 16 matchup is locked in.
 
  <div class="card">
 
-<h2>⭐ POWER RANKINGS</h2>
-
-<table>
-
-<tr>
-<th>Rank</th>
-<th>Owner</th>
-<th>Media Take</th>
-</tr>
-
-<tr>
-<td>🥇</td>
-<td>🌮 Mama G</td>
-<td><strong>"One point behind. Argentina survived and the pressure is on."</strong></td>
-</tr>
-
-<tr>
-<td>🥈</td>
-<td>👑 J.D.</td>
-<td><strong>"Still wearing the crown... but barely."</strong></td>
-</tr>
-
-<tr>
-<td>🥉</td>
-<td>💙 Momma M</td>
-<td><strong>"Eight-point surge has completely changed the race."</strong></td>
-</tr>
-
-<tr>
-<td>4️⃣</td>
-<td>🚀 BOB</td>
-<td><strong>"Colombia keeps him within striking distance."</strong></td>
-</tr>
-
-<tr>
-<td>5️⃣</td>
-<td>🏟️ Matt</td>
-<td><strong>"Egypt lives to fight another day."</strong></td>
-</tr>
-
-<tr>
-<td>6️⃣</td>
-<td>🦅 Mateo</td>
-<td><strong>"USA is the last chance to climb."</strong></td>
-</tr>
-
-<tr>
-<td>7️⃣</td>
-<td>🥪 P-Big</td>
-<td><strong>"France carries the entire season now."</strong></td>
-</tr>
-
-<tr>
-<td>8️⃣</td>
-<td>🍼 Nene</td>
-<td><strong>"Portugal is still alive in a brutal bracket."</strong></td>
-</tr>
-
-</table>
-
-</div>
-
-<div class="card">
-
-<h2>🏅 DAILY AWARDS</h2>
-
-<div class="story">
-
-🏆 <strong>Team of the Day</strong>
-
-<br><br>
-
-🇨🇻 Cape Verde
-
-<hr>
-
-🔥 <strong>Owner of the Day</strong>
-
-<br><br>
-
-🌮 Mama G
-
-<hr>
-
-❤️ <strong>Story of the Tournament</strong>
-
-<br><br>
-
-🇨🇻 Cape Verde's unforgettable World Cup run.
-
-<hr>
-
-💔 <strong>Heartbreak of the Day</strong>
-
-<br><br>
-
-🇨🇻 Cape Verde falls after extra time.
-
-<hr>
-
-🎯 <strong>Tomorrow's Main Event</strong>
-
-<br><br>
-
-👑 🇨🇦 Canada vs 🇲🇦 Morocco
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>🎯 ROUND OF 16 SPOTLIGHT</h2>
-
-<div class="story">
-
-<h3>👑 Canada vs 🇲🇦 Morocco</h3>
-
-Canada begins the Round of 16 against giant-killers Morocco.
-
-<hr>
-
-<h3>🇵🇾 Paraguay vs 🥪 France</h3>
-
-Can Paraguay continue its miracle run?
-
-<hr>
-
-<h3>👀 Looking Ahead</h3>
-
-Brazil vs Norway.
-
-Mexico vs England.
-
-Spain vs Portugal.
-
-USA vs Belgium.
-
-The biggest matches of the tournament are finally here.
-
-</div>
-
-</div>
-
- <!-- ===================== NEW BRACKET ===================== -->
-
-<div class="card">
-
-<h2>🏆 ROAD TO THE CUP</h2>
+<h2>🏆 ROAD TO THE FAMILY CUP</h2>
 
 <div class="small" style="text-align:center;margin-bottom:18px;">
 
 🟩 Advanced &nbsp;&nbsp;
-⬜ To Be Played &nbsp;&nbsp;
+🟨 Today &nbsp;&nbsp;
+⬜ Upcoming &nbsp;&nbsp;
 ⬛ Eliminated
 
 </div>
@@ -697,17 +589,11 @@ padding:10px 0;
 display:grid;
 
 grid-template-columns:
+300px 150px
+300px 150px
+300px;
 
-260px 120px
-260px 120px
-260px 120px
-220px
-120px
-260px 120px
-260px 120px
-260px;
-
-min-width:3100px;
+min-width:1500px;
 
 align-items:center;
 
@@ -715,74 +601,90 @@ align-items:center;
 
 .roundTitle{
 text-align:center;
-color:gold;
+font-size:22px;
 font-weight:800;
-margin-bottom:15px;
+color:gold;
+margin-bottom:18px;
 }
 
 .match{
-margin-bottom:20px;
+margin-bottom:36px;
 }
 
 .team{
+
 background:#08111d;
-border:2px solid #284663;
-border-radius:8px;
-padding:10px 12px;
-margin:6px 0;
+
+border:2px solid #2f4f72;
+
+border-radius:12px;
+
+padding:14px;
+
+margin:10px 0;
+
+font-size:18px;
+
 font-weight:700;
+
 }
 
-.team.win{
-background:#17365d;
+.team.live{
+
+border-color:#ffd54f;
+
+background:#2f2b12;
+
+}
+
+.team.advance{
+
+background:#16375d;
+
 border-color:gold;
-}
 
-.team.out{
-opacity:.35;
-text-decoration:line-through;
 }
 
 .lines{
+
 position:relative;
-height:640px;
+
+height:760px;
+
 }
 
 .lines:before{
+
 content:"";
+
 position:absolute;
+
 left:0;
-top:22px;
+
+top:30px;
+
 width:100%;
-height:596px;
-border-left:3px solid #486888;
+
+height:700px;
+
+border-left:3px solid #4f6f90;
+
 }
 
-.lines:after{
-content:"";
-position:absolute;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:
-linear-gradient(#486888,#486888) left 0 top 35px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 123px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 211px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 299px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 387px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 475px/100% 3px no-repeat,
-linear-gradient(#486888,#486888) left 0 top 563px/100% 3px no-repeat;
-}
+.trophy{
 
-.trophyBox{
-background:linear-gradient(180deg,#f7dd73,#c79d24);
-color:#07111b;
-padding:24px;
-border-radius:18px;
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
 font-weight:800;
-font-size:22px;
-text-align:center;
+
+color:gold;
+
 }
 
 </style>
@@ -791,127 +693,167 @@ text-align:center;
 
 <div class="bracketGrid">
 
-<!-- ROUND OF 32 -->
-
-<div>
-
-<div class="roundTitle">ROUND OF 32</div>
-
-<div class="match">
-<div class="team out">🇿🇦 South Africa</div>
-<div class="team win">👑 🇨🇦 Canada</div>
-</div>
-
-<div class="match">
-<div class="team out">🇯🇵 Japan</div>
-<div class="team win">👑 🇧🇷 Brazil</div>
-</div>
-
-<div class="match">
-<div class="team out">🦅 🇩🇪 Germany</div>
-<div class="team win">🇵🇾 Paraguay</div>
-</div>
-
-<div class="match">
-<div class="team out">🚀 🇳🇱 Netherlands</div>
-<div class="team win">🇲🇦 Morocco</div>
-</div>
-
-<div class="match">
-<div class="team out">🇨🇮 Ivory Coast</div>
-<div class="team win">🇳🇴 Norway</div>
-</div>
-
-<div class="match">
-<div class="team out">🥪 🇸🇪 Sweden</div>
-<div class="team win">🥪 🇫🇷 France</div>
-</div>
-
-<div class="match">
-<div class="team out">🏟️ 🇪🇨 Ecuador</div>
-<div class="team win">🌮 🇲🇽 Mexico</div>
-</div>
-
-<div class="match">
-<div class="team out">🇨🇩 DR Congo</div>
-<div class="team win">🏟️ 🏴 England</div>
-</div>
-
-</div>
-
- <div class="lines"></div>
-
 <!-- ROUND OF 16 -->
 
 <div>
 
-<div class="roundTitle">ROUND OF 16</div>
+<div class="roundTitle">
 
-<div class="match">
-<div class="team">👑 🇨🇦 Canada</div>
-<br><br><br>
-<div class="team">🇲🇦 Morocco</div>
-</div>
+ROUND OF 16
 
-<div class="match">
-<div class="team">🇵🇾 Paraguay</div>
-<br><br><br>
-<div class="team">🥪 🇫🇷 France</div>
 </div>
 
 <div class="match">
-<div class="team">👑 🇧🇷 Brazil</div>
-<br><br><br>
-<div class="team">🇳🇴 Norway</div>
+
+<div class="team advance">🇲🇦 Morocco</div>
+
+<div class="team">🇫🇷 France</div>
+
 </div>
 
 <div class="match">
-<div class="team">🌮 🇲🇽 Mexico</div>
-<br><br><br>
-<div class="team">🏟️ 🏴 England</div>
+
+<div class="team live">👑 🇧🇷 Brazil</div>
+
+<div class="team live">🇳🇴 Norway</div>
+
+</div>
+
+<div class="match">
+
+<div class="team live">🌮 🇲🇽 Mexico</div>
+
+<div class="team live">🏟️ 🏴 England</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">💙 🇪🇸 Spain</div>
+
+<div class="team">🍼 🇵🇹 Portugal</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">🦅 🇺🇸 USA</div>
+
+<div class="team">🇧🇪 Belgium</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">🌮 🇦🇷 Argentina</div>
+
+<div class="team">🏟️ 🇪🇬 Egypt</div>
+
+</div>
+
+<div class="match">
+
+<div class="team">💙 🇨🇭 Switzerland</div>
+
+<div class="team">🚀 🇨🇴 Colombia</div>
+
 </div>
 
 </div>
+
+ <!-- CONNECTORS -->
 
 <div class="lines"></div>
 
-<!-- QUARTERFINALS -->
+<!-- ================= QUARTERFINALS ================= -->
 
 <div>
 
-<div class="roundTitle">QUARTERFINALS</div>
+<div class="roundTitle">
+
+QUARTERFINALS
+
+</div>
 
 <div class="match">
-<div class="team">
-Winner CAN/MAR
-</div>
+
+<div class="team advance">
+
+🇲🇦 Morocco
+
 </div>
 
-<div style="height:150px;"></div>
+<div class="team advance">
 
-<div class="match">
-<div class="team">
-Winner PAR/FRA
-</div>
+🇫🇷 France
+
 </div>
 
-<div style="height:150px;"></div>
-
-<div class="match">
-<div class="team">
-Winner BRA/NOR
-</div>
 </div>
 
-<div style="height:150px;"></div>
+<div style="height:45px;"></div>
 
 <div class="match">
+
 <div class="team">
-Winner MEX/ENG
+
+Winner
+🇧🇷 Brazil / 🇳🇴 Norway
+
 </div>
+
+<div class="team">
+
+Winner
+🇲🇽 Mexico / 🏴 England
+
 </div>
 
 </div>
+
+<div style="height:45px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+🇪🇸 Spain / 🇵🇹 Portugal
+
+</div>
+
+<div class="team">
+
+Winner
+🇺🇸 USA / 🇧🇪 Belgium
+
+</div>
+
+</div>
+
+<div style="height:45px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+🇦🇷 Argentina / 🇪🇬 Egypt
+
+</div>
+
+<div class="team">
+
+Winner
+🇨🇭 Switzerland / 🇨🇴 Colombia
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONNECTORS -->
 
 <div class="lines"></div>
 
@@ -925,47 +867,82 @@ SEMIFINALS
 
 </div>
 
-<div style="margin-top:70px;"></div>
+<div class="match">
 
 <div class="team">
 
-Winner QF 1
+Winner
+Morocco / France
 
 </div>
 
-<div style="height:250px;"></div>
+</div>
+
+<div style="height:130px;"></div>
+
+<div class="match">
 
 <div class="team">
 
-Winner QF 2
+Winner
+Brazil-Norway /
+Mexico-England
 
 </div>
 
 </div>
 
- <!-- CONNECTOR -->
+<div style="height:130px;"></div>
 
-<div class="lines"></div>
+<div class="match">
 
-<!-- ================= FINAL ================= -->
+<div class="team">
 
-<div style="display:flex;align-items:center;justify-content:center;">
+Winner
+Spain-Portugal /
+USA-Belgium
 
-<div class="trophyBox">
+</div>
+
+</div>
+
+<div style="height:130px;"></div>
+
+<div class="match">
+
+<div class="team">
+
+Winner
+Argentina-Egypt /
+Switzerland-Colombia
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+  <div class="card">
+
+<h2>🏆 CHAMPIONSHIP PATH</h2>
+
+<div class="trophy">
 
 🏆
 
-<br><br>
+</div>
 
-WORLD CUP
+<div class="story" style="text-align:center;">
 
-<br>
-
-FINAL
+<strong>WORLD CUP FINAL</strong>
 
 <br><br>
 
-Winner SF 1
+Winner of Semifinal 1
 
 <br>
 
@@ -973,207 +950,11 @@ vs
 
 <br>
 
-Winner SF 2
+Winner of Semifinal 2
 
-</div>
+<br><br>
 
-</div>
-
-<!-- CONNECTOR -->
-
-<div class="lines"></div>
-
-<!-- ================= RIGHT SEMIFINALS ================= -->
-
-<div>
-
-<div class="roundTitle">
-
-SEMIFINALS
-
-</div>
-
-<div style="margin-top:70px;"></div>
-
-<div class="team">
-
-Winner QF 3
-
-</div>
-
-<div style="height:250px;"></div>
-
-<div class="team">
-
-Winner QF 4
-
-</div>
-
-</div>
-
-<!-- CONNECTOR -->
-
-<div class="lines"></div>
-
-<!-- ================= RIGHT QUARTERFINALS ================= -->
-
-<div>
-
-<div class="roundTitle">
-
-QUARTERFINALS
-
-</div>
-
-<div class="match">
-
-<div class="team">
-
-Winner ESP/POR
-
-</div>
-
-</div>
-
-<div style="height:150px;"></div>
-
-<div class="match">
-
-<div class="team">
-
-Winner USA/BEL
-
-</div>
-
-</div>
-
-<div style="height:150px;"></div>
-
-<div class="match">
-
-<div class="team">
-
-Winner SUI/COL
-
-</div>
-
-</div>
-
-<div style="height:150px;"></div>
-
-<div class="match">
-
-<div class="team">
-
-Winner ARG/EGY
-
-</div>
-
-</div>
-
-</div>
-
-<div class="lines"></div>
-
-<!-- ================= RIGHT ROUND OF 16 ================= -->
-
-<div>
-
-<div class="roundTitle">
-
-ROUND OF 16
-
-</div>
-
-<div class="match">
-<div class="team">💙 🇪🇸 Spain</div>
-
-<br><br><br>
-
-<div class="team">🍼 🇵🇹 Portugal</div>
-</div>
-
-<div class="match">
-<div class="team">🦅 🇺🇸 USA</div>
-
-<br><br><br>
-
-<div class="team">🇧🇪 Belgium</div>
-</div>
-
-<div class="match">
-<div class="team">💙 🇨🇭 Switzerland</div>
-
-<br><br><br>
-
-<div class="team">🚀 🇨🇴 Colombia</div>
-</div>
-
-<div class="match">
-<div class="team">🌮 🇦🇷 Argentina</div>
-
-<br><br><br>
-
-<div class="team">🏟️ 🇪🇬 Egypt</div>
-</div>
-
-</div>
-
- <div class="lines"></div>
-
-<!-- ================= RIGHT ROUND OF 32 ================= -->
-
-<div>
-
-<div class="roundTitle">
-
-ROUND OF 32
-
-</div>
-
-<div class="match">
-<div class="team out">🥪 🇸🇳 Senegal</div>
-<div class="team win">🇧🇪 Belgium</div>
-</div>
-
-<div class="match">
-<div class="team out">🇧🇦 Bosnia & Herzegovina</div>
-<div class="team win">🦅 🇺🇸 USA</div>
-</div>
-
-<div class="match">
-<div class="team out">🍼 🇦🇹 Austria</div>
-<div class="team win">💙 🇪🇸 Spain</div>
-</div>
-
-<div class="match">
-<div class="team out">👑 🇭🇷 Croatia</div>
-<div class="team win">🍼 🇵🇹 Portugal</div>
-</div>
-
-<div class="match">
-<div class="team out">🇩🇿 Algeria</div>
-<div class="team win">💙 🇨🇭 Switzerland</div>
-</div>
-
-<div class="match">
-<div class="team out">🇬🇭 Ghana</div>
-<div class="team win">🚀 🇨🇴 Colombia</div>
-</div>
-
-<div class="match">
-<div class="team out">🚀 🇨🇻 Cabo Verde</div>
-<div class="team win">🌮 🇦🇷 Argentina</div>
-</div>
-
-<div class="match">
-<div class="team out">🇦🇺 Australia</div>
-<div class="team win">🏟️ 🇪🇬 Egypt</div>
-</div>
-
-</div>
-
-</div>
+<strong>🏆 FAMILY CUP CHAMPION</strong>
 
 </div>
 
@@ -1185,15 +966,12 @@ ROUND OF 32
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
 
-<div style="
-background:#08111d;
-border:2px solid #284663;
-border-radius:16px;
-padding:20px;
-">
+<div style="background:#08111d;border:2px solid #2f4f72;border-radius:14px;padding:18px;">
 
-<h3 style="color:gold;margin-bottom:16px;">
+<h3 style="color:gold;margin-bottom:14px;">
+
 ⚽ GROUP STAGE
+
 </h3>
 
 <table>
@@ -1214,26 +992,23 @@ padding:20px;
 
 </div>
 
- <div style="
-background:#08111d;
-border:2px solid #284663;
-border-radius:16px;
-padding:20px;
-">
+<div style="background:#08111d;border:2px solid #2f4f72;border-radius:14px;padding:18px;">
 
-<h3 style="color:gold;margin-bottom:16px;">
+<h3 style="color:gold;margin-bottom:14px;">
+
 🏆 KNOCKOUT STAGE
+
 </h3>
 
 <table>
 
 <tr><td>Round of 32 Win</td><td style="text-align:right;"><strong>+4</strong></td></tr>
 
-<tr><td>Quarterfinal Win</td><td style="text-align:right;"><strong>+6</strong></td></tr>
+<tr><td>Round of 16 Win</td><td style="text-align:right;"><strong>+6</strong></td></tr>
 
-<tr><td>Semifinal Win</td><td style="text-align:right;"><strong>+8</strong></td></tr>
+<tr><td>Quarterfinal Win</td><td style="text-align:right;"><strong>+8</strong></td></tr>
 
-<tr><td>Final Win</td><td style="text-align:right;"><strong>+10</strong></td></tr>
+<tr><td>Semifinal Win</td><td style="text-align:right;"><strong>+10</strong></td></tr>
 
 <tr><td>🏆 World Champion</td><td style="text-align:right;"><strong>+15</strong></td></tr>
 
@@ -1245,74 +1020,53 @@ padding:20px;
 
 <br>
 
-<div style="
-background:#17365d;
-border-radius:16px;
-padding:20px;
-text-align:center;
-font-size:18px;
-line-height:2;
-">
+<div style="background:#17365d;border-radius:16px;padding:18px;text-align:center;line-height:2;">
 
-<strong>👑 Leader:</strong> J.D. — 39
+<strong>Maximum Knockout Points Remaining:</strong>
+
+43
 
 <br>
 
-<strong>📈 Closest Challenger:</strong> Mama G — 38
-
-<br>
-
-<strong>🎯 Next Up:</strong>
-
-👑 🇨🇦 Canada vs 🇲🇦 Morocco • 🇵🇾 Paraguay vs 🥪 🇫🇷 France
+4 + 6 + 8 + 10 + 15
 
 </div>
 
 </div>
 
-<footer style="
-margin-top:30px;
-padding:40px 20px;
-text-align:center;
-background:#08111d;
-border-top:3px solid gold;
-color:#d7e3ef;
-line-height:2;
-">
+<footer style="margin-top:30px;padding:35px;text-align:center;background:#08111d;border-top:3px solid gold;line-height:2;">
 
-<h2 style="color:gold;margin-bottom:18px;">
+<h2 style="color:gold;">
 
 🏆 THE FAMILY CUP
 
 </h2>
 
-Season One • FIFA World Cup 2026
-
-<br><br>
-
-Round of 16 Begins
-
-<br><br>
-
-👑 Current Leader:
-<strong>J.D. (39)</strong>
+FIFA World Cup 2026
 
 <br>
 
-🌮 Closest Challenger:
-<strong>Mama G (38)</strong>
+Round of 16
+
+<br><br>
+
+<strong>Current Leader:</strong>
+
+👑 J.D. — 39
+
+<br>
+
+<strong>Closest Challenger:</strong>
+
+🌮 Mama G — 38
 
 <br><br>
 
 <i>
 
-Sixteen teams remain.
+Eight owners.
 
-<br>
-
-Eight owners still believe.
-
-<br>
+Eight dreams.
 
 One Family Cup Champion.
 
@@ -1325,3 +1079,4 @@ One Family Cup Champion.
 </body>
 
 </html>
+
