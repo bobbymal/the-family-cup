@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -18,41 +17,40 @@ box-sizing:border-box;
 
 body{
 background:#07111b;
-color:#fff;
+color:white;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 header{
-background:linear-gradient(180deg,#16375d,#07111b);
+background:linear-gradient(180deg,#173b63,#07111b);
 padding:45px 20px;
 text-align:center;
 border-bottom:4px solid gold;
 }
 
 header h1{
-font-size:52px;
+font-size:54px;
 letter-spacing:2px;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 header p{
 font-size:20px;
-color:#d7e5f3;
-line-height:1.8;
+color:#dbe7f4;
 }
 
 .container{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
 padding:18px;
 }
 
 .card{
 background:#102030;
-border-radius:18px;
 padding:22px;
+border-radius:18px;
 margin-bottom:22px;
-box-shadow:0 8px 24px rgba(0,0,0,.35);
+box-shadow:0 10px 28px rgba(0,0,0,.35);
 }
 
 .card h2{
@@ -63,27 +61,34 @@ font-size:28px;
 }
 
 .hero{
-font-size:44px;
-font-weight:800;
+font-size:48px;
+font-weight:900;
 text-align:center;
 color:gold;
-line-height:1.35;
+line-height:1.3;
+}
+
+.heroSub{
+text-align:center;
+font-size:22px;
+margin-top:16px;
+color:#dbe7f4;
 }
 
 .ticker{
 overflow:hidden;
 white-space:nowrap;
-background:#08111d;
+background:#0b1624;
 padding:16px;
 border-radius:14px;
+font-weight:800;
 font-size:18px;
-font-weight:700;
 }
 
 .ticker span{
 display:inline-block;
 padding-left:100%;
-animation:ticker 34s linear infinite;
+animation:ticker 30s linear infinite;
 }
 
 @keyframes ticker{
@@ -97,28 +102,38 @@ border-collapse:collapse;
 }
 
 th{
-background:#17365d;
+background:#173b63;
 padding:14px;
+font-size:18px;
 }
 
 td{
 padding:14px;
 text-align:center;
-border-bottom:1px solid #294663;
+border-bottom:1px solid #2d4b69;
+font-size:18px;
 }
 
-.analytics{
+.first{
+background:#1b3d21;
+font-weight:bold;
+}
+
+.ownerCard{
+display:flex;
+justify-content:space-between;
+align-items:center;
 background:#08111d;
-border-left:5px solid gold;
+padding:14px 18px;
+margin-top:10px;
 border-radius:12px;
-padding:18px;
-margin-bottom:15px;
-line-height:1.9;
+border-left:5px solid gold;
+font-size:18px;
 }
 
-.good{color:#63ff96;font-weight:bold;}
-.bad{color:#ff6d6d;font-weight:bold;}
-.gold{color:gold;font-weight:bold;}
+.badge{
+font-size:24px;
+}
 
 </style>
 
@@ -130,15 +145,7 @@ line-height:1.9;
 
 <h1>🏆 THE FAMILY CUP</h1>
 
-<p>
-
-FIFA World Cup 2026
-
-<br>
-
-Round of 16
-
-</p>
+<p>FIFA World Cup 2026 • Round of 16</p>
 
 </header>
 
@@ -150,7 +157,7 @@ Round of 16
 
 <span>
 
-🏟️ MATT TAKES THE LEAD • 👑 BRAZIL ELIMINATED • 💔 J.D. HAS NO TEAMS REMAINING • 🏴 ENGLAND 3–2 MEXICO IN AN INSTANT CLASSIC • 🇳🇴 NORWAY STUNS BRAZIL • 🇪🇸 SPAIN VS 🇵🇹 PORTUGAL TODAY • 🇺🇸 USA VS 🇧🇪 BELGIUM TODAY
+🇺🇸 USA! USA! USA! • 🇺🇸 TODAY WE'RE ALL AMERICANS • 🇺🇸 BEAT BELGIUM • 🇺🇸 MATEO FIGHTS FOR SURVIVAL • 🇺🇸 RED • WHITE • BLUE • 🇺🇸 BELIEVE • 🇺🇸 ONE NATION • ONE MATCH • 🇺🇸
 
 </span>
 
@@ -162,11 +169,23 @@ Round of 16
 
 <div class="hero">
 
-👑 THE KING HAS FALLEN.
+👑 THERE'S A NEW QUEEN.
 
 <br>
 
-🏟️ THERE'S A NEW LEADER.
+💙 MOMMA M TAKES THE THRONE.
+
+</div>
+
+<div class="heroSub">
+
+Spain delivers.
+
+43 points.
+
+First place.
+
+The Family Cup has a brand-new leader.
 
 </div>
 
@@ -188,28 +207,28 @@ Round of 16
 
 </tr>
 
+<tr class="first">
+<td>👑</td>
+<td>💙 Momma M</td>
+<td><strong>43</strong></td>
+</tr>
+
 <tr>
-<td>🥇</td>
+<td>🥈</td>
 <td>🏟️ Matt</td>
 <td><strong>42</strong></td>
 </tr>
 
 <tr>
-<td>🥈</td>
+<td>🥉</td>
 <td>👑 J.D.</td>
 <td><strong>39</strong></td>
 </tr>
 
 <tr>
-<td>🥉</td>
+<td>4️⃣</td>
 <td>🌮 Mama G</td>
 <td><strong>38</strong></td>
-</tr>
-
-<tr>
-<td>4️⃣</td>
-<td>💙 Momma M</td>
-<td><strong>37</strong></td>
 </tr>
 
 <tr>
@@ -240,7 +259,95 @@ Round of 16
 
 </div>
 
+<div class="card">
+
+<h2>❤️ REMAINING TEAMS</h2>
+
+<div class="ownerCard">
+<div>💙 Momma M</div>
+<div class="badge">🇪🇸 🇨🇭</div>
+</div>
+
+<div class="ownerCard">
+<div>🏟️ Matt</div>
+<div class="badge">🏴 🇪🇬</div>
+</div>
+
+<div class="ownerCard">
+<div>👑 J.D.</div>
+<div class="badge">💀</div>
+</div>
+
+<div class="ownerCard">
+<div>🌮 Mama G</div>
+<div class="badge">🇦🇷</div>
+</div>
+
+<div class="ownerCard">
+<div>🚀 BOB</div>
+<div class="badge">🇨🇴</div>
+</div>
+
+<div class="ownerCard">
+<div>🥪 P-Big</div>
+<div class="badge">🇫🇷</div>
+</div>
+
+<div class="ownerCard">
+<div>🦅 Mateo</div>
+<div class="badge">🇺🇸</div>
+</div>
+
+<div class="ownerCard">
+<div>🍼 Nene</div>
+<div class="badge">💀</div>
+</div>
+
+</div>
+
  <div class="card">
+
+<h2>👑 THRONE TRACKER</h2>
+
+<div style="
+background:#08111d;
+padding:22px;
+border-radius:16px;
+line-height:2;
+font-size:20px;
+">
+
+👑 <strong>J.D.</strong>
+
+<br>
+
+Ruled the Family Cup for most of the tournament.
+
+<br><br>
+
+🏟️ <strong>Matt</strong>
+
+<br>
+
+Captured first after England's legendary victory over Mexico.
+
+<br><br>
+
+💙 <strong>MOMMA M</strong>
+
+<br>
+
+👑 <span style="color:gold;font-weight:800;">CURRENT QUEEN OF THE FAMILY CUP</span>
+
+<br>
+
+Spain's 1–0 victory crowned a brand-new leader.
+
+</div>
+
+</div>
+
+<div class="card">
 
 <h2>📊 FAMILY CUP ANALYTICS</h2>
 
@@ -248,29 +355,60 @@ Round of 16
 
 <h3>📈 Championship Odds</h3>
 
-<p><strong>🥇 🏟️ Matt — 30%</strong><br>
-<small>New leader. England is alive, and every win now widens his advantage.</small></p>
+<p><strong>💙 Momma M — 32%</strong><br>
+<small>43 points and still holding Spain and Switzerland. She has the strongest position in the tournament.</small></p>
 
-<p><strong>🥈 🌮 Mama G — 22%</strong><br>
-<small>Only four points back with Argentina still capable of winning the World Cup.</small></p>
+<p><strong>🏟️ Matt — 24%</strong><br>
+<small>England is still dangerous, and Egypt could make a surprise run. He's only one point back.</small></p>
 
-<p><strong>🥉 💙 Momma M — 18%</strong><br>
-<small>Spain and Switzerland are both alive, giving her two realistic paths to the title.</small></p>
+<p><strong>🌮 Mama G — 18%</strong><br>
+<small>Argentina remains one of the favorites to lift the World Cup.</small></p>
 
-<p><strong>4️⃣ 🥪 P-Big — 15%</strong><br>
-<small>France has already earned 10 knockout points and remains one of the tournament favorites.</small></p>
+<p><strong>🥪 P-Big — 13%</strong><br>
+<small>France keeps quietly winning and is still one of the best teams left.</small></p>
 
-<p><strong>5️⃣ 🚀 BOB — 9%</strong><br>
-<small>Colombia has a difficult road, but one deep run could completely reshape the standings.</small></p>
+<p><strong>🚀 BOB — 8%</strong><br>
+<small>Colombia is an underdog, but one big upset changes everything.</small></p>
 
-<p><strong>6️⃣ 👑 J.D. — 4%</strong><br>
-<small>No teams remain. He now needs everyone else to fall short of 39 points.</small></p>
+<p><strong>👑 J.D. — 3%</strong><br>
+<small>No teams remain. He needs everyone else to leave points on the table.</small></p>
 
-<p><strong>7️⃣ 🦅 Mateo — 1%</strong><br>
-<small>The USA must survive Belgium before an even tougher path ahead.</small></p>
+<p><strong>🦅 Mateo — 2%</strong><br>
+<small>Beat Belgium tonight and these odds could triple overnight.</small></p>
 
-<p><strong>8️⃣ 🍼 Nene — 1%</strong><br>
-<small>Portugal has championship quality but the toughest remaining draw.</small></p>
+<p><strong>🍼 Nene — 0.1%</strong><br>
+<small>The basement lights are on, but the championship lights are fading.</small></p>
+
+</div>
+
+<div class="analytics">
+
+<h3>👑 CROWN METER</h3>
+
+<pre style="
+font-size:18px;
+line-height:2;
+color:white;
+overflow-x:auto;
+">
+
+💙 Momma M  ████████████████████ 43 👑
+
+🏟️ Matt     ███████████████████ 42
+
+👑 J.D.      ████████████████    39
+
+🌮 Mama G    ███████████████     38
+
+🚀 BOB       ██████████████      37
+
+🥪 P-Big     ███████████         32
+
+🦅 Mateo     █████████           29
+
+🍼 Nene      ███████             24
+
+</pre>
 
 </div>
 
@@ -278,103 +416,180 @@ Round of 16
 
 <h3>🔥 Trending</h3>
 
-<p class="good">⬆ Matt</p>
+<p style="color:#63ff96;font-weight:bold;">
 
-England survived the greatest match in Family Cup history and vaulted into first place.
+⬆ Momma M
 
-<br><br>
+</p>
 
-<p class="good">⬆ Norway</p>
-
-The upset over Brazil completely changed the tournament landscape.
+Spain delivers six enormous points and the throne.
 
 <br><br>
 
-<p class="bad">⬇ J.D.</p>
+<p style="color:#63ff96;font-weight:bold;">
 
-Canada is gone.
+⬆ England
 
-Brazil is gone.
+</p>
 
-The longtime leader is out of teams.
+Still one of the hottest teams left in the tournament.
+
+<br><br>
+
+<p style="color:#ff7272;font-weight:bold;">
+
+⬇ Portugal
+
+</p>
+
+Eliminated by Spain.
+
+<br><br>
+
+<p style="color:#ff7272;font-weight:bold;">
+
+⬇ J.D.
+
+</p>
+
+No remaining teams.
+
+The former king can only watch.
 
 </div>
 
 <div class="analytics">
 
-<h3>⚠ Pressure Meter</h3>
+<h3>⚠ PRESSURE METER</h3>
 
-<p>
+<div style="
+text-align:center;
+font-size:26px;
+font-weight:800;
+color:gold;
+">
 
-🏟️ <span class="gold">MATT — EXTREME</span>
+💙 MOMMA M
 
-<br><br>
+</div>
 
-For weeks he chased the crown.
+<div style="
+text-align:center;
+margin-top:12px;
+font-size:20px;
+">
 
-Now everyone is chasing him.
+🔥🔥🔥🔥🔥
+
+EXTREME PRESSURE
+
+</div>
+
+<p style="margin-top:18px;line-height:1.8;">
+
+Everyone spent weeks chasing J.D.
+
+Now the entire Family Cup is chasing Momma M.
+
+One-point lead.
+
+Two teams alive.
+
+The crown is officially hers...
+
+for now.
 
 </p>
 
 </div>
 
-<div class="analytics">
-
-<h3>📌 Family Cup Take</h3>
-
-<p>
-
-This is no longer about catching J.D.
-
-It's about who can catch <strong>Matt</strong> before England's run goes even deeper.
-
-</p>
-
 </div>
 
-</div>
-
- <div class="card">
+<div class="card">
 
 <h2>🌍 STORY OF THE DAY</h2>
 
-<div class="story">
+<div style="font-size:20px;line-height:2;">
 
-For most of the tournament...
+For weeks...
 
-the Family Cup belonged to one man.
+the Family Cup belonged to one ruler.
 
-👑 J.D.
+First it was 👑 <strong>J.D.</strong>.
 
-<br><br>
+Then 🏟️ <strong>Matt</strong> stormed into first after England's unforgettable victory over Mexico.
 
-He survived every twist.
+Now...
 
-Every upset.
-
-Every challenge.
+there is a new Queen.
 
 <br><br>
 
-Then everything changed in a matter of hours.
+💙 <strong>Momma M</strong> didn't need fireworks.
 
-Canada had already fallen.
+She didn't need penalties.
 
-Brazil was his final hope.
+She didn't need drama.
 
-Norway ended it.
+Spain found one goal...
+
+one victory...
+
+and six enormous Family Cup points.
 
 <br><br>
 
-At the same time...
+With 43 points and two teams still alive, she now stands alone atop the Family Cup mountain.
 
-Matt watched England survive one of the greatest matches anyone in this family has ever watched.
+The crown has changed hands again.
 
-Six more points.
+</div>
 
-A new leader.
+</div>
 
-A brand new championship race.
+<div class="card" style="background:linear-gradient(135deg,#002868,#04152b,#bf0a30);border:3px solid white;">
+
+<h2 style="color:white;border-left:6px solid white;">
+
+🇺🇸 AMERICA'S NIGHT 🇺🇸
+
+</h2>
+
+<div style="text-align:center;font-size:30px;font-weight:900;line-height:1.6;">
+
+🇺🇸 USA
+
+<br>
+
+vs
+
+<br>
+
+🇧🇪 BELGIUM
+
+</div>
+
+<div style="margin-top:25px;font-size:20px;line-height:2;text-align:center;">
+
+Tonight...
+
+the Family Cup pauses.
+
+The standings don't matter.
+
+The championship race can wait.
+
+For one night...
+
+we're all wearing red, white and blue.
+
+<br><br>
+
+<strong>
+
+🇺🇸 USA! USA! USA! 🇺🇸
+
+</strong>
 
 </div>
 
@@ -382,85 +597,95 @@ A brand new championship race.
 
 <div class="card">
 
-<h2>🔥 MATCH OF THE TOURNAMENT</h2>
+<h2>🚨 BASEMENT BULLETIN 🚨</h2>
 
-<div class="story">
+<div style="font-size:20px;line-height:2;">
 
-<h3>🏴 England 3–2 Mexico</h3>
+<h3 style="color:gold;">
 
-This wasn't just another knockout match.
+🍼 Permanent Resident
 
-This became Family Cup history.
+</h3>
 
-<br><br>
-
-Momentum swung back and forth.
-
-Every goal changed the championship picture.
-
-Every attack felt enormous.
+<strong>Nene</strong>
 
 <br><br>
 
-Matt earned six priceless points.
+Lease Status:
 
-Mama G watched Mexico's dream come to an end.
+✅ Permanent
 
-<br><br>
+<br>
 
-Years from now...
+Property Taxes:
 
-this will still be remembered as one of the greatest Family Cup matches ever.
+Paid.
 
-</div>
+<br>
 
-</div>
+Mail:
 
-<div class="card">
+Forwarded.
 
-<h2>⚽ THE UPSET</h2>
+<br>
 
-<div class="story">
+Utilities:
 
-<h3>🇳🇴 Norway 2–1 Brazil</h3>
+Included.
 
-One result changed everything.
+<br>
 
-Brazil's elimination ended J.D.'s final chance to score more points.
+Favorite Chair:
 
-<br><br>
-
-Norway advances.
-
-Brazil goes home.
-
-And the Family Cup title race is completely transformed.
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>💔 HEARTBREAK OF THE DAY</h2>
-
-<div class="story">
-
-👑 <strong>J.D.</strong>
+Claimed.
 
 <br><br>
 
-He led the Family Cup for nearly the entire tournament.
+🏠 The basement officially belongs to Nene.
 
-He watched Canada fall.
+She's unpacked.
 
-Then he watched Brazil fall.
+Hung pictures.
 
-<br><br>
+Painted the walls.
 
-The standings may still show 39 points...
+And has absolutely no intention of leaving.
 
-but his championship now depends entirely on everyone else.
+<hr style="margin:24px 0;">
+
+<h3 style="color:gold;">
+
+👀 Watching the Stairs
+
+</h3>
+
+🦅 <strong>Mateo</strong>
+
+<br>
+
+If Team USA loses tonight...
+
+Nene already has the guest room ready.
+
+Fresh towels included.
+
+<hr style="margin:24px 0;">
+
+<h3 style="color:gold;">
+
+😂 Basement Quote of the Day
+
+</h3>
+
+<i>
+
+"The Wi-Fi is actually pretty good down here."
+
+</i>
+
+<br>
+
+— Nene
 
 </div>
 
@@ -470,21 +695,31 @@ but his championship now depends entirely on everyone else.
 
 <h2>👀 TODAY</h2>
 
-<div class="story">
+<div style="text-align:center;font-size:34px;font-weight:900;line-height:1.8;">
 
-<h3>💙 🇪🇸 Spain vs 🍼 🇵🇹 Portugal</h3>
+🇺🇸 USA
 
-One powerhouse moves on.
+<br>
 
-One contender goes home.
+🆚
 
-<hr style="margin:18px 0;">
+<br>
 
-<h3>🦅 🇺🇸 USA vs 🇧🇪 Belgium</h3>
+🇧🇪 BELGIUM
 
-Mateo fights to stay alive.
+</div>
 
-Belgium looks to continue its impressive run.
+<div style="margin-top:20px;text-align:center;font-size:20px;line-height:2;">
+
+Win...
+
+and Mateo stays alive.
+
+Lose...
+
+and another owner joins the eliminated club.
+
+One of the biggest nights of the tournament begins now.
 
 </div>
 
@@ -494,11 +729,13 @@ Belgium looks to continue its impressive run.
 
 <div class="hero">
 
-👑 THE KING IS OUT OF TEAMS.
+👑 A NEW QUEEN RULES.
 
 <br>
 
-🏆 THE FAMILY CUP IS WIDE OPEN.
+🇺🇸 NOW...
+
+LET'S GO USA.
 
 </div>
 
@@ -508,10 +745,10 @@ Belgium looks to continue its impressive run.
 
 <h2>🏆 ROAD TO THE FAMILY CUP</h2>
 
-<div class="small" style="text-align:center;margin-bottom:18px;">
+<div style="text-align:center;font-size:15px;margin-bottom:18px;">
 
 🟩 Advanced &nbsp;&nbsp;
-🟨 Playing Today &nbsp;&nbsp;
+🟨 Playing Now &nbsp;&nbsp;
 ⬜ Upcoming &nbsp;&nbsp;
 ⬛ Eliminated
 
@@ -521,36 +758,37 @@ Belgium looks to continue its impressive run.
 
 .bracketWrap{
 overflow-x:auto;
-padding:10px 0;
+padding:6px 0;
 }
 
 .bracketGrid{
 display:grid;
-grid-template-columns:320px 170px 320px 170px 320px;
-min-width:1650px;
+grid-template-columns:260px 120px 260px 120px 260px;
+min-width:1220px;
 align-items:center;
 }
 
 .roundTitle{
 text-align:center;
-font-size:22px;
+font-size:18px;
 font-weight:800;
 color:gold;
-margin-bottom:20px;
+margin-bottom:16px;
 }
 
 .match{
-margin-bottom:36px;
+margin-bottom:22px;
 }
 
 .team{
 background:#08111d;
 border:2px solid #315171;
-border-radius:12px;
-padding:15px;
-margin:10px 0;
+border-radius:10px;
+padding:9px 12px;
+margin:6px 0;
+font-size:15px;
 font-weight:700;
-font-size:18px;
+line-height:1.2;
 }
 
 .team.advance{
@@ -559,33 +797,39 @@ border-color:gold;
 }
 
 .team.live{
-background:#3b3311;
+background:#3c3210;
 border-color:#ffd54f;
+animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 rgba(255,213,79,.6);}
+50%{box-shadow:0 0 18px rgba(255,213,79,.8);}
+100%{box-shadow:0 0 0 rgba(255,213,79,.6);}
 }
 
 .lines{
 position:relative;
-height:690px;
+height:520px;
 }
 
 .lines:before{
 content:"";
 position:absolute;
-left:0;
-top:35px;
-width:100%;
-height:620px;
-border-left:3px solid #547392;
+left:50%;
+top:20px;
+height:470px;
+border-left:2px solid #4c6b89;
 }
 
 .trophyBox{
-background:linear-gradient(180deg,#f7dc72,#c69a20);
-color:#07111b;
-border-radius:20px;
-padding:24px;
-text-align:center;
-font-size:24px;
-font-weight:800;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100%;
+font-size:34px;
+font-weight:900;
+color:gold;
 }
 
 </style>
@@ -615,8 +859,8 @@ ROUND OF 16
 </div>
 
 <div class="match">
-<div class="team live">💙 🇪🇸 Spain</div>
-<div class="team live">🍼 🇵🇹 Portugal</div>
+<div class="team advance">💙 🇪🇸 Spain ✅</div>
+<div class="team">🍼 🇵🇹 Portugal ❌</div>
 </div>
 
 <div class="match">
@@ -636,11 +880,11 @@ ROUND OF 16
 
 </div>
 
- <!-- CONNECTORS -->
+<!-- CONNECTOR -->
 
 <div class="lines"></div>
 
-<!-- ================= QUARTERFINALS ================= -->
+<!-- QUARTERFINALS -->
 
 <div>
 
@@ -662,8 +906,6 @@ QUARTERFINALS
 
 </div>
 
-<div style="height:45px;"></div>
-
 <div class="match">
 
 <div class="team advance">
@@ -676,13 +918,10 @@ QUARTERFINALS
 
 </div>
 
-<div style="height:45px;"></div>
-
 <div class="match">
 
-<div class="team">
-Winner
-🇪🇸 Spain / 🇵🇹 Portugal
+<div class="team advance">
+💙 🇪🇸 Spain
 </div>
 
 <div class="team">
@@ -691,8 +930,6 @@ Winner
 </div>
 
 </div>
-
-<div style="height:45px;"></div>
 
 <div class="match">
 
@@ -710,7 +947,7 @@ Winner
 
 </div>
 
-<!-- CONNECTORS -->
+ <!-- CONNECTOR -->
 
 <div class="lines"></div>
 
@@ -727,50 +964,60 @@ SEMIFINALS
 <div class="match">
 
 <div class="team">
+
 Winner
-Morocco / France
-</div>
+
+🇲🇦 Morocco / 🇫🇷 France
 
 </div>
 
-<div style="height:120px;"></div>
+</div>
+
+<div style="height:58px;"></div>
 
 <div class="match">
 
 <div class="team">
+
 Winner
-Norway / England
-</div>
+
+🇳🇴 Norway / 🏴 England
 
 </div>
 
-<div style="height:120px;"></div>
+</div>
+
+<div style="height:58px;"></div>
 
 <div class="match">
 
 <div class="team">
+
 Winner
-Spain-Portugal /
-USA-Belgium
-</div>
+
+🇪🇸 Spain / 🇺🇸 USA / 🇧🇪 Belgium
 
 </div>
 
-<div style="height:120px;"></div>
+</div>
+
+<div style="height:58px;"></div>
 
 <div class="match">
 
 <div class="team">
+
 Winner
-Argentina-Egypt /
-Switzerland-Colombia
-</div>
+
+🇦🇷 Argentina / 🇪🇬 Egypt / 🇨🇭 Switzerland / 🇨🇴 Colombia
 
 </div>
 
 </div>
 
-<!-- CONNECTORS -->
+</div>
+
+<!-- CONNECTOR -->
 
 <div class="lines"></div>
 
@@ -780,19 +1027,28 @@ Switzerland-Colombia
 
 <div class="trophyBox">
 
-🏆
+<div style="
+background:linear-gradient(180deg,#f8df76,#c99718);
+color:#07111b;
+padding:20px;
+border-radius:18px;
+width:100%;
+text-align:center;
+">
 
-<br><br>
+<div style="font-size:46px;">🏆</div>
 
-WORLD CUP
+<div style="font-size:18px;font-weight:900;margin-top:8px;">
 
-<br>
+WORLD CUP FINAL
 
-FINAL
+</div>
 
-<br><br>
+<hr style="margin:14px 0;border:1px solid rgba(0,0,0,.25);">
 
-Winner SF 1
+<div style="font-size:15px;line-height:1.7;">
+
+Winner of Semifinal 1
 
 <br>
 
@@ -800,7 +1056,18 @@ vs
 
 <br>
 
-Winner SF 2
+Winner of Semifinal 2
+
+</div>
+
+<hr style="margin:14px 0;border:1px solid rgba(0,0,0,.25);">
+
+<div style="
+font-size:17px;
+font-weight:900;
+">
+
+🏆 FAMILY CUP GLORY
 
 </div>
 
@@ -812,7 +1079,41 @@ Winner SF 2
 
 </div>
 
- <div class="card">
+</div>
+
+<div class="card">
+
+<h2>🔥 ELITE EIGHT PREVIEW</h2>
+
+<div style="font-size:19px;line-height:2;">
+
+Three quarterfinals are already loaded with storylines.
+
+<br><br>
+
+🇲🇦 <strong>Morocco vs France</strong>
+
+The Cinderella story meets one of the tournament favorites.
+
+<br><br>
+
+🇳🇴 <strong>Norway vs England</strong>
+
+The giant killer takes on the winner of the greatest Family Cup match ever.
+
+<br><br>
+
+💙 <strong>Spain waits...</strong>
+
+Will Team USA keep the dream alive?
+
+Or will Belgium crash America's party?
+
+</div>
+
+</div>
+
+  <div class="card">
 
 <h2>📖 OFFICIAL FAMILY CUP RULES</h2>
 
@@ -834,15 +1135,10 @@ padding:20px;
 <table>
 
 <tr><td>✅ Win</td><td style="text-align:right;"><strong>+3</strong></td></tr>
-
 <tr><td>🤝 Draw</td><td style="text-align:right;"><strong>+1</strong></td></tr>
-
 <tr><td>❌ Loss</td><td style="text-align:right;"><strong>0</strong></td></tr>
-
 <tr><td>🥇 Group Winner</td><td style="text-align:right;"><strong>+6</strong></td></tr>
-
 <tr><td>🥈 Group Runner-Up</td><td style="text-align:right;"><strong>+4</strong></td></tr>
-
 <tr><td>🥉 Best 3rd Place</td><td style="text-align:right;"><strong>+2</strong></td></tr>
 
 </table>
@@ -865,13 +1161,9 @@ padding:20px;
 <table>
 
 <tr><td>Round of 32 Win</td><td style="text-align:right;"><strong>+4</strong></td></tr>
-
 <tr><td>Round of 16 Win</td><td style="text-align:right;"><strong>+6</strong></td></tr>
-
 <tr><td>Quarterfinal Win</td><td style="text-align:right;"><strong>+8</strong></td></tr>
-
 <tr><td>Semifinal Win</td><td style="text-align:right;"><strong>+10</strong></td></tr>
-
 <tr><td>🏆 World Champion</td><td style="text-align:right;"><strong>+15</strong></td></tr>
 
 </table>
@@ -883,79 +1175,102 @@ padding:20px;
 <br>
 
 <div style="
-background:#17365d;
+background:#173b63;
 border-radius:16px;
-padding:22px;
+padding:20px;
 text-align:center;
-line-height:2;
 font-size:18px;
+line-height:2;
 ">
 
-<strong>Maximum Knockout Points Available:</strong>
-
-43 Points
+<strong>Current Queen 👑</strong>
 
 <br>
 
-4 + 6 + 8 + 10 + 15
+💙 Momma M — <strong>43 Points</strong>
 
 <br><br>
 
-<strong>Current Leader:</strong>
-
-🏟️ Matt — 42
+<strong>Closest Challenger</strong>
 
 <br>
 
-<strong>Closest Challenger:</strong>
+🏟️ Matt — <strong>42 Points</strong>
 
-👑 J.D. — 39
+<br><br>
+
+<strong>Biggest Match Tonight</strong>
+
+<br>
+
+🇺🇸 USA vs 🇧🇪 Belgium
 
 </div>
 
 </div>
 
 <footer style="
-margin-top:35px;
+margin-top:30px;
 padding:40px;
-text-align:center;
 background:#08111d;
 border-top:3px solid gold;
-line-height:2;
-color:#d7e5f3;
+text-align:center;
+line-height:2.1;
+color:#dbe7f4;
 ">
 
-<h2 style="color:gold;margin-bottom:15px;">
+<h2 style="color:gold;margin-bottom:16px;">
 
 🏆 THE FAMILY CUP
 
 </h2>
 
-FIFA World Cup 2026
+<div style="font-size:20px;font-weight:700;">
+
+👑 The King has fallen.
 
 <br>
 
-Round of 16
+💙 A Queen now rules.
 
-<br><br>
-
-<strong>Eight owners entered.</strong>
+</div>
 
 <br>
 
-<strong>One champion will remain.</strong>
+<div style="font-size:18px;">
+
+The greatest Family Cup match has already been played.
+
+The championship race is tighter than ever.
+
+The basement has a permanent resident.
+
+And tonight...
+
+an entire family becomes one fan base.
+
+</div>
 
 <br><br>
 
-<i>
+<div style="
+font-size:30px;
+font-weight:900;
+color:white;
+letter-spacing:2px;
+">
 
-The crown changed hands.
+🇺🇸 USA!
 
-The greatest Family Cup match has been played.
+<br>
 
-The best is still to come.
+USA!
 
-</i>
+<br>
+
+USA! 🇺🇸
+
+</div>
 
 </footer>
 
