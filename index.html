@@ -25,10 +25,6 @@ body {
     padding: 20px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -45,10 +41,6 @@ header p {
     color: #aeb7c4;
     font-size: 15px;
 }
-
-/* =========================
-   CHILD SELECTOR
-========================= */
 
 .child-selector {
     display: flex;
@@ -73,10 +65,6 @@ header p {
     background: #252c38;
 }
 
-/* =========================
-   PROFILE
-========================= */
-
 .profile-card {
     background: #191f29;
     border: 1px solid #303846;
@@ -85,10 +73,6 @@ header p {
     margin-bottom: 24px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
-
-/* =========================
-   CHARACTER
-========================= */
 
 .character-area {
     text-align: center;
@@ -99,16 +83,12 @@ header p {
     width: 230px;
     height: 280px;
     margin: 0 auto 18px;
-
     background: #11161d;
-
     border: 3px solid #303846;
     border-radius: 18px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
 
@@ -143,10 +123,6 @@ header p {
     font-size: 13px;
 }
 
-/* =========================
-   NAME + LEVEL
-========================= */
-
 .profile-name {
     text-align: center;
     font-size: 30px;
@@ -161,10 +137,6 @@ header p {
     font-weight: bold;
     margin-bottom: 18px;
 }
-
-/* =========================
-   OVERALL XP
-========================= */
 
 .xp-text {
     display: flex;
@@ -190,10 +162,6 @@ header p {
     border-radius: 999px;
     transition: width 0.5s ease;
 }
-
-/* =========================
-   SKILLS
-========================= */
 
 .skills-title {
     font-size: 24px;
@@ -245,20 +213,12 @@ header p {
     height: 11px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .footer {
     text-align: center;
     color: #697383;
     font-size: 12px;
     margin: 30px 0 10px;
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 650px) {
 
@@ -295,181 +255,120 @@ header p {
 
 <div class="container">
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<header>
+    <h1>🌱 REAL LIFE GROWTH</h1>
+    <p>This is who you're growing to become.</p>
+</header>
 
-    <header>
+<div class="child-selector">
 
-        <h1>🌱 REAL LIFE GROWTH</h1>
+    <button
+        class="child-button active"
+        onclick="selectChild('JD')"
+        id="button-JD">
+        JD
+    </button>
 
-        <p>
-            This is who you're growing to become.
-        </p>
+    <button
+        class="child-button"
+        onclick="selectChild('Michael')"
+        id="button-Michael">
+        Michael
+    </button>
 
-    </header>
+</div>
 
+<div class="profile-card">
 
-    <!-- =========================
-         CHILD SELECTOR
-    ========================== -->
+    <div class="character-area">
 
-    <div class="child-selector">
+        <div class="character-frame">
 
-        <button
-            class="child-button active"
-            onclick="selectChild('JD')"
-            id="button-JD">
-
-            JD
-
-        </button>
-
-        <button
-            class="child-button"
-            onclick="selectChild('Michael')"
-            id="button-Michael">
-
-            Michael
-
-        </button>
-
-    </div>
-
-
-    <!-- =========================
-         PROFILE
-    ========================== -->
-
-    <div class="profile-card">
-
-
-        <!-- CHARACTER -->
-
-        <div class="character-area">
-
-            <div class="character-frame">
-
-                <img
-                    id="characterImage"
-                    class="character-image"
-                    src="images/JD/level-1.png"
-                    alt="JD character">
-
-                <div
-                    id="characterPlaceholder"
-                    class="character-placeholder"
-                    style="display:none;">
-
-                    <span class="baby">👶</span>
-
-                    Character artwork coming soon.
-
-                </div>
-
-            </div>
-
+            <img
+                id="characterImage"
+                class="character-image"
+                src="images/JD/level-2.png"
+                alt="JD character">
 
             <div
-                id="characterStage"
-                class="character-stage">
+                id="characterPlaceholder"
+                class="character-placeholder"
+                style="display:none;">
 
-                BABY • LEVEL 1
+                <span class="baby">👶</span>
 
-            </div>
-
-
-            <div
-                id="characterCaption"
-                class="character-caption">
-
-                The beginning of the journey.
+                Character artwork coming soon.
 
             </div>
 
         </div>
-
-
-        <!-- NAME -->
 
         <div
-            class="profile-name"
-            id="childName">
-
-            JD
-
+            id="characterStage"
+            class="character-stage">
+            BABY • LEVEL 2
         </div>
-
-
-        <!-- OVERALL LEVEL -->
 
         <div
-            class="overall-level"
-            id="overallLevel">
-
-            LEVEL 1
-
-        </div>
-
-
-        <!-- OVERALL XP -->
-
-        <div class="xp-text">
-
-            <span id="overallCurrentXP">
-                0 XP
-            </span>
-
-            <span id="overallNextXP">
-                83 XP
-            </span>
-
-        </div>
-
-
-        <div class="progress-background">
-
-            <div
-                class="progress-fill"
-                id="overallProgress">
-
-            </div>
-
+            id="characterCaption"
+            class="character-caption">
+            The beginning of the journey.
         </div>
 
     </div>
-
-
-    <!-- =========================
-         SKILLS
-    ========================== -->
-
-    <div class="skills-title">
-        Skills
-    </div>
-
 
     <div
-        class="skills-grid"
-        id="skillsGrid">
+        class="profile-name"
+        id="childName">
+        JD
+    </div>
+
+    <div
+        class="overall-level"
+        id="overallLevel">
+        LEVEL 2
+    </div>
+
+    <div class="xp-text">
+
+        <span id="overallCurrentXP">
+            105 XP
+        </span>
+
+        <span id="overallNextXP">
+            174 XP
+        </span>
 
     </div>
 
+    <div class="progress-background">
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <div class="footer">
-
-        Growth is not about being better than someone else.<br>
-
-        It's about becoming who you're capable of becoming.
+        <div
+            class="progress-fill"
+            id="overallProgress">
+        </div>
 
     </div>
 
 </div>
 
+<div class="skills-title">
+    Skills
+</div>
+
+<div
+    class="skills-grid"
+    id="skillsGrid">
+</div>
+
+<div class="footer">
+
+    Growth is not about being better than someone else.<br>
+    It's about becoming who you're capable of becoming.
+
+</div>
+
+</div>
 
 <script>
 
@@ -518,18 +417,123 @@ const skills = [
 const players = {
 
     JD: {
-        xp: {}
+        xp: {
+            "📚 Reading": 30,
+            "🤝 Friend Relationships": 60,
+            "🧹 Responsibility": 10,
+            "🧠 Critical Thinking": 5
+        }
     },
 
     Michael: {
-        xp: {}
+        xp: {
+            "📚 Reading": 50
+        }
     }
 
 };
 
 
 /* =========================================================
-   CHARACTER STAGES
+   INITIALIZE ALL SKILLS
+========================================================= */
+
+function initializePlayers() {
+
+    Object.keys(players).forEach(player => {
+
+        skills.forEach(skill => {
+
+            if (players[player].xp[skill.name] === undefined) {
+                players[player].xp[skill.name] = 0;
+            }
+
+        });
+
+    });
+
+}
+
+initializePlayers();
+
+
+/* =========================================================
+   RUNESCAPE-INSPIRED XP CURVE
+========================================================= */
+
+function xpForLevel(level) {
+
+    if (level <= 1) {
+        return 0;
+    }
+
+    let total = 0;
+
+    for (let i = 1; i < level; i++) {
+
+        total += Math.floor(
+            i + 300 * Math.pow(2, i / 7)
+        );
+
+    }
+
+    return Math.floor(total / 4);
+
+}
+
+
+/* =========================================================
+   GET LEVEL
+========================================================= */
+
+function getLevel(xp) {
+
+    let level = 1;
+
+    while (xp >= xpForLevel(level + 1)) {
+
+        level++;
+
+        if (level >= 99) {
+            return 99;
+        }
+
+    }
+
+    return level;
+
+}
+
+
+/* =========================================================
+   GET PROGRESS
+========================================================= */
+
+function getProgress(xp) {
+
+    const level = getLevel(xp);
+
+    if (level >= 99) {
+        return 100;
+    }
+
+    const currentLevelXP = xpForLevel(level);
+    const nextLevelXP = xpForLevel(level + 1);
+
+    const progress =
+        ((xp - currentLevelXP) /
+        (nextLevelXP - currentLevelXP)) * 100;
+
+    return Math.max(
+        0,
+        Math.min(100, progress)
+    );
+
+}
+
+
+/* =========================================================
+   CHARACTER STAGE
 ========================================================= */
 
 function getCharacterStage(level) {
@@ -597,115 +601,6 @@ function getCharacterStage(level) {
 
 
 /* =========================================================
-   INITIALIZE PLAYERS
-========================================================= */
-
-function initializePlayers() {
-
-    Object.keys(players).forEach(player => {
-
-        skills.forEach(skill => {
-
-            if (
-                players[player].xp[skill.name] === undefined
-            ) {
-
-                players[player].xp[skill.name] = 0;
-
-            }
-
-        });
-
-    });
-
-}
-
-initializePlayers();
-
-
-/* =========================================================
-   RUNESCAPE-INSPIRED XP CURVE
-========================================================= */
-
-function xpForLevel(level) {
-
-    if (level <= 1) {
-        return 0;
-    }
-
-    let total = 0;
-
-    for (let i = 1; i < level; i++) {
-
-        total += Math.floor(
-            i + 300 * Math.pow(2, i / 7)
-        );
-
-    }
-
-    return Math.floor(total / 4);
-
-}
-
-
-/* =========================================================
-   GET LEVEL
-========================================================= */
-
-function getLevel(xp) {
-
-    let level = 1;
-
-    while (
-        xp >= xpForLevel(level + 1)
-    ) {
-
-        level++;
-
-        if (level >= 99) {
-            return 99;
-        }
-
-    }
-
-    return level;
-
-}
-
-
-/* =========================================================
-   GET PROGRESS
-========================================================= */
-
-function getProgress(xp) {
-
-    const level = getLevel(xp);
-
-    if (level >= 99) {
-        return 100;
-    }
-
-    const currentLevelXP =
-        xpForLevel(level);
-
-    const nextLevelXP =
-        xpForLevel(level + 1);
-
-    const progress =
-        (
-            (xp - currentLevelXP) /
-            (nextLevelXP - currentLevelXP)
-        ) * 100;
-
-    return Math.max(
-        0,
-        Math.min(100, progress)
-    );
-
-}
-
-
-/* =========================================================
    CURRENT CHILD
 ========================================================= */
 
@@ -723,18 +618,12 @@ function selectChild(child) {
     document
         .querySelectorAll(".child-button")
         .forEach(button => {
-
             button.classList.remove("active");
-
         });
 
-
     document
-        .getElementById(
-            "button-" + child
-        )
+        .getElementById("button-" + child)
         .classList.add("active");
-
 
     render();
 
@@ -750,9 +639,7 @@ function getOverallXP(player) {
     let total = 0;
 
     skills.forEach(skill => {
-
         total += player.xp[skill.name];
-
     });
 
     return total;
@@ -767,31 +654,10 @@ function getOverallXP(player) {
 function updateCharacter(level) {
 
     const image =
-        document.getElementById(
-            "characterImage"
-        );
+        document.getElementById("characterImage");
 
     const placeholder =
-        document.getElementById(
-            "characterPlaceholder"
-        );
-
-
-    /*
-       Every level gets its own image.
-
-       Example:
-
-       images/JD/level-1.png
-       images/JD/level-2.png
-       images/JD/level-3.png
-
-       or
-
-       images/Michael/level-1.png
-       images/Michael/level-2.png
-       images/Michael/level-3.png
-    */
+        document.getElementById("characterPlaceholder");
 
     const imagePath =
         "images/" +
@@ -800,7 +666,6 @@ function updateCharacter(level) {
         level +
         ".png";
 
-
     image.src = imagePath;
 
     image.alt =
@@ -808,33 +673,22 @@ function updateCharacter(level) {
         " character at level " +
         level;
 
-
-    /*
-       If the artwork doesn't exist yet,
-       show the temporary baby placeholder.
-    */
-
     image.onerror = function() {
 
         image.style.display = "none";
-
         placeholder.style.display = "block";
 
     };
 
-
     image.onload = function() {
 
         image.style.display = "block";
-
         placeholder.style.display = "none";
 
     };
 
-
     const stage =
         getCharacterStage(level);
-
 
     document.getElementById(
         "characterStage"
@@ -842,7 +696,6 @@ function updateCharacter(level) {
         stage.name +
         " • LEVEL " +
         level;
-
 
     document.getElementById(
         "characterCaption"
@@ -861,32 +714,22 @@ function render() {
     const player =
         players[currentChild];
 
-
-    /* -------------------------
-       NAME
-    ------------------------- */
-
     document.getElementById(
         "childName"
     ).textContent =
         currentChild;
 
 
-    /* -------------------------
-       OVERALL XP
-    ------------------------- */
+    /* OVERALL */
 
     const overallXP =
         getOverallXP(player);
 
-
     const overallLevel =
         getLevel(overallXP);
 
-
     const overallProgress =
         getProgress(overallXP);
-
 
     document.getElementById(
         "overallLevel"
@@ -894,13 +737,11 @@ function render() {
         "LEVEL " +
         overallLevel;
 
-
     document.getElementById(
         "overallCurrentXP"
     ).textContent =
         overallXP.toLocaleString() +
         " XP";
-
 
     if (overallLevel >= 99) {
 
@@ -921,7 +762,6 @@ function render() {
 
     }
 
-
     document.getElementById(
         "overallProgress"
     ).style.width =
@@ -929,90 +769,63 @@ function render() {
         "%";
 
 
-    /* -------------------------
-       CHARACTER
-    ------------------------- */
+    /* CHARACTER */
 
-    updateCharacter(
-        overallLevel
-    );
+    updateCharacter(overallLevel);
 
 
-    /* -------------------------
-       SKILLS
-    ------------------------- */
+    /* SKILLS */
 
     const grid =
-        document.getElementById(
-            "skillsGrid"
-        );
-
+        document.getElementById("skillsGrid");
 
     grid.innerHTML = "";
-
 
     skills.forEach(skill => {
 
         const xp =
             player.xp[skill.name];
 
-
         const level =
             getLevel(xp);
-
 
         const progress =
             getProgress(xp);
 
-
         const card =
-            document.createElement(
-                "div"
-            );
-
+            document.createElement("div");
 
         card.className =
             "skill-card";
-
 
         card.innerHTML = `
 
             <div class="skill-header">
 
                 <div class="skill-name">
-
                     ${skill.name}
-
                 </div>
 
                 <div class="skill-level">
-
                     LV ${level}
-
                 </div>
 
             </div>
-
 
             <div class="progress-background">
 
                 <div
                     class="progress-fill"
                     style="width: ${progress}%">
-
                 </div>
 
             </div>
 
-
             <div class="skill-xp">
 
                 <span>
-
                     ${xp.toLocaleString()} XP
-
                 </span>
-
 
                 <span>
 
@@ -1029,7 +842,6 @@ function render() {
             </div>
 
         `;
-
 
         grid.appendChild(card);
 
