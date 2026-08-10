@@ -1008,7 +1008,6 @@ header p {
 
 <script>
 
-
 /* =========================================================
    SKILLS
 ========================================================= */
@@ -1016,47 +1015,30 @@ header p {
 const skills = [
 
     { name: "⚾ Baseball" },
-
     { name: "🏀 Basketball" },
-
     { name: "🏈 Football" },
-
     { name: "⛳ Golf" },
-
     { name: "🏊 Swimming" },
 
     { name: "📚 Reading" },
-
     { name: "✍️ Writing" },
-
     { name: "🔢 Mathematics" },
-
     { name: "🎨 Drawing" },
-
     { name: "🧱 Building" },
-
     { name: "🎨 Designing" },
 
     { name: "🙏 God Relationship" },
-
     { name: "❤️ Family Relationship" },
-
     { name: "🤝 Friend Relationships" },
 
     { name: "💡 Creativity" },
-
     { name: "🍳 Cooking" },
-
     { name: "🧹 Responsibility" },
 
     { name: "🏃 Running / Speed" },
-
     { name: "💪 Strength" },
-
     { name: "♟️ Chess" },
-
     { name: "🧠 Critical Thinking" },
-
     { name: "🎵 Music" }
 
 ];
@@ -1068,53 +1050,38 @@ const skills = [
 
 const players = {
 
-
     JD: {
 
         xp: {
 
             "⚾ Baseball": 0,
-
             "🏀 Basketball": 0,
-
             "🏈 Football": 0,
-
             "⛳ Golf": 0,
-
             "🏊 Swimming": 0,
 
             "📚 Reading": 30,
-
             "✍️ Writing": 3,
-
             "🔢 Mathematics": 0,
-
             "🎨 Drawing": 0,
-
             "🧱 Building": 0,
-
             "🎨 Designing": 0,
 
             "🙏 God Relationship": 10,
-
             "❤️ Family Relationship": 40,
-
             "🤝 Friend Relationships": 120,
 
             "💡 Creativity": 4,
-
             "🍳 Cooking": 0,
 
-            "🧹 Responsibility": 20,
+            /* +5 buckled himself
+               +5 put his shoes away himself */
+            "🧹 Responsibility": 30,
 
             "🏃 Running / Speed": 8,
-
             "💪 Strength": 0,
-
             "♟️ Chess": 0,
-
             "🧠 Critical Thinking": 17,
-
             "🎵 Music": 20
 
         },
@@ -1129,52 +1096,69 @@ const players = {
         xp: {
 
             "⚾ Baseball": 20,
-
             "🏀 Basketball": 0,
-
             "🏈 Football": 2,
-
             "⛳ Golf": 0,
-
             "🏊 Swimming": 0,
 
             "📚 Reading": 85,
-
             "✍️ Writing": 9,
-
             "🔢 Mathematics": 0,
-
             "🎨 Drawing": 0,
-
             "🧱 Building": 0,
-
             "🎨 Designing": 0,
 
             "🙏 God Relationship": 10,
-
             "❤️ Family Relationship": 40,
-
             "🤝 Friend Relationships": 50,
 
             "💡 Creativity": 8,
-
             "🍳 Cooking": 0,
 
-            "🧹 Responsibility": 10,
+            /* +5 for buckling himself */
+            "🧹 Responsibility": 15,
 
             "🏃 Running / Speed": 10,
-
             "💪 Strength": 1,
-
             "♟️ Chess": 0,
-
             "🧠 Critical Thinking": 17,
-
             "🎵 Music": 20
 
         },
 
         trust: 97
+
+    }
+
+};
+
+
+/* =========================================================
+   CHARACTER ART
+========================================================= */
+
+/*
+   JD uses the normal level filenames.
+
+   Michael Level 2 uses the REAL uploaded picture.
+   We are deliberately NOT renaming that image.
+*/
+
+const characterImages = {
+
+    JD: {
+
+        1: "images/JD/level-1.png",
+        2: "images/JD/level-2.png"
+
+    },
+
+    Michael: {
+
+        1: "images/Michael/level-1.png",
+
+        2:
+        "images/Michael/ChatGPT Image Aug 9, 2026, 09_28_26 PM.png"
 
     }
 
@@ -1188,9 +1172,7 @@ const players = {
 function xpForLevel(level) {
 
     if (level <= 1) {
-
         return 0;
-
     }
 
     let total = 0;
@@ -1227,9 +1209,7 @@ function getLevel(xp) {
         level++;
 
         if (level >= 99) {
-
             return 99;
-
         }
 
     }
@@ -1249,9 +1229,7 @@ function getProgress(xp) {
         getLevel(xp);
 
     if (level >= 99) {
-
         return 100;
-
     }
 
     const current =
@@ -1274,11 +1252,13 @@ function getProgress(xp) {
 
 /* =========================================================
    OVERALL CHARACTER LEVEL
-=========================================================
-
-   Overall Level = 1 +
-   every individual skill level gained above Level 1.
 ========================================================= */
+
+/*
+   Overall level only changes when a SKILL changes level.
+
+   Raw XP by itself never increases the overall level.
+*/
 
 function getOverallLevel(player) {
 
@@ -1330,8 +1310,12 @@ function getCharacterStage(level) {
     if (level <= 9) {
 
         return {
+
             name: "BABY / LITTLE ONE",
-            caption: "The beginning of the journey."
+
+            caption:
+            "The beginning of the journey."
+
         };
 
     }
@@ -1339,8 +1323,12 @@ function getCharacterStage(level) {
     if (level <= 19) {
 
         return {
+
             name: "LITTLE KID",
-            caption: "Growing, learning, and discovering."
+
+            caption:
+            "Growing, learning, and discovering."
+
         };
 
     }
@@ -1348,8 +1336,12 @@ function getCharacterStage(level) {
     if (level <= 29) {
 
         return {
+
             name: "KID",
-            caption: "Building skills and becoming more capable."
+
+            caption:
+            "Building skills and becoming more capable."
+
         };
 
     }
@@ -1357,8 +1349,12 @@ function getCharacterStage(level) {
     if (level <= 49) {
 
         return {
+
             name: "YOUNG TEEN",
-            caption: "Growing stronger and discovering who you are."
+
+            caption:
+            "Growing stronger and discovering who you are."
+
         };
 
     }
@@ -1366,8 +1362,12 @@ function getCharacterStage(level) {
     if (level <= 69) {
 
         return {
+
             name: "TEEN",
-            caption: "Developing your strengths and character."
+
+            caption:
+            "Developing your strengths and character."
+
         };
 
     }
@@ -1375,8 +1375,12 @@ function getCharacterStage(level) {
     if (level <= 89) {
 
         return {
+
             name: "YOUNG ADULT",
-            caption: "Becoming the person you've worked to become."
+
+            caption:
+            "Becoming the person you've worked to become."
+
         };
 
     }
@@ -1385,7 +1389,8 @@ function getCharacterStage(level) {
 
         name: "ADULT",
 
-        caption: "A lifetime of growth."
+        caption:
+        "A lifetime of growth."
 
     };
 
@@ -1415,13 +1420,11 @@ function selectChild(child) {
 
         });
 
-
     document
         .getElementById(
             "button-" + child
         )
         .classList.add("active");
-
 
     render();
 
@@ -1455,16 +1458,28 @@ function updateCharacter(level) {
         Math.min(level, 5);
 
 
-    const path =
-        "images/" +
-        currentChild +
-        "/level-" +
-        level +
-        ".png";
+    /*
+       Use special character art if we have it.
+       Otherwise use the normal level filename.
+    */
+
+    let path =
+        characterImages[currentChild]?.[level];
+
+
+    if (!path) {
+
+        path =
+            "images/" +
+            currentChild +
+            "/level-" +
+            level +
+            ".png";
+
+    }
 
 
     image.src = path;
-
 
     image.alt =
         currentChild +
@@ -1690,7 +1705,6 @@ function render() {
                 <span>
                     ${xp.toLocaleString()} XP
                 </span>
-
 
                 <span>
 
