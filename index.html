@@ -152,14 +152,6 @@ header p {
     margin-bottom: 4px;
 }
 
-.overall-level {
-    text-align: center;
-    font-size: 28px;
-    color: #e0b84f;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
 .overall-label {
     text-align: center;
     color: #aeb7c4;
@@ -169,8 +161,16 @@ header p {
     margin-bottom: 4px;
 }
 
+.overall-level {
+    text-align: center;
+    font-size: 28px;
+    color: #e0b84f;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
 /* =========================
-   XP
+   OVERALL PROGRESS
 ========================= */
 
 .xp-text {
@@ -195,6 +195,74 @@ header p {
     width: 0%;
     background: linear-gradient(90deg, #c99425, #f1d36b);
     border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+/* =========================
+   TRUST
+========================= */
+
+.trust-card {
+    margin-top: 24px;
+    padding: 18px;
+
+    background: #151b23;
+    border: 1px solid #303846;
+    border-radius: 14px;
+}
+
+.trust-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.trust-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.trust-value {
+    color: #8fd694;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.trust-description {
+    color: #8e98a6;
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.trust-bar-background {
+    width: 100%;
+    height: 14px;
+
+    background: #0d1015;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    border: 1px solid #353d49;
+}
+
+.trust-bar-fill {
+    height: 100%;
+
+    width: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #5ca866,
+        #9be3a0
+    );
+
+    border-radius: 999px;
+
     transition: width 0.6s ease;
 }
 
@@ -414,167 +482,191 @@ header p {
 
 <div class="container">
 
-    <!-- HEADER -->
+<header>
 
-    <header>
+    <h1>🌱 REAL LIFE GROWTH</h1>
 
-        <h1>🌱 REAL LIFE GROWTH</h1>
+    <p>
+        This is who you're growing to become.
+    </p>
 
-        <p>
-            This is who you're growing to become.
-        </p>
-
-    </header>
+</header>
 
 
-    <!-- CHILD SELECTOR -->
+<!-- =========================
+     CHILD SELECTOR
+========================= -->
 
-    <div class="child-selector">
+<div class="child-selector">
 
-        <button
-            class="child-button active"
-            onclick="selectChild('JD')"
-            id="button-JD">
+    <button
+        class="child-button active"
+        onclick="selectChild('JD')"
+        id="button-JD">
 
-            JD
+        JD
 
-        </button>
-
-        <button
-            class="child-button"
-            onclick="selectChild('Michael')"
-            id="button-Michael">
-
-            Michael
-
-        </button>
-
-    </div>
+    </button>
 
 
-    <!-- PROFILE -->
+    <button
+        class="child-button"
+        onclick="selectChild('Michael')"
+        id="button-Michael">
 
-    <div class="profile-card">
+        Michael
+
+    </button>
+
+</div>
 
 
-        <!-- CHARACTER -->
+<!-- =========================
+     PROFILE
+========================= -->
 
-        <div class="character-area">
+<div class="profile-card">
 
-            <div class="character-frame">
 
-                <img
-                    id="characterImage"
-                    class="character-image"
-                    src="images/JD/level-1.png"
-                    alt="JD character">
+    <!-- CHARACTER -->
 
-                <div
-                    id="characterPlaceholder"
-                    class="character-placeholder"
-                    style="display:none;">
+    <div class="character-area">
 
-                    <span class="baby">👶</span>
+        <div class="character-frame">
 
-                    Character artwork coming soon.
-
-                </div>
-
-            </div>
-
+            <img
+                id="characterImage"
+                class="character-image"
+                src="images/JD/level-1.png"
+                alt="JD character">
 
             <div
-                id="characterStage"
-                class="character-stage">
+                id="characterPlaceholder"
+                class="character-placeholder"
+                style="display:none;">
 
-                BABY • LEVEL 1
+                <span class="baby">👶</span>
 
-            </div>
-
-
-            <div
-                id="characterCaption"
-                class="character-caption">
-
-                The beginning of the journey.
+                Character artwork coming soon.
 
             </div>
 
         </div>
 
-
-        <!-- NAME -->
 
         <div
-            class="profile-name"
-            id="childName">
+            id="characterStage"
+            class="character-stage">
 
-            JD
+            BABY / LITTLE ONE • LEVEL 1
 
         </div>
 
-
-        <!-- OVERALL LEVEL -->
-
-        <div class="overall-label">
-            Overall Character
-        </div>
 
         <div
-            class="overall-level"
-            id="overallLevel">
+            id="characterCaption"
+            class="character-caption">
 
-            LEVEL 1
-
-        </div>
-
-
-        <!-- OVERALL PROGRESS -->
-
-        <div class="xp-text">
-
-            <span id="overallCurrentXP">
-                0 XP
-            </span>
-
-            <span id="overallNextXP">
-                Next Skill Level-Up
-            </span>
-
-        </div>
-
-
-        <div class="progress-background">
-
-            <div
-                class="progress-fill"
-                id="overallProgress">
-
-            </div>
+            The beginning of the journey.
 
         </div>
 
     </div>
 
 
-    <!-- SKILLS -->
+    <!-- NAME -->
 
-    <div class="skills-title">
-        Skills
+    <div
+        class="profile-name"
+        id="childName">
+
+        JD
+
+    </div>
+
+
+    <!-- OVERALL LEVEL -->
+
+    <div class="overall-label">
+        Overall Character
     </div>
 
 
     <div
-        class="skills-grid"
-        id="skillsGrid">
+        class="overall-level"
+        id="overallLevel">
+
+        LEVEL 1
 
     </div>
 
 
-    <div class="footer">
+    <!-- OVERALL PROGRESS -->
 
-        Growth is not about being better than someone else.<br>
-        It's about becoming who you're capable of becoming.
+    <div class="xp-text">
+
+        <span id="overallCurrentXP">
+            0 TOTAL XP
+        </span>
+
+        <span id="overallNextXP">
+            Next skill level-up
+        </span>
+
+    </div>
+
+
+    <div class="progress-background">
+
+        <div
+            class="progress-fill"
+            id="overallProgress">
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TRUST
+    ========================== -->
+
+    <div class="trust-card">
+
+        <div class="trust-header">
+
+            <div class="trust-title">
+                🛡️ Trust
+            </div>
+
+            <div
+                class="trust-value"
+                id="trustValue">
+
+                100%
+
+            </div>
+
+        </div>
+
+
+        <div class="trust-description">
+
+            Trust reflects how responsibly you handle
+            the freedom and responsibility you're given.
+
+        </div>
+
+
+        <div class="trust-bar-background">
+
+            <div
+                class="trust-bar-fill"
+                id="trustBar">
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -582,7 +674,34 @@ header p {
 
 
 <!-- =========================
-     LEVEL UP CELEBRATION
+     SKILLS
+========================= -->
+
+<div class="skills-title">
+    Skills
+</div>
+
+
+<div
+    class="skills-grid"
+    id="skillsGrid">
+
+</div>
+
+
+<div class="footer">
+
+    Growth is not about being better than someone else.<br>
+
+    It's about becoming who you're capable of becoming.
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     LEVEL-UP CELEBRATION
 ========================= -->
 
 <div
@@ -599,13 +718,16 @@ header p {
 
         </div>
 
+
         <h2 id="celebrationTitle">
             LEVEL UP!
         </h2>
 
+
         <h3 id="celebrationSkill">
             Reading
         </h3>
+
 
         <div
             class="level-change"
@@ -615,6 +737,7 @@ header p {
 
         </div>
 
+
         <div
             class="level-up-message"
             id="celebrationMessage">
@@ -622,6 +745,7 @@ header p {
             Your growth is becoming part of who you are.
 
         </div>
+
 
         <button
             class="close-level-up"
@@ -688,13 +812,17 @@ const players = {
 
             "📚 Reading": 30,
 
-            "🤝 Friend Relationships": 60,
+            "🤝 Friend Relationships": 120,
+
+            "❤️ Family Relationship": 5,
 
             "🧹 Responsibility": 10,
 
-            "🧠 Critical Thinking": 5
+            "🧠 Critical Thinking": 10
 
-        }
+        },
+
+        trust: 98
 
     },
 
@@ -703,9 +831,17 @@ const players = {
 
         xp: {
 
-            "📚 Reading": 50
+            "📚 Reading": 50,
 
-        }
+            "🤝 Friend Relationships": 50,
+
+            "❤️ Family Relationship": 5,
+
+            "🧠 Critical Thinking": 4
+
+        },
+
+        trust: 97
 
     }
 
@@ -794,7 +930,7 @@ function getLevel(xp) {
 
 
 /* =========================================================
-   GET PROGRESS WITHIN CURRENT SKILL LEVEL
+   GET SKILL PROGRESS
 ========================================================= */
 
 function getProgress(xp) {
@@ -831,19 +967,10 @@ function getProgress(xp) {
    OVERALL CHARACTER LEVEL
 =========================================================
 
-   IMPORTANT:
+   Overall level is NOT based on total XP.
 
-   Overall Level DOES NOT come from total XP.
-
-   Every individual skill level-up contributes
-   one level to the overall character.
-
-   All skills begin at Level 1.
-
-   Therefore:
-
-   Overall Level =
-   1 + the total number of skill levels gained
+   Every individual skill level gained above Level 1
+   contributes one level to the overall character.
 ========================================================= */
 
 function getOverallLevel(player) {
@@ -865,7 +992,7 @@ function getOverallLevel(player) {
 
 
 /* =========================================================
-   TOTAL XP FOR DISPLAY
+   TOTAL XP
 ========================================================= */
 
 function getOverallXP(player) {
@@ -1061,299 +1188,6 @@ function updateCharacter(level) {
 
 
 /* =========================================================
-   LOCAL STORAGE LEVEL TRACKING
-========================================================= */
-
-function getSavedLevels() {
-
-    const saved =
-        localStorage.getItem(
-            "realLifeGrowthLevels"
-        );
-
-
-    if (!saved) {
-
-        return null;
-
-    }
-
-
-    try {
-
-        return JSON.parse(saved);
-
-    } catch {
-
-        return null;
-
-    }
-
-}
-
-
-function saveCurrentLevels() {
-
-    const data = {};
-
-    Object.keys(players).forEach(playerName => {
-
-        data[playerName] = {};
-
-        skills.forEach(skill => {
-
-            data[playerName][skill.name] =
-                getLevel(
-                    players[playerName].xp[skill.name]
-                );
-
-        });
-
-        data[playerName].overall =
-            getOverallLevel(
-                players[playerName]
-            );
-
-    });
-
-
-    localStorage.setItem(
-        "realLifeGrowthLevels",
-        JSON.stringify(data)
-    );
-
-}
-
-
-/* =========================================================
-   LEVEL-UP DETECTION
-========================================================= */
-
-function findLevelUps(playerName) {
-
-    const saved =
-        getSavedLevels();
-
-
-    /*
-       First visit:
-
-       Save the current state but don't celebrate
-       anything.
-
-       This prevents the website from celebrating
-       every skill when first installed.
-    */
-
-    if (!saved) {
-
-        saveCurrentLevels();
-
-        return [];
-
-    }
-
-
-    const previous =
-        saved[playerName];
-
-
-    if (!previous) {
-
-        return [];
-
-    }
-
-
-    const current =
-        players[playerName];
-
-
-    const levelUps = [];
-
-
-    skills.forEach(skill => {
-
-        const oldLevel =
-            previous[skill.name] || 1;
-
-
-        const newLevel =
-            getLevel(
-                current.xp[skill.name]
-            );
-
-
-        if (newLevel > oldLevel) {
-
-            for (
-                let level = oldLevel + 1;
-                level <= newLevel;
-                level++
-            ) {
-
-                levelUps.push({
-
-                    type: "skill",
-
-                    skill: skill.name,
-
-                    oldLevel: level - 1,
-
-                    newLevel: level
-
-                });
-
-            }
-
-        }
-
-    });
-
-
-    const oldOverall =
-        previous.overall || 1;
-
-
-    const newOverall =
-        getOverallLevel(current);
-
-
-    if (newOverall > oldOverall) {
-
-        for (
-            let level = oldOverall + 1;
-            level <= newOverall;
-            level++
-        ) {
-
-            levelUps.push({
-
-                type: "overall",
-
-                oldLevel: level - 1,
-
-                newLevel: level
-
-            });
-
-        }
-
-    }
-
-
-    return levelUps;
-
-}
-
-
-/* =========================================================
-   LEVEL-UP CELEBRATION
-========================================================= */
-
-function celebrateLevelUp(levelUp) {
-
-    const overlay =
-        document.getElementById(
-            "levelUpOverlay"
-        );
-
-
-    const title =
-        document.getElementById(
-            "celebrationTitle"
-        );
-
-
-    const skill =
-        document.getElementById(
-            "celebrationSkill"
-        );
-
-
-    const level =
-        document.getElementById(
-            "celebrationLevel"
-        );
-
-
-    const message =
-        document.getElementById(
-            "celebrationMessage"
-        );
-
-
-    const icon =
-        document.getElementById(
-            "celebrationIcon"
-        );
-
-
-    if (levelUp.type === "skill") {
-
-        icon.textContent = "🎉";
-
-        title.textContent =
-            "SKILL LEVEL UP!";
-
-        skill.textContent =
-            levelUp.skill;
-
-        level.innerHTML =
-            "LEVEL " +
-            levelUp.oldLevel +
-            " → <span>LEVEL " +
-            levelUp.newLevel +
-            "</span>";
-
-        message.textContent =
-            "Your growth is becoming part of who you are.";
-
-    }
-
-
-    if (levelUp.type === "overall") {
-
-        icon.textContent = "🌟";
-
-        title.textContent =
-            "CHARACTER LEVEL UP!";
-
-        skill.textContent =
-            currentChild;
-
-        level.innerHTML =
-            "LEVEL " +
-            levelUp.oldLevel +
-            " → <span>LEVEL " +
-            levelUp.newLevel +
-            "</span>";
-
-        message.textContent =
-            "You are growing into the person you're becoming.";
-
-    }
-
-
-    overlay.classList.add("show");
-
-}
-
-
-/* =========================================================
-   CLOSE LEVEL-UP
-========================================================= */
-
-function closeLevelUp() {
-
-    document
-        .getElementById("levelUpOverlay")
-        .classList.remove("show");
-
-}
-
-
-/* =========================================================
    RENDER
 ========================================================= */
 
@@ -1363,9 +1197,7 @@ function render() {
         players[currentChild];
 
 
-    /* -------------------------
-       NAME
-    ------------------------- */
+    /* NAME */
 
     document.getElementById(
         "childName"
@@ -1373,9 +1205,7 @@ function render() {
         currentChild;
 
 
-    /* -------------------------
-       OVERALL LEVEL
-    ------------------------- */
+    /* OVERALL LEVEL */
 
     const overallLevel =
         getOverallLevel(player);
@@ -1400,10 +1230,8 @@ function render() {
 
 
     /*
-       The overall progress bar now represents
-       progress toward the NEXT SKILL LEVEL-UP.
-
-       It is NOT based on total XP.
+       Overall progress shows the closest
+       skill to leveling up.
     */
 
     let closestProgress = 0;
@@ -1436,18 +1264,28 @@ function render() {
         "Next skill level-up";
 
 
-    /* -------------------------
-       CHARACTER
-    ------------------------- */
+    /* TRUST */
+
+    document.getElementById(
+        "trustValue"
+    ).textContent =
+        player.trust + "%";
+
+
+    document.getElementById(
+        "trustBar"
+    ).style.width =
+        player.trust + "%";
+
+
+    /* CHARACTER */
 
     updateCharacter(
         overallLevel
     );
 
 
-    /* -------------------------
-       SKILLS
-    ------------------------- */
+    /* SKILLS */
 
     const grid =
         document.getElementById(
@@ -1491,6 +1329,7 @@ function render() {
                     ${skill.name}
 
                 </div>
+
 
                 <div class="skill-level">
 
@@ -1547,87 +1386,10 @@ function render() {
 
 
 /* =========================================================
-   START APPLICATION
+   INITIAL DISPLAY
 ========================================================= */
 
 render();
-
-
-/*
-   Check for new level-ups AFTER rendering.
-*/
-
-const levelUps =
-    findLevelUps(currentChild);
-
-
-/*
-   Save the new state after checking.
-*/
-
-saveCurrentLevels();
-
-
-/*
-   Celebrate the first level-up found.
-
-   If multiple things leveled up,
-   the first celebration appears first.
-*/
-
-if (levelUps.length > 0) {
-
-    let celebrationIndex = 0;
-
-
-    function showNextCelebration() {
-
-        if (
-            celebrationIndex >=
-            levelUps.length
-        ) {
-
-            return;
-
-        }
-
-
-        celebrateLevelUp(
-            levelUps[celebrationIndex]
-        );
-
-        celebrationIndex++;
-
-    }
-
-
-    /*
-       Replace the close button behavior
-       so multiple level-ups can be celebrated.
-    */
-
-    const closeButton =
-        document.querySelector(
-            ".close-level-up"
-        );
-
-
-    closeButton.onclick = function() {
-
-        closeLevelUp();
-
-
-        setTimeout(
-            showNextCelebration,
-            350
-        );
-
-    };
-
-
-    showNextCelebration();
-
-}
 
 </script>
 
