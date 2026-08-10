@@ -321,7 +321,7 @@ header p {
 }
 
 /* =========================
-   LEVEL UP OVERLAY
+   LEVEL UP CELEBRATION
 ========================= */
 
 .level-up-overlay {
@@ -812,17 +812,21 @@ const players = {
 
             "📚 Reading": 30,
 
+            "✍️ Writing": 3,
+
+            "💡 Creativity": 1,
+
             "🤝 Friend Relationships": 120,
 
             "❤️ Family Relationship": 5,
 
             "🧹 Responsibility": 10,
 
-            "🧠 Critical Thinking": 10
+            "🧠 Critical Thinking": 13
 
         },
 
-        trust: 98
+        trust: 91
 
     },
 
@@ -831,13 +835,17 @@ const players = {
 
         xp: {
 
-            "📚 Reading": 50,
+            "📚 Reading": 85,
+
+            "✍️ Writing": 9,
+
+            "💡 Creativity": 5,
 
             "🤝 Friend Relationships": 50,
 
             "❤️ Family Relationship": 5,
 
-            "🧠 Critical Thinking": 4
+            "🧠 Critical Thinking": 12
 
         },
 
@@ -971,6 +979,17 @@ function getProgress(xp) {
 
    Every individual skill level gained above Level 1
    contributes one level to the overall character.
+
+   Example:
+
+   All skills Level 1
+   = Overall Level 1
+
+   One skill reaches Level 2
+   = Overall Level 2
+
+   Two skills reach Level 2
+   = Overall Level 3
 ========================================================= */
 
 function getOverallLevel(player) {
@@ -1132,6 +1151,17 @@ function updateCharacter(level) {
         );
 
 
+    /*
+       The picture changes automatically
+       according to the child's overall level.
+
+       JD Level 1:
+       images/JD/level-1.png
+
+       Michael Level 2:
+       images/Michael/level-2.png
+    */
+
     const imagePath =
         "images/" +
         currentChild +
@@ -1230,8 +1260,9 @@ function render() {
 
 
     /*
-       Overall progress shows the closest
-       skill to leveling up.
+       Overall progress shows how close the
+       child's strongest current skill is to
+       its next level.
     */
 
     let closestProgress = 0;
