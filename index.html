@@ -1009,7 +1009,7 @@ header p {
 <script>
 
 /* =========================================================
-   SKILLS
+   REAL LIFE GROWTH — PLAYER DATA
 ========================================================= */
 
 const skills = [
@@ -1074,8 +1074,9 @@ const players = {
             "💡 Creativity": 4,
             "🍳 Cooking": 0,
 
-            /* +5 buckled himself
-               +5 put his shoes away himself */
+            /* Responsibility updates:
+               - Buckled himself
+               - Put his shoes away himself */
             "🧹 Responsibility": 30,
 
             "🏃 Running / Speed": 8,
@@ -1095,34 +1096,74 @@ const players = {
 
         xp: {
 
-            "⚾ Baseball": 20,
+            "⚾ Baseball": 28,
             "🏀 Basketball": 0,
             "🏈 Football": 2,
             "⛳ Golf": 0,
             "🏊 Swimming": 0,
 
-            "📚 Reading": 85,
-            "✍️ Writing": 9,
+            /*
+               Finished his first chapter book
+               and read for over an hour.
+            */
+            "📚 Reading": 205,
+
+            /*
+               Writing:
+               - Previous writing XP
+               - Wrote name
+               - Wrote address
+               - Wrote parents' phone numbers
+            */
+            "✍️ Writing": 29,
+
             "🔢 Mathematics": 0,
             "🎨 Drawing": 0,
             "🧱 Building": 0,
             "🎨 Designing": 0,
 
             "🙏 God Relationship": 10,
-            "❤️ Family Relationship": 40,
-            "🤝 Friend Relationships": 50,
 
-            "💡 Creativity": 8,
+            /*
+               Helping a teacher and positive
+               family/community interactions.
+            */
+            "❤️ Family Relationship": 42,
+
+            /*
+               Meeting his new teacher and positive
+               social interactions.
+            */
+            "🤝 Friend Relationships": 55,
+
+            /*
+               Reading and story imagination.
+            */
+            "💡 Creativity": 16,
+
             "🍳 Cooking": 0,
 
-            /* +5 for buckling himself */
-            "🧹 Responsibility": 15,
+            /*
+               Helping a teacher move classroom items
+               + buckling himself.
+            */
+            "🧹 Responsibility": 45,
 
             "🏃 Running / Speed": 10,
             "💪 Strength": 1,
             "♟️ Chess": 0,
-            "🧠 Critical Thinking": 17,
-            "🎵 Music": 20
+
+            /*
+               Reading comprehension,
+               handling important personal information,
+               helping another person.
+            */
+            "🧠 Critical Thinking": 38,
+
+            /*
+               Worship music activity.
+            */
+            "🎵 Music": 30
 
         },
 
@@ -1137,28 +1178,37 @@ const players = {
    CHARACTER ART
 ========================================================= */
 
-/*
-   JD uses the normal level filenames.
-
-   Michael Level 2 uses the REAL uploaded picture.
-   We are deliberately NOT renaming that image.
-*/
-
 const characterImages = {
 
     JD: {
 
-        1: "images/JD/level-1.png",
-        2: "images/JD/level-2.png"
+        1:
+        "images/JD/level-1.png",
+
+        2:
+        "images/JD/level-2.png"
 
     },
 
+
     Michael: {
 
-        1: "images/Michael/level-1.png",
+        1:
+        "images/Michael/level-1.png",
 
         2:
-        "images/Michael/ChatGPT Image Aug 9, 2026, 09_28_26 PM.png"
+        "images/Michael/ChatGPT Image Aug 9, 2026, 09_28_26 PM.png",
+
+        /*
+           Upload the new Level 3 card as:
+
+           images/Michael/level-3.png
+
+           Then Michael's Level 3 artwork
+           will automatically appear.
+        */
+        3:
+        "images/Michael/level-3.png"
 
     }
 
@@ -1195,7 +1245,7 @@ function xpForLevel(level) {
 
 
 /* =========================================================
-   GET LEVEL
+   GET SKILL LEVEL
 ========================================================= */
 
 function getLevel(xp) {
@@ -1220,7 +1270,7 @@ function getLevel(xp) {
 
 
 /* =========================================================
-   GET PROGRESS
+   GET SKILL PROGRESS
 ========================================================= */
 
 function getProgress(xp) {
@@ -1252,13 +1302,16 @@ function getProgress(xp) {
 
 /* =========================================================
    OVERALL CHARACTER LEVEL
+=========================================================
+
+   IMPORTANT RULE:
+
+   A child ONLY increases their overall level
+   when one or more SKILLS actually reach
+   a new level.
+
+   Raw XP does NOT directly increase overall level.
 ========================================================= */
-
-/*
-   Overall level only changes when a SKILL changes level.
-
-   Raw XP by itself never increases the overall level.
-*/
 
 function getOverallLevel(player) {
 
@@ -1307,11 +1360,12 @@ function getOverallXP(player) {
 
 function getCharacterStage(level) {
 
-    if (level <= 9) {
+    if (level <= 1) {
 
         return {
 
-            name: "BABY / LITTLE ONE",
+            name:
+            "BABY / LITTLE ONE",
 
             caption:
             "The beginning of the journey."
@@ -1320,11 +1374,13 @@ function getCharacterStage(level) {
 
     }
 
-    if (level <= 19) {
+
+    if (level <= 2) {
 
         return {
 
-            name: "LITTLE KID",
+            name:
+            "LITTLE KID",
 
             caption:
             "Growing, learning, and discovering."
@@ -1333,11 +1389,13 @@ function getCharacterStage(level) {
 
     }
 
-    if (level <= 29) {
+
+    if (level <= 5) {
 
         return {
 
-            name: "KID",
+            name:
+            "KID",
 
             caption:
             "Building skills and becoming more capable."
@@ -1346,11 +1404,58 @@ function getCharacterStage(level) {
 
     }
 
+
+    if (level <= 10) {
+
+        return {
+
+            name:
+            "BIG KID",
+
+            caption:
+            "Growing stronger, wiser, and more independent."
+
+        };
+
+    }
+
+
+    if (level <= 19) {
+
+        return {
+
+            name:
+            "YOUNG HERO",
+
+            caption:
+            "Learning to use your strengths for good."
+
+        };
+
+    }
+
+
+    if (level <= 29) {
+
+        return {
+
+            name:
+            "KID LEADER",
+
+            caption:
+            "Building character and helping others."
+
+        };
+
+    }
+
+
     if (level <= 49) {
 
         return {
 
-            name: "YOUNG TEEN",
+            name:
+            "YOUNG TEEN",
 
             caption:
             "Growing stronger and discovering who you are."
@@ -1359,11 +1464,13 @@ function getCharacterStage(level) {
 
     }
 
+
     if (level <= 69) {
 
         return {
 
-            name: "TEEN",
+            name:
+            "TEEN",
 
             caption:
             "Developing your strengths and character."
@@ -1372,11 +1479,13 @@ function getCharacterStage(level) {
 
     }
 
+
     if (level <= 89) {
 
         return {
 
-            name: "YOUNG ADULT",
+            name:
+            "YOUNG ADULT",
 
             caption:
             "Becoming the person you've worked to become."
@@ -1385,9 +1494,11 @@ function getCharacterStage(level) {
 
     }
 
+
     return {
 
-        name: "ADULT",
+        name:
+        "ADULT",
 
         caption:
         "A lifetime of growth."
@@ -1416,15 +1527,21 @@ function selectChild(child) {
         .querySelectorAll(".child-button")
         .forEach(button => {
 
-            button.classList.remove("active");
+            button.classList.remove(
+                "active"
+            );
 
         });
+
 
     document
         .getElementById(
             "button-" + child
         )
-        .classList.add("active");
+        .classList.add(
+            "active"
+        );
+
 
     render();
 
@@ -1442,10 +1559,12 @@ function updateCharacter(level) {
             "characterImage"
         );
 
+
     const placeholder =
         document.getElementById(
             "characterPlaceholder"
         );
+
 
     const frame =
         document.getElementById(
@@ -1459,13 +1578,20 @@ function updateCharacter(level) {
 
 
     /*
-       Use special character art if we have it.
-       Otherwise use the normal level filename.
+       Use the specific character image
+       assigned to this child's level.
     */
 
     let path =
-        characterImages[currentChild]?.[level];
+        characterImages
+            [currentChild]
+            ?.[level];
 
+
+    /*
+       If no artwork exists yet,
+       fall back to the standard filename.
+    */
 
     if (!path) {
 
@@ -1480,6 +1606,7 @@ function updateCharacter(level) {
 
 
     image.src = path;
+
 
     image.alt =
         currentChild +
@@ -1516,6 +1643,7 @@ function updateCharacter(level) {
     document.getElementById(
         "characterStage"
     ).textContent =
+
         stage.name +
         " • LEVEL " +
         level;
@@ -1524,9 +1652,117 @@ function updateCharacter(level) {
     document.getElementById(
         "characterCaption"
     ).textContent =
+
         stage.caption;
 
 }
+
+
+/* =========================================================
+   LEVEL-UP CELEBRATION
+========================================================= */
+
+function celebrateLevelUp(
+    skillName,
+    oldLevel,
+    newLevel
+) {
+
+    const overlay =
+        document.getElementById(
+            "levelUpOverlay"
+        );
+
+
+    const title =
+        document.getElementById(
+            "celebrationTitle"
+        );
+
+
+    const skill =
+        document.getElementById(
+            "celebrationSkill"
+        );
+
+
+    const level =
+        document.getElementById(
+            "celebrationLevel"
+        );
+
+
+    const message =
+        document.getElementById(
+            "celebrationMessage"
+        );
+
+
+    const icon =
+        document.getElementById(
+            "celebrationIcon"
+        );
+
+
+    icon.textContent =
+        "🎉";
+
+
+    title.textContent =
+        "SKILL LEVEL UP!";
+
+
+    skill.textContent =
+        skillName;
+
+
+    level.innerHTML =
+
+        "LEVEL " +
+        oldLevel +
+        " → " +
+        "<span>LEVEL " +
+        newLevel +
+        "</span>";
+
+
+    message.textContent =
+
+        currentChild +
+        " is growing! " +
+        skillName +
+        " just reached a new level.";
+
+
+    overlay.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE LEVEL-UP
+========================================================= */
+
+document
+    .getElementById(
+        "closeLevelUp"
+    )
+    .addEventListener(
+        "click",
+        function() {
+
+            document
+                .getElementById(
+                    "levelUpOverlay"
+                )
+                .classList.remove(
+                    "show"
+                );
+
+        }
+    );
 
 
 /* =========================================================
@@ -1569,8 +1805,13 @@ function render() {
 
 
     overallLevelElement.className =
+
         "overall-level level-" +
-        Math.min(overallLevel, 5);
+
+        Math.min(
+            overallLevel,
+            5
+        );
 
 
     /* TOTAL XP */
@@ -1578,6 +1819,7 @@ function render() {
     document.getElementById(
         "overallCurrentXP"
     ).textContent =
+
         totalXP.toLocaleString() +
         " TOTAL XP";
 
@@ -1611,7 +1853,9 @@ function render() {
     document.getElementById(
         "overallProgress"
     ).style.width =
-        closestProgress + "%";
+
+        closestProgress +
+        "%";
 
 
     /* TRUST */
@@ -1619,13 +1863,17 @@ function render() {
     document.getElementById(
         "trustValue"
     ).textContent =
-        player.trust + "%";
+
+        player.trust +
+        "%";
 
 
     document.getElementById(
         "trustBar"
     ).style.width =
-        player.trust + "%";
+
+        player.trust +
+        "%";
 
 
     /* CHARACTER */
@@ -1667,8 +1915,13 @@ function render() {
 
 
         card.className =
+
             "skill-card level-" +
-            Math.min(level, 5);
+
+            Math.min(
+                level,
+                5
+            );
 
 
         card.innerHTML = `
@@ -1678,6 +1931,7 @@ function render() {
                 <div class="skill-name">
                     ${skill.name}
                 </div>
+
 
                 <div
                     class="skill-level level-${Math.min(level, 5)}">
@@ -1706,11 +1960,14 @@ function render() {
                     ${xp.toLocaleString()} XP
                 </span>
 
+
                 <span>
 
                     ${
                         level >= 99
+
                         ? "MAX"
+
                         : xpForLevel(
                             level + 1
                           ).toLocaleString() +
@@ -1724,7 +1981,9 @@ function render() {
         `;
 
 
-        grid.appendChild(card);
+        grid.appendChild(
+            card
+        );
 
     });
 
