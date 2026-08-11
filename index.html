@@ -1,117 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <title>Real Life Growth</title>
 
+
 <style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: #10141b;
+
     color: #f5f5f5;
+
 }
+
 
 .container {
+
     max-width: 950px;
+
     margin: 0 auto;
+
     padding: 16px;
+
 }
 
-/* =========================
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header {
+
     text-align: center;
+
     margin-bottom: 18px;
+
 }
 
 header h1 {
+
     margin: 0;
+
     font-size: 31px;
+
     letter-spacing: 1px;
+
 }
 
 header p {
+
     margin: 7px 0 0;
+
     color: #aeb7c4;
+
     font-size: 14px;
+
 }
 
 
-/* =========================
-   CHILD SELECTOR
-========================= */
+/* =========================================================
+   CHILD BUTTONS
+========================================================= */
 
 .child-selector {
+
     display: flex;
+
     gap: 10px;
+
     margin-bottom: 16px;
+
 }
 
 .child-button {
+
     flex: 1;
+
     padding: 13px;
+
     border: 2px solid #303846;
+
     border-radius: 12px;
+
     background: #191f29;
+
     color: white;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.25s;
+
 }
 
 .child-button.active {
+
     border-color: #e0b84f;
+
     background: #252c38;
-    box-shadow: 0 0 14px rgba(224,184,79,0.15);
+
+    box-shadow:
+        0 0 14px rgba(224,184,79,0.15);
+
 }
 
 
-/* =========================
+/* =========================================================
    PROFILE
-========================= */
+========================================================= */
 
 .profile-card {
+
     background: #191f29;
+
     border: 1px solid #303846;
+
     border-radius: 18px;
+
     padding: 20px;
+
     margin-bottom: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+
 }
 
 
-/* =========================
+/* =========================================================
    CHARACTER
-========================= */
+========================================================= */
 
 .character-area {
+
     text-align: center;
+
     margin-bottom: 18px;
+
 }
 
+
 .character-frame {
+
     width: 215px;
-    height: 255px;
-    margin: 0 auto 14px;
+
+    height: 275px;
+
+    margin:
+        0 auto 14px;
 
     background: #11161d;
 
     border: 3px solid #303846;
+
     border-radius: 18px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -119,121 +193,227 @@ header p {
     transition:
         border-color 0.4s,
         box-shadow 0.4s;
+
 }
+
+
+.character-frame.level-1 {
+
+    border-color: #303846;
+
+}
+
 
 .character-frame.level-2 {
+
     border-color: #e0b84f;
-    box-shadow: 0 0 22px rgba(224,184,79,0.25);
+
+    box-shadow:
+        0 0 22px
+        rgba(224,184,79,0.25);
+
 }
+
 
 .character-frame.level-3 {
+
     border-color: #65d68b;
-    box-shadow: 0 0 24px rgba(101,214,139,0.25);
+
+    box-shadow:
+        0 0 28px
+        rgba(101,214,139,0.35);
+
 }
+
 
 .character-frame.level-4 {
+
     border-color: #58a6ff;
-    box-shadow: 0 0 26px rgba(88,166,255,0.25);
+
+    box-shadow:
+        0 0 28px
+        rgba(88,166,255,0.35);
+
 }
+
 
 .character-frame.level-5 {
+
     border-color: #b56cff;
-    box-shadow: 0 0 28px rgba(181,108,255,0.3);
+
+    box-shadow:
+        0 0 30px
+        rgba(181,108,255,0.35);
+
 }
+
 
 .character-image {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: contain;
+
     display: block;
+
 }
+
 
 .character-placeholder {
+
     text-align: center;
+
     color: #778291;
+
     padding: 20px;
+
 }
+
 
 .character-placeholder .baby {
+
     font-size: 75px;
+
     display: block;
+
     margin-bottom: 8px;
+
 }
+
 
 .character-stage {
+
     color: #e0b84f;
+
     font-weight: bold;
+
     font-size: 15px;
+
     margin-bottom: 3px;
+
 }
+
 
 .character-caption {
+
     color: #9da7b4;
+
     font-size: 12px;
+
 }
 
 
-/* =========================
+/* =========================================================
    NAME + OVERALL LEVEL
-========================= */
+========================================================= */
 
 .profile-name {
+
     text-align: center;
+
     font-size: 29px;
+
     font-weight: bold;
+
     margin-bottom: 3px;
+
 }
+
 
 .overall-label {
+
     text-align: center;
+
     color: #8f99a8;
+
     font-size: 11px;
+
     text-transform: uppercase;
+
     letter-spacing: 2px;
+
 }
+
 
 .overall-level {
+
     text-align: center;
-    font-size: 29px;
-    color: #e0b84f;
+
+    font-size: 31px;
+
+    color: #7f8997;
+
     font-weight: bold;
-    margin: 3px 0 13px;
+
+    margin:
+        3px 0 13px;
 
     transition: 0.3s;
+
 }
+
 
 .overall-level.level-2 {
+
     color: #e0b84f;
-    text-shadow: 0 0 12px rgba(224,184,79,0.45);
+
+    text-shadow:
+        0 0 12px
+        rgba(224,184,79,0.45);
+
 }
+
 
 .overall-level.level-3 {
+
     color: #65d68b;
+
+    text-shadow:
+        0 0 14px
+        rgba(101,214,139,0.45);
+
 }
+
 
 .overall-level.level-4 {
+
     color: #58a6ff;
+
 }
+
 
 .overall-level.level-5 {
+
     color: #b56cff;
+
 }
 
 
-/* =========================
-   OVERALL PROGRESS
-========================= */
+/* =========================================================
+   PROGRESS
+========================================================= */
 
 .xp-text {
+
     display: flex;
+
     justify-content: space-between;
+
     color: #aeb7c4;
+
     font-size: 11px;
+
     margin-bottom: 6px;
+
 }
 
+
 .progress-background {
+
     width: 100%;
+
     height: 13px;
 
     background: #0d1015;
@@ -243,30 +423,39 @@ header p {
     overflow: hidden;
 
     border: 1px solid #353d49;
+
 }
 
+
 .progress-fill {
+
     height: 100%;
+
     width: 0%;
 
-    background: linear-gradient(
-        90deg,
-        #c99425,
-        #f1d36b
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #c99425,
+            #f1d36b
+        );
 
     border-radius: 999px;
 
-    transition: width 0.6s ease;
+    transition:
+        width 0.6s ease;
+
 }
 
 
-/* =========================
+/* =========================================================
    TRUST
-========================= */
+========================================================= */
 
 .trust-card {
+
     margin-top: 16px;
+
     padding: 14px;
 
     background: #151b23;
@@ -274,35 +463,58 @@ header p {
     border: 1px solid #303846;
 
     border-radius: 13px;
+
 }
 
+
 .trust-header {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     margin-bottom: 5px;
+
 }
+
 
 .trust-title {
+
     font-size: 16px;
+
     font-weight: bold;
+
 }
+
 
 .trust-value {
+
     color: #8fd694;
+
     font-size: 15px;
+
     font-weight: bold;
+
 }
+
 
 .trust-description {
+
     color: #7f8997;
+
     font-size: 11px;
+
     margin-bottom: 8px;
+
 }
 
+
 .trust-bar-background {
+
     width: 100%;
+
     height: 10px;
 
     background: #0d1015;
@@ -312,44 +524,61 @@ header p {
     overflow: hidden;
 
     border: 1px solid #353d49;
+
 }
 
+
 .trust-bar-fill {
+
     height: 100%;
+
     width: 100%;
 
-    background: linear-gradient(
-        90deg,
-        #5ca866,
-        #9be3a0
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #5ca866,
+            #9be3a0
+        );
 
     border-radius: 999px;
 
-    transition: width 0.6s ease;
+    transition:
+        width 0.6s ease;
+
 }
 
 
-/* =========================
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 .skills-title {
+
     font-size: 23px;
+
     font-weight: bold;
-    margin: 12px 0;
+
+    margin:
+        12px 0;
+
 }
 
+
 .skills-grid {
+
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
     gap: 9px;
+
 }
 
+
 .skill-card {
+
     background: #191f29;
 
     border: 2px solid #303846;
@@ -362,45 +591,60 @@ header p {
         border-color 0.3s,
         box-shadow 0.3s,
         transform 0.2s;
+
 }
 
 
-/* LEVEL 2+ VISUAL CHANGE */
-
 .skill-card.level-2 {
+
     border-color: #e0b84f;
 
     box-shadow:
-        0 0 12px rgba(224,184,79,0.16);
+        0 0 12px
+        rgba(224,184,79,0.16);
+
 }
 
+
 .skill-card.level-3 {
+
     border-color: #65d68b;
 
     box-shadow:
-        0 0 13px rgba(101,214,139,0.17);
+        0 0 15px
+        rgba(101,214,139,0.22);
+
 }
 
+
 .skill-card.level-4 {
+
     border-color: #58a6ff;
 
     box-shadow:
-        0 0 14px rgba(88,166,255,0.18);
+        0 0 15px
+        rgba(88,166,255,0.22);
+
 }
 
+
 .skill-card.level-5 {
+
     border-color: #b56cff;
 
     box-shadow:
-        0 0 15px rgba(181,108,255,0.2);
+        0 0 16px
+        rgba(181,108,255,0.25);
+
 }
 
 
-/* =========================
+/* =========================================================
    SKILL HEADER
-========================= */
+========================================================= */
 
 .skill-header {
+
     display: flex;
 
     align-items: center;
@@ -410,10 +654,14 @@ header p {
     gap: 5px;
 
     margin-bottom: 7px;
+
 }
 
+
 .skill-name {
+
     font-size: 13px;
+
     font-weight: bold;
 
     overflow: hidden;
@@ -421,45 +669,64 @@ header p {
     text-overflow: ellipsis;
 
     white-space: nowrap;
+
 }
 
+
 .skill-level {
+
     font-size: 13px;
+
     font-weight: bold;
 
     color: #7f8997;
 
     white-space: nowrap;
 
-    transition: 0.3s;
 }
+
 
 .skill-level.level-2 {
+
     color: #e0b84f;
+
 }
+
 
 .skill-level.level-3 {
+
     color: #65d68b;
+
 }
+
 
 .skill-level.level-4 {
+
     color: #58a6ff;
+
 }
+
 
 .skill-level.level-5 {
+
     color: #b56cff;
+
 }
 
 
-/* =========================
-   SKILL BAR
-========================= */
+/* =========================================================
+   SKILL XP
+========================================================= */
 
 .skill-card .progress-background {
+
     height: 8px;
+
 }
 
+
 .skill-xp {
+
     margin-top: 5px;
 
     color: #778291;
@@ -469,43 +736,64 @@ header p {
     display: flex;
 
     justify-content: space-between;
+
 }
 
 
-/* =========================
+/* =========================================================
    LEVEL-UP ANIMATION
-========================= */
+========================================================= */
 
 @keyframes levelGlow {
 
     0% {
+
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(224,184,79,0);
+
+        box-shadow:
+            0 0 0
+            rgba(224,184,79,0);
+
     }
 
     40% {
+
         transform: scale(1.035);
+
         box-shadow:
-            0 0 30px rgba(224,184,79,0.7);
+            0 0 30px
+            rgba(224,184,79,0.7);
+
     }
 
     100% {
+
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(224,184,79,0);
+
+        box-shadow:
+            0 0 0
+            rgba(224,184,79,0);
+
     }
 
 }
 
+
 .skill-card.just-leveled {
-    animation: levelGlow 1.2s ease;
+
+    animation:
+        levelGlow
+        1.2s ease;
+
 }
 
 
-/* =========================
+/* =========================================================
    LEVEL-UP OVERLAY
-========================= */
+========================================================= */
 
 .level-up-overlay {
+
     position: fixed;
 
     inset: 0;
@@ -522,14 +810,24 @@ header p {
     z-index: 1000;
 
     padding: 18px;
+
 }
+
 
 .level-up-overlay.show {
+
     display: flex;
+
 }
 
+
 .level-up-box {
-    width: min(450px, 100%);
+
+    width:
+        min(
+            450px,
+            100%
+        );
 
     background: #191f29;
 
@@ -537,66 +835,105 @@ header p {
 
     border-radius: 20px;
 
-    padding: 30px 22px;
+    padding:
+        30px 22px;
 
     text-align: center;
 
     box-shadow:
-        0 0 45px rgba(224,184,79,0.35),
-        0 20px 60px rgba(0,0,0,0.6);
+        0 0 45px
+        rgba(224,184,79,0.35),
 
-    animation: levelPop 0.5s ease;
+        0 20px 60px
+        rgba(0,0,0,0.6);
+
+    animation:
+        levelPop
+        0.5s ease;
+
 }
+
 
 @keyframes levelPop {
 
     0% {
-        transform: scale(0.6);
+
+        transform:
+            scale(0.6);
+
         opacity: 0;
+
     }
 
     70% {
-        transform: scale(1.05);
+
+        transform:
+            scale(1.05);
+
     }
 
     100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
         opacity: 1;
+
     }
 
 }
 
+
 .celebration {
+
     font-size: 42px;
+
 }
 
+
 .level-up-box h2 {
-    margin: 5px 0;
+
+    margin:
+        5px 0;
 
     color: #e0b84f;
 
     font-size: 29px;
+
 }
+
 
 .level-up-box h3 {
-    margin: 9px 0;
+
+    margin:
+        9px 0;
 
     font-size: 22px;
+
 }
+
 
 .level-change {
+
     font-size: 20px;
 
-    margin: 14px 0;
+    margin:
+        14px 0;
+
 }
 
+
 .level-change span {
+
     color: #e0b84f;
 
     font-weight: bold;
+
 }
 
+
 .level-up-message {
+
     color: #b9c1cc;
 
     margin-bottom: 20px;
@@ -604,14 +941,18 @@ header p {
     line-height: 1.5;
 
     font-size: 14px;
+
 }
 
+
 .close-level-up {
+
     border: none;
 
     border-radius: 11px;
 
-    padding: 12px 23px;
+    padding:
+        12px 23px;
 
     background: #e0b84f;
 
@@ -622,83 +963,105 @@ header p {
     font-weight: bold;
 
     cursor: pointer;
+
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer {
+
     text-align: center;
 
     color: #697383;
 
     font-size: 11px;
 
-    margin: 25px 0 8px;
+    margin:
+        25px 0 8px;
+
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 520px) {
 
     .container {
+
         padding: 10px;
+
     }
 
     header h1 {
+
         font-size: 25px;
+
     }
 
     .character-frame {
+
         width: 190px;
-        height: 225px;
+
+        height: 245px;
+
     }
 
     .profile-card {
+
         padding: 15px;
+
     }
 
     .skills-grid {
+
         gap: 7px;
+
     }
 
     .skill-card {
+
         padding: 9px;
+
     }
 
     .skill-name {
+
         font-size: 11px;
+
     }
 
     .skill-level {
+
         font-size: 11px;
+
     }
 
     .skill-xp {
+
         font-size: 9px;
+
     }
 
 }
 
 
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
 @media (max-width: 360px) {
 
     .skills-grid {
+
         grid-template-columns: 1fr;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -708,13 +1071,11 @@ header p {
 <div class="container">
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <h1>🌱 REAL LIFE GROWTH</h1>
+    <h1>
+        🌱 REAL LIFE GROWTH
+    </h1>
 
     <p>
         This is who you're growing to become.
@@ -722,10 +1083,6 @@ header p {
 
 </header>
 
-
-<!-- =========================
-     CHILD SELECTOR
-========================= -->
 
 <div class="child-selector">
 
@@ -751,40 +1108,39 @@ header p {
 </div>
 
 
-<!-- =========================
-     PROFILE
-========================= -->
-
 <div class="profile-card">
 
 
-    <!-- CHARACTER -->
-
     <div class="character-area">
+
 
         <div
             class="character-frame"
             id="characterFrame">
 
+
             <img
                 id="characterImage"
                 class="character-image"
-                src="images/JD/level-1.png"
-                alt="JD character">
+                src=""
+                alt="Character">
 
 
             <div
                 id="characterPlaceholder"
-                class="character-placeholder"
-                style="display:none;">
+                class="character-placeholder">
+
 
                 <span class="baby">
                     👶
                 </span>
 
+
                 Character artwork coming soon.
 
+
             </div>
+
 
         </div>
 
@@ -793,8 +1149,6 @@ header p {
             id="characterStage"
             class="character-stage">
 
-            BABY / LITTLE ONE • LEVEL 1
-
         </div>
 
 
@@ -802,14 +1156,11 @@ header p {
             id="characterCaption"
             class="character-caption">
 
-            The beginning of the journey.
-
         </div>
+
 
     </div>
 
-
-    <!-- NAME -->
 
     <div
         class="profile-name"
@@ -820,10 +1171,10 @@ header p {
     </div>
 
 
-    <!-- OVERALL LEVEL -->
-
     <div class="overall-label">
+
         Overall Character
+
     </div>
 
 
@@ -836,17 +1187,14 @@ header p {
     </div>
 
 
-    <!-- OVERALL PROGRESS -->
-
     <div class="xp-text">
 
         <span id="overallCurrentXP">
             0 TOTAL XP
         </span>
 
-
         <span>
-            Closest Skill
+            Growth Progress
         </span>
 
     </div>
@@ -863,9 +1211,8 @@ header p {
     </div>
 
 
-    <!-- TRUST -->
-
     <div class="trust-card">
+
 
         <div class="trust-header">
 
@@ -903,14 +1250,12 @@ header p {
 
         </div>
 
+
     </div>
+
 
 </div>
 
-
-<!-- =========================
-     SKILLS
-========================= -->
 
 <div class="skills-title">
 
@@ -938,10 +1283,6 @@ header p {
 </div>
 
 
-<!-- =========================
-     LEVEL-UP CELEBRATION
-========================= -->
-
 <div
     class="level-up-overlay"
     id="levelUpOverlay">
@@ -959,14 +1300,16 @@ header p {
         </div>
 
 
-        <h2 id="celebrationTitle">
+        <h2
+            id="celebrationTitle">
 
             SKILL LEVEL UP!
 
         </h2>
 
 
-        <h3 id="celebrationSkill">
+        <h3
+            id="celebrationSkill">
 
             Reading
 
@@ -978,7 +1321,9 @@ header p {
             id="celebrationLevel">
 
             LEVEL 1 →
-            <span>LEVEL 2</span>
+            <span>
+                LEVEL 2
+            </span>
 
         </div>
 
@@ -1003,42 +1348,61 @@ header p {
 
     </div>
 
+
 </div>
 
 
 <script>
 
+
 /* =========================================================
-   REAL LIFE GROWTH — PLAYER DATA
+   SKILL LIST
 ========================================================= */
 
 const skills = [
 
     { name: "⚾ Baseball" },
+
     { name: "🏀 Basketball" },
+
     { name: "🏈 Football" },
+
     { name: "⛳ Golf" },
+
     { name: "🏊 Swimming" },
 
     { name: "📚 Reading" },
+
     { name: "✍️ Writing" },
+
     { name: "🔢 Mathematics" },
+
     { name: "🎨 Drawing" },
+
     { name: "🧱 Building" },
+
     { name: "🎨 Designing" },
 
     { name: "🙏 God Relationship" },
+
     { name: "❤️ Family Relationship" },
+
     { name: "🤝 Friend Relationships" },
 
     { name: "💡 Creativity" },
+
     { name: "🍳 Cooking" },
+
     { name: "🧹 Responsibility" },
 
     { name: "🏃 Running / Speed" },
+
     { name: "💪 Strength" },
+
     { name: "♟️ Chess" },
+
     { name: "🧠 Critical Thinking" },
+
     { name: "🎵 Music" }
 
 ];
@@ -1050,39 +1414,53 @@ const skills = [
 
 const players = {
 
+
     JD: {
 
         xp: {
 
             "⚾ Baseball": 0,
+
             "🏀 Basketball": 0,
+
             "🏈 Football": 0,
+
             "⛳ Golf": 0,
+
             "🏊 Swimming": 0,
 
             "📚 Reading": 30,
+
             "✍️ Writing": 3,
+
             "🔢 Mathematics": 0,
+
             "🎨 Drawing": 0,
+
             "🧱 Building": 0,
+
             "🎨 Designing": 0,
 
             "🙏 God Relationship": 10,
+
             "❤️ Family Relationship": 40,
+
             "🤝 Friend Relationships": 120,
 
             "💡 Creativity": 4,
+
             "🍳 Cooking": 0,
 
-            /* Responsibility updates:
-               - Buckled himself
-               - Put his shoes away himself */
             "🧹 Responsibility": 30,
 
             "🏃 Running / Speed": 8,
+
             "💪 Strength": 0,
+
             "♟️ Chess": 0,
+
             "🧠 Critical Thinking": 17,
+
             "🎵 Music": 20
 
         },
@@ -1097,72 +1475,47 @@ const players = {
         xp: {
 
             "⚾ Baseball": 28,
+
             "🏀 Basketball": 0,
+
             "🏈 Football": 2,
+
             "⛳ Golf": 0,
+
             "🏊 Swimming": 0,
 
-            /*
-               Finished his first chapter book
-               and read for over an hour.
-            */
             "📚 Reading": 205,
 
-            /*
-               Writing:
-               - Previous writing XP
-               - Wrote name
-               - Wrote address
-               - Wrote parents' phone numbers
-            */
             "✍️ Writing": 29,
 
             "🔢 Mathematics": 0,
+
             "🎨 Drawing": 0,
+
             "🧱 Building": 0,
+
             "🎨 Designing": 0,
 
             "🙏 God Relationship": 10,
 
-            /*
-               Helping a teacher and positive
-               family/community interactions.
-            */
             "❤️ Family Relationship": 42,
 
-            /*
-               Meeting his new teacher and positive
-               social interactions.
-            */
             "🤝 Friend Relationships": 55,
 
-            /*
-               Reading and story imagination.
-            */
             "💡 Creativity": 16,
 
             "🍳 Cooking": 0,
 
-            /*
-               Helping a teacher move classroom items
-               + buckling himself.
-            */
             "🧹 Responsibility": 45,
 
             "🏃 Running / Speed": 10,
+
             "💪 Strength": 1,
+
             "♟️ Chess": 0,
 
-            /*
-               Reading comprehension,
-               handling important personal information,
-               helping another person.
-            */
             "🧠 Critical Thinking": 38,
 
-            /*
-               Worship music activity.
-            */
             "🎵 Music": 30
 
         },
@@ -1175,10 +1528,11 @@ const players = {
 
 
 /* =========================================================
-   CHARACTER ART
+   CHARACTER IMAGES
 ========================================================= */
 
 const characterImages = {
+
 
     JD: {
 
@@ -1199,16 +1553,8 @@ const characterImages = {
         2:
         "images/Michael/ChatGPT Image Aug 9, 2026, 09_28_26 PM.png",
 
-        /*
-           Upload the new Level 3 card as:
-
-           images/Michael/level-3.png
-
-           Then Michael's Level 3 artwork
-           will automatically appear.
-        */
         3:
-        "images/Michael/level-3.png"
+        "images/Michael/f49e8ae9-3967-435c-a91d-42bd72d08cbd.png"
 
     }
 
@@ -1216,16 +1562,21 @@ const characterImages = {
 
 
 /* =========================================================
-   XP CURVE
+   RUNESCAPE-STYLE XP CURVE
 ========================================================= */
 
 function xpForLevel(level) {
 
+
     if (level <= 1) {
+
         return 0;
+
     }
 
+
     let total = 0;
+
 
     for (
         let i = 1;
@@ -1234,12 +1585,22 @@ function xpForLevel(level) {
     ) {
 
         total += Math.floor(
-            i + 300 * Math.pow(2, i / 7)
+
+            i +
+            300 *
+            Math.pow(
+                2,
+                i / 7
+            )
+
         );
 
     }
 
-    return Math.floor(total / 4);
+
+    return Math.floor(
+        total / 4
+    );
 
 }
 
@@ -1250,19 +1611,33 @@ function xpForLevel(level) {
 
 function getLevel(xp) {
 
+
     let level = 1;
 
+
     while (
-        xp >= xpForLevel(level + 1)
+
+        xp >=
+        xpForLevel(
+            level + 1
+        )
+
     ) {
+
 
         level++;
 
-        if (level >= 99) {
+
+        if (
+            level >= 99
+        ) {
+
             return 99;
+
         }
 
     }
+
 
     return level;
 
@@ -1270,64 +1645,91 @@ function getLevel(xp) {
 
 
 /* =========================================================
-   GET SKILL PROGRESS
+   SKILL PROGRESS
 ========================================================= */
 
 function getProgress(xp) {
 
+
     const level =
         getLevel(xp);
 
-    if (level >= 99) {
+
+    if (
+        level >= 99
+    ) {
+
         return 100;
+
     }
+
 
     const current =
         xpForLevel(level);
 
+
     const next =
-        xpForLevel(level + 1);
+        xpForLevel(
+            level + 1
+        );
+
 
     return Math.max(
+
         0,
+
         Math.min(
+
             100,
-            ((xp - current) /
-            (next - current)) * 100
+
+            (
+
+                (xp - current) /
+
+                (next - current)
+
+            ) * 100
+
         )
+
     );
 
 }
 
 
 /* =========================================================
-   OVERALL CHARACTER LEVEL
+   OVERALL LEVEL
 =========================================================
 
-   IMPORTANT RULE:
+   Overall level only increases when
+   a skill reaches a new level.
 
-   A child ONLY increases their overall level
-   when one or more SKILLS actually reach
-   a new level.
-
-   Raw XP does NOT directly increase overall level.
 ========================================================= */
 
 function getOverallLevel(player) {
 
+
     let gainedLevels = 0;
 
-    skills.forEach(skill => {
 
-        const level =
-            getLevel(
-                player.xp[skill.name]
-            );
+    skills.forEach(
+        skill => {
 
-        gainedLevels +=
-            level - 1;
 
-    });
+            const level =
+                getLevel(
+                    player.xp[
+                        skill.name
+                    ]
+                );
+
+
+            gainedLevels +=
+                level - 1;
+
+        }
+    );
+
 
     return 1 + gainedLevels;
 
@@ -1340,14 +1742,22 @@ function getOverallLevel(player) {
 
 function getOverallXP(player) {
 
+
     let total = 0;
 
-    skills.forEach(skill => {
 
-        total +=
-            player.xp[skill.name];
+    skills.forEach(
+        skill => {
 
-    });
+
+            total +=
+                player.xp[
+                    skill.name
+                ];
+
+        }
+    );
+
 
     return total;
 
@@ -1360,7 +1770,10 @@ function getOverallXP(player) {
 
 function getCharacterStage(level) {
 
-    if (level <= 1) {
+
+    if (
+        level <= 1
+    ) {
 
         return {
 
@@ -1375,7 +1788,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 2) {
+    if (
+        level <= 2
+    ) {
 
         return {
 
@@ -1390,7 +1805,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 5) {
+    if (
+        level <= 5
+    ) {
 
         return {
 
@@ -1405,7 +1822,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 10) {
+    if (
+        level <= 10
+    ) {
 
         return {
 
@@ -1420,7 +1839,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 19) {
+    if (
+        level <= 19
+    ) {
 
         return {
 
@@ -1435,7 +1856,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 29) {
+    if (
+        level <= 29
+    ) {
 
         return {
 
@@ -1450,7 +1873,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 49) {
+    if (
+        level <= 49
+    ) {
 
         return {
 
@@ -1465,7 +1890,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 69) {
+    if (
+        level <= 69
+    ) {
 
         return {
 
@@ -1480,7 +1907,9 @@ function getCharacterStage(level) {
     }
 
 
-    if (level <= 89) {
+    if (
+        level <= 89
+    ) {
 
         return {
 
@@ -1512,7 +1941,8 @@ function getCharacterStage(level) {
    CURRENT CHILD
 ========================================================= */
 
-let currentChild = "JD";
+let currentChild =
+    "JD";
 
 
 /* =========================================================
@@ -1521,24 +1951,34 @@ let currentChild = "JD";
 
 function selectChild(child) {
 
-    currentChild = child;
+
+    currentChild =
+        child;
+
 
     document
-        .querySelectorAll(".child-button")
-        .forEach(button => {
+        .querySelectorAll(
+            ".child-button"
+        )
+        .forEach(
+            button => {
 
-            button.classList.remove(
-                "active"
-            );
+                button.classList
+                    .remove(
+                        "active"
+                    );
 
-        });
+            }
+        );
 
 
     document
         .getElementById(
-            "button-" + child
+            "button-" +
+            child
         )
-        .classList.add(
+        .classList
+        .add(
             "active"
         );
 
@@ -1549,10 +1989,11 @@ function selectChild(child) {
 
 
 /* =========================================================
-   CHARACTER IMAGE
+   CHARACTER UPDATE
 ========================================================= */
 
 function updateCharacter(level) {
+
 
     const image =
         document.getElementById(
@@ -1574,70 +2015,83 @@ function updateCharacter(level) {
 
     frame.className =
         "character-frame level-" +
-        Math.min(level, 5);
+        Math.min(
+            level,
+            5
+        );
 
-
-    /*
-       Use the specific character image
-       assigned to this child's level.
-    */
 
     let path =
-        characterImages
-            [currentChild]
-            ?.[level];
+        characterImages[
+            currentChild
+        ]?.[
+            level
+        ];
 
-
-    /*
-       If no artwork exists yet,
-       fall back to the standard filename.
-    */
 
     if (!path) {
 
+
         path =
+
             "images/" +
+
             currentChild +
+
             "/level-" +
+
             level +
+
             ".png";
 
     }
 
 
-    image.src = path;
+    image.src =
+        path;
 
 
     image.alt =
+
         currentChild +
+
         " character at level " +
+
         level;
 
 
-    image.onerror = function() {
-
-        image.style.display =
-            "none";
-
-        placeholder.style.display =
-            "block";
-
-    };
+    image.onerror =
+        function() {
 
 
-    image.onload = function() {
+            image.style.display =
+                "none";
 
-        image.style.display =
-            "block";
 
-        placeholder.style.display =
-            "none";
+            placeholder.style.display =
+                "block";
 
-    };
+        };
+
+
+    image.onload =
+        function() {
+
+
+            image.style.display =
+                "block";
+
+
+            placeholder.style.display =
+                "none";
+
+        };
 
 
     const stage =
-        getCharacterStage(level);
+        getCharacterStage(
+            level
+        );
 
 
     document.getElementById(
@@ -1645,7 +2099,9 @@ function updateCharacter(level) {
     ).textContent =
 
         stage.name +
+
         " • LEVEL " +
+
         level;
 
 
@@ -1659,128 +2115,28 @@ function updateCharacter(level) {
 
 
 /* =========================================================
-   LEVEL-UP CELEBRATION
-========================================================= */
-
-function celebrateLevelUp(
-    skillName,
-    oldLevel,
-    newLevel
-) {
-
-    const overlay =
-        document.getElementById(
-            "levelUpOverlay"
-        );
-
-
-    const title =
-        document.getElementById(
-            "celebrationTitle"
-        );
-
-
-    const skill =
-        document.getElementById(
-            "celebrationSkill"
-        );
-
-
-    const level =
-        document.getElementById(
-            "celebrationLevel"
-        );
-
-
-    const message =
-        document.getElementById(
-            "celebrationMessage"
-        );
-
-
-    const icon =
-        document.getElementById(
-            "celebrationIcon"
-        );
-
-
-    icon.textContent =
-        "🎉";
-
-
-    title.textContent =
-        "SKILL LEVEL UP!";
-
-
-    skill.textContent =
-        skillName;
-
-
-    level.innerHTML =
-
-        "LEVEL " +
-        oldLevel +
-        " → " +
-        "<span>LEVEL " +
-        newLevel +
-        "</span>";
-
-
-    message.textContent =
-
-        currentChild +
-        " is growing! " +
-        skillName +
-        " just reached a new level.";
-
-
-    overlay.classList.add(
-        "show"
-    );
-
-}
-
-
-/* =========================================================
-   CLOSE LEVEL-UP
-========================================================= */
-
-document
-    .getElementById(
-        "closeLevelUp"
-    )
-    .addEventListener(
-        "click",
-        function() {
-
-            document
-                .getElementById(
-                    "levelUpOverlay"
-                )
-                .classList.remove(
-                    "show"
-                );
-
-        }
-    );
-
-
-/* =========================================================
    RENDER
 ========================================================= */
 
 function render() {
 
+
     const player =
-        players[currentChild];
+        players[
+            currentChild
+        ];
 
 
     const overallLevel =
-        getOverallLevel(player);
+        getOverallLevel(
+            player
+        );
 
 
     const totalXP =
-        getOverallXP(player);
+        getOverallXP(
+            player
+        );
 
 
     /* NAME */
@@ -1800,6 +2156,7 @@ function render() {
 
 
     overallLevelElement.textContent =
+
         "LEVEL " +
         overallLevel;
 
@@ -1821,33 +2178,42 @@ function render() {
     ).textContent =
 
         totalXP.toLocaleString() +
+
         " TOTAL XP";
 
 
-    /* CLOSEST SKILL */
+    /* OVERALL PROGRESS */
 
-    let closestProgress = 0;
-
-
-    skills.forEach(skill => {
-
-        const progress =
-            getProgress(
-                player.xp[skill.name]
-            );
+    let closestProgress =
+        0;
 
 
-        if (
-            progress >
-            closestProgress
-        ) {
+    skills.forEach(
+        skill => {
 
-            closestProgress =
-                progress;
+
+            const progress =
+                getProgress(
+
+                    player.xp[
+                        skill.name
+                    ]
+
+                );
+
+
+            if (
+                progress >
+                closestProgress
+            ) {
+
+                closestProgress =
+                    progress;
+
+            }
 
         }
-
-    });
+    );
 
 
     document.getElementById(
@@ -1894,98 +2260,102 @@ function render() {
     grid.innerHTML = "";
 
 
-    skills.forEach(skill => {
-
-        const xp =
-            player.xp[skill.name];
+    skills.forEach(
+        skill => {
 
 
-        const level =
-            getLevel(xp);
+            const xp =
+                player.xp[
+                    skill.name
+                ];
 
 
-        const progress =
-            getProgress(xp);
+            const level =
+                getLevel(xp);
 
 
-        const card =
-            document.createElement(
-                "div"
+            const progress =
+                getProgress(xp);
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+
+                "skill-card level-" +
+
+                Math.min(
+                    level,
+                    5
+                );
+
+
+            card.innerHTML = `
+
+                <div class="skill-header">
+
+                    <div class="skill-name">
+                        ${skill.name}
+                    </div>
+
+                    <div
+                        class="skill-level level-${Math.min(level, 5)}">
+
+                        LV ${level}
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-background">
+
+                    <div
+                        class="progress-fill"
+                        style="width: ${progress}%">
+
+                    </div>
+
+                </div>
+
+
+                <div class="skill-xp">
+
+                    <span>
+                        ${xp.toLocaleString()} XP
+                    </span>
+
+                    <span>
+
+                        ${
+                            level >= 99
+
+                            ? "MAX"
+
+                            : xpForLevel(
+                                level + 1
+                              ).toLocaleString() +
+
+                              " XP"
+                        }
+
+                    </span>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(
+                card
             );
 
-
-        card.className =
-
-            "skill-card level-" +
-
-            Math.min(
-                level,
-                5
-            );
-
-
-        card.innerHTML = `
-
-            <div class="skill-header">
-
-                <div class="skill-name">
-                    ${skill.name}
-                </div>
-
-
-                <div
-                    class="skill-level level-${Math.min(level, 5)}">
-
-                    LV ${level}
-
-                </div>
-
-            </div>
-
-
-            <div class="progress-background">
-
-                <div
-                    class="progress-fill"
-                    style="width: ${progress}%">
-
-                </div>
-
-            </div>
-
-
-            <div class="skill-xp">
-
-                <span>
-                    ${xp.toLocaleString()} XP
-                </span>
-
-
-                <span>
-
-                    ${
-                        level >= 99
-
-                        ? "MAX"
-
-                        : xpForLevel(
-                            level + 1
-                          ).toLocaleString() +
-                          " XP"
-                    }
-
-                </span>
-
-            </div>
-
-        `;
-
-
-        grid.appendChild(
-            card
-        );
-
-    });
+        }
+    );
 
 }
 
@@ -1999,4 +2369,5 @@ render();
 </script>
 
 </body>
+
 </html>
