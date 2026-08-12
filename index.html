@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <title>Real Life Growth</title>
 
+
 <style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -25,6 +35,11 @@ body {
     padding: 16px;
 }
 
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 header {
     text-align: center;
     margin-bottom: 18px;
@@ -37,9 +52,15 @@ header h1 {
 }
 
 header p {
+    margin-top: 7px;
     color: #aeb7c4;
     font-size: 14px;
 }
+
+
+/* =========================================================
+   CHILD SELECTOR
+========================================================= */
 
 .child-selector {
     display: flex;
@@ -62,20 +83,26 @@ header p {
 .child-button.active {
     border-color: #e0b84f;
     background: #252c38;
+    box-shadow: 0 0 14px rgba(224,184,79,.18);
 }
 
-.profile-card,
-.growth-card,
-.skill-card {
-    background: #191f29;
-    border: 1px solid #303846;
-    border-radius: 16px;
-}
+
+/* =========================================================
+   PROFILE
+========================================================= */
 
 .profile-card {
+    background: #191f29;
+    border: 1px solid #303846;
+    border-radius: 18px;
     padding: 20px;
     margin-bottom: 18px;
 }
+
+
+/* =========================================================
+   CHARACTER
+========================================================= */
 
 .character-area {
     text-align: center;
@@ -84,14 +111,14 @@ header p {
 .character-frame {
     width: 220px;
     height: 280px;
-    margin: auto;
+    margin: 0 auto 12px;
     background: #11161d;
     border: 3px solid #303846;
     border-radius: 18px;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
     transition: .35s;
 }
 
@@ -128,20 +155,25 @@ header p {
 }
 
 .character-placeholder .baby {
-    font-size: 70px;
     display: block;
+    font-size: 70px;
 }
 
 .character-stage {
     color: #e0b84f;
     font-weight: bold;
-    margin-top: 10px;
+    font-size: 15px;
 }
 
 .character-caption {
     color: #9da7b4;
     font-size: 12px;
 }
+
+
+/* =========================================================
+   LEVEL / XP
+========================================================= */
 
 .profile-name {
     text-align: center;
@@ -156,7 +188,6 @@ header p {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 4px;
 }
 
 .overall-level {
@@ -198,6 +229,7 @@ header p {
     background: #0d1015;
     border-radius: 999px;
     overflow: hidden;
+    border: 1px solid #353d49;
 }
 
 .progress-fill {
@@ -206,6 +238,11 @@ header p {
     border-radius: 999px;
     transition: width .6s;
 }
+
+
+/* =========================================================
+   TRUST
+========================================================= */
 
 .trust-card {
     margin-top: 16px;
@@ -232,6 +269,7 @@ header p {
 }
 
 .trust-bar-background {
+    width: 100%;
     height: 9px;
     background: #0d1015;
     border-radius: 999px;
@@ -241,42 +279,7 @@ header p {
 .trust-bar-fill {
     height: 100%;
     background: linear-gradient(90deg,#5ca866,#9be3a0);
-}
-
-
-/* =========================================================
-   TODAY'S GROWTH
-========================================================= */
-
-.growth-card {
-    padding: 17px;
-    margin-bottom: 18px;
-    border: 2px solid #65d68b;
-    background:
-        linear-gradient(
-            135deg,
-            #19251f,
-            #191f29
-        );
-}
-
-.growth-title {
-    color: #65d68b;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 7px;
-}
-
-.growth-message {
-    color: #d9dee5;
-    line-height: 1.55;
-    font-size: 14px;
-}
-
-.growth-highlight {
-    margin-top: 9px;
-    color: #e0b84f;
-    font-weight: bold;
+    border-radius: 999px;
 }
 
 
@@ -297,18 +300,21 @@ header p {
 }
 
 .skill-card {
-    padding: 11px;
+    background: #191f29;
     border: 2px solid #303846;
+    border-radius: 12px;
+    padding: 11px;
     transition: .3s;
 }
 
 .skill-card.level-2 {
     border-color: #e0b84f;
+    box-shadow: 0 0 12px rgba(224,184,79,.16);
 }
 
 .skill-card.level-3 {
     border-color: #65d68b;
-    box-shadow: 0 0 14px rgba(101,214,139,.18);
+    box-shadow: 0 0 15px rgba(101,214,139,.22);
 }
 
 .skill-card.level-4 {
@@ -371,72 +377,48 @@ header p {
 
 
 /* =========================================================
-   LEVEL-UP CELEBRATION
+   TODAY'S GROWTH
+   UNDER THE SKILLS
 ========================================================= */
 
-.level-up-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5,8,12,.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+.growth-card {
+    margin-top: 22px;
     padding: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            #19251f,
+            #191f29
+        );
+    border: 2px solid #65d68b;
+    border-radius: 16px;
+    box-shadow: 0 0 18px rgba(101,214,139,.12);
 }
 
-.level-up-overlay.show {
-    display: flex;
-}
-
-.level-up-box {
-    width: min(450px,100%);
-    background: #191f29;
-    border: 3px solid #65d68b;
-    border-radius: 20px;
-    padding: 30px 22px;
-    text-align: center;
-    box-shadow: 0 0 45px rgba(101,214,139,.35);
-}
-
-.celebration {
-    font-size: 45px;
-}
-
-.level-up-box h2 {
+.growth-title {
     color: #65d68b;
-    margin: 7px 0;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
-.level-up-box h3 {
-    margin: 8px 0;
+.growth-message {
+    color: #d9dee5;
+    line-height: 1.6;
+    font-size: 14px;
 }
 
-.level-change {
-    font-size: 21px;
-    margin: 15px 0;
-}
-
-.level-change span {
+.growth-highlight {
+    margin-top: 10px;
     color: #e0b84f;
     font-weight: bold;
-}
-
-.level-up-message {
-    color: #b9c1cc;
     line-height: 1.5;
-    margin-bottom: 20px;
 }
 
-.close-level-up {
-    border: none;
-    border-radius: 11px;
-    padding: 12px 23px;
-    background: #e0b84f;
-    color: #15191f;
-    font-weight: bold;
-    cursor: pointer;
-}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
     text-align: center;
@@ -444,6 +426,11 @@ header p {
     font-size: 11px;
     margin: 25px 0 8px;
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:520px) {
 
@@ -474,12 +461,15 @@ header p {
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="container">
+
 
 <header>
 
@@ -503,6 +493,7 @@ JD
 
 </button>
 
+
 <button
 class="child-button"
 id="button-Michael"
@@ -517,17 +508,21 @@ Michael
 
 <div class="profile-card">
 
+
 <div class="character-area">
+
 
 <div
 class="character-frame"
 id="characterFrame">
+
 
 <img
 id="characterImage"
 class="character-image"
 src=""
 alt="Character">
+
 
 <div
 id="characterPlaceholder"
@@ -552,6 +547,7 @@ class="character-stage">
 id="characterCaption"
 class="character-caption">
 </div>
+
 
 </div>
 
@@ -597,6 +593,7 @@ class="progress-fill">
 
 <div class="trust-card">
 
+
 <div class="trust-header">
 
 <strong>🛡️ Trust</strong>
@@ -611,8 +608,7 @@ class="trust-value">
 
 <div class="trust-description">
 
-Trust reflects how responsibly you handle
-the freedom and responsibility you're given.
+Trust grows back through consistent responsible choices.
 
 </div>
 
@@ -626,33 +622,14 @@ class="trust-bar-fill">
 
 </div>
 
-</div>
 
 </div>
 
 
-<!-- =====================================================
-     MOTIVATIONAL GROWTH MESSAGE
-===================================================== -->
-
-<div class="growth-card">
-
-<div class="growth-title">
-🌟 TODAY'S GROWTH
 </div>
 
-<div
-id="growthMessage"
-class="growth-message">
-</div>
 
-<div
-id="growthHighlight"
-class="growth-highlight">
-</div>
-
-</div>
-
+<!-- SKILLS -->
 
 <div class="skills-title">
 Your Skills
@@ -665,6 +642,29 @@ class="skills-grid">
 </div>
 
 
+<!-- MOTIVATIONAL MESSAGE -->
+
+<div class="growth-card">
+
+<div class="growth-title">
+🌟 TODAY'S GROWTH
+</div>
+
+
+<div
+id="growthMessage"
+class="growth-message">
+</div>
+
+
+<div
+id="growthHighlight"
+class="growth-highlight">
+</div>
+
+</div>
+
+
 <div class="footer">
 
 Growth isn't about being better than someone else.<br>
@@ -673,49 +673,6 @@ It's about becoming who you're capable of becoming.
 
 </div>
 
-</div>
-
-
-<!-- =====================================================
-     LEVEL UP POPUP
-===================================================== -->
-
-<div
-id="levelUpOverlay"
-class="level-up-overlay">
-
-<div class="level-up-box">
-
-<div class="celebration">
-🎉
-</div>
-
-<h2>
-SKILL LEVEL UP!
-</h2>
-
-<h3 id="celebrationSkill">
-</h3>
-
-<div
-id="celebrationLevel"
-class="level-change">
-</div>
-
-<div
-id="celebrationMessage"
-class="level-up-message">
-</div>
-
-<button
-id="closeLevelUp"
-class="close-level-up">
-
-KEEP GROWING 🚀
-
-</button>
-
-</div>
 
 </div>
 
@@ -783,37 +740,32 @@ xp: {
 "🧱 Building": 0,
 "🎨 Designing": 0,
 
-"🙏 God Relationship": 10,
+"🙏 God Relationship": 20,
 "❤️ Family Relationship": 40,
 "🤝 Friend Relationships": 120,
 
 "💡 Creativity": 4,
 "🍳 Cooking": 0,
 
-/*
-JD responsibility includes:
-- Buckling himself
-- Putting his shoes away himself
-*/
-"🧹 Responsibility": 30,
+"🧹 Responsibility": 32,
 
 "🏃 Running / Speed": 8,
 "💪 Strength": 0,
 "♟️ Chess": 0,
 "🧠 Critical Thinking": 17,
-"🎵 Music": 20
+"🎵 Music": 30
 
 },
 
-trust: 91,
+trust: 96,
 
 growthMessage:
 
-"JD, you spent about 30 minutes reading today! Every page you read makes your brain stronger. Reading builds imagination, vocabulary, focus, and problem-solving skills.",
+"JD, you spent about 30 minutes reading today, listened to worship music, and prayed before eating. Those may seem like small moments, but small habits can build a strong mind, strong character, and a strong relationship with God.",
 
 growthHighlight:
 
-"📚 Small reading sessions become big knowledge over time. Keep going!"
+"📚 Keep stacking good choices. Little steps today become big strengths tomorrow!"
 
 },
 
@@ -835,32 +787,32 @@ xp: {
 "🧱 Building": 0,
 "🎨 Designing": 0,
 
-"🙏 God Relationship": 10,
+"🙏 God Relationship": 20,
 "❤️ Family Relationship": 42,
 "🤝 Friend Relationships": 55,
 
 "💡 Creativity": 18,
 "🍳 Cooking": 0,
 
-"🧹 Responsibility": 45,
+"🧹 Responsibility": 47,
 
 "🏃 Running / Speed": 10,
 "💪 Strength": 8,
 "♟️ Chess": 0,
 "🧠 Critical Thinking": 44,
-"🎵 Music": 30
+"🎵 Music": 40
 
 },
 
-trust: 97,
+trust: 100,
 
 growthMessage:
 
-"Michael, today you read for about 30 minutes and spent 45 minutes practicing baseball. Throwing, catching, and swinging don't just help baseball — they build skills that can transfer to football, basketball, golf, and other sports too. Your brain and body are learning how to move, react, focus, and improve.",
+"Michael, today you read, practiced baseball, helped a teacher, listened to worship music, and prayed before eating. Throwing, catching, and swinging help more than one sport — those skills can transfer to football, basketball, golf, and more. Reading strengthens your brain while helping others strengthens your character.",
 
 growthHighlight:
 
-"⚾ One practice can make you better at more than one sport. Keep practicing, keep learning, and keep helping others!"
+"🌟 You are not just getting better at things — you are becoming someone who learns, helps, and grows. Keep going!"
 
 }
 
@@ -927,7 +879,7 @@ return Math.floor(total/4);
 
 
 /* =========================================================
-   LEVEL
+   GET LEVEL
 ========================================================= */
 
 function getLevel(xp) {
@@ -1079,8 +1031,7 @@ let currentChild = "JD";
 
 function selectChild(child) {
 
-currentChild =
-child;
+currentChild = child;
 
 document
 .querySelectorAll(".child-button")
@@ -1145,6 +1096,12 @@ level+
 
 image.src =
 path;
+
+
+image.alt =
+currentChild+
+" character at level "+
+level;
 
 
 image.onerror =
@@ -1219,7 +1176,7 @@ document.getElementById(
 currentChild;
 
 
-/* LEVEL */
+/* OVERALL LEVEL */
 
 const levelElement =
 document.getElementById(
@@ -1230,10 +1187,11 @@ levelElement.textContent =
 "LEVEL "+overallLevel;
 
 levelElement.className =
-"overall-level level-"+Math.min(overallLevel,5);
+"overall-level level-"+
+Math.min(overallLevel,5);
 
 
-/* XP */
+/* TOTAL XP */
 
 document.getElementById(
 "overallCurrentXP"
@@ -1285,20 +1243,6 @@ overallLevel
 );
 
 
-/* MOTIVATIONAL MESSAGE */
-
-document.getElementById(
-"growthMessage"
-).textContent =
-player.growthMessage;
-
-
-document.getElementById(
-"growthHighlight"
-).textContent =
-player.growthHighlight;
-
-
 /* SKILLS */
 
 const grid =
@@ -1314,21 +1258,18 @@ skills.forEach(skill => {
 const xp =
 player.xp[skill];
 
-
 const level =
 getLevel(xp);
-
 
 const progress =
 getProgress(xp);
 
-
 const card =
 document.createElement("div");
 
-
 card.className =
-"skill-card level-"+Math.min(level,5);
+"skill-card level-"+
+Math.min(level,5);
 
 
 card.innerHTML = `
@@ -1339,7 +1280,8 @@ card.innerHTML = `
 ${skill}
 </div>
 
-<div class="skill-level level-${Math.min(level,5)}">
+<div
+class="skill-level level-${Math.min(level,5)}">
 
 LV ${level}
 
@@ -1384,23 +1326,23 @@ grid.appendChild(card);
 
 });
 
+
+/* =====================================================
+   MOTIVATIONAL MESSAGE
+===================================================== */
+
+document.getElementById(
+"growthMessage"
+).textContent =
+player.growthMessage;
+
+
+document.getElementById(
+"growthHighlight"
+).textContent =
+player.growthHighlight;
+
 }
-
-
-/* =========================================================
-   LEVEL-UP CLOSE BUTTON
-========================================================= */
-
-document.getElementById(
-"closeLevelUp"
-).onclick =
-function() {
-
-document.getElementById(
-"levelUpOverlay"
-).classList.remove("show");
-
-};
 
 
 /* =========================================================
