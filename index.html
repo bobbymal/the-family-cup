@@ -1,444 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Real Life Growth</title>
 
 <style>
-*{box-sizing:border-box}
 
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#10141b;
-  color:#f5f5f5;
+* {
+    box-sizing: border-box;
 }
 
-.container{
-  max-width:950px;
-  margin:auto;
-  padding:16px;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #10141b;
+    color: #f5f5f5;
 }
 
-header{
-  text-align:center;
-  margin-bottom:18px;
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 16px;
 }
 
-header h1{
-  margin:0;
-  font-size:31px;
-  letter-spacing:1px;
+header {
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-header p{
-  margin-top:7px;
-  color:#aeb7c4;
-  font-size:14px;
+header h1 {
+    margin: 0;
+    font-size: 31px;
+    letter-spacing: 1px;
 }
 
-.child-selector{
-  display:flex;
-  gap:10px;
-  margin-bottom:16px;
+header p {
+    margin-top: 7px;
+    color: #aeb7c4;
+    font-size: 14px;
 }
 
-.child-button{
-  flex:1;
-  padding:13px;
-  border:2px solid #303846;
-  border-radius:12px;
-  background:#191f29;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
+
+/* =========================
+   CHILD BUTTONS
+========================= */
+
+.child-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
 }
 
-.child-button.active{
-  border-color:#e0b84f;
-  background:#252c38;
+.child-button {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid #303846;
+    border-radius: 12px;
+    background: #191f29;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.profile-card{
-  background:#191f29;
-  border:1px solid #303846;
-  border-radius:18px;
-  padding:20px;
-  margin-bottom:18px;
+.child-button.active {
+    border-color: #e0b84f;
+    background: #252c38;
 }
 
-.character-area{
-  text-align:center;
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card {
+    background: #191f29;
+    border: 1px solid #303846;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
 }
 
-.character-frame{
-  width:270px;
-  height:360px;
-  margin:0 auto 12px;
-  background:#11161d;
-  border:3px solid #303846;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+
+/* =========================
+   CHARACTER
+========================= */
+
+.character-area {
+    text-align: center;
 }
 
-.character-frame.level-2{
-  border-color:#e0b84f;
-  box-shadow:0 0 22px rgba(224,184,79,.3);
+.character-frame {
+    width: 270px;
+    height: 360px;
+    margin: 0 auto 12px;
+    background: #11161d;
+    border: 3px solid #303846;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.character-frame.level-3{
-  border-color:#65d68b;
-  box-shadow:0 0 28px rgba(101,214,139,.4);
+.character-frame.level-2 {
+    border-color: #e0b84f;
+    box-shadow: 0 0 22px rgba(224,184,79,.3);
 }
 
-.character-frame.level-4{
-  border-color:#65d68b;
-  box-shadow:0 0 32px rgba(101,214,139,.5);
+.character-frame.level-3 {
+    border-color: #65d68b;
+    box-shadow: 0 0 28px rgba(101,214,139,.4);
 }
 
-.character-frame.level-5{
-  border-color:#b56cff;
-  box-shadow:0 0 35px rgba(181,108,255,.5);
+.character-frame.level-4 {
+    border-color: #65d68b;
+    box-shadow: 0 0 32px rgba(101,214,139,.45);
 }
 
-.character-image{
-  width:100%;
-  height:100%;
-  object-fit:contain;
+.character-frame.level-5 {
+    border-color: #b56cff;
+    box-shadow: 0 0 35px rgba(181,108,255,.5);
 }
 
-.character-placeholder{
-  text-align:center;
-  color:#778291;
-  padding:20px;
+.character-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.character-placeholder .baby{
-  display:block;
-  font-size:70px;
+.character-placeholder {
+    text-align: center;
+    color: #778291;
+    padding: 20px;
 }
 
-.character-stage{
-  color:#e0b84f;
-  font-weight:bold;
-  font-size:15px;
+.character-placeholder .baby {
+    display: block;
+    font-size: 70px;
 }
 
-.character-caption{
-  color:#9da7b4;
-  font-size:12px;
+.character-stage {
+    color: #e0b84f;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.profile-name{
-  text-align:center;
-  font-size:29px;
-  font-weight:bold;
-  margin-top:10px;
+.character-caption {
+    color: #9da7b4;
+    font-size: 12px;
 }
 
-.overall-label{
-  text-align:center;
-  color:#8f99a8;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:2px;
+
+/* =========================
+   NAME / LEVEL
+========================= */
+
+.profile-name {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.overall-level{
-  text-align:center;
-  font-size:31px;
-  font-weight:bold;
-  color:#7f8997;
-  margin:3px 0 13px;
+.overall-label {
+    text-align: center;
+    color: #8f99a8;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.overall-level.level-2{color:#e0b84f}
-.overall-level.level-3{color:#65d68b}
-.overall-level.level-4{color:#65d68b}
-.overall-level.level-5{color:#b56cff}
-
-.xp-text{
-  display:flex;
-  justify-content:space-between;
-  color:#aeb7c4;
-  font-size:11px;
-  margin-bottom:6px;
+.overall-level {
+    text-align: center;
+    font-size: 31px;
+    font-weight: bold;
+    color: #7f8997;
+    margin: 3px 0 13px;
 }
 
-.progress-background{
-  width:100%;
-  height:11px;
-  background:#0d1015;
-  border-radius:999px;
-  overflow:hidden;
+.overall-level.level-2 {
+    color: #e0b84f;
 }
 
-.progress-fill{
-  height:100%;
-  background:linear-gradient(90deg,#c99425,#f1d36b);
-  border-radius:999px;
+.overall-level.level-3 {
+    color: #65d68b;
 }
 
-.trust-card{
-  margin-top:16px;
-  padding:14px;
-  background:#151b23;
-  border:1px solid #303846;
-  border-radius:13px;
+.overall-level.level-4 {
+    color: #65d68b;
 }
 
-.trust-header{
-  display:flex;
-  justify-content:space-between;
+.overall-level.level-5 {
+    color: #b56cff;
 }
 
-.trust-value{
-  color:#8fd694;
-  font-weight:bold;
+
+/* =========================
+   XP
+========================= */
+
+.xp-text {
+    display: flex;
+    justify-content: space-between;
+    color: #aeb7c4;
+    font-size: 11px;
+    margin-bottom: 6px;
 }
 
-.trust-description{
-  color:#7f8997;
-  font-size:11px;
-  margin:5px 0 8px;
+.progress-background {
+    width: 100%;
+    height: 11px;
+    background: #0d1015;
+    border-radius: 999px;
+    overflow: hidden;
 }
 
-.trust-bar-background{
-  width:100%;
-  height:9px;
-  background:#0d1015;
-  border-radius:999px;
-  overflow:hidden;
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg,#c99425,#f1d36b);
+    border-radius: 999px;
 }
 
-.trust-bar-fill{
-  height:100%;
-  background:linear-gradient(90deg,#5ca866,#9be3a0);
+
+/* =========================
+   TRUST
+========================= */
+
+.trust-card {
+    margin-top: 16px;
+    padding: 14px;
+    background: #151b23;
+    border: 1px solid #303846;
+    border-radius: 13px;
 }
 
-.skills-title{
-  font-size:23px;
-  font-weight:bold;
-  margin:12px 0;
+.trust-header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:9px;
+.trust-value {
+    color: #8fd694;
+    font-weight: bold;
 }
 
-.skill-card{
-  background:#191f29;
-  border:2px solid #303846;
-  border-radius:12px;
-  padding:11px;
+.trust-description {
+    color: #7f8997;
+    font-size: 11px;
+    margin: 5px 0 8px;
 }
 
-.skill-card.level-2{
-  border-color:#e0b84f;
-  box-shadow:0 0 12px rgba(224,184,79,.16);
+.trust-bar-background {
+    width: 100%;
+    height: 9px;
+    background: #0d1015;
+    border-radius: 999px;
+    overflow: hidden;
 }
 
-.skill-card.level-3{
-  border-color:#65d68b;
+.trust-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg,#5ca866,#9be3a0);
 }
 
-.skill-card.level-4{
-  border-color:#58a6ff;
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-title {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 12px 0;
 }
 
-.skill-card.level-5{
-  border-color:#b56cff;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 9px;
 }
 
-.skill-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:5px;
-  margin-bottom:7px;
+.skill-card {
+    background: #191f29;
+    border: 2px solid #303846;
+    border-radius: 12px;
+    padding: 11px;
 }
 
-.skill-name{
-  font-size:13px;
-  font-weight:bold;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.skill-card.level-2 {
+    border-color: #e0b84f;
+    box-shadow: 0 0 12px rgba(224,184,79,.16);
 }
 
-.skill-level{
-  font-size:13px;
-  font-weight:bold;
-  color:#7f8997;
+.skill-card.level-3 {
+    border-color: #65d68b;
 }
 
-.skill-level.level-2{color:#e0b84f}
-.skill-level.level-3{color:#65d68b}
-.skill-level.level-4{color:#58a6ff}
-.skill-level.level-5{color:#b56cff}
-
-.skill-card .progress-background{
-  height:8px;
+.skill-card.level-4 {
+    border-color: #58a6ff;
 }
 
-.skill-xp{
-  margin-top:5px;
-  color:#778291;
-  font-size:10px;
-  display:flex;
-  justify-content:space-between;
+.skill-card.level-5 {
+    border-color: #b56cff;
 }
 
-.growth-card{
-  margin-top:22px;
-  padding:18px;
-  background:linear-gradient(135deg,#19251f,#191f29);
-  border:2px solid #65d68b;
-  border-radius:16px;
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 7px;
 }
 
-.growth-title{
-  color:#65d68b;
-  font-size:19px;
-  font-weight:bold;
-  margin-bottom:8px;
+.skill-name {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.growth-message{
-  color:#d9dee5;
-  line-height:1.6;
-  font-size:14px;
+.skill-level {
+    font-size: 13px;
+    font-weight: bold;
+    color: #7f8997;
 }
 
-.growth-highlight{
-  margin-top:10px;
-  color:#e0b84f;
-  font-weight:bold;
-  line-height:1.5;
+.skill-level.level-2 {
+    color: #e0b84f;
 }
 
-.footer{
-  text-align:center;
-  color:#697383;
-  font-size:11px;
-  margin:25px 0 8px;
+.skill-level.level-3 {
+    color: #65d68b;
 }
 
-@media(max-width:520px){
-  .skills-grid{gap:7px}
-  .skill-card{padding:9px}
-  .skill-name{font-size:11px}
-  .skill-level{font-size:11px}
-  .character-frame{
-    width:240px;
-    height:320px;
-  }
+.skill-level.level-4 {
+    color: #58a6ff;
 }
 
-@media(max-width:360px){
-  .skills-grid{
-    grid-template-columns:1fr;
-  }
+.skill-level.level-5 {
+    color: #b56cff;
 }
+
+.skill-card .progress-background {
+    height: 8px;
+}
+
+.skill-xp {
+    margin-top: 5px;
+    color: #778291;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   TODAY'S GROWTH
+========================= */
+
+.growth-card {
+    margin-top: 22px;
+    padding: 18px;
+    background: linear-gradient(135deg,#19251f,#191f29);
+    border: 2px solid #65d68b;
+    border-radius: 16px;
+}
+
+.growth-title {
+    color: #65d68b;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.growth-message {
+    color: #d9dee5;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.growth-highlight {
+    margin-top: 10px;
+    color: #e0b84f;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    color: #697383;
+    font-size: 11px;
+    margin: 25px 0 8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:520px) {
+
+    .skills-grid {
+        gap: 7px;
+    }
+
+    .skill-card {
+        padding: 9px;
+    }
+
+    .skill-name {
+        font-size: 11px;
+    }
+
+    .skill-level {
+        font-size: 11px;
+    }
+
+    .character-frame {
+        width: 240px;
+        height: 320px;
+    }
+
+}
+
+@media(max-width:360px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
+
 <header>
+
 <h1>🌱 REAL LIFE GROWTH</h1>
-<p>Become stronger. Learn more. Help others. Keep growing.</p>
+
+<p>
+Become stronger. Learn more. Help others. Keep growing.
+</p>
+
 </header>
 
+
 <div class="child-selector">
-<button class="child-button active" id="button-JD" onclick="selectChild('JD')">JD</button>
-<button class="child-button" id="button-Michael" onclick="selectChild('Michael')">Michael</button>
+
+<button
+class="child-button active"
+id="button-JD"
+onclick="selectChild('JD')">
+
+JD
+
+</button>
+
+
+<button
+class="child-button"
+id="button-Michael"
+onclick="selectChild('Michael')">
+
+Michael
+
+</button>
+
 </div>
+
 
 <div class="profile-card">
 
+
 <div class="character-area">
 
-<div class="character-frame" id="characterFrame">
 
-<img id="characterImage" class="character-image" src="" alt="Character">
+<div
+class="character-frame"
+id="characterFrame">
 
-<div id="characterPlaceholder" class="character-placeholder">
+
+<img
+id="characterImage"
+class="character-image"
+src=""
+alt="Character">
+
+
+<div
+id="characterPlaceholder"
+class="character-placeholder">
+
 <span class="baby">⭐</span>
+
 Character artwork coming soon.
-</div>
 
 </div>
 
-<div id="characterStage" class="character-stage"></div>
-<div id="characterCaption" class="character-caption"></div>
+</div>
+
+
+<div
+id="characterStage"
+class="character-stage">
+</div>
+
+
+<div
+id="characterCaption"
+class="character-caption">
+</div>
+
 
 </div>
 
-<div id="childName" class="profile-name"></div>
 
-<div class="overall-label">OVERALL CHARACTER</div>
+<div
+id="childName"
+class="profile-name">
+</div>
 
-<div id="overallLevel" class="overall-level"></div>
+
+<div class="overall-label">
+
+OVERALL CHARACTER
+
+</div>
+
+
+<div
+id="overallLevel"
+class="overall-level">
+</div>
+
 
 <div class="xp-text">
-<span id="overallCurrentXP"></span>
-<span>Growth Progress</span>
+
+<span
+id="overallCurrentXP">
+</span>
+
+<span>
+Growth Progress
+</span>
+
 </div>
 
+
 <div class="progress-background">
-<div id="overallProgress" class="progress-fill"></div>
+
+<div
+id="overallProgress"
+class="progress-fill">
 </div>
+
+</div>
+
 
 <div class="trust-card">
 
+
 <div class="trust-header">
-<strong>🛡️ Trust</strong>
-<span id="trustValue" class="trust-value"></span>
+
+<strong>
+🛡️ Trust
+</strong>
+
+
+<span
+id="trustValue"
+class="trust-value">
+</span>
+
 </div>
+
 
 <div class="trust-description">
+
 Trust grows through consistent responsible choices.
+
 </div>
+
 
 <div class="trust-bar-background">
-<div id="trustBar" class="trust-bar-fill"></div>
+
+<div
+id="trustBar"
+class="trust-bar-fill">
 </div>
 
 </div>
+
+
 </div>
 
-<div class="skills-title">Your Skills</div>
 
-<div id="skillsGrid" class="skills-grid"></div>
+</div>
+
+
+<div class="skills-title">
+
+Your Skills
+
+</div>
+
+
+<div
+id="skillsGrid"
+class="skills-grid">
+</div>
+
 
 <div class="growth-card">
 
-<div class="growth-title">🌟 TODAY'S GROWTH</div>
 
-<div id="growthMessage" class="growth-message"></div>
+<div class="growth-title">
 
-<div id="growthHighlight" class="growth-highlight"></div>
+🌟 TODAY'S GROWTH
 
 </div>
+
+
+<div
+id="growthMessage"
+class="growth-message">
+</div>
+
+
+<div
+id="growthHighlight"
+class="growth-highlight">
+</div>
+
+
+</div>
+
 
 <div class="footer">
+
 Growth isn't about being better than someone else.<br>
+
 It's about becoming who you're capable of becoming.
-</div>
 
 </div>
+
+
+</div>
+
 
 <script>
+
 
 /* =========================================================
    SKILLS
@@ -471,7 +702,9 @@ const skills = [
 "💪 Strength",
 "♟️ Chess",
 "🧠 Critical Thinking",
-"🎵 Music"
+"🎵 Music",
+
+"🥗 Nutrition / Healthy Choices"
 
 ];
 
@@ -482,102 +715,145 @@ const skills = [
 
 const players = {
 
-/* =========================
+
+/* =========================================================
    JD
-========================= */
+========================================================= */
 
 JD: {
 
 xp: {
 
-"⚾ Baseball":20,
+"⚾ Baseball":80,
+
 "🏀 Basketball":5,
+
 "🏈 Football":9,
+
 "⛳ Golf":30,
+
 "🎳 Bowling":20,
 
-"📚 Reading":122,
+"📚 Reading":142,
+
 "✍️ Writing":13,
+
 "🔢 Mathematics":0,
+
 "🎨 Drawing":0,
+
 "🧱 Building":0,
+
 "🎨 Designing":0,
 
-"🙏 God Relationship":50,
+"🙏 God Relationship":175,
+
 "❤️ Family Relationship":131,
+
 "🤝 Friend Relationships":140,
 
-"💡 Creativity":4,
-"🍳 Cooking":0,
-"🧹 Responsibility":94,
+"💡 Creativity":7,
 
-"🏃 Running / Speed":8,
-"💪 Strength":9,
+"🍳 Cooking":0,
+
+"🧹 Responsibility":99,
+
+"🏃 Running / Speed":13,
+
+"💪 Strength":19,
+
 "♟️ Chess":0,
-"🧠 Critical Thinking":35,
-"🎵 Music":60
+
+"🧠 Critical Thinking":50,
+
+"🎵 Music":60,
+
+"🥗 Nutrition / Healthy Choices":5
 
 },
 
 trust:100,
 
+
 growthMessage:
 
-"JD had an awesome day of real-life growth! He read, played golf and catch, helped his sister and Momma at the grocery store, listened well, spent hours with Papa Big, spent time with Uncle, went bowling with Momma and Grandpa, listened to worship music, prayed before eating, and read a letter from Grandma and Grandpa.",
+"JD had an incredible day of growth! He spent time learning about Jesus at church, worshiping, praying, reading Scripture, solving a puzzle, creating things, helping his sister and Momma, connecting with Papa Big and Uncle, playing golf and baseball, bowling, and making responsible choices like brushing his teeth and staying in his seat at dinner.",
+
 
 growthHighlight:
 
-"❤️ Your time with family matters! Helping people, being social, listening well, playing sports, reading, and spending time with the people who love you are all ways you are becoming stronger."
+"🙏 Real growth happens everywhere — in church, at home, at the dinner table, on the baseball field, and while helping your family. Keep choosing to be helpful, responsible, curious, and kind!"
 
 },
 
 
-/* =========================
+/* =========================================================
    MICHAEL
-========================= */
+========================================================= */
 
 Michael: {
 
 xp: {
 
-"⚾ Baseball":118,
+"⚾ Baseball":178,
+
 "🏀 Basketball":8,
+
 "🏈 Football":19,
+
 "⛳ Golf":38,
+
 "🎳 Bowling":20,
 
-"📚 Reading":285,
+"📚 Reading":305,
+
 "✍️ Writing":31,
+
 "🔢 Mathematics":0,
-"🎨 Drawing":0,
-"🧱 Building":0,
+
+"🎨 Drawing":15,
+
+"🧱 Building":8,
+
 "🎨 Designing":0,
 
-"🙏 God Relationship":50,
+"🙏 God Relationship":175,
+
 "❤️ Family Relationship":57,
+
 "🤝 Friend Relationships":55,
 
-"💡 Creativity":18,
-"🍳 Cooking":0,
-"🧹 Responsibility":49,
+"💡 Creativity":43,
 
-"🏃 Running / Speed":20,
-"💪 Strength":21,
+"🍳 Cooking":0,
+
+"🧹 Responsibility":67,
+
+"🏃 Running / Speed":25,
+
+"💪 Strength":31,
+
 "♟️ Chess":0,
-"🧠 Critical Thinking":57,
-"🎵 Music":60
+
+"🧠 Critical Thinking":75,
+
+"🎵 Music":60,
+
+"🥗 Nutrition / Healthy Choices":5
 
 },
 
 trust:100,
 
+
 growthMessage:
 
-"Michael had a HUGE growth day! He read for about 45 minutes, played golf for about 30 minutes, played catch, completed a baseball tryout with grounders, hitting, pop-ups, running and first base, went bowling with Momma and Grandpa, listened to worship music, prayed before eating, and read a letter from Grandma and Grandpa.",
+"Michael had a huge day of growth! He spent time learning about Jesus at church, worshiping, praying, studying Scripture, building, creating with scissors and glue, connecting with Grandpa, playing golf and catch, bowling, and working hard for a full hour at baseball.",
+
 
 growthHighlight:
 
-"⚾ Every sport can help another sport! Catch builds throwing and catching for baseball, football and basketball. Golf builds coordination and control. Baseball builds speed, reactions and athletic confidence. And reading makes your brain stronger too!"
+"⚾ Your hard work on the baseball field is building more than baseball. You're developing focus, strength, coordination, speed, problem-solving, and confidence — while reading and Scripture study are strengthening your mind and faith."
 
 }
 
@@ -586,6 +862,14 @@ growthHighlight:
 
 /* =========================================================
    CHARACTER IMAGES
+=========================================================
+
+   We use the highest artwork that exists.
+
+   This means if a child is Level 7 but only has
+   a Level 5 picture, the Level 5 picture stays visible
+   instead of showing a broken image.
+
 ========================================================= */
 
 const characterImages = {
@@ -593,18 +877,27 @@ const characterImages = {
 JD: {
 
 1:"images/JD/level-1.png",
+
 2:"images/JD/level-2.png",
+
 3:"images/JD/level-3.png",
-4:"images/JD/level-4.png"
+
+4:"images/JD/level-4.png",
+
+5:"images/JD/level-5.png"
 
 },
 
 Michael: {
 
 1:"images/Michael/level-1.png",
+
 2:"images/Michael/level-2.png",
+
 3:"images/Michael/level-3.png",
+
 4:"images/Michael/level-4.png",
+
 5:"images/Michael/level-5.png"
 
 }
@@ -616,13 +909,17 @@ Michael: {
    XP LEVEL THRESHOLDS
 ========================================================= */
 
-function xpForLevel(level){
+function xpForLevel(level) {
 
-if(level<=1)return 0;
+if(level <= 1) {
 
-let total=0;
+return 0;
 
-for(let i=1;i<level;i++){
+}
+
+let total = 0;
+
+for(let i=1;i<level;i++) {
 
 total += Math.floor(
 i + 300 * Math.pow(2,i/7)
@@ -639,15 +936,21 @@ return Math.floor(total/4);
    GET SKILL LEVEL
 ========================================================= */
 
-function getLevel(xp){
+function getLevel(xp) {
 
-let level=1;
+let level = 1;
 
-while(xp>=xpForLevel(level+1)){
+while(
+xp >= xpForLevel(level+1)
+) {
 
 level++;
 
-if(level>=99)return 99;
+if(level >= 99) {
+
+return 99;
+
+}
 
 }
 
@@ -657,17 +960,25 @@ return level;
 
 
 /* =========================================================
-   PROGRESS
+   SKILL PROGRESS
 ========================================================= */
 
-function getProgress(xp){
+function getProgress(xp) {
 
-const level=getLevel(xp);
+const level =
+getLevel(xp);
 
-if(level>=99)return 100;
+if(level >= 99) {
 
-const current=xpForLevel(level);
-const next=xpForLevel(level+1);
+return 100;
+
+}
+
+const current =
+xpForLevel(level);
+
+const next =
+xpForLevel(level+1);
 
 return Math.max(
 0,
@@ -684,43 +995,45 @@ Math.min(
    OVERALL LEVEL
 =========================================================
 
-Every skill level above Level 1 contributes to
-the child's overall character level.
+   Every skill level above Level 1 counts.
 
-JD currently has:
+   JD currently has:
 
-Reading Level 2
-Friend Relationships Level 2
-Family Relationship Level 2
+   Reading              Level 2 = +1
+   God Relationship     Level 3 = +2
+   Family Relationship  Level 2 = +1
+   Friend Relationships Level 2 = +1
+   Responsibility       Level 2 = +1
 
-Therefore:
+   Overall:
 
-1 + 1 + 1 + 1 = OVERALL LEVEL 4
+   1 + 1 + 2 + 1 + 1 + 1 = LEVEL 7
 
 
-Michael currently has:
+   Michael currently has:
 
-Reading Level 4
-Baseball Level 2
+   Reading          Level 4 = +3
+   Baseball         Level 3 = +2
+   God Relationship Level 3 = +2
 
-Therefore:
+   Overall:
 
-1 + 3 + 1 = OVERALL LEVEL 5
+   1 + 3 + 2 + 2 = LEVEL 8
 
 ========================================================= */
 
-function getOverallLevel(player){
+function getOverallLevel(player) {
 
-let gainedLevels=0;
+let gainedLevels = 0;
 
-skills.forEach(skill=>{
+skills.forEach(skill => {
 
 gainedLevels +=
-getLevel(player.xp[skill])-1;
+getLevel(player.xp[skill]) - 1;
 
 });
 
-return 1+gainedLevels;
+return 1 + gainedLevels;
 
 }
 
@@ -729,11 +1042,11 @@ return 1+gainedLevels;
    TOTAL XP
 ========================================================= */
 
-function getTotalXP(player){
+function getTotalXP(player) {
 
 return skills.reduce(
-(total,skill)=>
-total+player.xp[skill],
+(total,skill) =>
+total + player.xp[skill],
 0
 );
 
@@ -744,9 +1057,9 @@ total+player.xp[skill],
    CHARACTER STAGE
 ========================================================= */
 
-function getCharacterStage(level){
+function getCharacterStage(level) {
 
-if(level<=1){
+if(level <= 1) {
 
 return {
 name:"LITTLE ONE",
@@ -755,7 +1068,7 @@ caption:"The beginning of the journey."
 
 }
 
-if(level===2){
+if(level === 2) {
 
 return {
 name:"LITTLE KID",
@@ -764,7 +1077,7 @@ caption:"Growing, learning, and discovering."
 
 }
 
-if(level===3){
+if(level === 3) {
 
 return {
 name:"KID",
@@ -773,7 +1086,7 @@ caption:"Building skills and becoming more capable."
 
 }
 
-if(level===4){
+if(level === 4) {
 
 return {
 name:"FAMILY HERO",
@@ -782,7 +1095,7 @@ caption:"Growing stronger, kinder, and more helpful."
 
 }
 
-if(level===5){
+if(level === 5) {
 
 return {
 name:"RISING HERO",
@@ -791,17 +1104,26 @@ caption:"Building skills across life, sports, learning, and character."
 
 }
 
-if(level<=10){
+if(level <= 7) {
 
 return {
-name:"BIG KID",
-caption:"Growing stronger, wiser, and more independent."
+name:"GROWING HERO",
+caption:"Growing stronger, wiser, kinder, and more capable."
+};
+
+}
+
+if(level <= 10) {
+
+return {
+name:"BIG KID HERO",
+caption:"Learning to use your strengths to help yourself and others."
 };
 
 }
 
 return {
-name:"GROWING HERO",
+name:"LIFE HERO",
 caption:"Becoming the person you're capable of becoming."
 };
 
@@ -812,21 +1134,23 @@ caption:"Becoming the person you're capable of becoming."
    CURRENT CHILD
 ========================================================= */
 
-let currentChild="JD";
+let currentChild = "JD";
 
 
 /* =========================================================
    SELECT CHILD
 ========================================================= */
 
-function selectChild(child){
+function selectChild(child) {
 
-currentChild=child;
+currentChild = child;
 
 document
 .querySelectorAll(".child-button")
-.forEach(button=>{
+.forEach(button => {
+
 button.classList.remove("active");
+
 });
 
 document
@@ -839,72 +1163,162 @@ render();
 
 
 /* =========================================================
-   UPDATE CHARACTER
+   FIND BEST AVAILABLE CHARACTER IMAGE
 ========================================================= */
 
-function updateCharacter(level){
+function getCharacterImage(child, level) {
 
-const image=
-document.getElementById("characterImage");
+const images =
+characterImages[child];
 
-const placeholder=
-document.getElementById("characterPlaceholder");
+if(!images) {
 
-const frame=
-document.getElementById("characterFrame");
+return null;
 
-frame.className=
+}
+
+
+/*
+Try the child's exact level first.
+*/
+
+if(images[level]) {
+
+return images[level];
+
+}
+
+
+/*
+If that level doesn't have artwork,
+use the highest available artwork below it.
+*/
+
+const availableLevels =
+Object.keys(images)
+.map(Number)
+.sort((a,b)=>b-a);
+
+
+for(const imageLevel of availableLevels) {
+
+if(imageLevel <= level) {
+
+return images[imageLevel];
+
+}
+
+}
+
+return null;
+
+}
+
+
+/* =========================================================
+   CHARACTER
+========================================================= */
+
+function updateCharacter(level) {
+
+const image =
+document.getElementById(
+"characterImage"
+);
+
+const placeholder =
+document.getElementById(
+"characterPlaceholder"
+);
+
+const frame =
+document.getElementById(
+"characterFrame"
+);
+
+
+frame.className =
 "character-frame level-"+
 Math.min(level,5);
 
-const path=
-characterImages[currentChild]?.[level];
 
-if(!path){
+const path =
+getCharacterImage(
+currentChild,
+level
+);
 
-image.style.display="none";
-placeholder.style.display="block";
+
+if(!path) {
+
+image.style.display =
+"none";
+
+placeholder.style.display =
+"block";
+
 return;
 
 }
 
-image.src=path;
 
-image.alt=
+image.src =
+path;
+
+image.alt =
 currentChild+
 " character at level "+
 level;
 
-image.style.display="block";
-placeholder.style.display="none";
 
-image.onerror=function(){
+image.style.display =
+"block";
 
-image.style.display="none";
-placeholder.style.display="block";
+placeholder.style.display =
+"none";
+
+
+image.onerror =
+function() {
+
+image.style.display =
+"none";
+
+placeholder.style.display =
+"block";
 
 };
 
-image.onload=function(){
 
-image.style.display="block";
-placeholder.style.display="none";
+image.onload =
+function() {
+
+image.style.display =
+"block";
+
+placeholder.style.display =
+"none";
 
 };
 
-const stage=
+
+const stage =
 getCharacterStage(level);
+
 
 document.getElementById(
 "characterStage"
-).textContent=
+).textContent =
+
 stage.name+
 " • LEVEL "+
 level;
 
+
 document.getElementById(
 "characterCaption"
-).textContent=
+).textContent =
+
 stage.caption;
 
 }
@@ -914,14 +1328,17 @@ stage.caption;
    RENDER
 ========================================================= */
 
-function render(){
+function render() {
 
-const player=players[currentChild];
+const player =
+players[currentChild];
 
-const overallLevel=
+
+const overallLevel =
 getOverallLevel(player);
 
-const totalXP=
+
+const totalXP =
 getTotalXP(player);
 
 
@@ -929,21 +1346,23 @@ getTotalXP(player);
 
 document.getElementById(
 "childName"
-).textContent=
+).textContent =
 currentChild;
 
 
 /* OVERALL LEVEL */
 
-const levelElement=
+const levelElement =
 document.getElementById(
 "overallLevel"
 );
 
-levelElement.textContent=
+
+levelElement.textContent =
 "LEVEL "+overallLevel;
 
-levelElement.className=
+
+levelElement.className =
 "overall-level level-"+
 Math.min(overallLevel,5);
 
@@ -952,28 +1371,34 @@ Math.min(overallLevel,5);
 
 document.getElementById(
 "overallCurrentXP"
-).textContent=
+).textContent =
+
 totalXP.toLocaleString()+
 " TOTAL XP";
 
 
 /* OVERALL PROGRESS */
 
-let totalProgress=0;
+let totalProgress = 0;
 
-skills.forEach(skill=>{
+skills.forEach(skill => {
 
 totalProgress +=
-getProgress(player.xp[skill]);
+getProgress(
+player.xp[skill]
+);
 
 });
 
-totalProgress=
-totalProgress/skills.length;
+
+totalProgress =
+totalProgress /
+skills.length;
+
 
 document.getElementById(
 "overallProgress"
-).style.width=
+).style.width =
 totalProgress+"%";
 
 
@@ -981,104 +1406,144 @@ totalProgress+"%";
 
 document.getElementById(
 "trustValue"
-).textContent=
+).textContent =
 player.trust+"%";
+
 
 document.getElementById(
 "trustBar"
-).style.width=
+).style.width =
 player.trust+"%";
 
 
 /* CHARACTER */
 
-updateCharacter(overallLevel);
+updateCharacter(
+overallLevel
+);
 
 
-/* SKILLS */
+/* =====================================================
+   SKILLS
+===================================================== */
 
-const grid=
+const grid =
 document.getElementById(
 "skillsGrid"
 );
 
-grid.innerHTML="";
+
+grid.innerHTML = "";
 
 
-skills.forEach(skill=>{
+skills.forEach(skill => {
 
-const xp=
+
+const xp =
 player.xp[skill];
 
-const level=
+
+const level =
 getLevel(xp);
 
-const progress=
+
+const progress =
 getProgress(xp);
 
-const card=
+
+const card =
 document.createElement("div");
 
-card.className=
+
+card.className =
 "skill-card level-"+
 Math.min(level,5);
 
-card.innerHTML=`
+
+card.innerHTML = `
 
 <div class="skill-header">
 
 <div class="skill-name">
+
 ${skill}
+
 </div>
 
-<div class="skill-level level-${Math.min(level,5)}">
+
+<div
+class="skill-level level-${Math.min(level,5)}">
+
 LV ${level}
+
 </div>
 
 </div>
+
 
 <div class="progress-background">
 
 <div
 class="progress-fill"
 style="width:${progress}%">
+
 </div>
 
 </div>
+
 
 <div class="skill-xp">
 
 <span>
+
 ${xp.toLocaleString()} XP
+
 </span>
 
+
 <span>
+
 ${
-level>=99
-?"MAX"
-:xpForLevel(level+1).toLocaleString()+" XP"
+level >= 99
+
+? "MAX"
+
+:
+
+xpForLevel(
+level+1
+).toLocaleString()+
+" XP"
+
 }
+
 </span>
 
 </div>
 
 `;
 
+
 grid.appendChild(card);
 
 });
 
 
-/* TODAY'S MESSAGE */
+/* =====================================================
+   TODAY'S GROWTH MESSAGE
+===================================================== */
 
 document.getElementById(
 "growthMessage"
-).textContent=
+).textContent =
+
 player.growthMessage;
+
 
 document.getElementById(
 "growthHighlight"
-).textContent=
+).textContent =
+
 player.growthHighlight;
 
 }
@@ -1093,4 +1558,5 @@ render();
 </script>
 
 </body>
+
 </html>
