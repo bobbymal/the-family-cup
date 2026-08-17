@@ -450,7 +450,6 @@ header p {
 
 <body>
 
-
 <div class="container">
 
 
@@ -542,9 +541,7 @@ class="profile-name">
 
 
 <div class="overall-label">
-
 OVERALL CHARACTER
-
 </div>
 
 
@@ -579,13 +576,11 @@ class="progress-fill">
 
 <div class="trust-card">
 
-
 <div class="trust-header">
 
 <strong>
 🛡️ Trust
 </strong>
-
 
 <span
 id="trustValue"
@@ -611,17 +606,13 @@ class="trust-bar-fill">
 
 </div>
 
-
 </div>
-
 
 </div>
 
 
 <div class="skills-title">
-
 Your Skills
-
 </div>
 
 
@@ -633,11 +624,8 @@ class="skills-grid">
 
 <div class="growth-card">
 
-
 <div class="growth-title">
-
 🌟 TODAY'S GROWTH
-
 </div>
 
 
@@ -651,7 +639,6 @@ class="growth-message">
 id="growthHighlight"
 class="growth-highlight">
 </div>
-
 
 </div>
 
@@ -728,17 +715,17 @@ xp: {
 
 "🏀 Basketball":5,
 
-"🏈 Football":9,
+"🏈 Football":14,
 
-"⛳ Golf":30,
+"⛳ Golf":60,
 
 "🎳 Bowling":20,
 
 "📚 Reading":142,
 
-"✍️ Writing":13,
+"✍️ Writing":21,
 
-"🔢 Mathematics":0,
+"🔢 Mathematics":3,
 
 "🎨 Drawing":0,
 
@@ -746,17 +733,17 @@ xp: {
 
 "🎨 Designing":0,
 
-"🙏 God Relationship":175,
+"🙏 God Relationship":180,
 
 "❤️ Family Relationship":131,
 
-"🤝 Friend Relationships":140,
+"🤝 Friend Relationships":143,
 
-"💡 Creativity":7,
+"💡 Creativity":15,
 
 "🍳 Cooking":0,
 
-"🧹 Responsibility":99,
+"🧹 Responsibility":104,
 
 "🏃 Running / Speed":13,
 
@@ -764,7 +751,7 @@ xp: {
 
 "♟️ Chess":0,
 
-"🧠 Critical Thinking":50,
+"🧠 Critical Thinking":55,
 
 "🎵 Music":60,
 
@@ -777,12 +764,12 @@ trust:100,
 
 growthMessage:
 
-"JD had an incredible day of growth! He spent time learning about Jesus at church, worshiping, praying, reading Scripture, solving a puzzle, creating things, helping his sister and Momma, connecting with Papa Big and Uncle, playing golf and baseball, bowling, and making responsible choices like brushing his teeth and staying in his seat at dinner.",
+"JD has had an incredible day of growth! He spent time learning about Jesus, worshiping, praying, solving puzzles, creating things, helping his sister and Momma, connecting with Papa Big and Uncle, playing golf and baseball, bowling, and making responsible choices. He even created his own fantasy football draft and organized names to draw from hats!",
 
 
 growthHighlight:
 
-"🙏 Real growth happens everywhere — in church, at home, at the dinner table, on the baseball field, and while helping your family. Keep choosing to be helpful, responsible, curious, and kind!"
+"🏈 Creating your own game takes imagination, planning, writing, organization, and problem-solving. Keep using your ideas to create, lead, help others, and grow!"
 
 },
 
@@ -801,7 +788,7 @@ xp: {
 
 "🏈 Football":19,
 
-"⛳ Golf":38,
+"⛳ Golf":68,
 
 "🎳 Bowling":20,
 
@@ -817,7 +804,7 @@ xp: {
 
 "🎨 Designing":0,
 
-"🙏 God Relationship":175,
+"🙏 God Relationship":180,
 
 "❤️ Family Relationship":57,
 
@@ -827,15 +814,15 @@ xp: {
 
 "🍳 Cooking":0,
 
-"🧹 Responsibility":67,
+"🧹 Responsibility":69,
 
 "🏃 Running / Speed":25,
 
-"💪 Strength":31,
+"💪 Strength":36,
 
 "♟️ Chess":0,
 
-"🧠 Critical Thinking":75,
+"🧠 Critical Thinking":80,
 
 "🎵 Music":60,
 
@@ -848,12 +835,12 @@ trust:100,
 
 growthMessage:
 
-"Michael had a huge day of growth! He spent time learning about Jesus at church, worshiping, praying, studying Scripture, building, creating with scissors and glue, connecting with Grandpa, playing golf and catch, bowling, and working hard for a full hour at baseball.",
+"Michael has had a huge day of growth! He spent time learning about Jesus, worshiping, praying, studying Scripture, building, creating with scissors and glue, connecting with Grandpa, playing golf and catch, bowling, and working hard for a full hour at baseball.",
 
 
 growthHighlight:
 
-"⚾ Your hard work on the baseball field is building more than baseball. You're developing focus, strength, coordination, speed, problem-solving, and confidence — while reading and Scripture study are strengthening your mind and faith."
+"⚾ Hard work in one area can make you better in many others. Baseball, golf, building, reading, Scripture, and creativity are all helping you become a stronger thinker, athlete, and person."
 
 }
 
@@ -862,14 +849,6 @@ growthHighlight:
 
 /* =========================================================
    CHARACTER IMAGES
-=========================================================
-
-   We use the highest artwork that exists.
-
-   This means if a child is Level 7 but only has
-   a Level 5 picture, the Level 5 picture stays visible
-   instead of showing a broken image.
-
 ========================================================= */
 
 const characterImages = {
@@ -877,13 +856,9 @@ const characterImages = {
 JD: {
 
 1:"images/JD/level-1.png",
-
 2:"images/JD/level-2.png",
-
 3:"images/JD/level-3.png",
-
 4:"images/JD/level-4.png",
-
 5:"images/JD/level-5.png"
 
 },
@@ -891,13 +866,9 @@ JD: {
 Michael: {
 
 1:"images/Michael/level-1.png",
-
 2:"images/Michael/level-2.png",
-
 3:"images/Michael/level-3.png",
-
 4:"images/Michael/level-4.png",
-
 5:"images/Michael/level-5.png"
 
 }
@@ -995,30 +966,31 @@ Math.min(
    OVERALL LEVEL
 =========================================================
 
-   Every skill level above Level 1 counts.
+Every skill level above Level 1 contributes.
 
-   JD currently has:
+JD:
 
-   Reading              Level 2 = +1
-   God Relationship     Level 3 = +2
-   Family Relationship  Level 2 = +1
-   Friend Relationships Level 2 = +1
-   Responsibility       Level 2 = +1
+Base = 1
 
-   Overall:
+Baseball Level 2 = +1
+Reading Level 2 = +1
+God Relationship Level 3 = +2
+Family Relationship Level 2 = +1
+Friend Relationships Level 2 = +1
+Responsibility Level 2 = +1
 
-   1 + 1 + 2 + 1 + 1 + 1 = LEVEL 7
+JD Overall = 8
 
 
-   Michael currently has:
+Michael:
 
-   Reading          Level 4 = +3
-   Baseball         Level 3 = +2
-   God Relationship Level 3 = +2
+Base = 1
 
-   Overall:
+Reading Level 4 = +3
+Baseball Level 3 = +2
+God Relationship Level 3 = +2
 
-   1 + 3 + 2 + 2 = LEVEL 8
+Michael Overall = 8
 
 ========================================================= */
 
@@ -1104,7 +1076,7 @@ caption:"Building skills across life, sports, learning, and character."
 
 }
 
-if(level <= 7) {
+if(level <= 8) {
 
 return {
 name:"GROWING HERO",
@@ -1113,7 +1085,7 @@ caption:"Growing stronger, wiser, kinder, and more capable."
 
 }
 
-if(level <= 10) {
+if(level <= 12) {
 
 return {
 name:"BIG KID HERO",
@@ -1163,10 +1135,10 @@ render();
 
 
 /* =========================================================
-   FIND BEST AVAILABLE CHARACTER IMAGE
+   FIND BEST AVAILABLE IMAGE
 ========================================================= */
 
-function getCharacterImage(child, level) {
+function getCharacterImage(child,level) {
 
 const images =
 characterImages[child];
@@ -1179,7 +1151,7 @@ return null;
 
 
 /*
-Try the child's exact level first.
+Use exact level if artwork exists.
 */
 
 if(images[level]) {
@@ -1190,8 +1162,8 @@ return images[level];
 
 
 /*
-If that level doesn't have artwork,
-use the highest available artwork below it.
+If the child is beyond the available artwork,
+use the highest available picture below that level.
 */
 
 const availableLevels =
@@ -1216,7 +1188,7 @@ return null;
 
 
 /* =========================================================
-   CHARACTER
+   UPDATE CHARACTER
 ========================================================= */
 
 function updateCharacter(level) {
@@ -1269,7 +1241,6 @@ image.alt =
 currentChild+
 " character at level "+
 level;
-
 
 image.style.display =
 "block";
@@ -1333,10 +1304,8 @@ function render() {
 const player =
 players[currentChild];
 
-
 const overallLevel =
 getOverallLevel(player);
-
 
 const totalXP =
 getTotalXP(player);
@@ -1357,10 +1326,8 @@ document.getElementById(
 "overallLevel"
 );
 
-
 levelElement.textContent =
 "LEVEL "+overallLevel;
-
 
 levelElement.className =
 "overall-level level-"+
@@ -1389,7 +1356,6 @@ player.xp[skill]
 );
 
 });
-
 
 totalProgress =
 totalProgress /
@@ -1432,28 +1398,22 @@ document.getElementById(
 "skillsGrid"
 );
 
-
 grid.innerHTML = "";
 
 
 skills.forEach(skill => {
 
-
 const xp =
 player.xp[skill];
-
 
 const level =
 getLevel(xp);
 
-
 const progress =
 getProgress(xp);
 
-
 const card =
 document.createElement("div");
-
 
 card.className =
 "skill-card level-"+
@@ -1523,27 +1483,22 @@ level+1
 
 `;
 
-
 grid.appendChild(card);
 
 });
 
 
-/* =====================================================
-   TODAY'S GROWTH MESSAGE
-===================================================== */
+/* TODAY'S GROWTH */
 
 document.getElementById(
 "growthMessage"
 ).textContent =
-
 player.growthMessage;
 
 
 document.getElementById(
 "growthHighlight"
 ).textContent =
-
 player.growthHighlight;
 
 }
@@ -1558,5 +1513,4 @@ render();
 </script>
 
 </body>
-
 </html>
