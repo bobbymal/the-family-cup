@@ -592,7 +592,7 @@ Your Skills
 
 
 <div class="skills-subtitle">
-Each skill gets harder to level up — just like RuneScape.
+Every level gets harder — just like RuneScape.
 </div>
 
 
@@ -693,67 +693,69 @@ JD: {
 
 xp: {
 
-"⚾ Baseball":95,
+"⚾ Baseball":135,
+
 "🏀 Basketball":25,
+
 "🏈 Football":29,
+
 "⚽ Soccer":40,
+
 "⛳ Golf":90,
+
 "🎳 Bowling":20,
 
 "📚 Reading":142,
+
 "✍️ Writing":21,
+
 "🔢 Mathematics":3,
+
 "🎨 Drawing":0,
+
 "🧱 Building":0,
+
 "🎨 Designing":0,
 
-"🙏 God Relationship":185,
-"❤️ Family Relationship":141,
-"🤝 Friend Relationships":158,
+"🙏 God Relationship":195,
 
-"💡 Creativity":15,
+"❤️ Family Relationship":151,
+
+"🤝 Friend Relationships":183,
+
+"💡 Creativity":30,
+
 "🍳 Cooking":0,
-"🧹 Responsibility":114,
 
-"🏃 Running / Speed":43,
-"💪 Strength":39,
+"🧹 Responsibility":122,
+
+"🏃 Running / Speed":91,
+
+"💪 Strength":59,
+
 "♟️ Chess":0,
-"🧠 Critical Thinking":70,
+
+"🧠 Critical Thinking":85,
+
 "🎵 Music":60,
 
 "🥗 Nutrition / Healthy Choices":5
 
 },
 
-/*
-   JD'S CURRENT OVERALL IS PRESERVED AT LEVEL 8.
-
-   Future skill level-ups are tracked separately.
-*/
-
-overallLevel: 8,
-
-/*
-   Skill level-ups banked toward the NEXT overall level.
-
-   JD is currently Overall 8.
-   From Overall 1-10, each skill level-up raises Overall by 1.
-
-   When JD reaches Overall 11, the requirement changes
-   to 2 skill level-ups per Overall level.
-*/
-
-overallSkillUpsTowardNext: 0,
-
 trust:100,
+
+overallLevel:8,
+
+overallSkillUpsTowardNext:0,
 
 growthMessage:
 
-"JD had a huge day of growth! He worked extremely hard in the gym for about an hour and a half, completed the Pacer test, dribbled a basketball, practiced soccer ball control, traps and feints, played a soccer scrimmage, practiced independently, spent time with Dad, showed love and respect to Dad's coworkers, greeted students, listened to worship music, and is finishing the day with prayer.",
+"JD has been working incredibly hard! Over the last two days he ran the Pacer test, improving from 14 laps to an amazing 34 laps, hit baseballs for about 30 minutes each day and was crushing them, played catch with three different people, and showed kindness and respect to students and coworkers. He and Michael also created a story together and performed it out loud.",
 
 growthHighlight:
 
-"⚽🏃 One workout can make you better at many sports! Running builds the engine you need for baseball, basketball, football and soccer. Soccer ball control builds coordination and decision-making, while being respectful and kind to people builds character too. Keep growing in every direction!"
+"🏃⚾ Your running helps you in baseball, basketball, football, and soccer. Your hitting builds coordination and timing. Playing catch builds throwing and receiving. And being kind and respectful while working hard makes you stronger as a person, not just as an athlete!"
 
 },
 
@@ -767,50 +769,68 @@ Michael: {
 xp: {
 
 "⚾ Baseball":178,
+
 "🏀 Basketball":8,
+
 "🏈 Football":19,
+
 "⚽ Soccer":0,
+
 "⛳ Golf":68,
+
 "🎳 Bowling":20,
 
 "📚 Reading":305,
-"✍️ Writing":31,
+
+"✍️ Writing":46,
+
 "🔢 Mathematics":0,
+
 "🎨 Drawing":15,
+
 "🧱 Building":8,
+
 "🎨 Designing":0,
 
-"🙏 God Relationship":180,
+"🙏 God Relationship":195,
+
 "❤️ Family Relationship":57,
+
 "🤝 Friend Relationships":55,
 
-"💡 Creativity":43,
+"💡 Creativity":58,
+
 "🍳 Cooking":0,
-"🧹 Responsibility":69,
+
+"🧹 Responsibility":74,
 
 "🏃 Running / Speed":25,
+
 "💪 Strength":36,
+
 "♟️ Chess":0,
-"🧠 Critical Thinking":80,
+
+"🧠 Critical Thinking":95,
+
 "🎵 Music":60,
 
 "🥗 Nutrition / Healthy Choices":5
 
 },
 
-overallLevel: 8,
+trust:95,
 
-overallSkillUpsTowardNext: 0,
+overallLevel:8,
 
-trust:100,
+overallSkillUpsTowardNext:0,
 
 growthMessage:
 
-"Michael has been growing across sports, learning, creativity, family and faith. He has been reading, studying Scripture, worshiping, praying, building, creating with scissors and glue, connecting with Grandpa, playing golf and catch, bowling, and working hard at baseball.",
+"Michael has been growing in faith, creativity, learning, sports, and character. He and JD created a story together and said it out loud, he has been spending 6–7 hours at school, he remembered to pray all by himself during the day, and he has continued praying before meals. He also worked on building, arts and crafts, reading, baseball, golf, and family relationships.",
 
 growthHighlight:
 
-"⚾ One activity can build many skills. Baseball can strengthen coordination, speed, focus and critical thinking. Golf can build patience and precision. Reading and Scripture study strengthen the mind. Keep working hard and growing!"
+"🙏 Remembering to pray on your own is a powerful sign of growing faith. Creating stories with your brother builds imagination, communication, writing, and teamwork. Keep growing your mind, your body, your relationships, and your faith!"
 
 }
 
@@ -839,21 +859,15 @@ Michael: {
 
 
 /* =========================================================
-   RUNESCAPE-STYLE XP TABLE
-=========================================================
-
-   This follows the same basic idea as RuneScape:
-
-   Every new level requires more XP than the previous one.
-
-   The exact XP requirements are generated automatically.
-
+   RUNESCAPE-STYLE XP CURVE
 ========================================================= */
 
 function xpForLevel(level) {
 
 if(level <= 1) {
-    return 0;
+
+return 0;
+
 }
 
 let points = 0;
@@ -879,12 +893,16 @@ function getLevel(xp) {
 
 let level = 1;
 
-while(xp >= xpForLevel(level + 1)) {
+while(
+xp >= xpForLevel(level + 1)
+) {
 
 level++;
 
 if(level >= 99) {
-    return 99;
+
+return 99;
+
 }
 
 }
@@ -900,15 +918,20 @@ return level;
 
 function getProgress(xp) {
 
-const level = getLevel(xp);
+const level =
+getLevel(xp);
 
 if(level >= 99) {
-    return 100;
+
+return 100;
+
 }
 
-const currentXP = xpForLevel(level);
+const currentXP =
+xpForLevel(level);
 
-const nextXP = xpForLevel(level + 1);
+const nextXP =
+xpForLevel(level + 1);
 
 return Math.max(
 0,
@@ -923,62 +946,56 @@ Math.min(
 
 
 /* =========================================================
-   OVERALL RULE
+   OVERALL SYSTEM
 =========================================================
 
-   OVERALL LEVEL IS NOT BASED ON TOTAL XP.
+Overall is completely separate from XP.
 
-   Individual skill XP determines individual skill levels.
+Overall 1-10:
+1 skill level-up = +1 overall
 
-   Individual skill level-ups then contribute to Overall.
+Overall 11-20:
+2 skill level-ups = +1 overall
 
-   Overall 1-10:
-   1 skill level-up = +1 Overall
+Overall 21-30:
+3 skill level-ups = +1 overall
 
-   Overall 11-20:
-   2 skill level-ups = +1 Overall
+Overall 31-40:
+4 skill level-ups = +1 overall
 
-   Overall 21-30:
-   3 skill level-ups = +1 Overall
-
-   Overall 31-40:
-   4 skill level-ups = +1 Overall
-
-   etc.
+And so on.
 
 ========================================================= */
 
-function skillUpsNeededForOverall(level) {
+function skillsNeededForNextOverall(level) {
 
-return Math.floor(
-level / 10
-) + 1;
+return Math.floor(level / 10) + 1;
 
 }
 
 
-function getOverallRequirementDescription(player) {
+/* =========================================================
+   OVERALL DESCRIPTION
+========================================================= */
 
-const overall =
+function getOverallDescription(player) {
+
+const level =
 player.overallLevel;
 
 const needed =
-skillUpsNeededForOverall(overall);
+skillsNeededForNextOverall(level);
 
-if(overall >= 99) {
+if(level >= 99) {
 
-return "MAXIMUM HERO LEVEL";
-
-}
-
-if(overall < 10) {
-
-return "1 skill level-up needed for Overall +1";
+return "Maximum Overall Level";
 
 }
 
 return needed +
-" skill level-ups needed for Overall +1";
+" skill level-up" +
+(needed === 1 ? "" : "s") +
+" needed for Overall +1";
 
 }
 
@@ -990,7 +1007,7 @@ return needed +
 function getTotalXP(player) {
 
 return skills.reduce(
-(total, skill) => {
+(total,skill) => {
 
 return total +
 (player.xp[skill] || 0);
@@ -1011,8 +1028,12 @@ function getCharacterStage(level) {
 if(level <= 1) {
 
 return {
+
 name:"LITTLE ONE",
-caption:"The beginning of the journey."
+
+caption:
+"The beginning of the journey."
+
 };
 
 }
@@ -1020,8 +1041,12 @@ caption:"The beginning of the journey."
 if(level === 2) {
 
 return {
+
 name:"LITTLE KID",
-caption:"Growing, learning, and discovering."
+
+caption:
+"Growing, learning, and discovering."
+
 };
 
 }
@@ -1029,8 +1054,12 @@ caption:"Growing, learning, and discovering."
 if(level === 3) {
 
 return {
+
 name:"KID",
-caption:"Building skills and becoming more capable."
+
+caption:
+"Building skills and becoming more capable."
+
 };
 
 }
@@ -1038,8 +1067,12 @@ caption:"Building skills and becoming more capable."
 if(level === 4) {
 
 return {
+
 name:"FAMILY HERO",
-caption:"Growing stronger, kinder, and more helpful."
+
+caption:
+"Growing stronger, kinder, and more helpful."
+
 };
 
 }
@@ -1047,8 +1080,12 @@ caption:"Growing stronger, kinder, and more helpful."
 if(level === 5) {
 
 return {
+
 name:"RISING HERO",
-caption:"Building skills across life, sports, learning, and character."
+
+caption:
+"Building skills across life, sports, learning, and character."
+
 };
 
 }
@@ -1056,8 +1093,12 @@ caption:"Building skills across life, sports, learning, and character."
 if(level <= 10) {
 
 return {
+
 name:"GROWING HERO",
-caption:"Growing stronger, wiser, kinder, and more capable."
+
+caption:
+"Growing stronger, wiser, kinder, and more capable."
+
 };
 
 }
@@ -1065,15 +1106,23 @@ caption:"Growing stronger, wiser, kinder, and more capable."
 if(level <= 20) {
 
 return {
+
 name:"ADVANCED HERO",
-caption:"Building mastery across many areas of life."
+
+caption:
+"Building mastery across many areas of life."
+
 };
 
 }
 
 return {
+
 name:"LIFE HERO",
-caption:"Becoming the person you're capable of becoming."
+
+caption:
+"Becoming the person you're capable of becoming."
+
 };
 
 }
@@ -1083,7 +1132,8 @@ caption:"Becoming the person you're capable of becoming."
    CURRENT CHILD
 ========================================================= */
 
-let currentChild = "JD";
+let currentChild =
+"JD";
 
 
 /* =========================================================
@@ -1092,7 +1142,8 @@ let currentChild = "JD";
 
 function selectChild(child) {
 
-currentChild = child;
+currentChild =
+child;
 
 document
 .querySelectorAll(".child-button")
@@ -1104,7 +1155,9 @@ button.classList.remove("active");
 
 
 document
-.getElementById("button-" + child)
+.getElementById(
+"button-" + child
+)
 .classList.add("active");
 
 
@@ -1129,6 +1182,7 @@ document.getElementById(
 "characterPlaceholder"
 );
 
+
 const path =
 characterImages[currentChild][8];
 
@@ -1146,7 +1200,8 @@ return;
 }
 
 
-image.src = path;
+image.src =
+path;
 
 image.alt =
 currentChild +
@@ -1160,24 +1215,14 @@ placeholder.style.display =
 "none";
 
 
-image.onerror = function() {
+image.onerror =
+function() {
 
 image.style.display =
 "none";
 
 placeholder.style.display =
 "block";
-
-};
-
-
-image.onload = function() {
-
-image.style.display =
-"block";
-
-placeholder.style.display =
-"none";
 
 };
 
@@ -1236,13 +1281,13 @@ document.getElementById(
 player.overallLevel;
 
 
-/* OVERALL RULE MESSAGE */
+/* OVERALL DESCRIPTION */
 
 document.getElementById(
 "overallExplanation"
 ).textContent =
 
-getOverallRequirementDescription(
+getOverallDescription(
 player
 );
 
@@ -1257,16 +1302,10 @@ totalXP.toLocaleString() +
 " XP";
 
 
-/* OVERALL PROGRESS
-
-   This is simply a visual progress indicator
-   toward the next Overall level based on the
-   number of skill level-ups required.
-
-*/
+/* OVERALL PROGRESS */
 
 const needed =
-skillUpsNeededForOverall(
+skillsNeededForNextOverall(
 player.overallLevel
 );
 
@@ -1347,7 +1386,9 @@ getProgress(xp);
 
 
 const card =
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 
 card.className =
@@ -1424,7 +1465,7 @@ grid.appendChild(card);
 });
 
 
-/* TODAY'S MESSAGE */
+/* MESSAGE */
 
 document.getElementById(
 "growthMessage"
