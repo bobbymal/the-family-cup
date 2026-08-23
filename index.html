@@ -454,7 +454,6 @@ onclick="selectChild('JD')">
 JD
 </button>
 
-
 <button
 class="child-button"
 id="button-Michael"
@@ -470,7 +469,6 @@ Michael
 
 <div class="character-area">
 
-
 <div class="character-frame">
 
 <img
@@ -478,7 +476,6 @@ id="characterImage"
 class="character-image"
 src=""
 alt="Character">
-
 
 <div
 id="characterPlaceholder"
@@ -492,18 +489,15 @@ Character artwork coming soon.
 
 </div>
 
-
 <div
 id="characterStage"
 class="character-stage">
 </div>
 
-
 <div
 id="characterCaption"
 class="character-caption">
 </div>
-
 
 </div>
 
@@ -552,7 +546,6 @@ class="progress-fill">
 
 <div class="trust-card">
 
-
 <div class="trust-header">
 
 <strong>
@@ -566,13 +559,11 @@ class="trust-value">
 
 </div>
 
-
 <div class="trust-description">
 
 Trust grows through consistent honest and responsible choices.
 
 </div>
-
 
 <div class="trust-bar-background">
 
@@ -582,7 +573,6 @@ class="trust-bar-fill">
 </div>
 
 </div>
-
 
 </div>
 
@@ -607,23 +597,19 @@ class="skills-grid">
 
 <div class="growth-card">
 
-
 <div class="growth-title">
 🌟 LATEST GROWTH
 </div>
-
 
 <div
 id="growthMessage"
 class="growth-message">
 </div>
 
-
 <div
 id="growthHighlight"
 class="growth-highlight">
 </div>
-
 
 </div>
 
@@ -673,6 +659,10 @@ const skills = [
 
 "🏃 Running / Speed",
 "💪 Strength",
+"🦁 Toughness",
+"🧠 Mental Strength",
+"🎯 Discipline",
+
 "♟️ Chess",
 "🧠 Critical Thinking",
 "🎵 Music",
@@ -683,7 +673,7 @@ const skills = [
 
 
 /* =========================================================
-   CURRENT PLAYER XP
+   PLAYER XP
 ========================================================= */
 
 const players = {
@@ -698,49 +688,35 @@ JD: {
 xp: {
 
 "⚾ Baseball":135,
-
 "🏀 Basketball":25,
-
 "🏈 Football":29,
-
 "⚽ Soccer":40,
-
 "⛳ Golf":90,
-
 "🎳 Bowling":20,
 
 "📚 Reading":142,
-
 "✍️ Writing":21,
-
 "🔢 Mathematics":3,
-
 "🎨 Drawing":0,
-
 "🧱 Building":0,
-
 "🎨 Designing":0,
 
 "🙏 God Relationship":195,
-
 "❤️ Family Relationship":151,
-
 "🤝 Friend Relationships":183,
 
 "💡 Creativity":30,
-
 "🍳 Cooking":0,
-
 "🧹 Responsibility":122,
 
 "🏃 Running / Speed":91,
-
 "💪 Strength":59,
+"🦁 Toughness":0,
+"🧠 Mental Strength":0,
+"🎯 Discipline":0,
 
 "♟️ Chess":0,
-
 "🧠 Critical Thinking":85,
-
 "🎵 Music":60,
 
 "🥗 Nutrition / Healthy Choices":5
@@ -749,15 +725,13 @@ xp: {
 
 trust:100,
 
-
 growthMessage:
 
-"JD has been working incredibly hard. He ran the Pacer on back-to-back days and improved from 14 laps to an awesome 34 laps! He played catch with three different people, hit baseballs for about 30 minutes on both days and was crushing the ball. He was also kind and respectful to students and coworkers. JD and Michael created and told a story together, have been working through full school days, and have continued praying before meals.",
-
+"JD has been working incredibly hard. He ran the Pacer on back-to-back days and improved from 14 laps to an awesome 34 laps! He played catch with three different people, hit baseballs for about 30 minutes on both days and was crushing the ball. He was kind and respectful to students and coworkers. JD and Michael also created and told a story together.",
 
 growthHighlight:
 
-"🏃⚾ JD, going from 14 to 34 Pacer laps shows what happens when you keep working! Running strengthens your engine for baseball, basketball, football and soccer. Catching, hitting, creating stories, talking to people and making good choices are all building different parts of you. Keep stacking skills!"
+"🏃⚾ JD, going from 14 to 34 Pacer laps shows what happens when you keep working! Running helps baseball, basketball, football and soccer. Catching builds coordination and throwing. Hitting builds timing and hand-eye coordination. Keep stacking skills!"
 
 },
 
@@ -770,50 +744,48 @@ Michael: {
 
 xp: {
 
-"⚾ Baseball":178,
+"⚾ Baseball":220,
 
 "🏀 Basketball":8,
-
 "🏈 Football":19,
-
 "⚽ Soccer":0,
-
 "⛳ Golf":68,
-
 "🎳 Bowling":20,
 
 "📚 Reading":305,
-
 "✍️ Writing":46,
-
 "🔢 Mathematics":0,
-
 "🎨 Drawing":15,
-
 "🧱 Building":8,
-
 "🎨 Designing":0,
 
 "🙏 God Relationship":195,
-
 "❤️ Family Relationship":57,
-
 "🤝 Friend Relationships":55,
 
 "💡 Creativity":58,
-
 "🍳 Cooking":0,
-
 "🧹 Responsibility":74,
 
 "🏃 Running / Speed":25,
-
 "💪 Strength":36,
 
+/*
+Major DBAT toughness update.
+Michael was hit in the hand,
+didn't give up, didn't complain,
+kept a great attitude and finished
+his last round hitting bombs.
+*/
+
+"🦁 Toughness":95,
+
+"🧠 Mental Strength":65,
+
+"🎯 Discipline":62,
+
 "♟️ Chess":0,
-
 "🧠 Critical Thinking":95,
-
 "🎵 Music":60,
 
 "🥗 Nutrition / Healthy Choices":5
@@ -822,15 +794,13 @@ xp: {
 
 trust:95,
 
-
 growthMessage:
 
-"Michael has been growing in faith, creativity and learning. He and JD created a story together and told it out loud, he has been completing full school days, he has continued praying before meals, and he even remembered to stop and pray all by himself during the middle of the day.",
-
+"Michael had an outstanding day at DBAT. He hit baseballs for over an hour, got hit in the hand, and kept going. What makes this especially impressive wasn't simply that he continued — it was his attitude. He didn't complain, didn't become mean to himself, and continued working with an excellent attitude. Then in his last round, he was hitting BOMBERS!",
 
 growthHighlight:
 
-"🙏💡 Michael, remembering to pray without anyone reminding you shows initiative. Creating a story with your brother also grows creativity, communication and critical thinking. Trust grows the same way skills do — through repeated good choices. Keep building it!"
+"🦁⚾ THAT is toughness. Getting hurt isn't what earns Toughness XP — it's what you do afterward. Michael chose perseverance, a great attitude, hard work and discipline. That kind of response to adversity is something that can help him in baseball, school, relationships and life."
 
 }
 
@@ -839,43 +809,25 @@ growthHighlight:
 
 /* =========================================================
    CHARACTER IMAGES
-
-   These are the EXACT filenames currently on GitHub.
 ========================================================= */
 
 const characterImages = {
 
 JD: {
-
-8: "images/JD/JD-level-8.png.PNG"
-
+8: "images/JD/JD-level-8.png.PNG",
+11: "images/JD/JD-level-11.png"
 },
 
 Michael: {
-
-8: "images/Michael/Level-8-Michael.png.PNG"
-
+8: "images/Michael/Level-8-Michael.png.PNG",
+9: "images/Michael/Level-9-Michael.png"
 }
 
 };
 
 
 /* =========================================================
-   INDIVIDUAL SKILL XP CURVE
-=========================================================
-
-This uses the RuneScape-style XP formula.
-
-Examples:
-
-Level 1 = 0 XP
-Level 2 = 83 XP
-Level 3 = 174 XP
-Level 4 = 276 XP
-
-The XP required continues increasing as the
-individual skill becomes stronger.
-
+   RUNESCAPE-STYLE XP CURVE
 ========================================================= */
 
 function xpForLevel(level) {
@@ -900,7 +852,7 @@ return Math.floor(points / 4);
 
 
 /* =========================================================
-   CALCULATE INDIVIDUAL SKILL LEVEL
+   INDIVIDUAL SKILL LEVEL
 ========================================================= */
 
 function getSkillLevel(xp) {
@@ -922,7 +874,7 @@ return level;
 
 
 /* =========================================================
-   INDIVIDUAL SKILL PROGRESS
+   SKILL PROGRESS
 ========================================================= */
 
 function getSkillProgress(xp) {
@@ -930,126 +882,55 @@ function getSkillProgress(xp) {
 const level =
 getSkillLevel(xp);
 
-
 if(level >= 99) {
-
     return 100;
-
 }
-
 
 const currentXP =
 xpForLevel(level);
 
-
 const nextXP =
 xpForLevel(level + 1);
 
-
 return Math.max(
-0,
-Math.min(
-100,
-((xp - currentXP) /
-(nextXP - currentXP)) * 100
-)
+    0,
+    Math.min(
+        100,
+        ((xp - currentXP) /
+        (nextXP - currentXP)) * 100
+    )
 );
 
 }
 
 
 /* =========================================================
-   COUNT ALL INDIVIDUAL SKILL LEVEL-UPS
-=========================================================
-
-Every skill starts at Level 1.
-
-So:
-
-Level 1 skill = 0 upgrades
-Level 2 skill = 1 upgrade
-Level 3 skill = 2 upgrades
-Level 4 skill = 3 upgrades
-
-etc.
-
+   TOTAL INDIVIDUAL SKILL LEVEL-UPS
 ========================================================= */
 
 function getTotalSkillLevelUps(player) {
 
-let totalLevelUps = 0;
-
+let total = 0;
 
 skills.forEach(skill => {
 
     const xp =
     player.xp[skill] || 0;
 
-
     const level =
     getSkillLevel(xp);
 
-
-    totalLevelUps +=
-    level - 1;
+    total += level - 1;
 
 });
 
-
-return totalLevelUps;
+return total;
 
 }
 
 
 /* =========================================================
-   OVERALL LEVEL SYSTEM
-=========================================================
-
-THIS IS THE IMPORTANT PART.
-
-Overall Levels 1-10:
-
-Each Overall level requires
-ONE individual skill level-up.
-
-
-Overall Levels 11-20:
-
-Each Overall level requires
-TWO individual skill level-ups.
-
-
-Overall Levels 21-30:
-
-Each Overall level requires
-THREE individual skill level-ups.
-
-
-Overall Levels 31-40:
-
-Each Overall level requires
-FOUR individual skill level-ups.
-
-
-And so on forever.
-
-
-EXAMPLE:
-
-9 total skill upgrades
-=
-Overall Level 10
-
-
-11 total skill upgrades
-=
-Overall Level 11
-
-
-13 total skill upgrades
-=
-Overall Level 12
-
+   AUTOMATIC OVERALL CALCULATOR
 ========================================================= */
 
 function calculateOverallData(player) {
@@ -1057,66 +938,41 @@ function calculateOverallData(player) {
 const totalUps =
 getTotalSkillLevelUps(player);
 
-
-let remainingUps =
+let remaining =
 totalUps;
-
 
 let overall =
 1;
 
 
-/*
-Move through Overall levels one at a time.
-*/
-
 while(overall < 99) {
-
-
-    /*
-    Determine the level we're trying to ENTER.
-
-    Entering Levels 2-10 costs 1.
-
-    Entering Levels 11-20 costs 2.
-
-    Entering Levels 21-30 costs 3.
-
-    etc.
-    */
 
     const nextOverall =
     overall + 1;
 
-
-    const cost =
-    Math.max(
-        1,
-        Math.ceil(
-            (nextOverall - 10) / 10
-        ) + 1
-    );
+    let cost;
 
 
     /*
-    Special correction:
+    Overall 1-10:
+    1 skill level-up required.
 
-    Levels 2 through 10
-    should cost exactly 1.
+    Overall 11-20:
+    2 skill level-ups required.
+
+    Overall 21-30:
+    3 required.
+
+    etc.
     */
-
-    let actualCost;
-
 
     if(nextOverall <= 10) {
 
-        actualCost = 1;
+        cost = 1;
 
-    }
+    } else {
 
-    else {
-
-        actualCost =
+        cost =
         Math.floor(
             (nextOverall - 1) / 10
         ) + 1;
@@ -1124,59 +980,39 @@ while(overall < 99) {
     }
 
 
-    /*
-    If we don't have enough skill upgrades
-    to buy the next Overall level, stop.
-    */
-
-    if(remainingUps < actualCost) {
+    if(remaining < cost) {
 
         return {
 
             level: overall,
 
-            usedUps:
-            totalUps - remainingUps,
+            bankedUps: remaining,
 
-            bankedUps:
-            remainingUps,
+            neededForNext: cost,
 
-            neededForNext:
-            actualCost
+            totalUps: totalUps
 
         };
 
     }
 
 
-    /*
-    Spend the required skill upgrades.
-    */
-
-    remainingUps -=
-    actualCost;
-
+    remaining -= cost;
 
     overall++;
 
 }
 
 
-/*
-Maximum level protection.
-*/
-
 return {
 
-level:99,
+level: 99,
 
-usedUps:
-totalUps - remainingUps,
+bankedUps: 0,
 
-bankedUps:
-remainingUps,
+neededForNext: 0,
 
-neededForNext:0
+totalUps: totalUps
 
 };
 
@@ -1190,13 +1026,13 @@ neededForNext:0
 function getTotalXP(player) {
 
 return skills.reduce(
-(total,skill) => {
+    (total, skill) => {
 
-    return total +
-    (player.xp[skill] || 0);
+        return total +
+        (player.xp[skill] || 0);
 
-},
-0
+    },
+    0
 );
 
 }
@@ -1207,20 +1043,6 @@ return skills.reduce(
 ========================================================= */
 
 function getCharacterStage(level) {
-
-if(level <= 1) {
-
-return {
-
-name:"LITTLE ONE",
-
-caption:
-"The beginning of the journey."
-
-};
-
-}
-
 
 if(level <= 5) {
 
@@ -1235,7 +1057,6 @@ caption:
 
 }
 
-
 if(level <= 10) {
 
 return {
@@ -1249,7 +1070,6 @@ caption:
 
 }
 
-
 if(level <= 20) {
 
 return {
@@ -1257,12 +1077,11 @@ return {
 name:"ADVANCED HERO",
 
 caption:
-"Building deeper skills across life, learning, faith and sports."
+"Building deeper skills across life, faith, learning and sports."
 
 };
 
 }
-
 
 if(level <= 30) {
 
@@ -1276,7 +1095,6 @@ caption:
 };
 
 }
-
 
 return {
 
@@ -1294,8 +1112,7 @@ caption:
    CURRENT CHILD
 ========================================================= */
 
-let currentChild =
-"JD";
+let currentChild = "JD";
 
 
 /* =========================================================
@@ -1307,28 +1124,19 @@ function selectChild(child) {
 currentChild =
 child;
 
-
 document
-.querySelectorAll(
-".child-button"
-)
+.querySelectorAll(".child-button")
 .forEach(button => {
 
-button.classList.remove(
-"active"
-);
+    button.classList.remove("active");
 
 });
 
-
 document
 .getElementById(
-"button-" + child
+    "button-" + child
 )
-.classList.add(
-"active"
-);
-
+.classList.add("active");
 
 render();
 
@@ -1343,43 +1151,80 @@ function updateCharacter(overallLevel) {
 
 const image =
 document.getElementById(
-"characterImage"
+    "characterImage"
 );
-
 
 const placeholder =
 document.getElementById(
-"characterPlaceholder"
+    "characterPlaceholder"
 );
 
 
 /*
-For now we have Level 8 artwork.
+Choose the newest available artwork.
 
-We continue displaying it until a newer
-character picture is uploaded.
+JD:
+Level 11 artwork now exists.
+
+Michael:
+Level 9 artwork now exists.
 */
 
-const path =
-characterImages[currentChild][8];
+let path;
+
+
+if(
+    characterImages[currentChild][overallLevel]
+) {
+
+    path =
+    characterImages[currentChild][overallLevel];
+
+}
+
+else if(
+    currentChild === "JD" &&
+    overallLevel >= 11
+) {
+
+    path =
+    characterImages.JD[11];
+
+}
+
+else if(
+    currentChild === "Michael" &&
+    overallLevel >= 9
+) {
+
+    path =
+    characterImages.Michael[9];
+
+}
+
+else {
+
+    path =
+    characterImages[currentChild][8];
+
+}
 
 
 if(!path) {
 
-image.style.display =
-"none";
+    image.style.display =
+    "none";
 
-placeholder.style.display =
-"block";
+    placeholder.style.display =
+    "block";
 
-return;
+    return;
 
 }
 
 
 image.src =
 path;
-
 
 image.alt =
 currentChild +
@@ -1389,7 +1234,6 @@ currentChild +
 image.style.display =
 "block";
 
-
 placeholder.style.display =
 "none";
 
@@ -1397,36 +1241,24 @@ placeholder.style.display =
 image.onerror =
 function() {
 
-image.style.display =
-"none";
+    image.style.display =
+    "none";
 
-placeholder.style.display =
-"block";
-
-};
-
-
-image.onload =
-function() {
-
-image.style.display =
-"block";
-
-placeholder.style.display =
-"none";
+    placeholder.style.display =
+    "block";
 
 };
 
 
 const stage =
 getCharacterStage(
-overallLevel
+    overallLevel
 );
 
 
 document
 .getElementById(
-"characterStage"
+    "characterStage"
 )
 .textContent =
 
@@ -1437,7 +1269,7 @@ overallLevel;
 
 document
 .getElementById(
-"characterCaption"
+    "characterCaption"
 )
 .textContent =
 
@@ -1456,145 +1288,115 @@ const player =
 players[currentChild];
 
 
-const overallData =
+const overall =
 calculateOverallData(
-player
+    player
 );
 
 
-const overallLevel =
-overallData.level;
+const level =
+overall.level;
 
 
 const totalXP =
-getTotalXP(
-player
-);
+getTotalXP(player);
 
 
-const totalSkillUps =
-getTotalSkillLevelUps(
-player
-);
-
-
-/* =========================
-   NAME
-========================= */
+/* NAME */
 
 document
 .getElementById(
-"childName"
+    "childName"
 )
 .textContent =
 currentChild;
 
 
-/* =========================
-   OVERALL LEVEL
-========================= */
+/* OVERALL */
 
 document
 .getElementById(
-"overallLevel"
+    "overallLevel"
 )
 .textContent =
 
 "LEVEL " +
-overallLevel;
+level;
 
 
-/* =========================
-   OVERALL EXPLANATION
-========================= */
+/* OVERALL PROGRESS TEXT */
 
-if(overallLevel >= 99) {
+if(level >= 99) {
 
 document
 .getElementById(
-"overallExplanation"
+    "overallExplanation"
 )
 .textContent =
-
 "MAXIMUM OVERALL LEVEL";
 
 }
 
 else {
 
-const remaining =
-overallData.neededForNext -
-overallData.bankedUps;
-
-
 document
 .getElementById(
-"overallExplanation"
+    "overallExplanation"
 )
 .textContent =
 
-overallData.bankedUps +
+overall.bankedUps +
 " of " +
-overallData.neededForNext +
+overall.neededForNext +
 " skill level-ups toward Level " +
-(overallLevel + 1);
+(level + 1);
 
 }
 
 
-/* =========================
-   TOTAL XP
-========================= */
+/* TOTAL XP */
 
 document
 .getElementById(
-"overallCurrentXP"
+    "overallCurrentXP"
 )
 .textContent =
 
 totalXP.toLocaleString() +
 " XP • " +
-totalSkillUps +
-" SKILL LEVEL-UPS";
+overall.totalUps +
+" skill level-ups";
 
 
-/* =========================
-   OVERALL PROGRESS BAR
-========================= */
+/* OVERALL BAR */
 
-let overallProgress =
-0;
+let overallProgress = 0;
 
+if(overall.neededForNext > 0) {
 
-if(
-overallData.neededForNext > 0
-) {
-
-overallProgress =
-
-(overallData.bankedUps /
-overallData.neededForNext)
-* 100;
+    overallProgress =
+    (overall.bankedUps /
+    overall.neededForNext) * 100;
 
 }
 
-
 document
 .getElementById(
-"overallProgress"
+    "overallProgress"
 )
 .style.width =
 
-overallProgress + "%";
+Math.min(
+    100,
+    overallProgress
+) + "%";
 
 
-/* =========================
-   TRUST
-========================= */
+/* TRUST */
 
 document
 .getElementById(
-"trustValue"
+    "trustValue"
 )
 .textContent =
 
@@ -1604,7 +1406,7 @@ player.trust +
 
 document
 .getElementById(
-"trustBar"
+    "trustBar"
 )
 .style.width =
 
@@ -1612,171 +1414,144 @@ player.trust +
 "%";
 
 
-/* =========================
-   CHARACTER
-========================= */
+/* CHARACTER */
 
-updateCharacter(
-overallLevel
-);
+updateCharacter(level);
 
 
-/* =========================
-   SKILLS
-========================= */
+/* SKILLS */
 
 const grid =
 document.getElementById(
-"skillsGrid"
+    "skillsGrid"
 );
 
-
-grid.innerHTML =
-"";
+grid.innerHTML = "";
 
 
 skills.forEach(skill => {
 
+    const xp =
+    player.xp[skill] || 0;
 
-const xp =
-player.xp[skill] || 0;
+    const skillLevel =
+    getSkillLevel(xp);
 
-
-const level =
-getSkillLevel(
-xp
-);
-
-
-const progress =
-getSkillProgress(
-xp
-);
+    const progress =
+    getSkillProgress(xp);
 
 
-let styleLevel =
-level;
+    let cardClass =
+    "skill-card";
 
 
-if(styleLevel > 5) {
+    if(skillLevel <= 5) {
 
-styleLevel =
-"high-level";
+        cardClass +=
+        " level-" +
+        skillLevel;
 
-}
+    }
 
+    else {
 
-const card =
-document.createElement(
-"div"
-);
+        cardClass +=
+        " high-level";
 
-
-card.className =
-"skill-card level-" +
-Math.min(level,5);
+    }
 
 
-if(level > 5) {
-
-card.className =
-"skill-card high-level";
-
-}
+    let levelClass =
+    skillLevel <= 5
+    ? "level-" + skillLevel
+    : "high-level";
 
 
-let nextLevelText;
+    let nextXP;
 
 
-if(level >= 99) {
+    if(skillLevel >= 99) {
 
-nextLevelText =
-"MAX";
+        nextXP =
+        "MAX";
 
-}
+    }
 
-else {
+    else {
 
-nextLevelText =
+        nextXP =
+        xpForLevel(
+            skillLevel + 1
+        ).toLocaleString() +
+        " XP";
 
-xpForLevel(
-level + 1
-).toLocaleString() +
-" XP";
-
-}
-
-
-card.innerHTML = `
-
-<div class="skill-header">
-
-<div class="skill-name">
-
-${skill}
-
-</div>
+    }
 
 
-<div
-class="skill-level ${
-level > 5
-? "high-level"
-: "level-" + level
-}">
-
-LV ${level}
-
-</div>
-
-</div>
+    const card =
+    document.createElement(
+        "div"
+    );
 
 
-<div class="progress-background">
-
-<div
-class="progress-fill"
-style="width:${progress}%">
-
-</div>
-
-</div>
+    card.className =
+    cardClass;
 
 
-<div class="skill-xp">
+    card.innerHTML = `
 
-<span>
+        <div class="skill-header">
 
-${xp.toLocaleString()} XP
+            <div class="skill-name">
 
-</span>
+                ${skill}
+
+            </div>
+
+            <div class="skill-level ${levelClass}">
+
+                LV ${skillLevel}
+
+            </div>
+
+        </div>
 
 
-<span>
+        <div class="progress-background">
 
-NEXT: ${nextLevelText}
+            <div
+                class="progress-fill"
+                style="width:${progress}%">
+            </div>
 
-</span>
-
-</div>
-
-`;
+        </div>
 
 
-grid.appendChild(
-card
-);
+        <div class="skill-xp">
+
+            <span>
+                ${xp.toLocaleString()} XP
+            </span>
+
+            <span>
+                NEXT: ${nextXP}
+            </span>
+
+        </div>
+
+    `;
+
+
+    grid.appendChild(card);
 
 });
 
 
-/* =========================
-   GROWTH MESSAGE
-========================= */
+/* GROWTH MESSAGE */
 
 document
 .getElementById(
-"growthMessage"
+    "growthMessage"
 )
 .textContent =
 
@@ -1785,7 +1560,7 @@ player.growthMessage;
 
 document
 .getElementById(
-"growthHighlight"
+    "growthHighlight"
 )
 .textContent =
 
@@ -1795,7 +1570,7 @@ player.growthHighlight;
 
 
 /* =========================================================
-   START SITE
+   START
 ========================================================= */
 
 render();
