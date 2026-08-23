@@ -378,7 +378,6 @@ header p {
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
@@ -688,14 +687,6 @@ Michael: {
 
 xp: {
 
-/*
-BASEBALL:
-Major DBAT session.
-Over an hour of hitting,
-with his final round producing
-BOMBERS.
-*/
-
 "⚾ Baseball":220,
 
 "🏀 Basketball":8,
@@ -719,42 +710,33 @@ BOMBERS.
 "🍳 Cooking":0,
 
 /*
-RESPONSIBILITY BOOST:
 Michael independently got his own
-baseball bag and carried it himself
-the entire time.
+baseball bag and took responsibility
+for it throughout the entire session.
 */
 
-"🧹 Responsibility":105,
+"🧹 Responsibility":120,
 
 "🏃 Running / Speed":25,
 "💪 Strength":36,
 
 /*
-TOUGHNESS BOOST:
-Michael was hit in the hand,
-didn't give up, didn't complain,
-didn't become negative toward himself,
-and continued working with an
-excellent attitude.
+Michael got hit in the hand while
+hitting at DBAT but kept going,
+didn't complain, stayed positive,
+and finished the session strongly.
 */
 
 "🦁 Toughness":95,
 
-/*
-MENTAL STRENGTH:
-Positive response to adversity.
-*/
-
 "🧠 Mental Strength":65,
 
 /*
-DISCIPLINE:
-Kept working and finished the
-session despite adversity.
+Michael showed exceptional discipline
+by continuing to work despite adversity.
 */
 
-"🎯 Discipline":62,
+"🎯 Discipline":90,
 
 "♟️ Chess":0,
 "🧠 Critical Thinking":95,
@@ -768,11 +750,11 @@ trust:95,
 
 growthMessage:
 
-"Michael had an outstanding day at DBAT. He hit baseballs for over an hour, got hit in the hand, and kept going. What makes this especially impressive was his attitude. He didn't complain, didn't become mean to himself, and continued working with an excellent attitude. Then in his last round, he was hitting BOMBERS! Michael was also extremely responsible — he got his own baseball bag and took care of it the entire time.",
+"Michael had an outstanding day at DBAT. He hit baseballs for over an hour, got hit in the hand, and kept going. He didn't complain, didn't become mean to himself, and maintained an excellent attitude. He finished the session hitting BOMBERS! Michael was also extremely responsible — he got his own baseball bag and took care of it the entire time.",
 
 growthHighlight:
 
-"🦁⚾ THAT is toughness. Getting hurt isn't what earns Toughness XP — it's what you do afterward. Michael chose perseverance, a great attitude, hard work and discipline. And taking care of his own baseball bag shows growing independence and responsibility. That is the kind of character we want to build."
+"🦁⚾ Michael showed incredible toughness AND discipline. He didn't allow getting hurt to change his attitude or make him quit. He kept working, stayed positive and finished strong. Taking care of his own baseball bag also showed growing independence and responsibility."
 
 }
 
@@ -915,17 +897,17 @@ return total;
    OVERALL CALCULATOR
 =========================================================
 
-1-10:
-1 skill upgrade = 1 Overall level
+Overall 1-10:
+1 skill level-up = +1 Overall
 
-11-20:
-2 skill upgrades = 1 Overall level
+Overall 11-20:
+2 skill level-ups = +1 Overall
 
-21-30:
-3 skill upgrades = 1 Overall level
+Overall 21-30:
+3 skill level-ups = +1 Overall
 
-31-40:
-4 skill upgrades = 1 Overall level
+Overall 31-40:
+4 skill level-ups = +1 Overall
 
 etc.
 
@@ -1094,8 +1076,7 @@ caption:
    CURRENT CHILD
 ========================================================= */
 
-let currentChild =
-"JD";
+let currentChild = "JD";
 
 
 /* =========================================================
@@ -1146,11 +1127,11 @@ let path;
 
 
 /*
-Use the exact artwork for the current level
+Use exact artwork for current level
 when available.
 
-If a newer artwork hasn't been uploaded yet,
-use the newest available artwork.
+Otherwise use the newest available
+artwork for that child.
 */
 
 if(
@@ -1346,7 +1327,7 @@ overall.totalUps +
 " skill level-ups";
 
 
-/* PROGRESS BAR */
+/* OVERALL BAR */
 
 let overallProgress = 0;
 
