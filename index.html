@@ -630,37 +630,37 @@ JD: {
 
 xp: {
 
-"⚾ Baseball":135,
+"⚾ Baseball":155,
 "🏀 Basketball":25,
 "🏈 Football":29,
 "⚽ Soccer":40,
 "⛳ Golf":90,
 "🎳 Bowling":20,
 
-"📚 Reading":142,
+"📚 Reading":152,
 "✍️ Writing":21,
 "🔢 Mathematics":3,
 "🎨 Drawing":0,
 "🧱 Building":0,
 "🎨 Designing":0,
 
-"🙏 God Relationship":195,
-"❤️ Family Relationship":151,
+"🙏 God Relationship":215,
+"❤️ Family Relationship":159,
 "🤝 Friend Relationships":183,
 
 "💡 Creativity":30,
 "🍳 Cooking":0,
-"🧹 Responsibility":122,
+"🧹 Responsibility":137,
 
 "🏃 Running / Speed":91,
 "💪 Strength":59,
 "🦁 Toughness":0,
 "🧠 Mental Strength":0,
-"🎯 Discipline":0,
+"🎯 Discipline":10,
 
 "♟️ Chess":0,
 "🧠 Critical Thinking":85,
-"🎵 Music":60,
+"🎵 Music":65,
 
 "🥗 Nutrition / Healthy Choices":5
 
@@ -670,11 +670,11 @@ trust:100,
 
 growthMessage:
 
-"JD has been working incredibly hard. He ran the Pacer on back-to-back days and improved from 14 laps to 34 laps. He played catch with three different people, hit baseballs for about 30 minutes on both days and was crushing the ball. He was kind and respectful to students and coworkers. JD and Michael also created and told a story together.",
+"JD and Michael had a busy weekend full of growth. They listened while Dad read, took showers and brushed their teeth, played pop-fly catches on the run for about 30 minutes, attended Awana and practiced Scripture for an hour and a half, shopped at Costco with Mom and a neighbor, listened to worship music, and helped clean the house.",
 
 growthHighlight:
 
-"🏃⚾ JD, going from 14 to 34 Pacer laps shows what happens when you keep working. Running helps baseball, basketball, football and soccer. Catching builds coordination and throwing. Hitting builds timing and hand-eye coordination. Keep stacking skills!"
+"⚾✝️ JD is building a great combination of athletic ability, responsibility and faith. The running pop-fly work builds baseball ability while also developing speed and coordination. Scripture practice, worship and helping around the house continue building character."
 
 },
 
@@ -687,7 +687,7 @@ Michael: {
 
 xp: {
 
-"⚾ Baseball":220,
+"⚾ Baseball":240,
 
 "🏀 Basketball":8,
 "🏈 Football":19,
@@ -695,52 +695,34 @@ xp: {
 "⛳ Golf":68,
 "🎳 Bowling":20,
 
-"📚 Reading":305,
+"📚 Reading":315,
 "✍️ Writing":46,
 "🔢 Mathematics":0,
 "🎨 Drawing":15,
 "🧱 Building":8,
 "🎨 Designing":0,
 
-"🙏 God Relationship":195,
-"❤️ Family Relationship":57,
+"🙏 God Relationship":215,
+"❤️ Family Relationship":65,
 "🤝 Friend Relationships":55,
 
 "💡 Creativity":58,
 "🍳 Cooking":0,
 
-/*
-Michael independently got his own
-baseball bag and took responsibility
-for it throughout the entire session.
-*/
+"🧹 Responsibility":135,
 
-"🧹 Responsibility":120,
-
-"🏃 Running / Speed":25,
+"🏃 Running / Speed":45,
 "💪 Strength":36,
-
-/*
-Michael got hit in the hand while
-hitting at DBAT but kept going,
-didn't complain, stayed positive,
-and finished the session strongly.
-*/
 
 "🦁 Toughness":95,
 
 "🧠 Mental Strength":65,
 
-/*
-Michael showed exceptional discipline
-by continuing to work despite adversity.
-*/
-
-"🎯 Discipline":90,
+"🎯 Discipline":105,
 
 "♟️ Chess":0,
 "🧠 Critical Thinking":95,
-"🎵 Music":60,
+"🎵 Music":65,
 
 "🥗 Nutrition / Healthy Choices":5
 
@@ -750,11 +732,11 @@ trust:95,
 
 growthMessage:
 
-"Michael had an outstanding day at DBAT. He hit baseballs for over an hour, got hit in the hand, and kept going. He didn't complain, didn't become mean to himself, and maintained an excellent attitude. He finished the session hitting BOMBERS! Michael was also extremely responsible — he got his own baseball bag and took care of it the entire time.",
+"Michael had an excellent weekend of character growth. He listened while Dad read, took care of his hygiene, played pop-fly catches on the run for about 30 minutes, attended Awana and practiced Scripture for an hour and a half, went shopping with Mom and a neighbor, listened to worship music and helped clean the house. This comes on top of his recent outstanding baseball session where he was hit in the hand but kept going with an excellent attitude.",
 
 growthHighlight:
 
-"🦁⚾ Michael showed incredible toughness AND discipline. He didn't allow getting hurt to change his attitude or make him quit. He kept working, stayed positive and finished strong. Taking care of his own baseball bag also showed growing independence and responsibility."
+"🦁⚾ Michael continues to show that discipline is more than working hard when everything is easy. He has shown toughness when hurt, responsibility by taking care of his belongings, and now continued discipline through Scripture practice, personal care and helping around the house."
 
 }
 
@@ -783,7 +765,10 @@ Michael: {
 "images/Michael/Level-8-Michael.png.PNG",
 
 9:
-"images/Michael/Level-9-Michael.png"
+"images/Michael/Level-9-Michael.png",
+
+11:
+"images/Michael/Level-11-Michael.png"
 
 }
 
@@ -1150,6 +1135,16 @@ overallLevel >= 11
 
 path =
 characterImages.JD[11];
+
+}
+
+else if(
+currentChild === "Michael" &&
+overallLevel >= 11
+) {
+
+path =
+characterImages.Michael[11];
 
 }
 
