@@ -9,7 +9,7 @@
 <style>
 
 /* =========================================================
-   BASE
+   RESET
 ========================================================= */
 
 * {
@@ -19,13 +19,9 @@
 body {
     margin: 0;
     background:
-        radial-gradient(circle at top, #1b2430 0%, #10141b 45%, #090c11 100%);
+        radial-gradient(circle at top, #1c2532 0%, #10141b 45%, #090c11 100%);
     color: #f4f6f8;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-button {
-    font-family: inherit;
 }
 
 
@@ -35,62 +31,57 @@ button {
 
 header {
     text-align: center;
-    padding: 25px 15px 20px;
-    background: rgba(20,25,34,.95);
+    padding: 22px 12px 18px;
+    background: rgba(20, 25, 34, 0.97);
     border-bottom: 2px solid #303a49;
 }
 
 header h1 {
     margin: 0;
-    font-size: 31px;
     color: #e0b84f;
+    font-size: 28px;
     letter-spacing: 1px;
 }
 
 header p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
     color: #aeb7c4;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
 /* =========================================================
-   MAIN
+   MAIN CONTAINER
 ========================================================= */
 
 .container {
-    max-width: 1150px;
+    max-width: 1050px;
     margin: auto;
-    padding: 20px 15px 50px;
+    padding: 18px 12px 45px;
 }
 
 
 /* =========================================================
-   PLAYER BUTTONS
+   PLAYER SELECTOR
 ========================================================= */
 
 .selector {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 18px;
 }
 
 .selector button {
-    min-width: 150px;
-    padding: 13px 28px;
-    border-radius: 12px;
-    border: 2px solid #3b4656;
+    min-width: 140px;
+    padding: 11px 24px;
+    border-radius: 10px;
+    border: 2px solid #394454;
     background: #191f29;
     color: #dce2ea;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 800;
     cursor: pointer;
-    transition: .2s;
-}
-
-.selector button:hover {
-    transform: translateY(-1px);
 }
 
 .selector button.active {
@@ -101,42 +92,47 @@ header p {
 
 
 /* =========================================================
-   CARDS
+   GENERAL CARDS
 ========================================================= */
 
 .card {
-    background: rgba(25,31,41,.97);
+    background: rgba(25, 31, 41, 0.97);
     border: 1px solid #303a49;
-    border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 7px 22px rgba(0,0,0,.22);
 }
 
 
 /* =========================================================
-   HERO SECTION
+   HERO AREA
 ========================================================= */
 
 .hero {
     display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
 }
+
+
+/* =========================================================
+   CHARACTER CARD
+========================================================= */
 
 .character-card {
     text-align: center;
 }
 
 .character-frame {
-    width: 300px;
-    height: 400px;
+    width: 285px;
+    height: 380px;
     max-width: 100%;
-    margin: 0 auto 15px;
+    margin: 0 auto 12px;
 
     background: #090d13;
     border: 3px solid #465264;
-    border-radius: 14px;
+    border-radius: 12px;
 
     display: flex;
     align-items: center;
@@ -152,41 +148,41 @@ header p {
 }
 
 .character-name {
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 900;
     color: #e0b84f;
 }
 
 .level-label {
-    margin-top: 6px;
+    margin-top: 5px;
     color: #aeb7c4;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .overall-number {
-    margin-top: 5px;
-    font-size: 76px;
+    margin-top: 4px;
+    font-size: 64px;
     line-height: 1;
     font-weight: 900;
     color: #e0b84f;
-    text-shadow: 0 0 18px rgba(224,184,79,.22);
 }
 
 .overall-text {
     color: #8f9aaa;
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size: 11px;
+    letter-spacing: 2px;
     font-weight: bold;
 }
 
 .philosophy {
-    margin-top: 18px;
-    padding: 13px;
-    border-radius: 10px;
+    margin-top: 15px;
+    padding: 11px;
+    border-radius: 9px;
     background: #111720;
     color: #dce2ea;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.45;
+    font-size: 13px;
 }
 
 
@@ -195,7 +191,7 @@ header p {
 ========================================================= */
 
 .trust-card {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .trust-header {
@@ -206,17 +202,18 @@ header p {
 
 .trust-header h2 {
     margin: 0;
+    font-size: 20px;
 }
 
 .trust-value {
     color: #65d68b;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
 }
 
 .trust-bar {
-    height: 14px;
-    margin-top: 12px;
+    height: 12px;
+    margin-top: 10px;
     border-radius: 20px;
     background: #0c1016;
     overflow: hidden;
@@ -229,10 +226,10 @@ header p {
 }
 
 .trust-note {
-    margin-top: 10px;
+    margin-top: 8px;
     color: #9ca7b5;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.45;
 }
 
 
@@ -245,99 +242,76 @@ header p {
 }
 
 .growth-card h2 {
-    margin-top: 0;
+    margin: 0 0 8px;
     color: #e0b84f;
+    font-size: 20px;
 }
 
 .growth-text {
     margin: 0;
     color: #d9dee5;
-    line-height: 1.65;
+    line-height: 1.55;
+    font-size: 13px;
 }
 
 .level-message {
-    margin-top: 15px;
-    padding: 14px;
+    margin-top: 12px;
+    padding: 11px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     background: #17261d;
     border: 1px solid #65d68b;
 
     color: #8ee8a9;
+    font-size: 12px;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 
 /* =========================================================
-   SKILLS HEADER
+   SKILLS SECTION
 ========================================================= */
 
 .skills-card {
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 .skills-card h2 {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
+    font-size: 21px;
 }
 
 .skills-intro {
     color: #9fa9b7;
-    font-size: 13px;
-    line-height: 1.55;
-    margin-bottom: 18px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 
 /* =========================================================
-   SKILL GRID
+   TWO-COLUMN SKILL GRID
 ========================================================= */
 
 .skills-grid {
-
     display: grid;
-
-    /*
-       THREE SKILLS PER ROW
-       This makes the levels much easier to scan.
-    */
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 13px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
 }
 
 
 /* =========================================================
-   INDIVIDUAL SKILL CARD
+   SKILL CARD
 ========================================================= */
 
 .skill-card {
-
     background: #10161f;
-
     border: 1px solid #2d3745;
-
-    border-radius: 13px;
-
-    padding: 15px;
-
-    min-height: 145px;
-
-    transition:
-        transform .15s ease,
-        border-color .15s ease;
-
-}
-
-.skill-card:hover {
-
-    transform: translateY(-2px);
-
-    border-color: #4b596b;
-
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 100px;
 }
 
 
@@ -346,70 +320,47 @@ header p {
 ========================================================= */
 
 .skill-top {
-
     display: flex;
-
     justify-content: space-between;
-
-    align-items: flex-start;
-
-    gap: 8px;
-
+    align-items: center;
+    gap: 6px;
 }
 
 .skill-title {
-
     color: #e7ebf0;
-
-    font-size: 15px;
-
+    font-size: 12px;
     font-weight: 800;
-
-    line-height: 1.25;
-
+    line-height: 1.2;
 }
 
 .skill-icon {
-
-    font-size: 21px;
-
-    margin-right: 4px;
-
+    font-size: 16px;
+    margin-right: 2px;
 }
 
 
 /* =========================================================
-   LEVEL NUMBER
+   LEVEL
 ========================================================= */
 
+.skill-level-box {
+    text-align: right;
+    flex-shrink: 0;
+}
+
 .skill-level {
-
     color: #e0b84f;
-
-    font-size: 25px;
-
+    font-size: 18px;
     font-weight: 900;
-
-    white-space: nowrap;
-
     line-height: 1;
-
 }
 
 .skill-level-label {
-
     color: #707b89;
-
-    font-size: 9px;
-
+    font-size: 6px;
     text-transform: uppercase;
-
-    letter-spacing: .8px;
-
-    text-align: right;
-
-    margin-top: 3px;
-
+    letter-spacing: .6px;
+    margin-top: 2px;
 }
 
 
@@ -418,17 +369,11 @@ header p {
 ========================================================= */
 
 .skill-xp {
-
-    margin-top: 12px;
-
+    margin-top: 7px;
     display: flex;
-
     justify-content: space-between;
-
     color: #8994a3;
-
-    font-size: 11px;
-
+    font-size: 8px;
 }
 
 
@@ -437,32 +382,21 @@ header p {
 ========================================================= */
 
 .skill-bar {
-
-    height: 9px;
-
-    margin-top: 7px;
-
+    height: 7px;
+    margin-top: 5px;
     background: #252e3a;
-
     border-radius: 20px;
-
     overflow: hidden;
-
 }
 
 .skill-fill {
-
     height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #438ddd,
-            #58a6ff
-        );
-
+    background: linear-gradient(
+        90deg,
+        #438ddd,
+        #58a6ff
+    );
     border-radius: 20px;
-
 }
 
 
@@ -471,13 +405,10 @@ header p {
 ========================================================= */
 
 .skill-next {
-
-    margin-top: 6px;
-
+    margin-top: 4px;
     color: #697584;
-
-    font-size: 10px;
-
+    font-size: 7px;
+    white-space: nowrap;
 }
 
 
@@ -486,33 +417,25 @@ header p {
 ========================================================= */
 
 .rules-card {
-
-    margin-top: 20px;
-
+    margin-top: 18px;
 }
 
 .rules-card h2 {
-
-    margin-top: 0;
-
+    margin: 0 0 8px;
     color: #e0b84f;
-
+    font-size: 20px;
 }
 
 .rules-card ul {
-
-    padding-left: 21px;
-
+    padding-left: 19px;
+    margin: 0;
     color: #b7c0cc;
-
-    line-height: 1.65;
-
+    line-height: 1.55;
+    font-size: 12px;
 }
 
 .rules-card strong {
-
     color: #e7ebf0;
-
 }
 
 
@@ -521,85 +444,142 @@ header p {
 ========================================================= */
 
 .footer {
-
     text-align: center;
-
     color: #687381;
-
-    font-size: 12px;
-
-    margin-top: 30px;
-
+    font-size: 11px;
+    margin-top: 25px;
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET / DESKTOP
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     .hero {
-
         grid-template-columns: 1fr;
-
     }
 
-    .skills-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
+    .character-frame {
+        width: 275px;
+        height: 365px;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   PHONE
 ========================================================= */
 
 @media (max-width: 600px) {
 
-    .skills-grid {
+    .container {
+        padding: 14px 8px 35px;
+    }
 
-        grid-template-columns: 1fr;
+    header h1 {
+        font-size: 24px;
+    }
 
+    .selector button {
+        min-width: 125px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .hero {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 12px;
     }
 
     .character-frame {
-
-        width: 270px;
-
-        height: 360px;
-
+        width: 250px;
+        height: 335px;
     }
 
     .overall-number {
+        font-size: 58px;
+    }
 
-        font-size: 66px;
+    /*
+       IMPORTANT:
+       KEEP TWO COLUMNS ON PHONE.
+    */
 
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .skill-card {
+        padding: 8px;
+        min-height: 96px;
+    }
+
+    .skill-title {
+        font-size: 10.5px;
+    }
+
+    .skill-icon {
+        font-size: 14px;
+    }
+
+    .skill-level {
+        font-size: 16px;
+    }
+
+    .skill-xp {
+        font-size: 7px;
+    }
+
+    .skill-next {
+        font-size: 6.5px;
     }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL PHONES
 ========================================================= */
 
 @media (max-width: 380px) {
 
     .selector {
-
-        flex-direction: column;
-
+        gap: 7px;
     }
 
     .selector button {
+        min-width: 0;
+        width: 50%;
+        padding: 9px 10px;
+    }
 
-        width: 100%;
+    .character-frame {
+        width: 230px;
+        height: 305px;
+    }
 
+    .skills-grid {
+        gap: 5px;
+    }
+
+    .skill-card {
+        padding: 7px;
+        min-height: 92px;
+    }
+
+    .skill-title {
+        font-size: 9.5px;
+    }
+
+    .skill-level {
+        font-size: 15px;
     }
 
 }
@@ -625,9 +605,9 @@ header p {
 <div class="container">
 
 
-<!-- ======================================================
+<!-- =====================================================
      PLAYER SELECTOR
-======================================================= -->
+====================================================== -->
 
 <div class="selector">
 
@@ -640,7 +620,6 @@ header p {
 
     </button>
 
-
     <button
         id="michaelButton"
         onclick="selectPlayer('Michael')">
@@ -652,9 +631,9 @@ header p {
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      HERO
-======================================================= -->
+====================================================== -->
 
 <div class="hero">
 
@@ -672,33 +651,26 @@ header p {
 
         </div>
 
-
         <div
             class="character-name"
             id="characterName">
         </div>
 
-
         <div class="level-label">
             OVERALL CHARACTER LEVEL
         </div>
-
 
         <div
             class="overall-number"
             id="overallLevel">
         </div>
 
-
         <div class="overall-text">
             REAL LIFE LEVEL
         </div>
 
-
         <div class="philosophy">
-
             "This is who you're growing to become."
-
         </div>
 
     </div>
@@ -724,7 +696,6 @@ header p {
 
             </div>
 
-
             <div class="trust-bar">
 
                 <div
@@ -733,7 +704,6 @@ header p {
                 </div>
 
             </div>
-
 
             <div class="trust-note">
 
@@ -759,7 +729,6 @@ header p {
                 class="growth-text">
             </p>
 
-
             <div
                 id="levelMessage"
                 class="level-message">
@@ -772,9 +741,9 @@ header p {
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SKILLS
-======================================================= -->
+====================================================== -->
 
 <div class="card skills-card">
 
@@ -792,16 +761,12 @@ header p {
             Overall Level = the sum of all 28 skill levels.
         </strong>
 
-        <br>
-
-        Activities can legitimately improve multiple
-        skills. Baseball, for example, can develop
-        running, hand-eye coordination, golf swing
-        mechanics, throwing, catching, decision-making,
-        and other transferable abilities.
+        Activities can legitimately improve multiple skills.
+        Baseball can improve running, golf swing mechanics,
+        throwing, catching, coordination and decision-making.
+        Running can transfer to almost every running-based sport.
 
     </div>
-
 
     <div
         id="skillsGrid"
@@ -811,9 +776,9 @@ header p {
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      RULES
-======================================================= -->
+====================================================== -->
 
 <div class="card rules-card">
 
@@ -823,70 +788,66 @@ header p {
 
         <li>
             <strong>Overall Level:</strong>
-            Overall is the combined level of every individual skill.
+            Overall is the combined level of all 28 individual skills.
         </li>
 
         <li>
-            <strong>Individual Skill XP:</strong>
-            Every skill uses an escalating RuneScape-style XP curve.
+            <strong>Individual XP:</strong>
+            Each skill follows an escalating RuneScape-style XP curve.
         </li>
 
         <li>
             <strong>XP Never Goes Backward:</strong>
-            Once earned, skill XP remains earned.
+            Once XP is earned, it stays earned.
         </li>
 
         <li>
             <strong>Primary Skill:</strong>
-            The activity receives the largest amount of XP in
-            the skill it directly trains.
+            The activity receives the largest amount of XP in the skill
+            it directly develops.
         </li>
 
         <li>
             <strong>Transfer Skills:</strong>
-            Activities can improve other skills when there is
+            Real abilities transfer between activities when there is
             a legitimate connection.
         </li>
 
         <li>
-            <strong>Sports Transfer:</strong>
-            Baseball can improve golf, running, football,
-            basketball, soccer, bowling, strength,
-            coordination, and decision-making.
+            <strong>Baseball → Golf:</strong>
+            Swing mechanics, timing, rotation, balance and hand-eye
+            coordination can transfer from baseball to golf.
         </li>
 
         <li>
             <strong>Running:</strong>
-            Running and speed can transfer to almost every
-            sport where acceleration, sprinting, endurance,
-            or movement is involved.
+            Running, acceleration, speed and movement can transfer
+            to baseball, soccer, football, basketball and other sports.
         </li>
 
         <li>
             <strong>School:</strong>
             School develops reading, writing, mathematics,
-            critical thinking, discipline, responsibility,
-            and mental strength.
+            critical thinking, discipline, responsibility and
+            mental strength.
         </li>
 
         <li>
             <strong>Spanish:</strong>
-            Michael's dual-language work develops
+            Michael's dual-language schoolwork develops
             Spanish / Language.
         </li>
 
         <li>
             <strong>Faith:</strong>
-            Prayer, worship, church, Scripture, and
-            spiritual growth contribute primarily to
-            God Relationship, with legitimate secondary
-            connections when appropriate.
+            Prayer, worship, church and Scripture primarily develop
+            God Relationship, with legitimate secondary connections.
         </li>
 
         <li>
             <strong>Trust:</strong>
-            Trust is separate from XP and can rise or fall
-            based on choices. Skill XP is never erased.
+            Trust is separate from XP. Poor choices can affect Trust,
+            but never erase skill XP.
         </li>
 
     </ul>
@@ -909,15 +870,13 @@ header p {
 
 
 /* =========================================================
-   RUNE-SCAPE STYLE XP CURVE
+   RUNE-SCAPE XP FORMULA
 ========================================================= */
 
 function xpForLevel(level) {
 
     if (level <= 1) {
-
         return 0;
-
     }
 
     let total = 0;
@@ -958,7 +917,7 @@ function getSkillLevel(xp) {
 
 
 /* =========================================================
-   GET PROGRESS
+   GET SKILL PROGRESS
 ========================================================= */
 
 function getSkillProgress(xp) {
@@ -972,7 +931,7 @@ function getSkillProgress(xp) {
     const nextXP =
         xpForLevel(level + 1);
 
-    const amount =
+    const required =
         nextXP - currentXP;
 
     const earned =
@@ -980,88 +939,61 @@ function getSkillProgress(xp) {
 
     let percent = 0;
 
-    if (amount > 0) {
+    if (required > 0) {
 
-        percent =
-            Math.floor(
-                (earned / amount) * 100
-            );
+        percent = Math.floor(
+            (earned / required) * 100
+        );
 
     }
 
     return {
-
         level: level,
-
         currentXP: currentXP,
-
         nextXP: nextXP,
-
         percent: percent
-
     };
 
 }
 
 
 /* =========================================================
-   SKILLS
+   28 SKILLS
 ========================================================= */
 
 const skillDefinitions = [
 
     ["⚾", "Baseball"],
-
     ["🏀", "Basketball"],
-
     ["🏈", "Football"],
-
     ["⚽", "Soccer"],
-
     ["⛳", "Golf"],
-
     ["🎳", "Bowling"],
 
     ["📚", "Reading"],
-
     ["✍️", "Writing"],
-
     ["🔢", "Mathematics"],
-
     ["🎨", "Drawing"],
-
     ["🧱", "Building"],
-
     ["🎨", "Designing"],
 
     ["🙏", "God Relationship"],
-
     ["❤️", "Family Relationship"],
-
     ["🤝", "Friend Relationships"],
 
     ["💡", "Creativity"],
-
     ["🍳", "Cooking"],
-
     ["🧹", "Responsibility"],
 
     ["🏃", "Running / Speed"],
-
     ["💪", "Strength"],
-
     ["🦁", "Toughness"],
-
     ["🧠", "Mental Strength"],
-
     ["🎯", "Discipline"],
 
     ["♟️", "Chess"],
-
     ["🧠", "Critical Thinking"],
-
     ["🎵", "Music"],
-
     ["🥗", "Nutrition / Healthy Choices"],
 
     ["🇪🇸", "Spanish / Language"]
@@ -1099,121 +1031,73 @@ const players = {
 
         },
 
-
-        /*
-         * JD'S UPDATED XP
-         *
-         * Previous baseline +
-         * soccer +
-         * school +
-         * faith +
-         * responsibility/outfit work
-         * + legitimate transfer XP
-         */
-
         xp: {
 
-            "Baseball":
-                240,
+            "Baseball": 240,
 
-            "Basketball":
-                45,
+            "Basketball": 45,
 
-            "Football":
-                49,
+            "Football": 49,
 
-            "Soccer":
-                210,
+            "Soccer": 210,
 
-            "Golf":
-                115,
+            "Golf": 115,
 
-            "Bowling":
-                25,
+            "Bowling": 25,
 
+            "Reading": 275,
 
-            "Reading":
-                275,
+            "Writing": 121,
 
-            "Writing":
-                121,
+            "Mathematics": 103,
 
-            "Mathematics":
-                103,
+            "Drawing": 0,
 
-            "Drawing":
-                0,
+            "Building": 0,
 
-            "Building":
-                0,
+            "Designing": 20,
 
-            "Designing":
-                20,
+            "God Relationship": 355,
 
+            "Family Relationship": 166,
 
-            "God Relationship":
-                355,
+            "Friend Relationships": 183,
 
-            "Family Relationship":
-                166,
+            "Creativity": 45,
 
-            "Friend Relationships":
-                183,
+            "Cooking": 15,
 
+            "Responsibility": 262,
 
-            "Creativity":
-                45,
+            "Running / Speed": 201,
 
-            "Cooking":
-                15,
+            "Strength": 79,
 
-            "Responsibility":
-                262,
+            "Toughness": 10,
 
+            "Mental Strength": 70,
 
-            "Running / Speed":
-                201,
+            "Discipline": 105,
 
-            "Strength":
-                79,
+            "Chess": 0,
 
-            "Toughness":
-                10,
+            "Critical Thinking": 95,
 
-            "Mental Strength":
-                70,
+            "Music": 75,
 
-            "Discipline":
-                105,
+            "Nutrition / Healthy Choices": 5,
 
-
-            "Chess":
-                0,
-
-            "Critical Thinking":
-                95,
-
-            "Music":
-                75,
-
-            "Nutrition / Healthy Choices":
-                5,
-
-
-            "Spanish / Language":
-                0
+            "Spanish / Language": 0
 
         },
-
 
         growth:
 
             "JD has had a major stretch of growth: four soccer practices and two soccer games, about 20 school days, repeated prayer and worship, four church visits, and repeated responsibility with towels and creating outfits. His soccer work is also building transferable athletic abilities including running, acceleration, movement, coordination, decision-making, and skills that carry into baseball, basketball, football, and other sports.",
 
-
         message:
 
-            "🏆 JD is now Overall Level 49. His strongest recent growth has come through soccer, school, faith, responsibility, running, and continued athletic development."
+            "🏆 JD is Overall Level 49. His strongest recent growth has come through soccer, school, faith, responsibility, running, and continued athletic development."
 
     },
 
@@ -1244,122 +1128,73 @@ const players = {
 
         },
 
-
-        /*
-         * MICHAEL'S UPDATED XP
-         *
-         * Previous baseline +
-         * baseball +
-         * school +
-         * Spanish +
-         * faith +
-         * responsibility/outfit work
-         * + legitimate transfer XP
-         */
-
         xp: {
 
-            "Baseball":
-                470,
+            "Baseball": 470,
 
-            "Basketball":
-                23,
+            "Basketball": 23,
 
-            "Football":
-                34,
+            "Football": 34,
 
-            "Soccer":
-                30,
+            "Soccer": 30,
 
-            "Golf":
-                93,
+            "Golf": 93,
 
-            "Bowling":
-                28,
+            "Bowling": 28,
 
+            "Reading": 405,
 
-            "Reading":
-                405,
+            "Writing": 146,
 
-            "Writing":
-                146,
+            "Mathematics": 100,
 
-            "Mathematics":
-                100,
+            "Drawing": 15,
 
-            "Drawing":
-                15,
+            "Building": 8,
 
-            "Building":
-                8,
+            "Designing": 20,
 
-            "Designing":
-                20,
+            "God Relationship": 355,
 
+            "Family Relationship": 72,
 
-            "God Relationship":
-                355,
+            "Friend Relationships": 55,
 
-            "Family Relationship":
-                72,
+            "Creativity": 73,
 
-            "Friend Relationships":
-                55,
+            "Cooking": 0,
 
+            "Responsibility": 255,
 
-            "Creativity":
-                73,
+            "Running / Speed": 70,
 
-            "Cooking":
-                0,
+            "Strength": 46,
 
-            "Responsibility":
-                255,
+            "Toughness": 115,
 
+            "Mental Strength": 125,
 
-            "Running / Speed":
-                70,
+            "Discipline": 180,
 
-            "Strength":
-                46,
+            "Chess": 0,
 
-            "Toughness":
-                115,
+            "Critical Thinking": 100,
 
-            "Mental Strength":
-                125,
+            "Music": 75,
 
-            "Discipline":
-                180,
+            "Nutrition / Healthy Choices": 5,
 
-
-            "Chess":
-                0,
-
-            "Critical Thinking":
-                100,
-
-            "Music":
-                75,
-
-            "Nutrition / Healthy Choices":
-                5,
-
-
-            "Spanish / Language":
-                155
+            "Spanish / Language": 155
 
         },
-
 
         growth:
 
             "Michael has had a huge stretch of development: four baseball games, five baseball practices, about 20 school days, continued Spanish work, four church visits, hundreds of prayers and worship songs, and repeated responsibility with towels and creating outfits. His baseball work is also strengthening running, golf-related swing mechanics, throwing, catching, movement, coordination, decision-making, and other transferable athletic abilities.",
 
-
         message:
 
-            "🏆 Michael is now Overall Level 50. Baseball and reading have become major strengths, while school, faith, Spanish, discipline, responsibility, and mental strength have all continued to grow."
+            "🏆 Michael is Overall Level 50. Baseball and reading have become major strengths, while school, faith, Spanish, discipline, responsibility, and mental strength have all continued to grow."
 
     }
 
@@ -1376,11 +1211,11 @@ function calculateOverall(player) {
 
     skillDefinitions.forEach(skill => {
 
-        const name =
+        const skillName =
             skill[1];
 
         const xp =
-            player.xp[name] || 0;
+            player.xp[skillName] || 0;
 
         total +=
             getSkillLevel(xp);
@@ -1398,39 +1233,35 @@ function calculateOverall(player) {
 
 function getCharacterImage(player, overall) {
 
-    const available =
+    const availableLevels =
         Object.keys(player.images)
             .map(Number)
             .sort((a,b) => a-b);
 
-    let chosen =
-        available[0];
+    let selectedLevel =
+        availableLevels[0];
 
-    for (const level of available) {
+    for (const level of availableLevels) {
 
         if (level <= overall) {
 
-            chosen = level;
+            selectedLevel = level;
 
         }
 
     }
 
-    return player.images[chosen];
+    return player.images[selectedLevel];
 
 }
 
 
 /* =========================================================
-   CURRENT PLAYER
+   PLAYER SELECTION
 ========================================================= */
 
 let currentPlayer = "JD";
 
-
-/* =========================================================
-   SELECT PLAYER
-========================================================= */
 
 function selectPlayer(name) {
 
@@ -1457,14 +1288,13 @@ function selectPlayer(name) {
 
 
 /* =========================================================
-   RENDER
+   RENDER PLAYER
 ========================================================= */
 
 function render() {
 
     const player =
         players[currentPlayer];
-
 
     const overall =
         calculateOverall(player);
@@ -1501,15 +1331,13 @@ function render() {
     document
         .getElementById("trustValue")
         .textContent =
-        player.trust +
-        "%";
+        player.trust + "%";
 
 
     document
         .getElementById("trustFill")
         .style.width =
-        player.trust +
-        "%";
+        player.trust + "%";
 
 
     document
@@ -1540,7 +1368,6 @@ function renderSkills(player) {
             "skillsGrid"
         );
 
-
     grid.innerHTML = "";
 
 
@@ -1555,14 +1382,12 @@ function renderSkills(player) {
         const xp =
             player.xp[name] || 0;
 
-
         const progress =
             getSkillProgress(xp);
 
 
         const card =
             document.createElement("div");
-
 
         card.className =
             "skill-card";
@@ -1583,7 +1408,7 @@ function renderSkills(player) {
                 </div>
 
 
-                <div>
+                <div class="skill-level-box">
 
                     <div class="skill-level">
 
@@ -1619,9 +1444,7 @@ function renderSkills(player) {
 
                 <div
                     class="skill-fill"
-                    style="
-                        width:${progress.percent}%
-                    ">
+                    style="width:${progress.percent}%">
                 </div>
 
             </div>
