@@ -43,11 +43,11 @@ button{border:1px solid var(--line);background:#202938;color:var(--text);padding
 .formgrid{display:grid;grid-template-columns:1.4fr .8fr .8fr .8fr;gap:10px}
 .field label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}
 .field input,.field select,.field textarea{width:100%;background:#101720;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit;min-width:0}
-.field textarea{min-height:70px;resize:vertical}
+.field textarea{min-height:75px;resize:vertical}
 .preview{display:none;margin-top:14px}
-.award{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #293341;padding:9px 0}
-.award strong{color:#a7e9b7}
-.award small{color:var(--muted)}
+.award{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #293341;padding:10px 0}
+.award strong{color:#a7e9b7;white-space:nowrap}
+.award small{display:block;color:var(--muted)}
 .history{display:flex;flex-direction:column;gap:9px}
 .entry{background:#171f2a;border:1px solid #2a3544;border-radius:12px;padding:12px}
 .entrytitle{font-weight:750}
@@ -65,8 +65,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
 <body>
 <div class="wrap">
 <header class="top">
- <div><h1>REAL LIFE GROWTH <span style="color:var(--gold)">2.0</span></h1><p class="sub">A real-world adventure. Growth is earned one day at a time.</p></div>
- <div class="pill">FRESH START · LEVEL 1</div>
+ <div>
+  <h1>REAL LIFE GROWTH <span style="color:var(--gold)">2.0</span></h1>
+  <p class="sub">A real-world adventure. Growth is earned one day at a time.</p>
+ </div>
+ <div class="pill">NEW CHAPTER · LEVEL 1</div>
 </header>
 
 <div class="tabs">
@@ -78,7 +81,11 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
  <div class="card">
   <div class="character">
    <div class="avatar" id="avatar"></div>
-   <div><div class="name" id="kidName">JD</div><div class="level" id="overallLevel">Overall Level 1</div><div class="muted" id="overallProgressText">0 XP earned</div></div>
+   <div>
+    <div class="name" id="kidName">JD</div>
+    <div class="level" id="overallLevel">Overall Level 1</div>
+    <div class="muted" id="overallProgressText">0 XP earned</div>
+   </div>
   </div>
   <div class="bigxp" id="overallXp">0 XP</div>
   <div class="bar"><span id="overallBar" style="width:0%"></span></div>
@@ -106,13 +113,42 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
 <div class="sectionhead"><h2>Log an Activity</h2><span class="muted">Create your own activity</span></div>
 <section class="card">
  <div class="formgrid">
-  <div class="field"><label for="activity">What did they do?</label><input id="activity" placeholder="e.g. Read a book about God"></div>
-  <div class="field"><label for="participant">Who participated?</label><select id="participant"><option value="JD">JD</option><option value="Michael">Michael</option><option value="Both">Both boys</option></select></div>
-  <div class="field"><label for="minutes">Minutes</label><input id="minutes" type="number" min="1" max="600" value="30"></div>
-  <div class="field"><label for="effort">Effort</label><select id="effort"><option value="1">Easy</option><option value="1.2" selected>Normal</option><option value="1.45">Hard</option><option value="1.7">All-out</option></select></div>
+  <div class="field">
+   <label for="activity">What did they do?</label>
+   <input id="activity" placeholder="e.g. Read a book about God">
+  </div>
+  <div class="field">
+   <label for="participant">Who participated?</label>
+   <select id="participant">
+    <option value="JD">JD</option>
+    <option value="Michael">Michael</option>
+    <option value="Both">Both boys</option>
+   </select>
+  </div>
+  <div class="field">
+   <label for="minutes">Minutes</label>
+   <input id="minutes" type="number" min="1" max="600" value="30">
+  </div>
+  <div class="field">
+   <label for="effort">Effort</label>
+   <select id="effort">
+    <option value="1">Easy</option>
+    <option value="1.2" selected>Normal</option>
+    <option value="1.45">Hard</option>
+    <option value="1.7">All-out</option>
+   </select>
+  </div>
  </div>
- <div class="field" style="margin-top:10px"><label for="details">Anything else? (optional)</label><textarea id="details" placeholder="Add context: what did they learn, practice, discuss, or accomplish?"></textarea></div>
- <div class="actions"><button class="primary" id="analyzeBtn">Analyze Activity</button><button id="clearBtn">Clear</button></div>
+
+ <div class="field" style="margin-top:10px">
+  <label for="details">Anything else? (optional)</label>
+  <textarea id="details" placeholder="What did they learn, practice, discuss, or accomplish?"></textarea>
+ </div>
+
+ <div class="actions">
+  <button class="primary" id="analyzeBtn">Analyze Activity</button>
+  <button id="clearBtn">Clear</button>
+ </div>
 
  <div class="preview" id="preview">
   <h3>Suggested Growth</h3>
@@ -123,15 +159,29 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
    <strong>Correct or add a skill</strong>
    <p class="muted" style="font-size:12px;margin:4px 0 10px">If the analyzer missed something, add it here before awarding XP.</p>
    <div class="formgrid" style="grid-template-columns:1.4fr .8fr .8fr">
-    <div class="field"><label for="manualSkill">Skill to add</label><select id="manualSkill"></select></div>
-    <div class="field"><label for="manualXP">XP to award</label><input id="manualXP" type="number" min="1" max="500" value="5"></div>
-    <div class="field"><label for="manualReason">Reason (optional)</label><input id="manualReason" placeholder="Why it applies"></div>
+    <div class="field">
+     <label for="manualSkill">Skill to add</label>
+     <select id="manualSkill"></select>
+    </div>
+    <div class="field">
+     <label for="manualXP">XP to award</label>
+     <input id="manualXP" type="number" min="1" max="500" value="5">
+    </div>
+    <div class="field">
+     <label for="manualReason">Reason</label>
+     <input id="manualReason" placeholder="Why it applies">
+    </div>
    </div>
    <div class="actions"><button id="addSkillBtn">Add Skill to Preview</button></div>
   </div>
-  <div class="actions"><button class="primary" id="approveBtn">Approve & Award XP</button><button id="cancelPreview">Cancel</button></div>
+
+  <div class="actions">
+   <button class="primary" id="approveBtn">Approve & Award XP</button>
+   <button id="cancelPreview">Cancel</button>
+  </div>
  </div>
- <p class="note">This GitHub-only version uses built-in activity rules, not a live ChatGPT connection. The activity name and optional notes are analyzed together. You can manually correct the suggested skills before approving.</p>
+
+ <p class="note">This GitHub-only version uses built-in activity rules, not a live ChatGPT connection. Both the activity name and optional notes are analyzed together. You can manually correct the suggested skills before approving.</p>
 </section>
 
 <div class="sectionhead">
@@ -150,42 +200,116 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
  <div class="modal">
   <h3>Delete this activity?</h3>
   <p class="muted">Deleting it reverses the exact overall XP and skill XP awarded by this activity.</p>
-  <div class="actions"><button class="danger" id="confirmDelete">Delete & Reverse XP</button><button id="keepEntry">Keep Activity</button></div>
+  <div class="actions">
+   <button class="danger" id="confirmDelete">Delete & Reverse XP</button>
+   <button id="keepEntry">Keep Activity</button>
+  </div>
  </div>
 </div>
 
 <script>
 const SKILLS=[
-["baseball","⚾","Baseball"],["basketball","🏀","Basketball"],["football","🏈","Football"],["soccer","⚽","Soccer"],["golf","⛳","Golf"],["bowling","🎳","Bowling"],
-["reading","📚","Reading"],["writing","✍️","Writing"],["math","🔢","Mathematics"],["drawing","🎨","Drawing"],["building","🧱","Building"],["designing","🖌️","Designing"],
-["god","🙏","God Relationship"],["family","❤️","Family Relationship"],["friends","🤝","Friend Relationships"],["creativity","💡","Creativity"],["cooking","🍳","Cooking"],["responsibility","🧹","Responsibility"],
-["running","🏃","Running / Speed"],["strength","💪","Strength"],["toughness","🦁","Toughness"],["mental","🧠","Mental Strength"],["discipline","🎯","Discipline"],["chess","♟️","Chess"],
-["critical","🔍","Critical Thinking"],["music","🎵","Music"],["nutrition","🥗","Nutrition / Healthy Choices"],["spanish","🇪🇸","Spanish / Language"]
+ ["baseball","⚾","Baseball"],
+ ["basketball","🏀","Basketball"],
+ ["football","🏈","Football"],
+ ["soccer","⚽","Soccer"],
+ ["golf","⛳","Golf"],
+ ["bowling","🎳","Bowling"],
+ ["reading","📚","Reading"],
+ ["writing","✍️","Writing"],
+ ["math","🔢","Mathematics"],
+ ["drawing","🎨","Drawing"],
+ ["building","🧱","Building"],
+ ["designing","🖌️","Designing"],
+ ["god","🙏","God Relationship"],
+ ["family","❤️","Family Relationship"],
+ ["friends","🤝","Friend Relationships"],
+ ["creativity","💡","Creativity"],
+ ["cooking","🍳","Cooking"],
+ ["responsibility","🧹","Responsibility"],
+ ["running","🏃","Running / Speed"],
+ ["strength","💪","Strength"],
+ ["toughness","🦁","Toughness"],
+ ["mental","🧠","Mental Strength"],
+ ["discipline","🎯","Discipline"],
+ ["chess","♟️","Chess"],
+ ["critical","🔍","Critical Thinking"],
+ ["music","🎵","Music"],
+ ["nutrition","🥗","Nutrition / Healthy Choices"],
+ ["spanish","🇪🇸","Spanish / Language"]
 ];
 
-const STORE_KEY="realLifeGrowth2_github_only_v1";
-const blankKid=()=>({overallXP:0,skills:Object.fromEntries(SKILLS.map(s=>[s[0],0])),history:[]});
-let data=loadData(),selected="JD",pending=null,deleteTarget=null;
+/* NEW STORAGE KEY: deliberately creates a fresh Level 1 start.
+   Previous progress under older keys is not loaded. */
+const STORE_KEY="realLifeGrowth3_fresh_start_20261116";
+
+const blankKid=()=>({
+ overallXP:0,
+ skills:Object.fromEntries(SKILLS.map(s=>[s[0],0])),
+ history:[]
+});
+
+let data=loadData();
+let selected="JD";
+let pending=null;
+let deleteTarget=null;
 
 function loadData(){
- try{const d=JSON.parse(localStorage.getItem(STORE_KEY));if(d&&d.JD&&d.Michael)return d}catch(e){}
- return{JD:blankKid(),Michael:blankKid()};
+ try{
+  const d=JSON.parse(localStorage.getItem(STORE_KEY));
+  if(d&&d.JD&&d.Michael)return d;
+ }catch(e){}
+ return {JD:blankKid(),Michael:blankKid()};
 }
-function save(){localStorage.setItem(STORE_KEY,JSON.stringify(data))}
-function xpForLevel(level){let p=0;for(let i=1;i<level;i++)p+=Math.floor(i+300*Math.pow(2,i/7));return Math.floor(p/4)}
-function levelForXP(xp){let l=1;while(l<126&&xp>=xpForLevel(l+1))l++;return l}
-function progress(xp){let l=levelForXP(xp),a=xpForLevel(l),b=xpForLevel(l+1);return{level:l,pct:Math.max(0,Math.min(100,(xp-a)/(b-a)*100)),remaining:b-xp}}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 
+function save(){
+ localStorage.setItem(STORE_KEY,JSON.stringify(data));
+}
+
+function xpForLevel(level){
+ let p=0;
+ for(let i=1;i<level;i++)p+=Math.floor(i+300*Math.pow(2,i/7));
+ return Math.floor(p/4);
+}
+
+function levelForXP(xp){
+ let l=1;
+ while(l<126&&xp>=xpForLevel(l+1))l++;
+ return l;
+}
+
+function progress(xp){
+ const l=levelForXP(xp);
+ const a=xpForLevel(l);
+ const b=xpForLevel(l+1);
+ return {
+  level:l,
+  pct:Math.max(0,Math.min(100,(xp-a)/(b-a)*100)),
+  remaining:b-xp
+ };
+}
+
+function esc(s){
+ return String(s).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+/* Character art: JD blue/gold, Michael black/red/gold. */
 function lionSVG(kid){
- const light=kid==="JD"?"#79b9ef":"#ed6250",dark=kid==="JD"?"#1c426e":"#4a1b22",gold="#e4b84f";
+ const light=kid==="JD"?"#79b9ef":"#ed6250";
+ const dark=kid==="JD"?"#1c426e":"#4a1b22";
+ const gold="#e4b84f";
+
  return `<svg viewBox="0 0 120 130" role="img" aria-label="${kid} baby lion cub" xmlns="http://www.w3.org/2000/svg">
  <defs><linearGradient id="mane${kid}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${light}"/><stop offset="1" stop-color="${dark}"/></linearGradient></defs>
  <path d="M60 5 C34 4 12 25 14 53 C-1 68 13 105 40 111 C48 128 75 130 84 111 C112 104 124 69 106 52 C110 22 84 3 60 5Z" fill="url(#mane${kid})" stroke="${gold}" stroke-width="3"/>
  <path d="M31 38 L27 18 Q43 17 47 34 M89 38 L94 18 Q77 17 73 34" fill="${light}" stroke="${gold}" stroke-width="3"/>
  <path d="M34 45 Q60 22 86 45 Q99 70 83 92 Q60 112 37 91 Q21 70 34 45Z" fill="#eabf82" stroke="#8c5a35" stroke-width="2"/>
- <ellipse cx="46" cy="64" rx="5" ry="7" fill="#17202b"/><ellipse cx="74" cy="64" rx="5" ry="7" fill="#17202b"/>
- <circle cx="47" cy="62" r="1.5" fill="white"/><circle cx="75" cy="62" r="1.5" fill="white"/>
+ <ellipse cx="46" cy="64" rx="5" ry="7" fill="#17202b"/>
+ <ellipse cx="74" cy="64" rx="5" ry="7" fill="#17202b"/>
+ <circle cx="47" cy="62" r="1.5" fill="white"/>
+ <circle cx="75" cy="62" r="1.5" fill="white"/>
  <path d="M54 76 Q60 70 66 76 Q64 83 60 83 Q56 83 54 76Z" fill="#54352b"/>
  <path d="M60 83 Q59 91 51 91 M60 83 Q61 91 69 91" fill="none" stroke="#54352b" stroke-width="2" stroke-linecap="round"/>
  <path d="M42 100 Q60 108 78 100 L83 119 Q60 130 37 119Z" fill="${dark}" stroke="${gold}" stroke-width="2"/>
@@ -195,8 +319,13 @@ function lionSVG(kid){
 }
 
 function render(){
- const kid=data[selected],o=progress(kid.overallXP);
- document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.kid===selected));
+ const kid=data[selected];
+ const o=progress(kid.overallXP);
+
+ document.querySelectorAll(".tab").forEach(b=>
+  b.classList.toggle("active",b.dataset.kid===selected)
+ );
+
  document.getElementById("avatar").innerHTML=lionSVG(selected);
  document.getElementById("kidName").textContent=selected;
  document.getElementById("overallLevel").textContent=`Overall Level ${o.level}`;
@@ -205,147 +334,389 @@ function render(){
  document.getElementById("overallBar").style.width=o.pct+"%";
  document.getElementById("overallNext").textContent=`${o.remaining.toLocaleString()} XP to Level ${o.level+1}`;
  document.getElementById("activitiesCount").textContent=kid.history.length;
- document.getElementById("skillsGrowing").textContent=SKILLS.filter(s=>kid.skills[s[0]]>0).length;
- document.getElementById("totalSkillXp").textContent=SKILLS.reduce((a,s)=>a+kid.skills[s[0]],0).toLocaleString();
+
+ document.getElementById("skillsGrowing").textContent=
+  SKILLS.filter(s=>kid.skills[s[0]]>0).length;
+
+ document.getElementById("totalSkillXp").textContent=
+  SKILLS.reduce((a,s)=>a+kid.skills[s[0]],0).toLocaleString();
+
  document.getElementById("skills").innerHTML=SKILLS.map(s=>{
   const p=progress(kid.skills[s[0]]);
-  return `<div class="skill"><div class="skilltop"><span class="skillname">${s[1]} ${s[2]}</span><span class="skilllevel">Lvl ${p.level}</span></div><div class="bar"><span style="width:${p.pct}%"></span></div><small>${kid.skills[s[0]].toLocaleString()} XP · ${p.remaining.toLocaleString()} to next level</small></div>`;
+  return `<div class="skill">
+   <div class="skilltop">
+    <span class="skillname">${s[1]} ${s[2]}</span>
+    <span class="skilllevel">Lvl ${p.level}</span>
+   </div>
+   <div class="bar"><span style="width:${p.pct}%"></span></div>
+   <small>${kid.skills[s[0]].toLocaleString()} XP · ${p.remaining.toLocaleString()} to next level</small>
+  </div>`;
  }).join("");
+
  renderHistory();
 }
 
 function renderHistory(){
  const list=data[selected].history.slice().reverse();
- document.getElementById("history").innerHTML=list.length?list.map(e=>{
-  const names=e.awards.map(a=>`${SKILLS.find(s=>s[0]===a.skill)?.[2]||a.skill} +${a.xp}`).join(" · ");
-  return `<div class="entry"><div class="entrytop"><div><div class="entrytitle">${esc(e.activity)}</div><div class="entrymeta">${new Date(e.date).toLocaleString()} · ${e.minutes} min · ${e.effortLabel} · +${e.overallXP} overall XP</div></div><button class="danger" data-delete="${e.id}">Delete</button></div><div class="entryskills">${names||"No skill XP awarded"}</div>${e.details?`<div class="entrymeta" style="margin-top:6px">${esc(e.details)}</div>`:""}</div>`;
- }).join(""):'<div class="empty">No activities logged yet. Your adventure starts here.</div>';
+
+ document.getElementById("history").innerHTML=list.length?
+ list.map(e=>{
+  const names=e.awards.map(a=>
+   `${SKILLS.find(s=>s[0]===a.skill)?.[2]||a.skill} +${a.xp}`
+  ).join(" · ");
+
+  return `<div class="entry">
+   <div class="entrytop">
+    <div>
+     <div class="entrytitle">${esc(e.activity)}</div>
+     <div class="entrymeta">${new Date(e.date).toLocaleString()} · ${e.minutes} min · ${e.effortLabel} · +${e.overallXP} overall XP</div>
+    </div>
+    <button class="danger" data-delete="${e.id}">Delete</button>
+   </div>
+   <div class="entryskills">${names||"No skill XP awarded"}</div>
+   ${e.details?`<div class="entrymeta" style="margin-top:6px">${esc(e.details)}</div>`:""}
+  </div>`;
+ }).join("")
+ :'<div class="empty">No activities logged yet. Your adventure starts here.</div>';
 }
 
+/* Robust text analysis */
 function analyzeActivity(activity,details,minutes,effort){
- const t=(activity+" "+details).toLowerCase(),f={};
- const add=(k,w,why)=>{if(!f[k]||w>f[k].weight)f[k]={weight:w,why}};
- const has=(...words)=>words.some(w=>t.includes(w));
+ const t=(activity+" "+details).toLowerCase()
+  .replace(/[’‘]/g,"'")
+  .replace(/[^a-z0-9\s'-]/g," ")
+  .replace(/\s+/g," ").trim();
 
- // Faith context is checked across BOTH the activity title and optional notes.
- const faithContext=has("god","jesus","christ","lord","bible","scripture","gospel","faith","prayer","pray","church","worship","devotion","devotional","christian","religious","spiritual","holy spirit","parable","psalm");
- const faithLearning=has("learned about god","learn about god","book about god","read about god","read about jesus","learned about jesus","bible story","bible book","scripture","gospel","faith lesson","devotional","devotion","prayer","pray","discussed god","talked about god","church","worship");
+ const found={};
 
- if(has("baseball","softball","tee ball","t-ball","batting","pitching","catching","fielding","base running")){add("baseball",1,"Direct baseball practice or play");add("running",.35,"Base running and movement")}
- if(has("basketball","hoops","shooting hoops","dribbling")){add("basketball",1,"Direct basketball practice or play");add("running",.35,"Movement, speed, and court coverage")}
- if(has("football","flag football","throwing routes","quarterback")){add("football",1,"Direct football practice or play");add("strength",.25,"Athletic movement and body control");add("running",.3,"Running and change of direction")}
- if(has("soccer","futbol")){add("soccer",1,"Direct soccer practice or play");add("running",.45,"Sustained running and quick movement");add("toughness",.2,"Sustained physical effort")}
- if(has("golf","putting","driving range")){add("golf",1,"Direct golf practice");add("critical",.25,"Judgment, aim, and course decisions")}
- if(has("bowling")){add("bowling",1,"Direct bowling practice");add("critical",.2,"Aim and adjustment")}
- if(has("badminton","pickleball","tennis","ping pong","table tennis","racquet","racket","paddle")){add("running",.5,"Footwork, acceleration, and recovery");add("critical",.4,"Tracking, anticipation, and quick decisions");add("baseball",.32,"Hand-eye coordination and tracking");add("basketball",.28,"Reaction time, positioning, and coordination");add("football",.22,"Footwork, reaction, and spatial awareness")}
- if(has("kickball","dodgeball","tag","capture the flag","ga-ga","gaga ball")){add("running",.55,"Acceleration, agility, and evasive movement");add("critical",.3,"Reacting and choosing where to move");add("toughness",.18,"Physical challenge and resilience");add("baseball",.18,"Tracking and striking or fielding a ball")}
- if(has("run","running","jog","sprint","race","track","hiking")){add("running",1,"Direct running or endurance activity");add("toughness",.25,"Sustained effort")}
- if(has("swim","swimming")){add("strength",.35,"Whole-body muscular effort");add("toughness",.25,"Sustained physical challenge");add("mental",.2,"Breath control and persistence")}
- if(has("workout","weight","push-up","push up","sit-up","sit up","exercise","strength training","lifting")){add("strength",1,"Direct strength or fitness work");add("discipline",.25,"Following through with training")}
- if(has("read","reading","book","chapter"))add("reading",1,"Direct reading practice");
- if(has("write","writing","journal","story","essay","spelling")){add("writing",1,"Direct writing practice");add("reading",.18,"Using language and comprehension")}
- if(has("math","maths","multiplication","division","fractions","homework","worksheet")){add("math",1,"Mathematical practice");add("discipline",.2,"Sustained learning effort")}
- if(has("draw","drawing","coloring","colouring","sketch","paint")){add("drawing",1,"Direct drawing or visual-art practice");add("creativity",.35,"Imagining and expressing ideas")}
- if(has("build","building","lego","blocks","fort","construction","craft")){add("building",1,"Constructing or assembling something");add("creativity",.35,"Inventing and experimenting");add("critical",.25,"Planning and solving problems")}
- if(has("design","designing","blueprint","model","decorate")){add("designing",1,"Planning a visual or functional design");add("creativity",.4,"Developing original ideas");add("critical",.2,"Making design decisions")}
- if(has("cook","cooking","bake","baking","meal prep","recipe")){add("cooking",1,"Preparing food");add("nutrition",.3,"Learning about food and ingredients");add("math",.15,"Measuring and following quantities")}
- if(has("chore","clean","cleaning","laundry","yard work","mow","mowing","take out trash","organize","responsibility")){add("responsibility",1,"Completing a helpful task");add("discipline",.25,"Following through on a task")}
-
- // A book about God should develop BOTH reading and God Relationship.
- if(faithContext&&(faithLearning||has("read","reading","book","chapter","learn","learned","study","studied","discuss","discussed","talk","talked","listen","listened","pray","prayer","church","worship","devotion"))){
-  add("god",1,"Learning about or engaging with God through faith, Scripture, or spiritual discussion");
+ function hasPhrase(...phrases){
+  return phrases.some(p=>t.includes(p.toLowerCase()));
  }
 
- if(has("family","mom","dad","brother","sister","grandparent","grandma","grandpa","family game","with my family"))add("family",.7,"Intentional time and connection with family");
- if(has("friend","teamwork","playdate","play date","helped a friend"))add("friends",.7,"Cooperation and positive connection with others");
- if(has("chess")){add("chess",1,"Direct chess practice or play");add("critical",.45,"Planning, pattern recognition, and strategy");add("mental",.2,"Concentration and patience")}
- if(has("music","piano","guitar","drum","sing","singing","instrument","band")){add("music",1,"Direct music practice");add("discipline",.2,"Practice and repetition")}
- if(has("spanish","language","vocabulary","flash cards","flashcards")){add("spanish",1,"Language learning or practice");add("mental",.15,"Memory and concentration")}
- if(has("nutrition","healthy food","vegetable","fruit","healthy choice","balanced meal"))add("nutrition",1,"Learning or making a healthy choice");
- if(has("practice","game","played","playing","drill","sports","sport")){add("critical",.12,"Making decisions during play");add("running",.12,"General movement and activity")}
- if(has("together","with dad","with mom","with family"))add("family",.35,"Shared time and connection");
- if(has("solve","puzzle","problem","strategy","figure out","experiment","discussed what","talked about what","explained why","reflected"))add("critical",.45,"Reasoning, reflection, and solving a problem");
- if(has("invent","create","make up","imagine","new idea"))add("creativity",.55,"Creating or exploring original ideas");
- if(has("did it anyway","kept trying","hard","challenging","difficult"))add("mental",.25,"Persistence through challenge");
+ function add(skill,weight,why){
+  if(!found[skill]||weight>found[skill].weight){
+   found[skill]={weight,why};
+  }
+ }
 
- // Explicit parent corrections in the notes are recognized directly.
- if(has("god relationship","relationship with god","grow closer to god","closer to god","strengthen faith","faith relationship"))add("god",1,"The note explicitly identifies growth in relationship with God");
+ /* READING */
+ if(hasPhrase("read","reading","book","chapter","story","novel")){
+  add("reading",1,"Reading and understanding written material");
+ }
 
- const mins=Math.max(1,Math.min(600,Number(minutes)||1));
- const base=Math.max(5,Math.round(mins/15*18*(Number(effort)||1)));
- const entries=Object.entries(f).filter(([,v])=>v.weight>=.16).sort((a,b)=>b[1].weight-a[1].weight);
- const sum=entries.reduce((n,[,v])=>n+v.weight,0);
- // Automatic skill XP is shared proportionally from one activity XP pool.
- let remaining=base;
- const awards=entries.map(([skill,v],i)=>{
-  const xp=i===entries.length-1?remaining:Math.max(0,Math.round(base*v.weight/sum));
-  remaining-=xp;
-  return{skill,xp,why:v.why};
- }).filter(a=>a.xp>0);
+ /* GOD RELATIONSHIP
+    Explicitly recognizes parent notes such as:
+    "This should grow God relationship"
+    "Read The God Proof"
+    "Book about God"
+    "Learning about Jesus"
+ */
+ const faithWords=[
+  "god","jesus","christ","bible","scripture","gospel","faith",
+  "prayer","pray","church","worship","devotion","devotional",
+  "christian","holy spirit","psalm","parable","religion","spiritual"
+ ];
 
- return{
+ const faithContext=faithWords.some(w=>t.includes(w));
+
+ const explicitGodGrowth=
+  /god\s+relationship/.test(t) ||
+  /relationship\s+with\s+god/.test(t) ||
+  /grow\w*\s+(?:his\s+|her\s+|their\s+)?(?:relationship\s+with\s+)?god/.test(t) ||
+  /closer\s+to\s+god/.test(t) ||
+  /strengthen\w*\s+(?:his\s+|her\s+|their\s+)?faith/.test(t) ||
+  /grow\w*\s+(?:his\s+|her\s+|their\s+)?faith/.test(t);
+
+ const faithActivity=
+  hasPhrase(
+   "book about god","read about god","reading about god",
+   "book about jesus","read about jesus","reading about jesus",
+   "learn about god","learned about god","learning about god",
+   "learn about jesus","learned about jesus","learning about jesus",
+   "bible story","bible study","read the bible","reading the bible",
+   "scripture reading","faith lesson","devotional","devotion",
+   "prayer","pray","worship","church","discussed god",
+   "talked about god","learned about christ"
+  );
+
+ if(explicitGodGrowth || (faithContext && faithActivity)){
+  add("god",1,
+   "The activity or your notes connect this experience to learning about God and developing a relationship with Him");
+ }
+
+ /* OTHER SPORTS */
+ if(hasPhrase("baseball","softball","tee ball","t-ball","batting","pitching","catching","fielding","base running")){
+  add("baseball",1,"Direct baseball practice or play");
+  add("running",.35,"Base running and movement");
+ }
+ if(hasPhrase("basketball","hoops","shooting hoops","dribbling")){
+  add("basketball",1,"Direct basketball practice or play");
+  add("running",.35,"Movement, speed, and court coverage");
+ }
+ if(hasPhrase("football","flag football","quarterback")){
+  add("football",1,"Direct football practice or play");
+  add("strength",.25,"Athletic movement and body control");
+  add("running",.3,"Running and change of direction");
+ }
+ if(hasPhrase("soccer","futbol")){
+  add("soccer",1,"Direct soccer practice or play");
+  add("running",.45,"Sustained running and quick movement");
+  add("toughness",.2,"Sustained physical effort");
+ }
+ if(hasPhrase("golf","putting","driving range")){
+  add("golf",1,"Direct golf practice");
+  add("critical",.25,"Judgment, aim, and course decisions");
+ }
+ if(hasPhrase("bowling")){
+  add("bowling",1,"Direct bowling practice");
+  add("critical",.2,"Aim and adjustment");
+ }
+
+ /* RACKET / PADDLE ACTIVITIES */
+ if(hasPhrase("badminton","pickleball","tennis","ping pong","table tennis","racquet","racket","paddle")){
+  add("running",.5,"Footwork, acceleration, and recovery");
+  add("critical",.4,"Tracking, anticipation, and quick decisions");
+  add("baseball",.32,"Hand-eye coordination and tracking");
+  add("basketball",.28,"Reaction time, positioning, and coordination");
+  add("football",.22,"Footwork, reaction, and spatial awareness");
+ }
+
+ if(hasPhrase("kickball","dodgeball","tag","capture the flag","ga-ga","gaga ball")){
+  add("running",.55,"Acceleration, agility, and evasive movement");
+  add("critical",.3,"Reacting and choosing where to move");
+  add("toughness",.18,"Physical challenge and resilience");
+  add("baseball",.18,"Tracking and striking or fielding a ball");
+ }
+
+ if(hasPhrase("running","run","jog","sprint","race","track","hiking")){
+  add("running",1,"Direct running or endurance activity");
+  add("toughness",.25,"Sustained effort");
+ }
+ if(hasPhrase("swim","swimming")){
+  add("strength",.35,"Whole-body muscular effort");
+  add("toughness",.25,"Sustained physical challenge");
+  add("mental",.2,"Breath control and persistence");
+ }
+ if(hasPhrase("workout","weight","push-up","push up","sit-up","sit up","exercise","strength training","lifting")){
+  add("strength",1,"Direct strength or fitness work");
+  add("discipline",.25,"Following through with training");
+ }
+
+ /* LEARNING AND CREATIVE SKILLS */
+ if(hasPhrase("write","writing","journal","story","essay","spelling")){
+  add("writing",1,"Direct writing practice");
+  add("reading",.18,"Using language and comprehension");
+ }
+ if(hasPhrase("math","maths","multiplication","division","fractions","homework","worksheet")){
+  add("math",1,"Mathematical practice");
+  add("discipline",.2,"Sustained learning effort");
+ }
+ if(hasPhrase("draw","drawing","coloring","colouring","sketch","paint")){
+  add("drawing",1,"Direct drawing or visual-art practice");
+  add("creativity",.35,"Imagining and expressing ideas");
+ }
+ if(hasPhrase("build","building","lego","blocks","fort","construction","craft")){
+  add("building",1,"Constructing or assembling something");
+  add("creativity",.35,"Inventing and experimenting");
+  add("critical",.25,"Planning and solving problems");
+ }
+ if(hasPhrase("design","designing","blueprint","model","decorate")){
+  add("designing",1,"Planning a visual or functional design");
+  add("creativity",.4,"Developing original ideas");
+  add("critical",.2,"Making design decisions");
+ }
+ if(hasPhrase("cook","cooking","bake","baking","meal prep","recipe")){
+  add("cooking",1,"Preparing food");
+  add("nutrition",.3,"Learning about food and ingredients");
+  add("math",.15,"Measuring and following quantities");
+ }
+ if(hasPhrase("chore","clean","cleaning","laundry","yard work","mow","mowing","take out trash","organize","responsibility")){
+  add("responsibility",1,"Completing a helpful task");
+  add("discipline",.25,"Following through on a task");
+ }
+
+ /* RELATIONSHIPS */
+ if(hasPhrase("family","mom","dad","brother","sister","grandparent","grandma","grandpa","family game","with my family")){
+  add("family",.7,"Intentional time and connection with family");
+ }
+ if(hasPhrase("friend","teamwork","playdate","play date","helped a friend")){
+  add("friends",.7,"Cooperation and positive connection with others");
+ }
+
+ /* OTHER SKILLS */
+ if(hasPhrase("chess")){
+  add("chess",1,"Direct chess practice or play");
+  add("critical",.45,"Planning, pattern recognition, and strategy");
+  add("mental",.2,"Concentration and patience");
+ }
+ if(hasPhrase("music","piano","guitar","drum","sing","singing","instrument","band")){
+  add("music",1,"Direct music practice");
+  add("discipline",.2,"Practice and repetition");
+ }
+ if(hasPhrase("spanish","language","vocabulary","flash cards","flashcards")){
+  add("spanish",1,"Language learning or practice");
+  add("mental",.15,"Memory and concentration");
+ }
+ if(hasPhrase("nutrition","healthy food","vegetable","fruit","healthy choice","balanced meal")){
+  add("nutrition",1,"Learning or making a healthy choice");
+ }
+
+ if(hasPhrase("practice","game","played","playing","drill","sports","sport")){
+  add("critical",.12,"Making decisions during play");
+  add("running",.12,"General movement and activity");
+ }
+ if(hasPhrase("together","with dad","with mom","with family")){
+  add("family",.35,"Shared time and connection");
+ }
+ if(hasPhrase("solve","puzzle","problem","strategy","figure out","experiment","discussed what","talked about what","explained why","reflected")){
+  add("critical",.45,"Reasoning, reflection, and solving a problem");
+ }
+ if(hasPhrase("invent","create","make up","imagine","new idea")){
+  add("creativity",.55,"Creating or exploring original ideas");
+ }
+ if(hasPhrase("kept trying","challenging","difficult","pushed through")){
+  add("mental",.25,"Persistence through challenge");
+ }
+
+ const minutes=Math.max(1,Math.min(600,Number(minutes)||1));
+ const base=Math.max(5,Math.round(minutes/15*18*(Number(effort)||1)));
+
+ const entries=Object.entries(found)
+  .filter(([,v])=>v.weight>=.16)
+  .sort((a,b)=>b[1].weight-a[1].weight);
+
+ const totalWeight=entries.reduce((n,[,v])=>n+v.weight,0);
+
+ /* Largest-remainder allocation: automatic skill XP adds up
+    exactly to the activity's skill XP pool. */
+ let awards=[];
+ if(entries.length&&totalWeight>0){
+  const raw=entries.map(([skill,v])=>({
+   skill,why:v.why,
+   exact:base*v.weight/totalWeight
+  }));
+  awards=raw.map(a=>({
+   skill:a.skill,
+   why:a.why,
+   xp:Math.floor(a.exact),
+   remainder:a.exact-Math.floor(a.exact)
+  }));
+
+  let leftover=base-awards.reduce((n,a)=>n+a.xp,0);
+  awards.slice().sort((a,b)=>b.remainder-a.remainder)
+   .slice(0,leftover)
+   .forEach(a=>a.xp++);
+
+  awards=awards.filter(a=>a.xp>0)
+   .map(({skill,why,xp})=>({skill,why,xp}));
+ }
+
+ return {
   awards,
   overallXP:Math.max(5,Math.round(base*.65)),
   explanation:entries.length?
-   `The activity title and your optional notes were analyzed together. ${entries.length} skill connection${entries.length===1?" was":"s were"} identified. Review the reasons and add or correct any skill before approving.`
-   :"I couldn't identify a strong skill connection. Add more detail or use the manual correction tool to assign a skill."
+   "The activity name and optional notes were analyzed together. Review each reason and add or correct any skill before approving."
+   :"No strong skill connection was identified. You can add one manually below."
  };
 }
 
 function skillOptions(){
- document.getElementById("manualSkill").innerHTML=SKILLS.map(s=>`<option value="${s[0]}">${s[1]} ${s[2]}</option>`).join("");
+ document.getElementById("manualSkill").innerHTML=SKILLS.map(s=>
+  `<option value="${s[0]}">${s[1]} ${s[2]}</option>`
+ ).join("");
 }
+
 function renderPreview(){
  if(!pending)return;
- document.getElementById("analysisText").textContent=pending.result.explanation+` Estimated overall award: ${pending.result.overallXP} XP.`;
- document.getElementById("awards").innerHTML=pending.result.awards.length?
+
+ document.getElementById("analysisText").textContent=
+  pending.result.explanation+
+  ` Estimated overall award: ${pending.result.overallXP} XP.`;
+
+ document.getElementById("awards").innerHTML=
+  pending.result.awards.length?
   pending.result.awards.map(a=>{
    const s=SKILLS.find(x=>x[0]===a.skill);
-   return `<div class="award"><span>${s[1]} ${s[2]} <small>— ${esc(a.why||"Manual correction")}</small></span><strong>+${a.xp} XP</strong></div>`;
+   return `<div class="award">
+    <span>${s[1]} ${s[2]}<small>${esc(a.why||"Manual correction")}</small></span>
+    <strong>+${a.xp} XP</strong>
+   </div>`;
   }).join("")
   :'<div class="empty">No skill XP suggested yet. Add a skill below if one applies.</div>';
 }
-function effortLabel(v){return v==="1"?"Easy":v==="1.2"?"Normal":v==="1.45"?"Hard":"All-out"}
+
+function effortLabel(v){
+ return v==="1"?"Easy":v==="1.2"?"Normal":v==="1.45"?"Hard":"All-out";
+}
 
 document.getElementById("analyzeBtn").onclick=()=>{
  const activity=document.getElementById("activity").value.trim();
  const details=document.getElementById("details").value.trim();
- if(!activity){alert("Enter an activity first.");return}
+
+ if(!activity){
+  alert("Enter an activity first.");
+  return;
+ }
+
  const minutes=Number(document.getElementById("minutes").value)||1;
  const effort=document.getElementById("effort").value;
  const who=document.getElementById("participant").value;
- pending={activity,details,minutes,effort,effortLabel:effortLabel(effort),who,result:analyzeActivity(activity,details,minutes,effort)};
+
+ pending={
+  activity,details,minutes,effort,
+  effortLabel:effortLabel(effort),
+  who,
+  result:analyzeActivity(activity,details,minutes,effort)
+ };
+
  renderPreview();
  document.getElementById("preview").style.display="block";
 };
 
 document.getElementById("addSkillBtn").onclick=()=>{
  if(!pending)return;
+
  const skill=document.getElementById("manualSkill").value;
  const xp=Math.max(1,Math.min(500,Number(document.getElementById("manualXP").value)||1));
  const reason=document.getElementById("manualReason").value.trim()||"Manually added by parent";
+
  const existing=pending.result.awards.find(a=>a.skill===skill);
- if(existing){existing.xp+=xp;existing.why+="; "+reason}
- else pending.result.awards.push({skill,xp,why:reason});
+
+ if(existing){
+  existing.xp+=xp;
+  existing.why+="; "+reason;
+ }else{
+  pending.result.awards.push({skill,xp,why:reason});
+ }
+
  renderPreview();
  document.getElementById("manualReason").value="";
 };
 
 document.getElementById("approveBtn").onclick=()=>{
  if(!pending)return;
+
  const targets=pending.who==="Both"?["JD","Michael"]:[pending.who];
+
  targets.forEach(k=>{
-  const kid=data[k],id=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+  const kid=data[k];
+  const id=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+
   kid.overallXP+=pending.result.overallXP;
   pending.result.awards.forEach(a=>kid.skills[a.skill]+=a.xp);
+
   kid.history.push({
-   id,activity:pending.activity,details:pending.details,
-   minutes:pending.minutes,effortLabel:pending.effortLabel,
+   id,
+   activity:pending.activity,
+   details:pending.details,
+   minutes:pending.minutes,
+   effortLabel:pending.effortLabel,
    overallXP:pending.result.overallXP,
    awards:pending.result.awards.map(a=>({skill:a.skill,xp:a.xp})),
    date:new Date().toISOString()
   });
  });
+
  save();
  pending=null;
  document.getElementById("preview").style.display="none";
@@ -355,8 +726,10 @@ document.getElementById("approveBtn").onclick=()=>{
 };
 
 document.getElementById("cancelPreview").onclick=()=>{
- pending=null;document.getElementById("preview").style.display="none";
+ pending=null;
+ document.getElementById("preview").style.display="none";
 };
+
 document.getElementById("clearBtn").onclick=()=>{
  document.getElementById("activity").value="";
  document.getElementById("details").value="";
@@ -376,38 +749,64 @@ document.getElementById("history").addEventListener("click",e=>{
  deleteTarget=b.dataset.delete;
  document.getElementById("confirmModal").style.display="flex";
 });
+
 document.getElementById("keepEntry").onclick=()=>{
- deleteTarget=null;document.getElementById("confirmModal").style.display="none";
+ deleteTarget=null;
+ document.getElementById("confirmModal").style.display="none";
 };
+
 document.getElementById("confirmDelete").onclick=()=>{
  if(deleteTarget){
-  const kid=data[selected],i=kid.history.findIndex(e=>e.id===deleteTarget);
+  const kid=data[selected];
+  const i=kid.history.findIndex(e=>e.id===deleteTarget);
+
   if(i>=0){
    const entry=kid.history[i];
    kid.overallXP=Math.max(0,kid.overallXP-entry.overallXP);
-   entry.awards.forEach(a=>kid.skills[a.skill]=Math.max(0,kid.skills[a.skill]-a.xp));
+
+   entry.awards.forEach(a=>{
+    kid.skills[a.skill]=Math.max(0,kid.skills[a.skill]-a.xp);
+   });
+
    kid.history.splice(i,1);
-   save();render();
+   save();
+   render();
   }
  }
+
  deleteTarget=null;
  document.getElementById("confirmModal").style.display="none";
 };
 
 document.getElementById("exportBtn").onclick=()=>{
  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download="real-life-growth-backup.json";a.click();
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="real-life-growth-backup.json";
+ a.click();
  URL.revokeObjectURL(url);
 };
-document.getElementById("importBtn").onclick=()=>document.getElementById("importFile").click();
+
+document.getElementById("importBtn").onclick=()=>{
+ document.getElementById("importFile").click();
+};
+
 document.getElementById("importFile").onchange=async e=>{
- const file=e.target.files[0];if(!file)return;
+ const file=e.target.files[0];
+ if(!file)return;
+
  try{
   const d=JSON.parse(await file.text());
   if(!d.JD||!d.Michael)throw Error();
-  data=d;save();render();alert("Backup imported.");
- }catch(err){alert("That file doesn't look like a Real Life Growth backup.")}
+  data=d;
+  save();
+  render();
+  alert("Backup imported.");
+ }catch(err){
+  alert("That file doesn't look like a Real Life Growth backup.");
+ }
+
  e.target.value="";
 };
 
