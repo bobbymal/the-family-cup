@@ -1,1480 +1,434 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Real Life Growth</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Life Growth 2.0</title>
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    box-sizing: border-box;
+:root {
+ --bg:#10141b;--card:#191f29;--inner:#10161f;
+ --border:#303a49;--gold:#e0b84f;--blue:#58a6ff;
+ --green:#65d68b;--muted:#9ca7b5;
 }
-
-body {
-    margin: 0;
-    background:
-        radial-gradient(circle at top, #1c2532 0%, #10141b 45%, #090c11 100%);
-    color: #f4f6f8;
-    font-family: Arial, Helvetica, sans-serif;
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#1c2532,#10141b 55%,#090c11);color:#f4f6f8;font-family:Arial,sans-serif}
+header{text-align:center;padding:23px 12px 18px;background:#141a23;border-bottom:2px solid var(--border)}
+header h1{margin:0;color:var(--gold);font-size:27px;letter-spacing:1px}
+header p{margin:8px 0 0;color:var(--muted);font-size:13px}
+.container{max-width:1050px;margin:auto;padding:16px 12px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:15px;margin-bottom:14px}
+h2{margin:0 0 10px;font-size:20px}
+.muted{color:var(--muted);font-size:12px;line-height:1.5}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.selector{display:flex;gap:10px;justify-content:center;margin-bottom:15px}
+.player-button{flex:1;max-width:180px;padding:12px;border-radius:9px;border:2px solid var(--border);background:var(--card);color:white;font-weight:bold}
+.player-button.active{background:var(--gold);color:#111;border-color:var(--gold)}
+.hero{display:grid;grid-template-columns:230px 1fr;gap:14px;margin-bottom:14px}
+.character{text-align:center}
+.avatar{width:145px;height:145px;margin:5px auto 14px;border-radius:50%;border:3px solid var(--gold);background:var(--inner);display:flex;align-items:center;justify-content:center;font-size:70px}
+.player-name{color:var(--gold);font-size:24px;font-weight:900}
+.overall-label{color:var(--muted);font-size:10px;letter-spacing:1.5px;margin-top:12px}
+.overall-number{color:var(--gold);font-size:62px;font-weight:900;line-height:1.1}
+.xp-label{color:var(--muted);font-size:11px}
+.progress{height:9px;background:#080d14;border-radius:20px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#438ddd,#58a6ff);border-radius:20px}
+.overall-fill{background:linear-gradient(90deg,#b38b28,#f5d777)}
+.growth-message{color:#d9dee5;font-size:13px;line-height:1.55;margin-top:12px}
+.stat-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.gold{color:var(--gold)}.green{color:var(--green)}
+.growth-card{border-color:#514321}
+.growth-card h2{color:var(--gold)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.skill-card{background:var(--inner);border:1px solid #2d3745;border-radius:10px;padding:10px;min-width:0}
+.skill-top{display:flex;justify-content:space-between;align-items:center;gap:5px}
+.skill-name{font-size:12px;font-weight:800;line-height:1.25}
+.skill-level{color:var(--gold);font-size:19px;font-weight:900;flex-shrink:0}
+.skill-xp{display:flex;justify-content:space-between;color:var(--muted);font-size:9px;margin-top:7px}
+.skill-next{color:#748092;font-size:8px;margin-top:5px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{color:#cbd3dd;font-size:12px;font-weight:bold}
+input,select{width:100%;padding:11px;background:var(--inner);color:white;border:1px solid #394454;border-radius:8px;outline:none}
+.primary-button{width:100%;padding:13px;border:0;border-radius:9px;background:var(--gold);color:#111;font-weight:900;margin-top:13px}
+.secondary-button{padding:10px 13px;border:1px solid #465264;background:var(--inner);color:#dce2ea;border-radius:8px;font-weight:bold}
+.activity-preview{background:var(--inner);border:1px solid var(--border);border-radius:9px;padding:11px;margin-top:12px;color:#cbd3dd;font-size:12px;line-height:1.6}
+.history-item{background:var(--inner);border:1px solid var(--border);border-radius:9px;padding:11px;margin-top:8px}
+.history-title{font-size:13px;font-weight:bold}
+.history-detail{color:var(--muted);font-size:11px;line-height:1.5;margin-top:5px}
+.history-xp{color:var(--green);font-size:11px;font-weight:bold;margin-top:5px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.rules li{margin:7px 0;color:#c1cad5;font-size:12px;line-height:1.5}
+.footer{text-align:center;color:#687381;font-size:11px;margin-top:25px}
+@media(max-width:650px){
+ .container{padding:12px 8px 30px}
+ .hero{grid-template-columns:1fr}
+ .avatar{width:120px;height:120px;font-size:58px}
+ .overall-number{font-size:54px}
+ .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .skill-card{padding:8px}
+ .skill-name{font-size:10.5px}
+ .skill-level{font-size:17px}
+ .skill-xp{font-size:8px}
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    text-align: center;
-    padding: 22px 12px 18px;
-    background: rgba(20, 25, 34, 0.97);
-    border-bottom: 2px solid #303a49;
+@media(max-width:360px){
+ .skill-card{padding:7px}
+ .skill-name{font-size:9px}
+ .skill-level{font-size:15px}
 }
-
-header h1 {
-    margin: 0;
-    color: #e0b84f;
-    font-size: 28px;
-    letter-spacing: 1px;
-}
-
-header p {
-    margin: 7px 0 0;
-    color: #aeb7c4;
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
-
-.container {
-    max-width: 1050px;
-    margin: auto;
-    padding: 18px 12px 45px;
-}
-
-
-/* =========================================================
-   PLAYER SELECTOR
-========================================================= */
-
-.selector {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.selector button {
-    min-width: 140px;
-    padding: 11px 24px;
-    border-radius: 10px;
-    border: 2px solid #394454;
-    background: #191f29;
-    color: #dce2ea;
-    font-size: 16px;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.selector button.active {
-    background: #e0b84f;
-    color: #111;
-    border-color: #e0b84f;
-}
-
-
-/* =========================================================
-   GENERAL CARDS
-========================================================= */
-
-.card {
-    background: rgba(25, 31, 41, 0.97);
-    border: 1px solid #303a49;
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 7px 22px rgba(0,0,0,.22);
-}
-
-
-/* =========================================================
-   HERO AREA
-========================================================= */
-
-.hero {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 18px;
-    margin-bottom: 18px;
-}
-
-
-/* =========================================================
-   CHARACTER CARD
-========================================================= */
-
-.character-card {
-    text-align: center;
-}
-
-.character-frame {
-    width: 285px;
-    height: 380px;
-    max-width: 100%;
-    margin: 0 auto 12px;
-
-    background: #090d13;
-    border: 3px solid #465264;
-    border-radius: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.character-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.character-name {
-    font-size: 24px;
-    font-weight: 900;
-    color: #e0b84f;
-}
-
-.level-label {
-    margin-top: 5px;
-    color: #aeb7c4;
-    font-size: 12px;
-}
-
-.overall-number {
-    margin-top: 4px;
-    font-size: 64px;
-    line-height: 1;
-    font-weight: 900;
-    color: #e0b84f;
-}
-
-.overall-text {
-    color: #8f9aaa;
-    font-size: 11px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.philosophy {
-    margin-top: 15px;
-    padding: 11px;
-    border-radius: 9px;
-    background: #111720;
-    color: #dce2ea;
-    font-style: italic;
-    line-height: 1.45;
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   TRUST
-========================================================= */
-
-.trust-card {
-    margin-bottom: 16px;
-}
-
-.trust-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.trust-header h2 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.trust-value {
-    color: #65d68b;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.trust-bar {
-    height: 12px;
-    margin-top: 10px;
-    border-radius: 20px;
-    background: #0c1016;
-    overflow: hidden;
-}
-
-.trust-fill {
-    height: 100%;
-    background: #65d68b;
-    border-radius: 20px;
-}
-
-.trust-note {
-    margin-top: 8px;
-    color: #9ca7b5;
-    font-size: 12px;
-    line-height: 1.45;
-}
-
-
-/* =========================================================
-   LATEST GROWTH
-========================================================= */
-
-.growth-card {
-    border-color: #514321;
-}
-
-.growth-card h2 {
-    margin: 0 0 8px;
-    color: #e0b84f;
-    font-size: 20px;
-}
-
-.growth-text {
-    margin: 0;
-    color: #d9dee5;
-    line-height: 1.55;
-    font-size: 13px;
-}
-
-.level-message {
-    margin-top: 12px;
-    padding: 11px;
-
-    border-radius: 9px;
-
-    background: #17261d;
-    border: 1px solid #65d68b;
-
-    color: #8ee8a9;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.45;
-}
-
-
-/* =========================================================
-   SKILLS SECTION
-========================================================= */
-
-.skills-card {
-    margin-top: 18px;
-}
-
-.skills-card h2 {
-    margin: 0 0 6px;
-    font-size: 21px;
-}
-
-.skills-intro {
-    color: #9fa9b7;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-
-/* =========================================================
-   TWO-COLUMN SKILL GRID
-========================================================= */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-}
-
-
-/* =========================================================
-   SKILL CARD
-========================================================= */
-
-.skill-card {
-    background: #10161f;
-    border: 1px solid #2d3745;
-    border-radius: 10px;
-    padding: 10px;
-    min-height: 100px;
-}
-
-
-/* =========================================================
-   SKILL TOP
-========================================================= */
-
-.skill-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
-}
-
-.skill-title {
-    color: #e7ebf0;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.skill-icon {
-    font-size: 16px;
-    margin-right: 2px;
-}
-
-
-/* =========================================================
-   LEVEL
-========================================================= */
-
-.skill-level-box {
-    text-align: right;
-    flex-shrink: 0;
-}
-
-.skill-level {
-    color: #e0b84f;
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.skill-level-label {
-    color: #707b89;
-    font-size: 6px;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    margin-top: 2px;
-}
-
-
-/* =========================================================
-   XP
-========================================================= */
-
-.skill-xp {
-    margin-top: 7px;
-    display: flex;
-    justify-content: space-between;
-    color: #8994a3;
-    font-size: 8px;
-}
-
-
-/* =========================================================
-   PROGRESS BAR
-========================================================= */
-
-.skill-bar {
-    height: 7px;
-    margin-top: 5px;
-    background: #252e3a;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.skill-fill {
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        #438ddd,
-        #58a6ff
-    );
-    border-radius: 20px;
-}
-
-
-/* =========================================================
-   NEXT LEVEL
-========================================================= */
-
-.skill-next {
-    margin-top: 4px;
-    color: #697584;
-    font-size: 7px;
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   RULES
-========================================================= */
-
-.rules-card {
-    margin-top: 18px;
-}
-
-.rules-card h2 {
-    margin: 0 0 8px;
-    color: #e0b84f;
-    font-size: 20px;
-}
-
-.rules-card ul {
-    padding-left: 19px;
-    margin: 0;
-    color: #b7c0cc;
-    line-height: 1.55;
-    font-size: 12px;
-}
-
-.rules-card strong {
-    color: #e7ebf0;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-    text-align: center;
-    color: #687381;
-    font-size: 11px;
-    margin-top: 25px;
-}
-
-
-/* =========================================================
-   TABLET / DESKTOP
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .character-frame {
-        width: 275px;
-        height: 365px;
-    }
-
-}
-
-
-/* =========================================================
-   PHONE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .container {
-        padding: 14px 8px 35px;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    .selector button {
-        min-width: 125px;
-        padding: 10px 18px;
-        font-size: 14px;
-    }
-
-    .hero {
-        gap: 12px;
-    }
-
-    .card {
-        padding: 12px;
-    }
-
-    .character-frame {
-        width: 250px;
-        height: 335px;
-    }
-
-    .overall-number {
-        font-size: 58px;
-    }
-
-    /*
-       IMPORTANT:
-       KEEP TWO COLUMNS ON PHONE.
-    */
-
-    .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 7px;
-    }
-
-    .skill-card {
-        padding: 8px;
-        min-height: 96px;
-    }
-
-    .skill-title {
-        font-size: 10.5px;
-    }
-
-    .skill-icon {
-        font-size: 14px;
-    }
-
-    .skill-level {
-        font-size: 16px;
-    }
-
-    .skill-xp {
-        font-size: 7px;
-    }
-
-    .skill-next {
-        font-size: 6.5px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .selector {
-        gap: 7px;
-    }
-
-    .selector button {
-        min-width: 0;
-        width: 50%;
-        padding: 9px 10px;
-    }
-
-    .character-frame {
-        width: 230px;
-        height: 305px;
-    }
-
-    .skills-grid {
-        gap: 5px;
-    }
-
-    .skill-card {
-        padding: 7px;
-        min-height: 92px;
-    }
-
-    .skill-title {
-        font-size: 9.5px;
-    }
-
-    .skill-level {
-        font-size: 15px;
-    }
-
-}
-
 </style>
 </head>
-
-
 <body>
-
-
 <header>
-
-    <h1>⚔️ REAL LIFE GROWTH</h1>
-
-    <p>
-        This is who you're growing to become.
-    </p>
-
+<h1>⚔️ REAL LIFE GROWTH</h1>
+<p>This is who you're growing to become.</p>
 </header>
 
-
 <div class="container">
-
-
-<!-- =====================================================
-     PLAYER SELECTOR
-====================================================== -->
-
 <div class="selector">
-
-    <button
-        id="jdButton"
-        class="active"
-        onclick="selectPlayer('JD')">
-
-        🟨 JD
-
-    </button>
-
-    <button
-        id="michaelButton"
-        onclick="selectPlayer('Michael')">
-
-        🟦 Michael
-
-    </button>
-
+<button class="player-button active" id="jdButton" onclick="selectPlayer('JD')">🟨 JD</button>
+<button class="player-button" id="michaelButton" onclick="selectPlayer('Michael')">🟪 Michael</button>
 </div>
-
-
-<!-- =====================================================
-     HERO
-====================================================== -->
 
 <div class="hero">
-
-
-    <!-- CHARACTER -->
-
-    <div class="card character-card">
-
-        <div class="character-frame">
-
-            <img
-                id="characterImage"
-                src=""
-                alt="Character">
-
-        </div>
-
-        <div
-            class="character-name"
-            id="characterName">
-        </div>
-
-        <div class="level-label">
-            OVERALL CHARACTER LEVEL
-        </div>
-
-        <div
-            class="overall-number"
-            id="overallLevel">
-        </div>
-
-        <div class="overall-text">
-            REAL LIFE LEVEL
-        </div>
-
-        <div class="philosophy">
-            "This is who you're growing to become."
-        </div>
-
-    </div>
-
-
-    <!-- RIGHT SIDE -->
-
-    <div>
-
-
-        <!-- TRUST -->
-
-        <div class="card trust-card">
-
-            <div class="trust-header">
-
-                <h2>🛡️ Trust</h2>
-
-                <div
-                    id="trustValue"
-                    class="trust-value">
-                </div>
-
-            </div>
-
-            <div class="trust-bar">
-
-                <div
-                    id="trustFill"
-                    class="trust-fill">
-                </div>
-
-            </div>
-
-            <div class="trust-note">
-
-                Trust is separate from XP.
-                Skill progress never disappears.
-                Trust grows through good choices,
-                honesty, responsibility, self-control,
-                and follow-through.
-
-            </div>
-
-        </div>
-
-
-        <!-- LATEST GROWTH -->
-
-        <div class="card growth-card">
-
-            <h2>🌟 LATEST GROWTH</h2>
-
-            <p
-                id="growthText"
-                class="growth-text">
-            </p>
-
-            <div
-                id="levelMessage"
-                class="level-message">
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="card character">
+<div class="avatar" id="avatar">🛡️</div>
+<div class="player-name" id="playerName">JD</div>
+<div class="overall-label">OVERALL CHARACTER LEVEL</div>
+<div class="overall-number" id="overallLevel">1</div>
+<div class="xp-label" id="overallXP">0 XP</div>
+<div class="progress"><div class="progress-fill overall-fill" id="overallProgress" style="width:0%"></div></div>
+<div class="xp-label" id="overallNext">83 XP to Level 2</div>
 </div>
 
-
-<!-- =====================================================
-     SKILLS
-====================================================== -->
-
-<div class="card skills-card">
-
-    <h2>📊 ALL SKILLS</h2>
-
-    <div class="skills-intro">
-
-        Every skill has its own XP and level.
-        Higher levels require more XP, just like
-        a RuneScape-style progression system.
-
-        <br><br>
-
-        <strong>
-            Overall Level = the sum of all 28 skill levels.
-        </strong>
-
-        Activities can legitimately improve multiple skills.
-        Baseball can improve running, golf swing mechanics,
-        throwing, catching, coordination and decision-making.
-        Running can transfer to almost every running-based sport.
-
-    </div>
-
-    <div
-        id="skillsGrid"
-        class="skills-grid">
-    </div>
-
+<div>
+<div class="card">
+<div class="stat-row"><h2>🌟 The Journey</h2><span class="gold">28 Skills</span></div>
+<div class="growth-message">Every activity is an opportunity to learn, improve and grow. Skills overlap, and progress in one area can strengthen another.</div>
+</div>
+<div class="card growth-card">
+<h2>🏆 LATEST GROWTH</h2>
+<div class="growth-message" id="latestGrowth">Your first adventure starts here.</div>
+</div>
+<div class="card">
+<div class="stat-row"><strong>🛡️ Trust</strong><strong class="green">Separate from XP</strong></div>
+<div class="muted" style="margin-top:8px">Trust reflects choices and follow-through. Poor choices never erase skill XP.</div>
+</div>
+</div>
 </div>
 
-
-<!-- =====================================================
-     RULES
-====================================================== -->
-
-<div class="card rules-card">
-
-    <h2>📜 THE GROWTH SYSTEM</h2>
-
-    <ul>
-
-        <li>
-            <strong>Overall Level:</strong>
-            Overall is the combined level of all 28 individual skills.
-        </li>
-
-        <li>
-            <strong>Individual XP:</strong>
-            Each skill follows an escalating RuneScape-style XP curve.
-        </li>
-
-        <li>
-            <strong>XP Never Goes Backward:</strong>
-            Once XP is earned, it stays earned.
-        </li>
-
-        <li>
-            <strong>Primary Skill:</strong>
-            The activity receives the largest amount of XP in the skill
-            it directly develops.
-        </li>
-
-        <li>
-            <strong>Transfer Skills:</strong>
-            Real abilities transfer between activities when there is
-            a legitimate connection.
-        </li>
-
-        <li>
-            <strong>Baseball → Golf:</strong>
-            Swing mechanics, timing, rotation, balance and hand-eye
-            coordination can transfer from baseball to golf.
-        </li>
-
-        <li>
-            <strong>Running:</strong>
-            Running, acceleration, speed and movement can transfer
-            to baseball, soccer, football, basketball and other sports.
-        </li>
-
-        <li>
-            <strong>School:</strong>
-            School develops reading, writing, mathematics,
-            critical thinking, discipline, responsibility and
-            mental strength.
-        </li>
-
-        <li>
-            <strong>Spanish:</strong>
-            Michael's dual-language schoolwork develops
-            Spanish / Language.
-        </li>
-
-        <li>
-            <strong>Faith:</strong>
-            Prayer, worship, church and Scripture primarily develop
-            God Relationship, with legitimate secondary connections.
-        </li>
-
-        <li>
-            <strong>Trust:</strong>
-            Trust is separate from XP. Poor choices can affect Trust,
-            but never erase skill XP.
-        </li>
-
-    </ul>
-
+<div class="card">
+<h2>➕ Record an Activity</h2>
+<p class="muted">Choose what happened, how long it lasted and the effort involved. The system awards the main skill and relevant transferable skills. Review the breakdown before saving.</p>
+<div class="form-grid">
+<div class="field full">
+<label for="activityType">Activity</label>
+<select id="activityType"></select>
+</div>
+<div class="field">
+<label for="minutes">Minutes</label>
+<input id="minutes" type="number" min="1" max="600" value="30">
+</div>
+<div class="field">
+<label for="effort">Effort</label>
+<select id="effort">
+<option value="0.8">Light / casual</option>
+<option value="1" selected>Normal effort</option>
+<option value="1.25">Strong effort</option>
+<option value="1.5">Exceptional effort</option>
+</select>
+</div>
+<div class="field full">
+<label for="notes">What did they do? (optional)</label>
+<input id="notes" type="text" maxlength="160" placeholder="e.g. Worked on throwing accuracy and catching">
+</div>
+</div>
+<div class="activity-preview" id="preview">Choose an activity to see which skills it can develop.</div>
+<button class="primary-button" onclick="recordActivity()">ADD ACTIVITY & AWARD XP</button>
 </div>
 
-
-<div class="footer">
-
-    Real growth happens one choice,
-    one effort, and one level at a time.
-
+<div class="card">
+<div class="stat-row"><h2>📊 All 28 Skills</h2><span class="muted">Every skill starts at Level 1</span></div>
+<div class="skills-grid" id="skillsGrid"></div>
 </div>
 
-
+<div class="card">
+<div class="stat-row"><h2>📜 Activity History</h2><span class="muted" id="historyCount">0 activities</span></div>
+<div id="history"><p class="muted">Your activity history will appear here.</p></div>
 </div>
 
+<div class="card">
+<h2>💾 Save & Backup</h2>
+<p class="muted">Progress saves automatically in this browser on this device. Export a backup regularly so progress can be restored if browser data is cleared or you change devices.</p>
+<div class="tools">
+<button class="secondary-button" onclick="exportBackup()">⬇ Export Backup</button>
+<button class="secondary-button" onclick="document.getElementById('importFile').click()">⬆ Import Backup</button>
+<input id="importFile" type="file" accept="application/json" hidden onchange="importBackup(event)">
+</div>
+<p class="muted" style="margin-top:12px">Browser storage is not shared between devices or browsers. Export and import backups when moving the site.</p>
+</div>
+
+<div class="card">
+<h2>📖 The Rules of Growth</h2>
+<ul class="rules">
+<li><b>Fresh start:</b> JD and Michael begin at Overall Level 1, with all 28 skills at Level 1 and 0 XP.</li>
+<li><b>Overall progression:</b> Overall XP is earned once for an activity. It is not the sum of skill XP.</li>
+<li><b>Primary skill:</b> The main skill receives 100% of the activity's base XP.</li>
+<li><b>Transfer skills:</b> Related skills can receive a smaller share when the activity genuinely develops abilities useful in those skills.</li>
+<li><b>Judgment matters:</b> Not every skill receives XP from every activity. No artificial or unrelated XP.</li>
+<li><b>Effort and time:</b> Duration and effort influence XP. Quality and substance matter, not just minutes.</li>
+<li><b>Permanent progress:</b> Earned XP never decreases.</li>
+</ul>
+</div>
+<div class="footer">REAL LIFE GROWTH 2.0 · One choice, one effort, one level at a time.</div>
+</div>
 
 <script>
-
-
-/* =========================================================
-   RUNE-SCAPE XP FORMULA
-========================================================= */
-
-function xpForLevel(level) {
-
-    if (level <= 1) {
-        return 0;
-    }
-
-    let total = 0;
-
-    for (let i = 1; i < level; i++) {
-
-        total += Math.floor(
-            i + 300 * Math.pow(2, i / 7)
-        );
-
-    }
-
-    return Math.floor(total / 4);
-
-}
-
-
-/* =========================================================
-   GET SKILL LEVEL
-========================================================= */
-
-function getSkillLevel(xp) {
-
-    let level = 1;
-
-    while (
-        level < 99 &&
-        xpForLevel(level + 1) <= xp
-    ) {
-
-        level++;
-
-    }
-
-    return level;
-
-}
-
-
-/* =========================================================
-   GET SKILL PROGRESS
-========================================================= */
-
-function getSkillProgress(xp) {
-
-    const level =
-        getSkillLevel(xp);
-
-    const currentXP =
-        xpForLevel(level);
-
-    const nextXP =
-        xpForLevel(level + 1);
-
-    const required =
-        nextXP - currentXP;
-
-    const earned =
-        xp - currentXP;
-
-    let percent = 0;
-
-    if (required > 0) {
-
-        percent = Math.floor(
-            (earned / required) * 100
-        );
-
-    }
-
-    return {
-        level: level,
-        currentXP: currentXP,
-        nextXP: nextXP,
-        percent: percent
-    };
-
-}
-
-
-/* =========================================================
-   28 SKILLS
-========================================================= */
-
-const skillDefinitions = [
-
-    ["⚾", "Baseball"],
-    ["🏀", "Basketball"],
-    ["🏈", "Football"],
-    ["⚽", "Soccer"],
-    ["⛳", "Golf"],
-    ["🎳", "Bowling"],
-
-    ["📚", "Reading"],
-    ["✍️", "Writing"],
-    ["🔢", "Mathematics"],
-    ["🎨", "Drawing"],
-    ["🧱", "Building"],
-    ["🎨", "Designing"],
-
-    ["🙏", "God Relationship"],
-    ["❤️", "Family Relationship"],
-    ["🤝", "Friend Relationships"],
-
-    ["💡", "Creativity"],
-    ["🍳", "Cooking"],
-    ["🧹", "Responsibility"],
-
-    ["🏃", "Running / Speed"],
-    ["💪", "Strength"],
-    ["🦁", "Toughness"],
-    ["🧠", "Mental Strength"],
-    ["🎯", "Discipline"],
-
-    ["♟️", "Chess"],
-    ["🧠", "Critical Thinking"],
-    ["🎵", "Music"],
-    ["🥗", "Nutrition / Healthy Choices"],
-
-    ["🇪🇸", "Spanish / Language"]
-
+const SKILLS = [
+["⚾","Baseball"],["🏀","Basketball"],["🏈","Football"],["⚽","Soccer"],["⛳","Golf"],["🎳","Bowling"],
+["📚","Reading"],["✍️","Writing"],["🔢","Mathematics"],["🎨","Drawing"],["🧱","Building"],["🖌️","Designing"],
+["🙏","God Relationship"],["❤️","Family Relationship"],["🤝","Friend Relationships"],["💡","Creativity"],
+["🍳","Cooking"],["🧹","Responsibility"],["🏃","Running / Speed"],["💪","Strength"],["🦁","Toughness"],
+["🧠","Mental Strength"],["🎯","Discipline"],["♟️","Chess"],["🔍","Critical Thinking"],["🎵","Music"],
+["🥗","Nutrition / Healthy Choices"],["🇪🇸","Spanish / Language"]
 ];
 
-
-/* =========================================================
-   PLAYER DATA
-========================================================= */
-
-const players = {
-
-
-    /* =====================================================
-       JD
-    ===================================================== */
-
-    JD: {
-
-        name: "JD",
-
-        trust: 100,
-
-        images: {
-
-            8:
-                "images/JD/JD-level-8.png.PNG",
-
-            11:
-                "images/JD/JD-level-11.png",
-
-            12:
-                "images/JD/JD-level-12.png.PNG"
-
-        },
-
-        xp: {
-
-            "Baseball": 240,
-
-            "Basketball": 45,
-
-            "Football": 49,
-
-            "Soccer": 210,
-
-            "Golf": 115,
-
-            "Bowling": 25,
-
-            "Reading": 275,
-
-            "Writing": 121,
-
-            "Mathematics": 103,
-
-            "Drawing": 0,
-
-            "Building": 0,
-
-            "Designing": 20,
-
-            "God Relationship": 355,
-
-            "Family Relationship": 166,
-
-            "Friend Relationships": 183,
-
-            "Creativity": 45,
-
-            "Cooking": 15,
-
-            "Responsibility": 262,
-
-            "Running / Speed": 201,
-
-            "Strength": 79,
-
-            "Toughness": 10,
-
-            "Mental Strength": 70,
-
-            "Discipline": 105,
-
-            "Chess": 0,
-
-            "Critical Thinking": 95,
-
-            "Music": 75,
-
-            "Nutrition / Healthy Choices": 5,
-
-            "Spanish / Language": 0
-
-        },
-
-        growth:
-
-            "JD has had a major stretch of growth: four soccer practices and two soccer games, about 20 school days, repeated prayer and worship, four church visits, and repeated responsibility with towels and creating outfits. His soccer work is also building transferable athletic abilities including running, acceleration, movement, coordination, decision-making, and skills that carry into baseball, basketball, football, and other sports.",
-
-        message:
-
-            "🏆 JD is Overall Level 49. His strongest recent growth has come through soccer, school, faith, responsibility, running, and continued athletic development."
-
-    },
-
-
-    /* =====================================================
-       MICHAEL
-    ===================================================== */
-
-    Michael: {
-
-        name: "Michael",
-
-        trust: 100,
-
-        images: {
-
-            8:
-                "images/Michael/Level-8-Michael.png.PNG",
-
-            9:
-                "images/Michael/Level-9-Michael.png",
-
-            11:
-                "images/Michael/Level-11-Michael.png",
-
-            12:
-                "images/Michael/Level-12-Michael.png.PNG"
-
-        },
-
-        xp: {
-
-            "Baseball": 470,
-
-            "Basketball": 23,
-
-            "Football": 34,
-
-            "Soccer": 30,
-
-            "Golf": 93,
-
-            "Bowling": 28,
-
-            "Reading": 405,
-
-            "Writing": 146,
-
-            "Mathematics": 100,
-
-            "Drawing": 15,
-
-            "Building": 8,
-
-            "Designing": 20,
-
-            "God Relationship": 355,
-
-            "Family Relationship": 72,
-
-            "Friend Relationships": 55,
-
-            "Creativity": 73,
-
-            "Cooking": 0,
-
-            "Responsibility": 255,
-
-            "Running / Speed": 70,
-
-            "Strength": 46,
-
-            "Toughness": 115,
-
-            "Mental Strength": 125,
-
-            "Discipline": 180,
-
-            "Chess": 0,
-
-            "Critical Thinking": 100,
-
-            "Music": 75,
-
-            "Nutrition / Healthy Choices": 5,
-
-            "Spanish / Language": 155
-
-        },
-
-        growth:
-
-            "Michael has had a huge stretch of development: four baseball games, five baseball practices, about 20 school days, continued Spanish work, four church visits, hundreds of prayers and worship songs, and repeated responsibility with towels and creating outfits. His baseball work is also strengthening running, golf-related swing mechanics, throwing, catching, movement, coordination, decision-making, and other transferable athletic abilities.",
-
-        message:
-
-            "🏆 Michael is Overall Level 50. Baseball and reading have become major strengths, while school, faith, Spanish, discipline, responsibility, and mental strength have all continued to grow."
-
-    }
-
+// Primary skill receives 100% of base XP.
+// Transfer percentages are smaller and reflect legitimate overlap.
+const ACTIVITIES = {
+baseball_practice:{label:"Baseball practice",primary:"Baseball",transfers:{"Running / Speed":.25,"Strength":.15,"Football":.20,"Basketball":.15,"Golf":.15,"Critical Thinking":.10,"Toughness":.10}},
+baseball_game:{label:"Baseball game",primary:"Baseball",transfers:{"Running / Speed":.30,"Strength":.10,"Football":.15,"Basketball":.12,"Golf":.10,"Critical Thinking":.20,"Toughness":.20}},
+baseball_throwing:{label:"Throwing a baseball",primary:"Baseball",transfers:{"Football":.35,"Basketball":.25,"Strength":.15,"Critical Thinking":.05}},
+baseball_hitting:{label:"Baseball hitting practice",primary:"Baseball",transfers:{"Golf":.35,"Basketball":.08,"Critical Thinking":.10,"Strength":.08}},
+soccer_practice:{label:"Soccer practice",primary:"Soccer",transfers:{"Running / Speed":.35,"Basketball":.15,"Football":.12,"Baseball":.08,"Toughness":.12,"Critical Thinking":.12,"Strength":.08}},
+soccer_game:{label:"Soccer game",primary:"Soccer",transfers:{"Running / Speed":.35,"Basketball":.12,"Football":.12,"Toughness":.20,"Critical Thinking":.15,"Strength":.08}},
+football_practice:{label:"Football practice",primary:"Football",transfers:{"Baseball":.18,"Basketball":.12,"Running / Speed":.25,"Strength":.20,"Toughness":.12,"Critical Thinking":.12}},
+basketball_practice:{label:"Basketball practice",primary:"Basketball",transfers:{"Baseball":.12,"Football":.12,"Running / Speed":.22,"Strength":.10,"Critical Thinking":.15,"Toughness":.10}},
+golf_practice:{label:"Golf practice",primary:"Golf",transfers:{"Baseball":.20,"Strength":.08,"Critical Thinking":.15,"Mental Strength":.12,"Discipline":.12}},
+bowling:{label:"Bowling",primary:"Bowling",transfers:{"Baseball":.08,"Golf":.12,"Mental Strength":.08,"Critical Thinking":.10}},
+reading:{label:"Reading",primary:"Reading",transfers:{"Writing":.25,"Critical Thinking":.30,"Creativity":.10}},
+writing:{label:"Writing",primary:"Writing",transfers:{"Reading":.20,"Creativity":.15,"Critical Thinking":.20}},
+math:{label:"Mathematics / math practice",primary:"Mathematics",transfers:{"Critical Thinking":.30}},
+drawing:{label:"Drawing",primary:"Drawing",transfers:{"Creativity":.30,"Designing":.20,"Mental Strength":.05}},
+building:{label:"Building / construction project",primary:"Building",transfers:{"Mathematics":.12,"Creativity":.15,"Designing":.20,"Critical Thinking":.15,"Discipline":.08}},
+designing:{label:"Designing / planning",primary:"Designing",transfers:{"Creativity":.30,"Critical Thinking":.12,"Mathematics":.08}},
+prayer:{label:"Prayer / personal time with God",primary:"God Relationship",transfers:{"Mental Strength":.08,"Discipline":.08}},
+church:{label:"Church / Bible study",primary:"God Relationship",transfers:{"Reading":.08,"Friend Relationships":.08,"Mental Strength":.08}},
+worship:{label:"Worship music",primary:"God Relationship",transfers:{"Music":.25,"Mental Strength":.05}},
+family:{label:"Intentional family time",primary:"Family Relationship",transfers:{"Friend Relationships":.05,"Mental Strength":.05}},
+friends:{label:"Positive time with friends",primary:"Friend Relationships",transfers:{"Family Relationship":.03}},
+cooking:{label:"Cooking / preparing food",primary:"Cooking",transfers:{"Mathematics":.12,"Responsibility":.15,"Nutrition / Healthy Choices":.25}},
+chores:{label:"Chores / making bed / towels",primary:"Responsibility",transfers:{"Discipline":.30,"Family Relationship":.08}},
+outfit:{label:"Choosing / preparing an outfit",primary:"Responsibility",transfers:{"Designing":.20,"Creativity":.12,"Discipline":.12}},
+running:{label:"Running / speed workout",primary:"Running / Speed",transfers:{"Soccer":.15,"Football":.15,"Basketball":.15,"Baseball":.12,"Strength":.08,"Toughness":.12}},
+strength:{label:"Strength / exercise",primary:"Strength",transfers:{"Baseball":.08,"Football":.12,"Basketball":.10,"Soccer":.08,"Toughness":.12}},
+chess:{label:"Chess",primary:"Chess",transfers:{"Critical Thinking":.45,"Mental Strength":.08}},
+music:{label:"Playing / practicing music",primary:"Music",transfers:{"Creativity":.20,"Discipline":.10}},
+nutrition:{label:"Healthy food choices / nutrition learning",primary:"Nutrition / Healthy Choices",transfers:{"Cooking":.10,"Mathematics":.05}},
+spanish:{label:"Spanish / language practice",primary:"Spanish / Language",transfers:{"Reading":.08,"Writing":.08,"Critical Thinking":.08}},
+school:{label:"School day / schoolwork",primary:"Reading",transfers:{"Writing":.35,"Mathematics":.35,"Critical Thinking":.25,"Mental Strength":.15,"Discipline":.15,"Responsibility":.15}}
 };
 
-
-/* =========================================================
-   CALCULATE OVERALL
-========================================================= */
-
-function calculateOverall(player) {
-
-    let total = 0;
-
-    skillDefinitions.forEach(skill => {
-
-        const skillName =
-            skill[1];
-
-        const xp =
-            player.xp[skillName] || 0;
-
-        total +=
-            getSkillLevel(xp);
-
-    });
-
-    return total;
-
+function freshPlayer(){
+ const skills={};
+ SKILLS.forEach(s=>skills[s[1]]=0);
+ return {overallXP:0,skills,history:[],latest:"Your first adventure starts here."};
 }
+function freshData(){return {JD:freshPlayer(),Michael:freshPlayer()};}
 
-
-/* =========================================================
-   CHARACTER IMAGE
-========================================================= */
-
-function getCharacterImage(player, overall) {
-
-    const availableLevels =
-        Object.keys(player.images)
-            .map(Number)
-            .sort((a,b) => a-b);
-
-    let selectedLevel =
-        availableLevels[0];
-
-    for (const level of availableLevels) {
-
-        if (level <= overall) {
-
-            selectedLevel = level;
-
-        }
-
-    }
-
-    return player.images[selectedLevel];
-
+let data;
+try {
+ data=JSON.parse(localStorage.getItem("realLifeGrowth2"))||freshData();
+} catch(e) {
+ data=freshData();
 }
+["JD","Michael"].forEach(n=>{
+ if(!data[n])data[n]=freshPlayer();
+ if(!data[n].skills)data[n].skills={};
+ SKILLS.forEach(s=>{if(typeof data[n].skills[s[1]]!=="number")data[n].skills[s[1]]=0;});
+ if(!Array.isArray(data[n].history))data[n].history=[];
+ if(typeof data[n].overallXP!=="number")data[n].overallXP=0;
+});
+let current="JD";
 
-
-/* =========================================================
-   PLAYER SELECTION
-========================================================= */
-
-let currentPlayer = "JD";
-
-
-function selectPlayer(name) {
-
-    currentPlayer =
-        name;
-
-    document
-        .getElementById("jdButton")
-        .classList.toggle(
-            "active",
-            name === "JD"
-        );
-
-    document
-        .getElementById("michaelButton")
-        .classList.toggle(
-            "active",
-            name === "Michael"
-        );
-
-    render();
-
+function save(){
+ localStorage.setItem("realLifeGrowth2",JSON.stringify(data));
 }
-
-
-/* =========================================================
-   RENDER PLAYER
-========================================================= */
-
-function render() {
-
-    const player =
-        players[currentPlayer];
-
-    const overall =
-        calculateOverall(player);
-
-
-    document
-        .getElementById("characterName")
-        .textContent =
-        player.name;
-
-
-    document
-        .getElementById("overallLevel")
-        .textContent =
-        overall;
-
-
-    document
-        .getElementById("characterImage")
-        .src =
-        getCharacterImage(
-            player,
-            overall
-        );
-
-
-    document
-        .getElementById("characterImage")
-        .alt =
-        player.name +
-        " character";
-
-
-    document
-        .getElementById("trustValue")
-        .textContent =
-        player.trust + "%";
-
-
-    document
-        .getElementById("trustFill")
-        .style.width =
-        player.trust + "%";
-
-
-    document
-        .getElementById("growthText")
-        .textContent =
-        player.growth;
-
-
-    document
-        .getElementById("levelMessage")
-        .textContent =
-        player.message;
-
-
-    renderSkills(player);
-
+function xpForLevel(level){
+ if(level<=1)return 0;
+ let total=0;
+ for(let i=1;i<level;i++)total+=Math.floor(i+300*Math.pow(2,i/7));
+ return Math.floor(total/4);
 }
-
-
-/* =========================================================
-   RENDER SKILLS
-========================================================= */
-
-function renderSkills(player) {
-
-    const grid =
-        document.getElementById(
-            "skillsGrid"
-        );
-
-    grid.innerHTML = "";
-
-
-    skillDefinitions.forEach(skill => {
-
-        const icon =
-            skill[0];
-
-        const name =
-            skill[1];
-
-        const xp =
-            player.xp[name] || 0;
-
-        const progress =
-            getSkillProgress(xp);
-
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "skill-card";
-
-
-        card.innerHTML = `
-
-            <div class="skill-top">
-
-                <div class="skill-title">
-
-                    <span class="skill-icon">
-                        ${icon}
-                    </span>
-
-                    ${name}
-
-                </div>
-
-
-                <div class="skill-level-box">
-
-                    <div class="skill-level">
-
-                        ${progress.level}
-
-                    </div>
-
-                    <div class="skill-level-label">
-
-                        LEVEL
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="skill-xp">
-
-                <span>
-                    ${xp.toLocaleString()} XP
-                </span>
-
-                <span>
-                    ${progress.percent}%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div
-                    class="skill-fill"
-                    style="width:${progress.percent}%">
-                </div>
-
-            </div>
-
-
-            <div class="skill-next">
-
-                ${progress.nextXP.toLocaleString()}
-                XP needed for Level
-                ${progress.level + 1}
-
-            </div>
-
-        `;
-
-
-        grid.appendChild(card);
-
-    });
-
+function getLevel(xp){
+ let level=1;
+ while(level<99&&xpForLevel(level+1)<=xp)level++;
+ return level;
 }
-
-
-/* =========================================================
-   START
-========================================================= */
-
+function progress(xp){
+ const level=getLevel(xp);
+ const start=xpForLevel(level);
+ const end=xpForLevel(level+1);
+ return {
+  level,
+  percent:Math.max(0,Math.min(100,(xp-start)/(end-start)*100)),
+  remaining:end-xp
+ };
+}
+function overallBase(minutes,effort){
+ return Math.max(1,Math.round((minutes/15)*10*effort));
+}
+function selectPlayer(name){
+ current=name;
+ document.getElementById("jdButton").classList.toggle("active",name==="JD");
+ document.getElementById("michaelButton").classList.toggle("active",name==="Michael");
+ render();
+}
+function buildActivityOptions(){
+ const select=document.getElementById("activityType");
+ Object.entries(ACTIVITIES).forEach(([key,a])=>{
+  const option=document.createElement("option");
+  option.value=key;
+  option.textContent=a.label;
+  select.appendChild(option);
+ });
+ select.addEventListener("change",updatePreview);
+ document.getElementById("minutes").addEventListener("input",updatePreview);
+ document.getElementById("effort").addEventListener("change",updatePreview);
+}
+function activityAwards(activity,base){
+ const awards={};
+ awards[activity.primary]=base;
+ Object.entries(activity.transfers).forEach(([skill,rate])=>{
+  const amount=Math.floor(base*rate);
+  if(amount>0)awards[skill]=(awards[skill]||0)+amount;
+ });
+ return awards;
+}
+function updatePreview(){
+ const activity=ACTIVITIES[document.getElementById("activityType").value];
+ if(!activity)return;
+ const minutes=Math.max(1,Math.min(600,Number(document.getElementById("minutes").value)||1));
+ const effort=Number(document.getElementById("effort").value);
+ const base=overallBase(minutes,effort);
+ const awards=activityAwards(activity,base);
+ const lines=Object.entries(awards).map(([skill,xp])=>`${skill}: +${xp} XP`);
+ document.getElementById("preview").innerHTML=
+ `<b>${activity.label}</b><br>Overall: +${base} XP<br><b>Skill awards</b><br>${lines.join("<br>")}`;
+}
+function recordActivity(){
+ const key=document.getElementById("activityType").value;
+ const activity=ACTIVITIES[key];
+ const minutes=Math.max(1,Math.min(600,Number(document.getElementById("minutes").value)||1));
+ const effort=Number(document.getElementById("effort").value);
+ const note=document.getElementById("notes").value.trim();
+ const base=overallBase(minutes,effort);
+ const awards=activityAwards(activity,base);
+ const player=data[current];
+ const before=getLevel(player.overallXP);
+ player.overallXP+=base;
+ Object.entries(awards).forEach(([skill,xp])=>{
+  player.skills[skill]=(player.skills[skill]||0)+xp;
+ });
+ const after=getLevel(player.overallXP);
+ const date=new Date().toLocaleString();
+ player.history.unshift({date,label:activity.label,minutes,base,awards,note,levelUp:after>before});
+ player.latest=`${activity.label} for ${minutes} minutes. ${Object.entries(awards).map(([s,x])=>`${s} +${x} XP`).join(", ")}.`;
+ document.getElementById("notes").value="";
+ save();
+ render();
+}
+function renderSkills(player){
+ const grid=document.getElementById("skillsGrid");
+ grid.innerHTML="";
+ SKILLS.forEach(([icon,name])=>{
+  const xp=player.skills[name]||0;
+  const p=progress(xp);
+  const card=document.createElement("div");
+  card.className="skill-card";
+  card.innerHTML=`
+   <div class="skill-top">
+    <div class="skill-name">${icon} ${name}</div>
+    <div class="skill-level">${p.level}</div>
+   </div>
+   <div class="skill-xp"><span>${xp.toLocaleString()} XP</span><span>${Math.floor(p.percent)}%</span></div>
+   <div class="progress"><div class="progress-fill" style="width:${p.percent}%"></div></div>
+   <div class="skill-next">${p.remaining.toLocaleString()} XP to Level ${p.level+1}</div>`;
+  grid.appendChild(card);
+ });
+}
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function renderHistory(player){
+ const el=document.getElementById("history");
+ document.getElementById("historyCount").textContent=`${player.history.length} activities`;
+ if(!player.history.length){
+  el.innerHTML='<p class="muted">Your activity history will appear here.</p>';
+  return;
+ }
+ el.innerHTML=player.history.slice(0,40).map(item=>{
+  const breakdown=Object.entries(item.awards||{}).map(([s,x])=>`${s} +${x}`).join(" · ");
+  return `<div class="history-item">
+   <div class="history-title">${escapeHTML(item.label)} ${item.levelUp?'🏆 LEVEL UP!':''}</div>
+   <div class="history-detail">${escapeHTML(item.date)} · ${item.minutes} minutes${item.note?' · '+escapeHTML(item.note):''}</div>
+   <div class="history-xp">Overall +${item.base} XP</div>
+   <div class="history-detail">${escapeHTML(breakdown)}</div>
+  </div>`;
+ }).join("");
+}
+function render(){
+ const player=data[current];
+ const p=progress(player.overallXP);
+ document.getElementById("playerName").textContent=current;
+ document.getElementById("overallLevel").textContent=p.level;
+ document.getElementById("overallXP").textContent=player.overallXP.toLocaleString()+" XP";
+ document.getElementById("overallProgress").style.width=p.percent+"%";
+ document.getElementById("overallNext").textContent=`${p.remaining.toLocaleString()} XP to Level ${p.level+1}`;
+ document.getElementById("latestGrowth").textContent=player.latest;
+ document.getElementById("avatar").textContent=current==="JD"?"🛡️":"⚔️";
+ renderSkills(player);
+ renderHistory(player);
+ updatePreview();
+}
+function exportBackup(){
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="real-life-growth-backup.json";
+ a.click();
+ URL.revokeObjectURL(url);
+}
+function importBackup(event){
+ const file=event.target.files[0];
+ if(!file)return;
+ const reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   const imported=JSON.parse(reader.result);
+   if(!imported.JD||!imported.Michael)throw new Error("Invalid backup");
+   data=imported;
+   ["JD","Michael"].forEach(n=>{
+    if(!data[n].skills)data[n].skills={};
+    SKILLS.forEach(s=>{if(typeof data[n].skills[s[1]]!=="number")data[n].skills[s[1]]=0;});
+    if(!Array.isArray(data[n].history))data[n].history=[];
+    if(typeof data[n].overallXP!=="number")data[n].overallXP=0;
+   });
+   save();
+   render();
+   alert("Backup restored successfully.");
+  }catch(e){
+   alert("Could not import that backup. Please select a valid Real Life Growth backup.");
+  }
+  event.target.value="";
+ };
+ reader.readAsText(file);
+}
+buildActivityOptions();
 render();
-
 </script>
-
 </body>
 </html>
